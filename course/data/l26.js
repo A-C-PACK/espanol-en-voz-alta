@@ -5,6 +5,7 @@ LESSONS["26"] = {
   scale: "Informal discussion with friends",
   reg: "tú", partner: "Javier", place: "Intercambio · Guadalajara",
   scene: "at a language exchange in a café in Guadalajara, Javier and I discussed three everyday topics and I gave and justified my opinions",
+  setup: "You're at a language exchange in a café in Guadalajara. Javier reads topic cards, and you each give your opinion.",
   goal: "At a language exchange, Javier picks topic cards for discussion. For each one, give your opinion, a reason, and an example. Agree, disagree, and ask what he thinks.",
   boardStep: ["Lee las tarjetas", "Javier will choose two or three. Think about your opinion and one example for each."],
   board: {

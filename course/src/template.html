@@ -65,6 +65,8 @@ header.lesson h1{font-size:clamp(2.1rem,7vw,2.8rem);letter-spacing:-.01em}
 .meta{font-size:.92rem;color:var(--muted)}
 .cando{font-size:1.15rem;line-height:1.5;padding-left:1rem;border-left:3px solid var(--blue)}
 .cando .eyebrow{display:block;margin-bottom:.15rem}
+.setup{margin:0 0 1rem;padding-left:1rem;border-left:3px solid var(--line)}
+.setup .eyebrow{display:block;margin-bottom:.1rem}
 
 /* sticky stage bar */
 nav.stages{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin:2rem -20px 0;padding:.55rem 20px;display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none}
@@ -424,6 +426,7 @@ function renderLesson(L){
   </div>
   <div class="step" id="p2">
     <div class="step-h"><span class="eyebrow">Paso 2</span><h3>Escucha el diálogo</h3><p>Listen once with the English showing. Then hide the English and listen again.</p></div>
+    ${L.setup?`<p class="setup"><span class="eyebrow">La escena</span>${L.setup}</p>`:""}
     <div class="controls">
       <div style="display:flex;gap:.5rem;flex-wrap:wrap">
         <button class="btn primary" id="play-all"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Play</button>

@@ -5,6 +5,7 @@ LESSONS["29"] = {
   scale: "Conversation",
   reg: "tú", partner: "Rogelio", place: "Boda · Tequila, Jalisco",
   scene: "at a wedding reception in Tequila, Jalisco, I was seated next to Rogelio, the bride's cousin, whom I'd never met, and kept the conversation going",
+  setup: "You're at a wedding reception in Tequila, Jalisco, seated next to someone you've never met: Rogelio, the bride's cousin. You start a conversation.",
   goal: "At a wedding reception, you're seated next to someone you don't know. Keep the conversation going for several minutes: ask follow-up questions, react, share about yourself, find something in common, and end the chat naturally.",
   boardStep: ["Prepara la plática", "Small talk is a skill: ask, react, share, and ask again."],
   board: {

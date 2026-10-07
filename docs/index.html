@@ -72,6 +72,8 @@ header.lesson h1{font-size:clamp(2.1rem,7vw,2.8rem);letter-spacing:-.01em}
 .meta{font-size:.92rem;color:var(--muted)}
 .cando{font-size:1.15rem;line-height:1.5;padding-left:1rem;border-left:3px solid var(--blue)}
 .cando .eyebrow{display:block;margin-bottom:.15rem}
+.setup{margin:0 0 1rem;padding-left:1rem;border-left:3px solid var(--line)}
+.setup .eyebrow{display:block;margin-bottom:.1rem}
 
 /* sticky stage bar */
 nav.stages{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin:2rem -20px 0;padding:.55rem 20px;display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none}
@@ -245,6 +247,7 @@ LESSONS["01"] = {
   scale: "Overall spoken interaction",
   reg: "tú", partner: "Mariana", place: "Intercambio · Coyoacán, CDMX",
   scene: "I met Mariana, an architect, at a language exchange in Mexico City and introduced myself",
+  setup: "You're at a language exchange at Café La Selva in Coyoacán, Mexico City. You meet Mariana, an architect, and introduce yourselves.",
   goal: "You're at a language exchange (intercambio) in a café in Coyoacán. ChatGPT plays Mariana. Introduce yourself, and find out three things about her.",
   boardStep: ["Prepara tu ficha", "Fill in the blanks in your head before you start. Mariana will ask all four."],
   board: {
@@ -355,6 +358,7 @@ LESSONS["02"] = {
   scale: "Information exchange",
   reg: "tú", partner: "Doña Lupe", place: "Casa de Lupe · Oaxaca",
   scene: "my host mother Doña Lupe in Oaxaca showed me family photos and we talked about our families",
+  setup: "You've just arrived at your homestay in Oaxaca. Your host mother, Doña Lupe, shows you photos of her family and asks about yours.",
   goal: "You've just arrived at your homestay in Oaxaca. ChatGPT plays Doña Lupe, your host mother, showing family photos. Find out who is in her family, and tell her about yours.",
   boardStep: ["Prepara tu familia", "Lupe's family is a surprise. Prepare yours, and the questions you'll ask her."],
   board: {
@@ -466,6 +470,7 @@ LESSONS["03"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Doña Carmen", place: "Mercado de Coyoacán, CDMX",
   scene: "I bought fruit and vegetables from Doña Carmen at the Mercado de Coyoacán",
+  setup: "It's Saturday morning at the Mercado de Coyoacán in Mexico City. You buy fruit and vegetables from Doña Carmen at her stand.",
   goal: "It's Saturday morning at the Mercado de Coyoacán. ChatGPT plays Doña Carmen, a fruit and vegetable vendor. Buy everything on your list, and check your change.",
   boardStep: ["Mira los precios", "These are Doña Carmen's prices. Your shopping list is on the right."],
   board: {
@@ -578,6 +583,7 @@ LESSONS["04"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Lucía", place: "Café El Jardín · San Miguel de Allende",
   scene: "I ordered breakfast from Lucía, a server at a café in San Miguel de Allende",
+  setup: "It's Sunday morning at Café El Jardín in San Miguel de Allende. Lucía, the server, takes your breakfast order.",
   goal: "It's Sunday morning at Café El Jardín in San Miguel de Allende. ChatGPT plays Lucía, your server. Order a drink and breakfast, ask one question about the menu, and ask for the check.",
   boardStep: ["Mira el menú", "Lucía uses this exact menu in the role play."],
   board: {
@@ -693,6 +699,7 @@ LESSONS["05"] = {
   scale: "Information exchange",
   reg: "usted", partner: "Rodrigo", place: "Escuela de español · Guanajuato",
   scene: "on my first day at a Spanish school in Guanajuato, I asked the receptionist Rodrigo about times, days, and dates",
+  setup: "It's your first day at a Spanish school in Guanajuato. You ask Rodrigo, the receptionist, about class times and activities.",
   goal: "It's your first day at a Spanish school in Guanajuato. ChatGPT plays Rodrigo, the receptionist. Find out when classes and activities happen, and find the one thing on the schedule that has changed.",
   boardStep: ["Mira el horario", "This is your printed schedule. One thing on it has changed."],
   board: {
@@ -805,6 +812,7 @@ LESSONS["06"] = {
   scale: "Conversation",
   reg: "tú", partner: "Diego", place: "Carne asada · Monterrey",
   scene: "at a Saturday carne asada in Monterrey, I talked with Diego about what we like and don't like",
+  setup: "You're at a Saturday carne asada at Diego's house in Monterrey. Diego offers you food, and you talk about what you like.",
   goal: "You're at a Saturday carne asada at Diego's house in Monterrey. ChatGPT plays Diego, your friend's cousin. Talk about food, sports, music, and free time, and politely say no to something.",
   boardStep: ["Mira la mesa", "Diego will offer you food and ask what you like."],
   board: {
@@ -917,6 +925,7 @@ LESSONS["07"] = {
   scale: "Sustained monologue: describing",
   reg: "tú", partner: "Claudia", place: "Videollamada · Mérida",
   scene: "on a video call with Claudia from Mérida, planning a home exchange, I described my home and neighborhood",
+  setup: "You're on a video call with Claudia in Mérida, planning a home exchange. She asks you to describe your home and neighborhood.",
   goal: "You're on a video call with Claudia from Mérida to plan a home exchange: she'll stay in your home, and you'll stay in hers. Describe your home and neighborhood, and talk for at least 30 seconds without stopping.",
   boardStep: ["Prepara tu descripción", "Claudia will ask these questions. Plan an answer for each."],
   board: {
@@ -1028,6 +1037,7 @@ LESSONS["08"] = {
   scale: "Information exchange",
   reg: "usted", partner: "Fernanda", place: "Hotel Casa Colonial · Puebla",
   scene: "I just checked in at a hotel in Puebla and asked the receptionist Fernanda where things are",
+  setup: "You've just checked in at Hotel Casa Colonial in Puebla. You ask Fernanda, the receptionist, where things are.",
   goal: "You just checked in at Hotel Casa Colonial in Puebla. ChatGPT plays Fernanda, the receptionist. Find out where everything on your list is, and check the directions you hear.",
   boardStep: ["Tu lista", "You don't know where these are. Ask Fernanda."],
   board: {
@@ -1138,6 +1148,7 @@ LESSONS["09"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Don Beto", place: "Taquería El Güero · Guadalajara",
   scene: "I ordered food at a taquería in Guadalajara from a server named Don Beto",
+  setup: "It's Friday night at Taquería El Güero in Guadalajara. Don Beto, the server, takes your order, and you pay at the end.",
   goal: "You're a customer at Taquería El Güero, and ChatGPT plays Don Beto, the server. Order a full meal, ask at least two questions about the menu, and pay.",
   boardStep: ["Mira el menú", "Don Beto uses this exact menu in the role play."],
   board: {
@@ -1268,6 +1279,7 @@ LESSONS["10"] = {
   scale: "Information exchange",
   reg: "usted", partner: "Sra. Elena", place: "Centro · mapa de práctica",
   scene: "in a Mexican town center I asked Señora Elena for directions, then gave her directions using a map we both had",
+  setup: "You're on a corner next to the main square of a Mexican town. You ask Señora Elena how to get to the museum, and then she asks you for directions.",
   goal: "You're standing at the corner of Juárez and Allende, next to the main square. ChatGPT plays Señora Elena, a local. Get directions to two places, then give her directions to two places.",
   boardStep: ["Mira el mapa", "You and Señora Elena have the same map. You are at the red dot."],
   board: {
@@ -1407,6 +1419,7 @@ LESSONS["11"] = {
   scale: "Conversation · Goal-oriented cooperation",
   reg: "tú", partner: "Valeria", place: "Llamada · Guadalajara",
   scene: "my friend Valeria called me in Guadalajara and we made plans for the weekend: what to do, when, and where to meet",
+  setup: "Your friend Valeria calls you in Guadalajara to make weekend plans. You agree on what to do, when, and where to meet.",
   goal: "Your friend Valeria calls to make weekend plans. Suggest something, say no to one of her ideas politely, and agree on a day, a time, and a meeting place.",
   boardStep: ["Mira tu agenda y la cartelera", "You're busy at some times. Valeria has her own plans too."],
   board: {
@@ -1519,6 +1532,7 @@ LESSONS["12"] = {
   scale: "Sustained monologue: describing experience",
   reg: "usted", partner: "Doña Rosa", place: "Casa de huéspedes · Guanajuato",
   scene: "on my first night with a host family in Guanajuato, Doña Rosa asked about my daily routine and my job so she could plan meals and the house schedule",
+  setup: "It's your first night with a host family in Guanajuato. Doña Rosa asks about your daily routine and your job.",
   goal: "It's your first night with your host family. Doña Rosa wants to plan meals and bathroom times. Describe a normal weekday from morning to night, and tell her about your job back home.",
   boardStep: ["Prepara tu día", "Doña Rosa will ask about each part of your day. Plan a time and a verb for each one."],
   board: {
@@ -1631,6 +1645,7 @@ LESSONS["13"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Paty", place: "Terminal del Norte · CDMX",
   scene: "I bought a bus ticket from Mexico City to San Miguel de Allende at the ticket window, asking about times, prices, and seats",
+  setup: "You're at a ticket window at the Terminal del Norte bus station in Mexico City. You buy a ticket to San Miguel de Allende from Paty.",
   goal: "You're at the Terminal del Norte in Mexico City. Buy a ticket to San Miguel de Allende for tomorrow. Ask about times, prices, and the trip, choose a seat, and pay.",
   boardStep: ["Mira las salidas", "Paty uses these exact times and prices. Decide what kind of bus you want."],
   board: {
@@ -1744,6 +1759,7 @@ LESSONS["14"] = {
   scale: "Sustained monologue: describing experience",
   reg: "tú", partner: "Isa", place: "Escuela de español · Oaxaca",
   scene: "on Monday morning at my Spanish school in Oaxaca, my teacher Isa asked what I did last weekend, and I told her, then asked about hers",
+  setup: "It's Monday morning at your Spanish school in Oaxaca. Your teacher, Isa, asks what you did over the weekend.",
   goal: "It's Monday at your Spanish school in Oaxaca. Your teacher Isa asks about your weekend. Tell her what you did on Saturday and Sunday, say how it was, and ask about her weekend.",
   boardStep: ["Tu fin de semana", "Use these photos from your phone, or your own real weekend."],
   board: {
@@ -1856,6 +1872,7 @@ LESSONS["15"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Andrés", place: "Hotel Casa del Valle · San Cristóbal de las Casas",
   scene: "I checked in at a small hotel in San Cristóbal de las Casas with the receptionist Andrés, sorted out a problem with my room, and asked about the hotel services",
+  setup: "You arrive at Hotel Casa del Valle in San Cristóbal de las Casas. You check in with Andrés, the receptionist, and there's a problem with your room.",
   goal: "You arrive at your hotel in San Cristóbal. Check in, confirm the details of your reservation, solve a problem with the room, and ask about breakfast, wifi, and check-out.",
   boardStep: ["Mira tu reservación", "Andrés has the same information on his screen. Or does he?"],
   board: {
@@ -1968,6 +1985,7 @@ LESSONS["16"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Doña Lety", place: "Guayaberas La Ceiba · Mérida",
   scene: "I shopped for a guayabera shirt in a store in Mérida with the saleswoman Doña Lety: I asked for my size and color, tried it on, and bought it",
+  setup: "You're in a guayabera shop in Mérida, looking for a shirt for a wedding. Doña Lety helps you find your size and color.",
   goal: "You need a guayabera for a wedding in Mérida. Find one in your size and a color you like, try it on, deal with a fit problem, and ask about the price and paying.",
   boardStep: ["Mira la tienda", "Doña Lety has these exact shirts and prices. Decide your size and budget first."],
   board: {
@@ -2082,6 +2100,7 @@ LESSONS["17"] = {
   scale: "Sustained monologue: describing",
   reg: "tú", partner: "Ximena", place: "Videollamada · CDMX",
   scene: "on a video call with my friend Ximena in Mexico City, I described three people who are visiting so she could recognize them at the airport and plan a dinner",
+  setup: "You're on a video call with your friend Ximena in Mexico City. She's picking up three of your visitors at the airport, so you describe them.",
   goal: "Three people you know are flying to Mexico City, and your friend Ximena will pick them up and host a dinner. Describe what each person looks like and what they're like, so she can recognize them and plan the evening.",
   boardStep: ["Prepara tus descripciones", "Use these three people, or describe three real people in your life."],
   board: {
@@ -2195,6 +2214,7 @@ LESSONS["18"] = {
   scale: "Conversation · Sociolinguistic appropriateness",
   reg: "tú", partner: "Mauricio", place: "Llamada · Morelia",
   scene: "I called my friend Mauricio in Morelia to apologize for missing his birthday dinner, then we talked about an invitation to his daughter's quinceañera and I invited him to something too",
+  setup: "You missed your friend Mauricio's birthday dinner last night. You call him in Morelia to apologize, and he invites you to his daughter's quinceañera.",
   goal: "Last night you missed your friend Mauricio's birthday dinner. Call him, apologize and explain, accept his invitation to his daughter's quinceañera, and invite him to something to make it up to him.",
   boardStep: ["Prepara la llamada", "Plan what you'll say. Mauricio is a little hurt at first."],
   board: {
@@ -2310,6 +2330,7 @@ LESSONS["19"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Sr. Ortega", place: "Tienda de electrodomésticos · Puebla",
   scene: "I went back to an appliance store in Puebla because the blender I bought yesterday doesn't work, explained the problem to Señor Ortega at customer service, and asked for a solution",
+  setup: "You're back at an appliance store in Puebla with the blender you bought yesterday. It doesn't work, and you explain the problem to Señor Ortega.",
   goal: "Yesterday you bought a blender, and it doesn't work. Go back to the store, explain the problem clearly, and get an exchange or a refund. The store has rules, so be ready to negotiate.",
   boardStep: ["Mira tu ticket y las reglas", "Señor Ortega follows these rules. Know what you want before you start."],
   board: {
@@ -2424,6 +2445,7 @@ LESSONS["20"] = {
   scale: "Conversation",
   reg: "tú", partner: "Lalo", place: "Café · Ciudad de México",
   scene: "over coffee in Mexico City, my friend Lalo helped me choose between two apartments for a three-month stay, and I compared them and explained which I prefer",
+  setup: "You're having coffee with your friend Lalo in Mexico City. You've seen two apartments, and he helps you compare them and choose.",
   goal: "You're moving to Mexico City for three months and you've seen two apartments. Your friend Lalo asks about them. Compare them point by point, listen to his opinion, and decide which one you'll take and why.",
   boardStep: ["Compara los departamentos", "Lalo knows both neighborhoods. He has a strong opinion."],
   board: {
@@ -2537,6 +2559,7 @@ LESSONS["21"] = {
   scale: "Goods & services · Information exchange",
   reg: "usted", partner: "Dra. Salinas", place: "Consultorio de farmacia · Playa del Carmen",
   scene: "I felt sick in Playa del Carmen and went to the doctor's office next to a pharmacy, where I described my symptoms to Dra. Salinas and understood her instructions",
+  setup: "You've felt sick since last night in Playa del Carmen. At a doctor's office next to a pharmacy, you describe your symptoms to Dra. Salinas.",
   goal: "You've felt sick since yesterday. At the small doctor's office next to a pharmacy, describe your symptoms, answer the doctor's questions, mention your allergy, and make sure you understand how to take the medicine.",
   boardStep: ["Prepara tus síntomas", "The doctor will ask about each of these. Plan how to say them."],
   board: {
@@ -2650,6 +2673,7 @@ LESSONS["22"] = {
   scale: "Sustained monologue: describing experience",
   reg: "tú", partner: "Natalia", place: "Cena en casa · Puebla",
   scene: "at a dinner at my friend Natalia's house in Puebla, I told the story of my trip to Chiapas, including something unexpected that happened",
+  setup: "You've just come back from a trip to Chiapas. At dinner at her house in Puebla, your friend Natalia asks you to tell her all about it.",
   goal: "You just got back from a trip to Chiapas. At dinner, your friend Natalia asks about it. Tell the story in order: set the scene, say what happened, include the unexpected moment, and say how it ended.",
   boardStep: ["Prepara tu historia", "Background (what it was like) uses the imperfect. Events (what happened) use the preterite."],
   board: {
@@ -2761,6 +2785,7 @@ LESSONS["23"] = {
   scale: "Sustained monologue · Conversation",
   reg: "tú", partner: "Diana", place: "Oficina · Querétaro",
   scene: "at the office in Querétaro, my coworker Diana asked about my plans for the Easter holidays, and I explained what I'm going to do, what I'd like to do, and what's still not decided",
+  setup: "It's Friday at your office in Querétaro, and Easter week starts soon. Your coworker Diana asks about your vacation plans.",
   goal: "The Easter holidays (Semana Santa) start next week. Your coworker Diana asks about your plans. Explain what's decided, what you'd like to do, what depends on something else, and ask about her plans.",
   boardStep: ["Mira tus planes", "Some things are booked, some are ideas, some depend on the weather or money."],
   board: {
@@ -2874,6 +2899,7 @@ LESSONS["24"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Sr. Ramírez", place: "Terminal de autobuses · Oaxaca",
   scene: "I missed my bus at the bus terminal in Oaxaca and had to explain what happened to the ticket agent, Señor Ramírez, and find another way to get to Puerto Escondido",
+  setup: "You're at the bus terminal in Oaxaca, and your bus to Puerto Escondido left 20 minutes ago. You explain what happened to Señor Ramírez at the ticket window.",
   goal: "Your bus to Puerto Escondido left 20 minutes ago. Explain what happened, find out your options, deal with one more problem, and leave with a solution you can live with.",
   boardStep: ["Mira tu boleto y las salidas", "Señor Ramírez sees the same information. Decide what matters most to you: time, money, or comfort."],
   board: {
@@ -2990,6 +3016,7 @@ LESSONS["25"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Lic. Treviño", place: "Hotel Bahía · Puerto Vallarta",
   scene: "at checkout from a hotel in Puerto Vallarta, I complained to the manager, Licenciada Treviño, about several problems during my stay and asked for compensation",
+  setup: "You're checking out of a hotel in Puerto Vallarta after three bad nights. You ask for the manager, Licenciada Treviño, and make a complaint.",
   goal: "You're checking out after three bad nights. Ask for the manager, explain what went wrong and what the staff told you, say what you expected, and ask for fair compensation. Stay polite but firm.",
   boardStep: ["Organiza tu queja", "Put the problems in order and decide what you'll ask for."],
   board: {
@@ -3103,6 +3130,7 @@ LESSONS["26"] = {
   scale: "Informal discussion with friends",
   reg: "tú", partner: "Javier", place: "Intercambio · Guadalajara",
   scene: "at a language exchange in a café in Guadalajara, Javier and I discussed three everyday topics and I gave and justified my opinions",
+  setup: "You're at a language exchange in a café in Guadalajara. Javier reads topic cards, and you each give your opinion.",
   goal: "At a language exchange, Javier picks topic cards for discussion. For each one, give your opinion, a reason, and an example. Agree, disagree, and ask what he thinks.",
   boardStep: ["Lee las tarjetas", "Javier will choose two or three. Think about your opinion and one example for each."],
   board: {
@@ -3218,6 +3246,7 @@ LESSONS["27"] = {
   scale: "Sustained monologue: describing experience",
   reg: "tú", partner: "Paola", place: "Club de cine · Oaxaca",
   scene: "at a movie club in Oaxaca, I told my friend Paola the plot of a movie and explained what I thought and felt about it",
+  setup: "It's recommendation night at a movie club in Oaxaca. You tell your friend Paola what the movie Coco is about and what you thought of it.",
   goal: "At a movie club, everyone recommends a movie. Tell Paola what yours is about: the setting, the main character, the problem, and how it develops, without giving away the ending. Then explain how it made you feel and who should see it.",
   boardStep: ["Prepara tu película", "Use Coco, or a movie or book you know well. Plan each part of the story."],
   board: {
@@ -3330,6 +3359,7 @@ LESSONS["28"] = {
   scale: "Sustained monologue",
   reg: "tú", partner: "Andrea", place: "Podcast «Sueños en voz alta» · CDMX",
   scene: "I was a guest on a small podcast in Mexico City called Sueños en voz alta, and I described a dream I have, why it matters to me, and what I'm doing to make it happen",
+  setup: "You're a guest on Sueños en voz alta, a podcast in Mexico City. The host, Andrea, asks you about one of your dreams.",
   goal: "A podcast host interviews people about their dreams. Describe one dream or ambition: what it is, where it came from, why it matters, what you're doing about it, and what could get in the way.",
   boardStep: ["Prepara tu sueño", "Use this example, or a real dream of your own. Plan one sentence for each part."],
   board: {
@@ -3441,6 +3471,7 @@ LESSONS["29"] = {
   scale: "Conversation",
   reg: "tú", partner: "Rogelio", place: "Boda · Tequila, Jalisco",
   scene: "at a wedding reception in Tequila, Jalisco, I was seated next to Rogelio, the bride's cousin, whom I'd never met, and kept the conversation going",
+  setup: "You're at a wedding reception in Tequila, Jalisco, seated next to someone you've never met: Rogelio, the bride's cousin. You start a conversation.",
   goal: "At a wedding reception, you're seated next to someone you don't know. Keep the conversation going for several minutes: ask follow-up questions, react, share about yourself, find something in common, and end the chat naturally.",
   boardStep: ["Prepara la plática", "Small talk is a skill: ask, react, share, and ask again."],
   board: {
@@ -3554,6 +3585,7 @@ LESSONS["30"] = {
   scale: "Information exchange",
   reg: "usted", partner: "Don Arturo", place: "Casa rentada · Guanajuato",
   scene: "I arrived at a rented house in Guanajuato and the owner, Don Arturo, explained by phone how to get in and how to use the water heater, the drinking water, and the trash, step by step",
+  setup: "You've just arrived at night at a rented house in Guanajuato. You call the owner, Don Arturo, who explains step by step how to get in and use the water heater.",
   goal: "You've just arrived at a rented house and the owner explains everything by phone. Follow his instructions to get in, ask questions when something isn't clear, check each step, and repeat the key steps back to him.",
   boardStep: ["Mira la casa", "Don Arturo will explain each thing. You don't know the details yet."],
   board: {
@@ -3669,6 +3701,7 @@ LESSONS["31"] = {
   scale: "Interviewing and being interviewed",
   reg: "usted", partner: "Lic. Morales", place: "Centro Comunitario · Oaxaca",
   scene: "I had an interview with Licenciada Morales to volunteer as an English teacher at a community center in Oaxaca, answering questions about my experience, motivation, and availability",
+  setup: "You're at a community center in Oaxaca, interviewing to volunteer as an English teacher. Licenciada Morales asks you questions.",
   goal: "You're interviewing to volunteer teaching English at a community center. Talk about yourself, your experience, why you want to volunteer, how you'd handle a difficult situation, and your availability. Ask at least two questions of your own.",
   boardStep: ["Prepara tus respuestas", "Licenciada Morales will ask all of these. Plan a short answer with an example for each."],
   board: {
@@ -3781,6 +3814,7 @@ LESSONS["32"] = {
   scale: "Sustained monologue · Conversation",
   reg: "tú", partner: "Mtra. Laura", place: "Congreso de maestros · Puebla",
   scene: "at a teachers' conference in Puebla, I talked with Laura, an English teacher at a Mexican university, about my work: my duties, the challenges, and what I enjoy",
+  setup: "It's a coffee break at a teachers' conference in Puebla. Laura, an English teacher at a Mexican university, asks about your work.",
   goal: "At a teachers' conference, a Mexican colleague wants to know about your job. Describe your duties and a typical week, explain the biggest challenges and how you deal with them, say what you enjoy most, and compare your context with hers.",
   boardStep: ["Prepara tu perfil", "Use your real job, or adapt these notes. Plan an example for each part."],
   board: {
@@ -7294,6 +7328,7 @@ function renderLesson(L){
   </div>
   <div class="step" id="p2">
     <div class="step-h"><span class="eyebrow">Paso 2</span><h3>Escucha el diálogo</h3><p>Listen once with the English showing. Then hide the English and listen again.</p></div>
+    ${L.setup?`<p class="setup"><span class="eyebrow">La escena</span>${L.setup}</p>`:""}
     <div class="controls">
       <div style="display:flex;gap:.5rem;flex-wrap:wrap">
         <button class="btn primary" id="play-all"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Play</button>

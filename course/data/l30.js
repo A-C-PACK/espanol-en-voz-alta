@@ -5,6 +5,7 @@ LESSONS["30"] = {
   scale: "Information exchange",
   reg: "usted", partner: "Don Arturo", place: "Casa rentada · Guanajuato",
   scene: "I arrived at a rented house in Guanajuato and the owner, Don Arturo, explained by phone how to get in and how to use the water heater, the drinking water, and the trash, step by step",
+  setup: "You've just arrived at night at a rented house in Guanajuato. You call the owner, Don Arturo, who explains step by step how to get in and use the water heater.",
   goal: "You've just arrived at a rented house and the owner explains everything by phone. Follow his instructions to get in, ask questions when something isn't clear, check each step, and repeat the key steps back to him.",
   boardStep: ["Mira la casa", "Don Arturo will explain each thing. You don't know the details yet."],
   board: {

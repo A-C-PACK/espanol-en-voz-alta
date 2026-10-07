@@ -5,6 +5,7 @@ LESSONS["09"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Don Beto", place: "Taquería El Güero · Guadalajara",
   scene: "I ordered food at a taquería in Guadalajara from a server named Don Beto",
+  setup: "It's Friday night at Taquería El Güero in Guadalajara. Don Beto, the server, takes your order, and you pay at the end.",
   goal: "You're a customer at Taquería El Güero, and ChatGPT plays Don Beto, the server. Order a full meal, ask at least two questions about the menu, and pay.",
   boardStep: ["Mira el menú", "Don Beto uses this exact menu in the role play."],
   board: {

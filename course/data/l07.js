@@ -5,6 +5,7 @@ LESSONS["07"] = {
   scale: "Sustained monologue: describing",
   reg: "tú", partner: "Claudia", place: "Videollamada · Mérida",
   scene: "on a video call with Claudia from Mérida, planning a home exchange, I described my home and neighborhood",
+  setup: "You're on a video call with Claudia in Mérida, planning a home exchange. She asks you to describe your home and neighborhood.",
   goal: "You're on a video call with Claudia from Mérida to plan a home exchange: she'll stay in your home, and you'll stay in hers. Describe your home and neighborhood, and talk for at least 30 seconds without stopping.",
   boardStep: ["Prepara tu descripción", "Claudia will ask these questions. Plan an answer for each."],
   board: {

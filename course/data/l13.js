@@ -5,6 +5,7 @@ LESSONS["13"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Paty", place: "Terminal del Norte · CDMX",
   scene: "I bought a bus ticket from Mexico City to San Miguel de Allende at the ticket window, asking about times, prices, and seats",
+  setup: "You're at a ticket window at the Terminal del Norte bus station in Mexico City. You buy a ticket to San Miguel de Allende from Paty.",
   goal: "You're at the Terminal del Norte in Mexico City. Buy a ticket to San Miguel de Allende for tomorrow. Ask about times, prices, and the trip, choose a seat, and pay.",
   boardStep: ["Mira las salidas", "Paty uses these exact times and prices. Decide what kind of bus you want."],
   board: {

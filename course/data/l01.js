@@ -5,6 +5,7 @@ LESSONS["01"] = {
   scale: "Overall spoken interaction",
   reg: "tú", partner: "Mariana", place: "Intercambio · Coyoacán, CDMX",
   scene: "I met Mariana, an architect, at a language exchange in Mexico City and introduced myself",
+  setup: "You're at a language exchange at Café La Selva in Coyoacán, Mexico City. You meet Mariana, an architect, and introduce yourselves.",
   goal: "You're at a language exchange (intercambio) in a café in Coyoacán. ChatGPT plays Mariana. Introduce yourself, and find out three things about her.",
   boardStep: ["Prepara tu ficha", "Fill in the blanks in your head before you start. Mariana will ask all four."],
   board: {

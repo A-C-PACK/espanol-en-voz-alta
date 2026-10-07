@@ -5,6 +5,7 @@ LESSONS["14"] = {
   scale: "Sustained monologue: describing experience",
   reg: "tú", partner: "Isa", place: "Escuela de español · Oaxaca",
   scene: "on Monday morning at my Spanish school in Oaxaca, my teacher Isa asked what I did last weekend, and I told her, then asked about hers",
+  setup: "It's Monday morning at your Spanish school in Oaxaca. Your teacher, Isa, asks what you did over the weekend.",
   goal: "It's Monday at your Spanish school in Oaxaca. Your teacher Isa asks about your weekend. Tell her what you did on Saturday and Sunday, say how it was, and ask about her weekend.",
   boardStep: ["Tu fin de semana", "Use these photos from your phone, or your own real weekend."],
   board: {

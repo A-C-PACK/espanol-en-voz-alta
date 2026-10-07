@@ -5,6 +5,7 @@ LESSONS["18"] = {
   scale: "Conversation · Sociolinguistic appropriateness",
   reg: "tú", partner: "Mauricio", place: "Llamada · Morelia",
   scene: "I called my friend Mauricio in Morelia to apologize for missing his birthday dinner, then we talked about an invitation to his daughter's quinceañera and I invited him to something too",
+  setup: "You missed your friend Mauricio's birthday dinner last night. You call him in Morelia to apologize, and he invites you to his daughter's quinceañera.",
   goal: "Last night you missed your friend Mauricio's birthday dinner. Call him, apologize and explain, accept his invitation to his daughter's quinceañera, and invite him to something to make it up to him.",
   boardStep: ["Prepara la llamada", "Plan what you'll say. Mauricio is a little hurt at first."],
   board: {

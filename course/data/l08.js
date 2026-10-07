@@ -5,6 +5,7 @@ LESSONS["08"] = {
   scale: "Information exchange",
   reg: "usted", partner: "Fernanda", place: "Hotel Casa Colonial · Puebla",
   scene: "I just checked in at a hotel in Puebla and asked the receptionist Fernanda where things are",
+  setup: "You've just checked in at Hotel Casa Colonial in Puebla. You ask Fernanda, the receptionist, where things are.",
   goal: "You just checked in at Hotel Casa Colonial in Puebla. ChatGPT plays Fernanda, the receptionist. Find out where everything on your list is, and check the directions you hear.",
   boardStep: ["Tu lista", "You don't know where these are. Ask Fernanda."],
   board: {

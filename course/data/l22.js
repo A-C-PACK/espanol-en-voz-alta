@@ -5,6 +5,7 @@ LESSONS["22"] = {
   scale: "Sustained monologue: describing experience",
   reg: "tú", partner: "Natalia", place: "Cena en casa · Puebla",
   scene: "at a dinner at my friend Natalia's house in Puebla, I told the story of my trip to Chiapas, including something unexpected that happened",
+  setup: "You've just come back from a trip to Chiapas. At dinner at her house in Puebla, your friend Natalia asks you to tell her all about it.",
   goal: "You just got back from a trip to Chiapas. At dinner, your friend Natalia asks about it. Tell the story in order: set the scene, say what happened, include the unexpected moment, and say how it ended.",
   boardStep: ["Prepara tu historia", "Background (what it was like) uses the imperfect. Events (what happened) use the preterite."],
   board: {

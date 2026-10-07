@@ -5,6 +5,7 @@ LESSONS["23"] = {
   scale: "Sustained monologue · Conversation",
   reg: "tú", partner: "Diana", place: "Oficina · Querétaro",
   scene: "at the office in Querétaro, my coworker Diana asked about my plans for the Easter holidays, and I explained what I'm going to do, what I'd like to do, and what's still not decided",
+  setup: "It's Friday at your office in Querétaro, and Easter week starts soon. Your coworker Diana asks about your vacation plans.",
   goal: "The Easter holidays (Semana Santa) start next week. Your coworker Diana asks about your plans. Explain what's decided, what you'd like to do, what depends on something else, and ask about her plans.",
   boardStep: ["Mira tus planes", "Some things are booked, some are ideas, some depend on the weather or money."],
   board: {

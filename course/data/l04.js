@@ -5,6 +5,7 @@ LESSONS["04"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Lucía", place: "Café El Jardín · San Miguel de Allende",
   scene: "I ordered breakfast from Lucía, a server at a café in San Miguel de Allende",
+  setup: "It's Sunday morning at Café El Jardín in San Miguel de Allende. Lucía, the server, takes your breakfast order.",
   goal: "It's Sunday morning at Café El Jardín in San Miguel de Allende. ChatGPT plays Lucía, your server. Order a drink and breakfast, ask one question about the menu, and ask for the check.",
   boardStep: ["Mira el menú", "Lucía uses this exact menu in the role play."],
   board: {

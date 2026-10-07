@@ -5,6 +5,7 @@ LESSONS["31"] = {
   scale: "Interviewing and being interviewed",
   reg: "usted", partner: "Lic. Morales", place: "Centro Comunitario · Oaxaca",
   scene: "I had an interview with Licenciada Morales to volunteer as an English teacher at a community center in Oaxaca, answering questions about my experience, motivation, and availability",
+  setup: "You're at a community center in Oaxaca, interviewing to volunteer as an English teacher. Licenciada Morales asks you questions.",
   goal: "You're interviewing to volunteer teaching English at a community center. Talk about yourself, your experience, why you want to volunteer, how you'd handle a difficult situation, and your availability. Ask at least two questions of your own.",
   boardStep: ["Prepara tus respuestas", "Licenciada Morales will ask all of these. Plan a short answer with an example for each."],
   board: {

@@ -5,6 +5,7 @@ LESSONS["28"] = {
   scale: "Sustained monologue",
   reg: "tú", partner: "Andrea", place: "Podcast «Sueños en voz alta» · CDMX",
   scene: "I was a guest on a small podcast in Mexico City called Sueños en voz alta, and I described a dream I have, why it matters to me, and what I'm doing to make it happen",
+  setup: "You're a guest on Sueños en voz alta, a podcast in Mexico City. The host, Andrea, asks you about one of your dreams.",
   goal: "A podcast host interviews people about their dreams. Describe one dream or ambition: what it is, where it came from, why it matters, what you're doing about it, and what could get in the way.",
   boardStep: ["Prepara tu sueño", "Use this example, or a real dream of your own. Plan one sentence for each part."],
   board: {

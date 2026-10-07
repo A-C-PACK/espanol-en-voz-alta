@@ -5,6 +5,7 @@ LESSONS["15"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Andrés", place: "Hotel Casa del Valle · San Cristóbal de las Casas",
   scene: "I checked in at a small hotel in San Cristóbal de las Casas with the receptionist Andrés, sorted out a problem with my room, and asked about the hotel services",
+  setup: "You arrive at Hotel Casa del Valle in San Cristóbal de las Casas. You check in with Andrés, the receptionist, and there's a problem with your room.",
   goal: "You arrive at your hotel in San Cristóbal. Check in, confirm the details of your reservation, solve a problem with the room, and ask about breakfast, wifi, and check-out.",
   boardStep: ["Mira tu reservación", "Andrés has the same information on his screen. Or does he?"],
   board: {

@@ -5,6 +5,7 @@ LESSONS["10"] = {
   scale: "Information exchange",
   reg: "usted", partner: "Sra. Elena", place: "Centro · mapa de práctica",
   scene: "in a Mexican town center I asked Señora Elena for directions, then gave her directions using a map we both had",
+  setup: "You're on a corner next to the main square of a Mexican town. You ask Señora Elena how to get to the museum, and then she asks you for directions.",
   goal: "You're standing at the corner of Juárez and Allende, next to the main square. ChatGPT plays Señora Elena, a local. Get directions to two places, then give her directions to two places.",
   boardStep: ["Mira el mapa", "You and Señora Elena have the same map. You are at the red dot."],
   board: {

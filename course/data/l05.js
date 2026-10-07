@@ -5,6 +5,7 @@ LESSONS["05"] = {
   scale: "Information exchange",
   reg: "usted", partner: "Rodrigo", place: "Escuela de español · Guanajuato",
   scene: "on my first day at a Spanish school in Guanajuato, I asked the receptionist Rodrigo about times, days, and dates",
+  setup: "It's your first day at a Spanish school in Guanajuato. You ask Rodrigo, the receptionist, about class times and activities.",
   goal: "It's your first day at a Spanish school in Guanajuato. ChatGPT plays Rodrigo, the receptionist. Find out when classes and activities happen, and find the one thing on the schedule that has changed.",
   boardStep: ["Mira el horario", "This is your printed schedule. One thing on it has changed."],
   board: {

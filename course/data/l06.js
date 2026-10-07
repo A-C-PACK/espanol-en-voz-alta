@@ -5,6 +5,7 @@ LESSONS["06"] = {
   scale: "Conversation",
   reg: "tú", partner: "Diego", place: "Carne asada · Monterrey",
   scene: "at a Saturday carne asada in Monterrey, I talked with Diego about what we like and don't like",
+  setup: "You're at a Saturday carne asada at Diego's house in Monterrey. Diego offers you food, and you talk about what you like.",
   goal: "You're at a Saturday carne asada at Diego's house in Monterrey. ChatGPT plays Diego, your friend's cousin. Talk about food, sports, music, and free time, and politely say no to something.",
   boardStep: ["Mira la mesa", "Diego will offer you food and ask what you like."],
   board: {

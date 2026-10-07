@@ -5,6 +5,7 @@ LESSONS["19"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Sr. Ortega", place: "Tienda de electrodomésticos · Puebla",
   scene: "I went back to an appliance store in Puebla because the blender I bought yesterday doesn't work, explained the problem to Señor Ortega at customer service, and asked for a solution",
+  setup: "You're back at an appliance store in Puebla with the blender you bought yesterday. It doesn't work, and you explain the problem to Señor Ortega.",
   goal: "Yesterday you bought a blender, and it doesn't work. Go back to the store, explain the problem clearly, and get an exchange or a refund. The store has rules, so be ready to negotiate.",
   boardStep: ["Mira tu ticket y las reglas", "Señor Ortega follows these rules. Know what you want before you start."],
   board: {

@@ -5,6 +5,7 @@ LESSONS["17"] = {
   scale: "Sustained monologue: describing",
   reg: "tú", partner: "Ximena", place: "Videollamada · CDMX",
   scene: "on a video call with my friend Ximena in Mexico City, I described three people who are visiting so she could recognize them at the airport and plan a dinner",
+  setup: "You're on a video call with your friend Ximena in Mexico City. She's picking up three of your visitors at the airport, so you describe them.",
   goal: "Three people you know are flying to Mexico City, and your friend Ximena will pick them up and host a dinner. Describe what each person looks like and what they're like, so she can recognize them and plan the evening.",
   boardStep: ["Prepara tus descripciones", "Use these three people, or describe three real people in your life."],
   board: {

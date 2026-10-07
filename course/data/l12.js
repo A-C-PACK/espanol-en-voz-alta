@@ -5,6 +5,7 @@ LESSONS["12"] = {
   scale: "Sustained monologue: describing experience",
   reg: "usted", partner: "Doña Rosa", place: "Casa de huéspedes · Guanajuato",
   scene: "on my first night with a host family in Guanajuato, Doña Rosa asked about my daily routine and my job so she could plan meals and the house schedule",
+  setup: "It's your first night with a host family in Guanajuato. Doña Rosa asks about your daily routine and your job.",
   goal: "It's your first night with your host family. Doña Rosa wants to plan meals and bathroom times. Describe a normal weekday from morning to night, and tell her about your job back home.",
   boardStep: ["Prepara tu día", "Doña Rosa will ask about each part of your day. Plan a time and a verb for each one."],
   board: {

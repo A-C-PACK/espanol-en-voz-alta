@@ -5,6 +5,7 @@ LESSONS["24"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Sr. Ramírez", place: "Terminal de autobuses · Oaxaca",
   scene: "I missed my bus at the bus terminal in Oaxaca and had to explain what happened to the ticket agent, Señor Ramírez, and find another way to get to Puerto Escondido",
+  setup: "You're at the bus terminal in Oaxaca, and your bus to Puerto Escondido left 20 minutes ago. You explain what happened to Señor Ramírez at the ticket window.",
   goal: "Your bus to Puerto Escondido left 20 minutes ago. Explain what happened, find out your options, deal with one more problem, and leave with a solution you can live with.",
   boardStep: ["Mira tu boleto y las salidas", "Señor Ramírez sees the same information. Decide what matters most to you: time, money, or comfort."],
   board: {

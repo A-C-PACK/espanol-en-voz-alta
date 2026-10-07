@@ -5,6 +5,7 @@ LESSONS["11"] = {
   scale: "Conversation · Goal-oriented cooperation",
   reg: "tú", partner: "Valeria", place: "Llamada · Guadalajara",
   scene: "my friend Valeria called me in Guadalajara and we made plans for the weekend: what to do, when, and where to meet",
+  setup: "Your friend Valeria calls you in Guadalajara to make weekend plans. You agree on what to do, when, and where to meet.",
   goal: "Your friend Valeria calls to make weekend plans. Suggest something, say no to one of her ideas politely, and agree on a day, a time, and a meeting place.",
   boardStep: ["Mira tu agenda y la cartelera", "You're busy at some times. Valeria has her own plans too."],
   board: {

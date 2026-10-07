@@ -5,6 +5,7 @@ LESSONS["16"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Doña Lety", place: "Guayaberas La Ceiba · Mérida",
   scene: "I shopped for a guayabera shirt in a store in Mérida with the saleswoman Doña Lety: I asked for my size and color, tried it on, and bought it",
+  setup: "You're in a guayabera shop in Mérida, looking for a shirt for a wedding. Doña Lety helps you find your size and color.",
   goal: "You need a guayabera for a wedding in Mérida. Find one in your size and a color you like, try it on, deal with a fit problem, and ask about the price and paying.",
   boardStep: ["Mira la tienda", "Doña Lety has these exact shirts and prices. Decide your size and budget first."],
   board: {

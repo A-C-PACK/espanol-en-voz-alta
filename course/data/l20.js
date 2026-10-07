@@ -5,6 +5,7 @@ LESSONS["20"] = {
   scale: "Conversation",
   reg: "tú", partner: "Lalo", place: "Café · Ciudad de México",
   scene: "over coffee in Mexico City, my friend Lalo helped me choose between two apartments for a three-month stay, and I compared them and explained which I prefer",
+  setup: "You're having coffee with your friend Lalo in Mexico City. You've seen two apartments, and he helps you compare them and choose.",
   goal: "You're moving to Mexico City for three months and you've seen two apartments. Your friend Lalo asks about them. Compare them point by point, listen to his opinion, and decide which one you'll take and why.",
   boardStep: ["Compara los departamentos", "Lalo knows both neighborhoods. He has a strong opinion."],
   board: {

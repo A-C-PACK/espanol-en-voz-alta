@@ -5,6 +5,7 @@ LESSONS["27"] = {
   scale: "Sustained monologue: describing experience",
   reg: "tú", partner: "Paola", place: "Club de cine · Oaxaca",
   scene: "at a movie club in Oaxaca, I told my friend Paola the plot of a movie and explained what I thought and felt about it",
+  setup: "It's recommendation night at a movie club in Oaxaca. You tell your friend Paola what the movie Coco is about and what you thought of it.",
   goal: "At a movie club, everyone recommends a movie. Tell Paola what yours is about: the setting, the main character, the problem, and how it develops, without giving away the ending. Then explain how it made you feel and who should see it.",
   boardStep: ["Prepara tu película", "Use Coco, or a movie or book you know well. Plan each part of the story."],
   board: {

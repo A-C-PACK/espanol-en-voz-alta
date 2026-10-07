@@ -5,6 +5,7 @@ LESSONS["21"] = {
   scale: "Goods & services · Information exchange",
   reg: "usted", partner: "Dra. Salinas", place: "Consultorio de farmacia · Playa del Carmen",
   scene: "I felt sick in Playa del Carmen and went to the doctor's office next to a pharmacy, where I described my symptoms to Dra. Salinas and understood her instructions",
+  setup: "You've felt sick since last night in Playa del Carmen. At a doctor's office next to a pharmacy, you describe your symptoms to Dra. Salinas.",
   goal: "You've felt sick since yesterday. At the small doctor's office next to a pharmacy, describe your symptoms, answer the doctor's questions, mention your allergy, and make sure you understand how to take the medicine.",
   boardStep: ["Prepara tus síntomas", "The doctor will ask about each of these. Plan how to say them."],
   board: {

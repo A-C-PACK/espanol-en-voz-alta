@@ -5,6 +5,7 @@ LESSONS["02"] = {
   scale: "Information exchange",
   reg: "tú", partner: "Doña Lupe", place: "Casa de Lupe · Oaxaca",
   scene: "my host mother Doña Lupe in Oaxaca showed me family photos and we talked about our families",
+  setup: "You've just arrived at your homestay in Oaxaca. Your host mother, Doña Lupe, shows you photos of her family and asks about yours.",
   goal: "You've just arrived at your homestay in Oaxaca. ChatGPT plays Doña Lupe, your host mother, showing family photos. Find out who is in her family, and tell her about yours.",
   boardStep: ["Prepara tu familia", "Lupe's family is a surprise. Prepare yours, and the questions you'll ask her."],
   board: {

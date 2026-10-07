@@ -5,6 +5,7 @@ LESSONS["25"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Lic. Treviño", place: "Hotel Bahía · Puerto Vallarta",
   scene: "at checkout from a hotel in Puerto Vallarta, I complained to the manager, Licenciada Treviño, about several problems during my stay and asked for compensation",
+  setup: "You're checking out of a hotel in Puerto Vallarta after three bad nights. You ask for the manager, Licenciada Treviño, and make a complaint.",
   goal: "You're checking out after three bad nights. Ask for the manager, explain what went wrong and what the staff told you, say what you expected, and ask for fair compensation. Stay polite but firm.",
   boardStep: ["Organiza tu queja", "Put the problems in order and decide what you'll ask for."],
   board: {

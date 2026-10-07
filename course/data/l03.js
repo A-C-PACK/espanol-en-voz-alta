@@ -5,6 +5,7 @@ LESSONS["03"] = {
   scale: "Transactions to obtain goods and services",
   reg: "usted", partner: "Doña Carmen", place: "Mercado de Coyoacán, CDMX",
   scene: "I bought fruit and vegetables from Doña Carmen at the Mercado de Coyoacán",
+  setup: "It's Saturday morning at the Mercado de Coyoacán in Mexico City. You buy fruit and vegetables from Doña Carmen at her stand.",
   goal: "It's Saturday morning at the Mercado de Coyoacán. ChatGPT plays Doña Carmen, a fruit and vegetable vendor. Buy everything on your list, and check your change.",
   boardStep: ["Mira los precios", "These are Doña Carmen's prices. Your shopping list is on the right."],
   board: {

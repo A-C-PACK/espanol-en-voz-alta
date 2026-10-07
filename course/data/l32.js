@@ -5,6 +5,7 @@ LESSONS["32"] = {
   scale: "Sustained monologue · Conversation",
   reg: "tú", partner: "Mtra. Laura", place: "Congreso de maestros · Puebla",
   scene: "at a teachers' conference in Puebla, I talked with Laura, an English teacher at a Mexican university, about my work: my duties, the challenges, and what I enjoy",
+  setup: "It's a coffee break at a teachers' conference in Puebla. Laura, an English teacher at a Mexican university, asks about your work.",
   goal: "At a teachers' conference, a Mexican colleague wants to know about your job. Describe your duties and a typical week, explain the biggest challenges and how you deal with them, say what you enjoy most, and compare your context with hers.",
   boardStep: ["Prepara tu perfil", "Use your real job, or adapt these notes. Plan an example for each part."],
   board: {
