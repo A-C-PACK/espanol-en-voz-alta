@@ -319,7 +319,7 @@ function renderHub(){
   app.innerHTML=`<header class="hub-h">
     <div class="meta">Spanish speaking practice · CEFR A1–B1 · Español de México</div>
     <h1>Español en voz alta</h1>
-    <p class="lede">Each lesson is one CEFR can-do statement. You prepare the language, role-play the situation with ChatGPT voice, get feedback, try again, and check yourself.</p>
+    <p class="lede">Each lesson is based on a can-do statement adapted from the CEFR Companion Volume (Council of Europe, 2020). You prepare the language, role-play the situation with ChatGPT voice, get feedback, try again, and check yourself.</p>
     <div class="cycle"><span>Prepárate</span><i>→</i><span>Role play</span><i>→</i><span>Feedback</span><i>→</i><span>Otra vez</span><i>→</i><span>¿Lo logré?</span></div>
   </header>${groups}`;
 }
@@ -332,7 +332,7 @@ function boardHtml(B){
 const frame=f=>f.replace(/\[([^\]]+)\]/g,'<span class="slot">$1</span>');
 
 function rolePrompt(L,V){
-  const a1=L.level==="A1",P=V?V.prompt:L.prompt,reg=V&&V.reg||L.reg;
+  const a1=L.level==="A1",b1=L.level==="B1",P=V?V.prompt:L.prompt,reg=V&&V.reg||L.reg;
   return `Let's do a Spanish speaking role play. I'm ${a1?"an A1 (beginner)":"an "+L.level} learner practicing this CEFR goal: "${L.cando}" Use Mexican Spanish.
 
 YOUR ROLE
@@ -345,8 +345,8 @@ TWIST
 ${P.twist}
 `:""}
 HOW TO TALK TO ME
-- Speak only Spanish, slowly and clearly. Use 1 or 2 short sentences per turn.
-- ${a1?"Use very simple A1 words and short questions.":"Use everyday A2 words."} Ask one question at a time.
+- Speak only Spanish, ${b1?"clearly, at a relaxed natural pace. Use 1 to 3 sentences per turn.":"slowly and clearly. Use 1 or 2 short sentences per turn."}
+- ${a1?"Use very simple A1 words and short questions.":b1?"Use natural everyday B1 Spanish, including common Mexican expressions.":"Use everyday A2 words."} Ask one question at a time.
 - ${P.lead}
 - If I make a mistake, don't stop to explain. Repeat the correct form naturally in your reply. Example: ${P.recast}
 - If I'm stuck, or I say "ayuda", give me a short hint: the beginning of a sentence I could say.
