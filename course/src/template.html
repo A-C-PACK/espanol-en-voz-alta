@@ -1,0 +1,618 @@
+<title>Español en Voz Alta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bungee&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one calm reading column, rows instead of boxes, one accent colour; the painted scene board is the only loud element */
+:root{
+  --bg:#F5F6F8; --surface:#FFFFFF; --ink:#1B2236; --muted:#5B6376; --line:#E2E5EB;
+  --blue:#2A56A8; --blue-soft:#E9EEF8; --mark:#FBEFD3; --mark-ink:#8A5A00; --ok:#2E7D4F; --warn:#B3352B;
+  --board:#14291F; --board-ink:#F5EFDF; --board-accent:#F2B33D; --board-red:#F08A70;
+  --display:"Bungee","Arial Black",Impact,sans-serif;
+  --body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161F; --surface:#182030; --ink:#E4E8EF; --muted:#A3ABBB; --line:#283245;
+  --blue:#9DB8F0; --blue-soft:#1E2A42; --mark:#3A2F14; --mark-ink:#F2C46A; --ok:#72C996; --warn:#EE8A7E;
+  color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#11161F; --surface:#182030; --ink:#E4E8EF; --muted:#A3ABBB; --line:#283245;
+  --blue:#9DB8F0; --blue-soft:#1E2A42; --mark:#3A2F14; --mark-ink:#F2C46A; --ok:#72C996; --warn:#EE8A7E;
+  color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6}
+.wrap{max-width:740px;margin:0 auto;padding-inline:20px;padding-block:32px 96px}
+h1,h2,h3{text-wrap:balance;line-height:1.2;margin:0;font-weight:700}
+p{margin:.4rem 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.eyebrow{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:4px}
+a{color:var(--blue)}
+
+/* ---------- hub ---------- */
+.hub-h{display:grid;gap:.8rem}
+.hub-h h1{font-size:clamp(2.2rem,8vw,3rem);letter-spacing:-.01em}
+.hub-h .lede{color:var(--muted);max-width:58ch}
+.cycle{display:flex;flex-wrap:wrap;gap:.35rem .5rem;align-items:center;font-size:.88rem;margin-top:.4rem}
+.cycle span{background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:.2rem .7rem;font-weight:700}
+.cycle i{color:var(--muted);font-style:normal}
+.level{margin-top:3rem}
+.level-h{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.6rem}
+.level-h h2{font-size:1.4rem}
+.level-h .muted{font-size:.9rem}
+.lrow{display:grid;grid-template-columns:2.6rem 1fr auto;gap:.3rem .9rem;align-items:center;padding:.85rem .3rem;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.lrows{border-top:1px solid var(--line)}
+a.lrow:hover .lt{color:var(--blue)}
+.lrow .num{font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums;font-size:1.05rem}
+.lrow .lt{font-weight:700}
+.lrow .lc{font-size:.92rem;color:var(--muted);display:block}
+.lrow .lp{font-size:.8rem;color:var(--muted);display:block}
+.lrow.soon .num,.lrow.soon .lt{color:var(--muted)}
+.lrow.soon .lt{font-weight:400}
+.pill{font-size:.75rem;font-weight:700;padding:.2rem .65rem;border-radius:99px;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
+.pill.prog{background:var(--mark);color:var(--mark-ink);border-color:transparent}
+.pill.done{background:var(--ok);color:var(--surface);border-color:transparent}
+@media (max-width:560px){.lrow{grid-template-columns:2.2rem 1fr}.lrow .pill{grid-column:2;justify-self:start}}
+
+/* ---------- lesson header ---------- */
+.back{font-size:.92rem;font-weight:700;text-decoration:none;display:inline-block;margin-bottom:1.2rem}
+header.lesson{display:grid;gap:1rem}
+header.lesson h1{font-size:clamp(2.1rem,7vw,2.8rem);letter-spacing:-.01em}
+.meta{font-size:.92rem;color:var(--muted)}
+.cando{font-size:1.15rem;line-height:1.5;padding-left:1rem;border-left:3px solid var(--blue)}
+.cando .eyebrow{display:block;margin-bottom:.15rem}
+
+/* sticky stage bar */
+nav.stages{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin:2rem -20px 0;padding:.55rem 20px;display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none}
+nav.stages button{flex:0 0 auto;border:0;background:none;color:var(--muted);font-weight:700;font-size:.9rem;padding:.35rem .75rem;border-radius:99px;white-space:nowrap}
+nav.stages button.on{background:var(--ink);color:var(--bg)}
+nav.stages .t{font-weight:400;opacity:.7;margin-left:.3rem;font-size:.8rem}
+.foldall{margin-left:auto;display:flex;gap:.1rem;flex:0 0 auto;align-items:center}
+nav.stages .foldall button{font-size:.8rem;padding:.35rem .5rem}
+nav.stages .foldall button:hover{color:var(--blue)}
+
+/* stages */
+section.stage{padding-top:3.5rem;scroll-margin-top:3.4rem}
+section.stage + section.stage{margin-top:2rem;border-top:1px solid var(--line)}
+.stage-h{display:flex;align-items:baseline;gap:.7rem}
+.stage-h h2{font-size:1.75rem}
+.stage-h .n{color:var(--blue);font-size:1.75rem;font-weight:700;font-variant-numeric:tabular-nums}
+.lede{color:var(--muted);margin-top:.5rem;max-width:60ch}
+
+.step{margin-top:2.8rem}
+.step-h{display:grid;gap:.1rem;margin-bottom:.9rem}
+.step-h h3{font-size:1.25rem}
+.step-h .eyebrow{color:var(--blue)}
+.step-h p{color:var(--muted);font-size:.95rem;margin:.1rem 0 0}
+
+/* collapsible */
+.stage-h,.step-h{position:relative;padding-right:2.8rem;cursor:pointer}
+.fold{position:absolute;right:0;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--muted);display:grid;place-items:center;padding:0}
+.fold:hover{border-color:var(--blue);color:var(--blue)}
+.fold svg{width:16px;height:16px;transition:transform .2s}
+.collapsed > .stage-h .fold svg,.collapsed > .step-h .fold svg{transform:rotate(-90deg)}
+.stage.collapsed > :not(.stage-h),.step.collapsed > :not(.step-h),.step.collapsed .step-h p{display:none}
+.step.collapsed .step-h{margin-bottom:0}
+.step.collapsed{margin-top:1.6rem}
+
+/* scene board */
+.board{background:var(--board);color:var(--board-ink);border-radius:12px;padding:1.5rem 1.5rem 1.2rem;box-shadow:inset 0 0 0 6px #0d1d15, inset 0 0 0 8px #3a5444}
+.board h4{font-family:var(--display);font-weight:400;color:var(--board-accent);font-size:clamp(1.3rem,5vw,1.8rem);margin:0;text-align:center}
+.board .sub{text-align:center;font-size:.85rem;opacity:.8;margin-bottom:1.1rem}
+.board .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 2.2rem}
+@media (max-width:560px){.board .cols{grid-template-columns:1fr}}
+.board h5{font-family:var(--display);font-weight:400;font-size:.9rem;color:var(--board-red);margin:0 0 .3rem;letter-spacing:.04em}
+.board h5:not(:first-child){margin-top:.9rem}
+.board ul{list-style:none;margin:0;padding:0}
+.board li{display:flex;gap:.4rem;align-items:baseline;font-size:1rem}
+.board li .dots{flex:1;border-bottom:2px dotted rgba(245,239,223,.3);transform:translateY(-4px)}
+.board li .p{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--board-accent);white-space:nowrap}
+.board .note{margin-top:1rem;font-size:.85rem;opacity:.85;text-align:center}
+.board .map svg{display:block;width:100%;height:auto;max-width:560px;margin:0 auto}
+.map .st{fill:#2C4A3A}.map .bk{fill:#1B3528}.map .park{fill:#2F5B3F}
+.map text{fill:#F5EFDF;font-family:var(--body);font-size:11px}
+.map .lm{font-weight:700}
+.map .sl{font-size:8.5px;letter-spacing:.08em;fill:#BFD6C7}
+.map .dot{fill:#F2B33D}.map .you{fill:#F08A70;stroke:#F5EFDF;stroke-width:2}
+.map .youl{fill:#F08A70;font-size:9.5px;font-weight:700}
+.map .n{stroke:#BFD6C7;stroke-width:2;fill:none}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;margin-bottom:.6rem}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;color:var(--muted);padding:.35rem .8rem;font-size:.85rem;font-weight:700}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.btn{border:1px solid var(--line);background:var(--surface);padding:.45rem .95rem;border-radius:99px;font-weight:700;font-size:.9rem;display:inline-flex;gap:.4rem;align-items:center;text-decoration:none;color:var(--ink)}
+.btn:hover{border-color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:var(--surface)}
+.count{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+
+.say{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:0;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;padding:0}
+.say:hover{background:var(--blue);color:var(--surface)}
+.say svg{width:16px;height:16px}
+
+/* rows */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:center;padding:.65rem .2rem;border-bottom:1px solid var(--line)}
+.row.chk{grid-template-columns:auto auto 1fr}
+.row .es-t{font-weight:700;display:inline}
+.row .en-t{display:block;font-size:.9rem;color:var(--muted)}
+.row input{width:20px;height:20px;accent-color:var(--ok);margin:0}
+.row.done .es-t{color:var(--ok)}
+.vrows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}
+@media (max-width:600px){.vrows{grid-template-columns:1fr}}
+.vgroup + .vgroup{margin-top:1.4rem}
+.vgroup .eyebrow{margin-bottom:.3rem}
+.masked .row{cursor:pointer}
+.mask-es .row:not(.peek) .es-t,.mask-en .row:not(.peek) .en-t{color:transparent;background:var(--line);border-radius:4px;user-select:none}
+
+.pat{padding:.7rem 0;border-bottom:1px solid var(--line)}
+.pat:first-child{border-top:1px solid var(--line)}
+.pat .frame{font-weight:700}
+.slot{background:var(--mark);color:var(--mark-ink);padding:0 .35rem;border-radius:4px}
+.pat .ex{font-size:.92rem;color:var(--muted)}
+
+.line{grid-template-columns:5.5rem 1fr auto}
+.line .who{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.line.c .who{color:var(--blue)}
+.line .es-t{font-weight:400}
+.line.c .es-t{font-weight:700}
+.line.playing{background:var(--mark)}
+@media (max-width:480px){.line{grid-template-columns:1fr auto}.line .who{grid-column:1 / -1;margin-bottom:-.5rem}}
+
+.qrow{padding:.8rem .2rem;border-bottom:1px solid var(--line);display:grid;gap:.35rem}
+.qrow:first-child{border-top:1px solid var(--line)}
+.qrow .ans{display:flex;gap:.6rem;align-items:center;font-weight:700;color:var(--blue)}
+.reveal{justify-self:start;border:0;background:none;color:var(--blue);font-weight:700;padding:0;font-size:.92rem;text-decoration:underline;text-underline-offset:3px}
+
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;padding:.8rem .2rem;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:.8rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--muted);font-weight:400;font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"−"}
+summary .count{margin-left:auto}
+details .inner{padding:0 0 1rem}
+details .inner .rows{border-top:0}
+.notes{display:grid;gap:.7rem;font-size:.95rem}
+.notes b{display:block}
+
+ol.steps{padding-left:1.3rem;margin:1rem 0}
+ol.steps li{margin:.35rem 0}
+.prompt{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;margin-top:1rem}
+.prompt .bar{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.55rem .7rem .55rem 1rem;border-bottom:1px solid var(--line)}
+.prompt .bar span{font-weight:700;font-size:.92rem}
+.prompt pre{margin:0;padding:1rem;font-family:var(--mono);font-size:.8rem;line-height:1.55;white-space:pre-wrap;word-break:break-word;max-height:300px;overflow:auto;color:var(--muted)}
+.copied{background:var(--ok)!important;border-color:var(--ok)!important;color:var(--surface)!important}
+.saylist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.2rem 2rem;margin-top:.6rem}
+@media (max-width:560px){.saylist{grid-template-columns:1fr}}
+.saylist div{padding:.45rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.saylist b{color:var(--blue);margin-right:.4rem}
+.tip{margin-top:1.4rem;padding:.9rem 1.1rem;background:var(--blue-soft);border-radius:10px;font-size:.95rem}
+
+.block{margin-top:1.8rem}
+.block h3{font-size:1.1rem;margin-bottom:.3rem}
+textarea{width:100%;min-height:120px;font:inherit;font-size:.95rem;padding:.8rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);resize:vertical;margin-top:.5rem}
+.twists{display:grid;margin-top:1rem;border-top:1px solid var(--line)}
+.twist{padding:1rem .2rem;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;align-items:start}
+.twist h4{margin:0;font-size:1.02rem}
+.twist .lvl{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-left:.5rem}
+.twist .lvl.rec{color:var(--ok)}
+.twist p{grid-column:1;margin:0;font-size:.93rem;color:var(--muted)}
+.twist .btn{grid-row:1 / span 2;grid-column:2;align-self:center}
+.twist pre{display:none}
+
+.sarow{display:grid;grid-template-columns:1fr auto;gap:.8rem;align-items:center;padding:.75rem .2rem;border-bottom:1px solid var(--line)}
+.sarow:first-child{border-top:1px solid var(--line)}
+@media (max-width:600px){.sarow{grid-template-columns:1fr}}
+.rating button[aria-pressed="true"][data-v="0"]{background:var(--warn);color:var(--surface)}
+.rating button[aria-pressed="true"][data-v="1"]{background:var(--mark-ink);color:var(--surface)}
+.rating button[aria-pressed="true"][data-v="2"]{background:var(--ok);color:var(--surface)}
+.finish{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem}
+.confirm{margin-top:1rem;padding:.9rem 1.1rem;border:1px solid var(--warn);border-radius:10px}
+.next{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:.5rem 1rem;border-radius:8px;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap" id="app"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/*__LESSON_DATA__*/
+</script>
+<script>
+(function(){
+const LESSONS=window.LESSONS||{};
+const IDS=Object.keys(LESSONS).sort();
+const UPCOMING=[
+ [11,"A2","Make plans with a friend"],[12,"A2","Describe my daily routine and job"],[13,"A2","Buy a bus ticket, ask about schedules"],
+ [14,"A2","Talk about last weekend"],[15,"A2","Book a hotel room or check in"],[16,"A2","Shop for clothes"],
+ [17,"A2","Describe family, friends, colleagues"],[18,"A2","Invitations and apologies"],
+ [19,"A2+","Explain a problem and ask for a fix"],[20,"A2+","Compare two things and say which I prefer"],[21,"A2+","Describe symptoms at a pharmacy"],
+ [22,"A2+","Tell a story about a past trip"],[23,"A2+","Talk about plans for the weekend or vacation"],
+ [24,"B1","Handle unexpected travel problems"],[25,"B1","Make a complaint"],[26,"B1","Give and justify opinions"],
+ [27,"B1","Tell the plot of a movie or book"],[28,"B1","Describe a hope or ambition"],[29,"B1","Keep small talk going"],
+ [30,"B1","Ask for and follow detailed instructions"],[31,"B1","Take part in a short interview"],[32,"B1","Talk about my work as a teacher"]
+];
+const LEVELS=[["A1","Beginner"],["A2","Elementary"],["A2+","Strong elementary"],["B1","Intermediate"]];
+const REP={"tú":["Perdón, ¿puedes repetir más despacio?","Sorry, can you repeat that more slowly?"],"usted":["Perdón, ¿me lo puede repetir más despacio?","Sorry, can you repeat that more slowly?"]};
+const LBL=["Todavía no","Casi","¡Sí!"];
+
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const strip=s=>String(s).replace(/<[^>]+>/g,"");
+function mkStore(p){return{
+  get(k,d){try{const v=localStorage.getItem(p+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(p+k,JSON.stringify(v))}catch(e){}},
+  clear(){try{Object.keys(localStorage).filter(k=>k.startsWith(p)).forEach(k=>localStorage.removeItem(k))}catch(e){}}}}
+const G=mkStore("spanish-course:");
+const LS=id=>mkStore("spanish-l"+id+":");
+const app=$("#app");
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove("show"),1800)}
+
+/* ---------- speech ---------- */
+let rate=G.get("rate",0.7),voices=[];
+function pickVoices(){
+  if(!("speechSynthesis" in window))return;
+  const rank=v=>/es[-_]MX/i.test(v.lang)?0:/es[-_](US|419)/i.test(v.lang)?1:2;
+  voices=speechSynthesis.getVoices().filter(v=>/^es/i.test(v.lang)).sort((a,b)=>rank(a)-rank(b));
+  const vi=$("#voiceinfo");if(vi)vi.textContent=voiceText();
+}
+function voiceText(){return voices.length?`Voice: ${voices[0].name} (${voices[0].lang}).`:"No Spanish voice found in this browser. Edge and Chrome include good Mexican Spanish voices."}
+if("speechSynthesis" in window){pickVoices();speechSynthesis.onvoiceschanged=pickVoices}
+function utter(text,vi){const u=new SpeechSynthesisUtterance(text);u.lang="es-MX";u.rate=rate;const v=voices[vi||0]||voices[0];if(v)u.voice=v;return u}
+function speak(text){if(!("speechSynthesis" in window)){toast("This browser has no speech voices");return}speechSynthesis.cancel();speechSynthesis.speak(utter(text))}
+function stopSpeech(){if("speechSynthesis" in window)speechSynthesis.cancel()}
+
+const SPK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>';
+const CHEV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+const sayBtn=t=>`<button class="say" data-say="${esc(strip(t))}" aria-label="Hear: ${esc(strip(t))}">${SPK}</button>`;
+const row=(es,en)=>`${sayBtn(es)}<div style="min-width:0"><span class="es-t">${es}</span><span class="en-t">${en}</span></div>`;
+
+/* ---------- global delegation ---------- */
+function flash(btn,label){const o=btn.textContent;btn.textContent=label;btn.classList.add("copied");setTimeout(()=>{btn.textContent=o;btn.classList.remove("copied")},1500)}
+function copyText(text,btn){
+  if(!navigator.clipboard){toast("Select the text and copy it with Ctrl+C");return}
+  navigator.clipboard.writeText(text).then(()=>flash(btn,"Copied"),()=>toast("Select the text and copy it with Ctrl+C"));
+}
+document.addEventListener("click",e=>{
+  const s=e.target.closest("[data-say]");if(s){speak(s.dataset.say);return}
+  const c=e.target.closest("[data-copy]");if(c){const el=document.getElementById(c.dataset.copy);if(el)copyText(el.textContent,c);return}
+  if(e.target.closest("input,button,a,summary"))return;
+  const r=e.target.closest(".masked .row");if(r)r.classList.toggle("peek");
+});
+
+/* ---------- progress ---------- */
+function progress(L){
+  const S=LS(L.id),learned=S.get("learned",{}),ratings=S.get("ratings",{});
+  const n=L.core.concat([REP[L.reg]]).filter(([es])=>learned[es]).length;
+  const rated=Object.values(ratings),yes=rated.filter(v=>v===2).length,total=L.sa.length+1;
+  if(rated.length)return{cls:"done",txt:`¡Sí! ${yes} of ${total}`};
+  if(n)return{cls:"prog",txt:`${n} of 8 phrases`};
+  return{cls:"",txt:"Not started"};
+}
+
+/* ---------- hub ---------- */
+let io=null;
+function renderHub(){
+  document.title="Español en Voz Alta";
+  const groups=LEVELS.map(([lv,name])=>{
+    const ready=IDS.filter(id=>LESSONS[id].level===lv).map(id=>{const L=LESSONS[id],p=progress(L);
+      return `<a class="lrow" href="#l${id}"><span class="num">${+id}</span><span style="min-width:0"><span class="lt">${L.title}</span><span class="lc">${L.cando}</span><span class="lp">${L.partner} · ${L.place}</span></span><span class="pill ${p.cls}">${p.txt}</span></a>`});
+    const soon=UPCOMING.filter(u=>u[1]===lv&&!LESSONS[String(u[0]).padStart(2,"0")]).map(([n,,t])=>`<div class="lrow soon"><span class="num">${n}</span><span class="lt">${t}</span><span class="pill">Coming</span></div>`);
+    if(!ready.length&&!soon.length)return"";
+    return `<section class="level"><div class="level-h"><h2>${lv}</h2><span class="muted">${name}</span></div><div class="lrows">${ready.join("")}${soon.join("")}</div></section>`;
+  }).join("");
+  app.innerHTML=`<header class="hub-h">
+    <div class="meta">Spanish speaking practice · CEFR A1–B1 · Español de México</div>
+    <h1>Español en voz alta</h1>
+    <p class="lede">Each lesson is one CEFR can-do statement. You prepare the language, role-play the situation with ChatGPT voice, get feedback, try again, and check yourself.</p>
+    <div class="cycle"><span>Prepárate</span><i>→</i><span>Role play</span><i>→</i><span>Feedback</span><i>→</i><span>Otra vez</span><i>→</i><span>¿Lo logré?</span></div>
+  </header>${groups}`;
+}
+
+/* ---------- lesson ---------- */
+function boardHtml(B){
+  const body=B.svg?`<div class="map">${B.svg}</div>`:`<div class="cols">${B.cols.map(col=>`<div>${col.map(g=>`<h5>${g.h}</h5><ul>${g.items.map(([a,b])=>`<li>${a}${b!=null?`<span class="dots"></span><span class="p">${b}</span>`:""}</li>`).join("")}</ul>`).join("")}</div>`).join("")}</div>`;
+  return `<div class="board" aria-label="${esc(B.title)}"><h4>${B.title}</h4><div class="sub">${B.sub}</div>${body}${B.note?`<div class="note">${B.note}</div>`:""}</div>`;
+}
+const frame=f=>f.replace(/\[([^\]]+)\]/g,'<span class="slot">$1</span>');
+
+function rolePrompt(L){
+  const a1=L.level==="A1",P=L.prompt;
+  return `Let's do a Spanish speaking role play. I'm ${a1?"an A1 (beginner)":"an "+L.level} learner practicing this CEFR goal: "${L.cando}" Use Mexican Spanish.
+
+YOUR ROLE
+${P.role}
+
+${P.infoTitle}
+${P.info}
+
+TWIST
+${P.twist}
+
+HOW TO TALK TO ME
+- Speak only Spanish, slowly and clearly. Use 1 or 2 short sentences per turn.
+- ${a1?"Use very simple A1 words and short questions.":"Use everyday A2 words."} Ask one question at a time.
+- ${P.lead}
+- If I make a mistake, don't stop to explain. Repeat the correct form naturally in your reply. Example: ${P.recast}
+- If I'm stuck, or I say "ayuda", give me a short hint: the beginning of a sentence I could say.
+- If I say "más despacio" or "otra vez", repeat it more slowly with simpler words.
+- If I speak English, answer in simple Spanish and help me say it in Spanish.
+- Don't end the scene yourself.
+
+FEEDBACK
+When I say "terminamos", leave the role and speak English. Keep the feedback under one minute:
+1. One thing I did well.
+2. Up to three corrections, most useful first: what I said, then a better way to say it. Say the Spanish slowly.
+3. One new phrase to use next time.
+My speech is transcribed automatically and errors may get cleaned up, so mention anything you weren't sure you heard correctly. Then ask if I want to try again.
+
+If you understand, reply only: "Listo. ${L.reg==="tú"?"Di":"Diga"} 'hola' para empezar."`;
+}
+function reviewPrompt(L,core,sa){
+  const next={"A1":"A1+","A2":"A2+","A2+":"B1","B1":"B1+"}[L.level];
+  return `I'm an ${L.level} Spanish learner (Mexican Spanish). Below is the transcript of a voice role play: ${L.scene}.
+CEFR goal: "${L.cando}"
+
+My 8 target phrases: ${core.map(c=>strip(c[0])).join(" · ")}
+
+My speech was transcribed by speech recognition, which often corrects grammar and removes hesitations. Treat my lines as a best-case version of what I actually said.
+
+Please give me:
+1. Can-do check. For each, say yes / partly / no with a short quote: ${sa.join(" · ")}.
+2. My top 3 corrections or upgrades: what I said → more natural Mexican Spanish → why (one line).
+3. Which target phrases I used and which I avoided.
+4. Two phrases to focus on in my next attempt.
+5. My side of the conversation rewritten at a solid ${next} level, so I can read it aloud.
+Keep explanations short and in English.
+
+TRANSCRIPT:
+`;
+}
+
+function renderLesson(L){
+  const S=LS(L.id),rep=REP[L.reg];
+  const core=L.core.concat([rep]);
+  const qd=L.qd.concat([["You didn't catch that. Ask them to repeat it slowly.",rep[0]]]);
+  const sa=L.sa.concat(["I can fix a misunderstanding without switching to English"]);
+  const twists=[["Lo mismo","Start here","Same scene. Aim to be faster and use every correction.","Otra vez, por favor. Same scene, same rules. I'll try to use your corrections."]]
+    .concat(L.twists,[["A velocidad real","Challenge","Same scene at a natural speed, with more Mexican expressions.","Otra vez, por favor. Same scene, but speak at a natural speed and use a few more everyday Mexican expressions. Still recast my mistakes."]]);
+  const you=L.reg==="tú"?"Tú":"Usted";
+  const m=L.minutes, prepM=m-18;
+  let learned=S.get("learned",{}),ratings=S.get("ratings",{}),collapsed=S.get("collapsed",{});
+  const idx=IDS.indexOf(L.id),prev=IDS[idx-1],nxt=IDS[idx+1];
+  document.title=`${+L.id}. ${L.title} · Español en Voz Alta`;
+
+  app.innerHTML=`
+<a class="back" href="#inicio">← All lessons</a>
+<header class="lesson">
+  <div class="meta">Lección ${+L.id} · CEFR ${L.level} · ${L.scale} · about ${m} min</div>
+  <h1>${L.title}</h1>
+  <p class="cando"><span class="eyebrow">Can-do</span>${L.cando}</p>
+</header>
+<nav class="stages" aria-label="Lesson stages">
+  <button data-go="prep" class="on">1 Prepárate<span class="t">${prepM}′</span></button>
+  <button data-go="roleplay">2 Role play<span class="t">6′</span></button>
+  <button data-go="feedback">3 Feedback<span class="t">5′</span></button>
+  <button data-go="again">4 Otra vez<span class="t">5′</span></button>
+  <button data-go="check">5 ¿Lo logré?<span class="t">2′</span></button>
+  <div class="foldall"><button id="expand-all">Expand all</button><button id="collapse-all">Collapse all</button></div>
+</nav>
+
+<section class="stage" id="prep">
+  <div class="stage-h"><span class="n">1</span><h2>Prepárate</h2></div>
+  <p class="lede">See the whole conversation first, then learn the 8 phrases you need most and practice saying them from memory.</p>
+  <div class="step" id="p1">
+    <div class="step-h"><span class="eyebrow">Paso 1</span><h3>${L.boardStep[0]}</h3><p>${L.boardStep[1]}</p></div>
+    ${boardHtml(L.board)}
+  </div>
+  <div class="step" id="p2">
+    <div class="step-h"><span class="eyebrow">Paso 2</span><h3>Escucha el diálogo</h3><p>Listen once with the English showing. Then hide the English and listen again.</p></div>
+    <div class="controls">
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="btn primary" id="play-all"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Play</button>
+        <button class="btn" id="stop-all">Stop</button>
+      </div>
+      <div class="seg" role="group" aria-label="Dialogue text" data-vis="dlg">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-en" aria-pressed="false">Hide English</button><button data-mode="mask-es mask-en" aria-pressed="false">Hide all</button>
+      </div>
+    </div>
+    <div class="rows" id="dlg">${L.dialogue.map(([w,es,en],i)=>`<div class="row line ${w}" id="dl${i}"><span class="who">${w==="m"?L.partner:you}</span><div style="min-width:0"><span class="es-t">${es}</span><span class="en-t">${en}</span></div>${sayBtn(es)}</div>`).join("")}</div>
+  </div>
+  <div class="step" id="p3">
+    <div class="step-h"><span class="eyebrow">Paso 3</span><h3>Aprende 8 frases</h3><p>These are the ones you'll use. Say each out loud, then hide the Spanish and recall it from the English. Tap a row to peek. Check it off when you can say it without looking.</p></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Phrase text" data-vis="core">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-es" aria-pressed="false">Hide Spanish</button><button data-mode="mask-en" aria-pressed="false">Hide English</button>
+      </div>
+      <span class="count" id="phr-count"></span>
+    </div>
+    <div class="rows" id="core"></div>
+    <h3 style="font-size:1.05rem;margin:1.8rem 0 .2rem">You'll hear</h3>
+    <p class="muted small" style="margin-bottom:.6rem">Hide the English and see if you know what ${L.partner} is saying.</p>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Listening text" data-vis="hear">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-en" aria-pressed="false">Hide English</button><button data-mode="mask-es mask-en" aria-pressed="false">Audio only</button>
+      </div>
+    </div>
+    <div class="rows" id="hear">${L.hear.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div>
+  </div>
+  <div class="step" id="p4">
+    <div class="step-h"><span class="eyebrow">Paso 4</span><h3>Vocabulario</h3><p>Hide one language and test yourself. Tap a row to peek.</p></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Vocabulary text" data-vis="vocab">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-es" aria-pressed="false">Hide Spanish</button><button data-mode="mask-en" aria-pressed="false">Hide English</button>
+      </div>
+    </div>
+    <div id="vocab">${L.vocab.map(([g,items])=>`<div class="vgroup"><div class="eyebrow">${g}</div><div class="vrows">${items.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div></div>`).join("")}</div>
+  </div>
+  <div class="step" id="p5">
+    <div class="step-h"><span class="eyebrow">Paso 5</span><h3>¿Qué dirías?</h3><p>Say your answer out loud first, then check it.</p></div>
+    <div id="qd">${qd.map(([s,a],i)=>`<div class="qrow"><div>${i+1}. ${s}</div><button class="reveal" data-q="${i}">Show answer</button><div class="ans" hidden id="qa${i}">${sayBtn(a)}<span>${a}</span></div></div>`).join("")}</div>
+  </div>
+  <div class="step" id="p6">
+    <div class="step-h"><span class="eyebrow">Extra</span><h3>If you have time</h3></div>
+    <details><summary>More phrases <span class="count">${L.extra.length}</span></summary><div class="inner"><div class="rows">${L.extra.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div></div></details>
+    <details><summary>Patterns</summary><div class="inner">${L.patterns.map(([f,ex])=>`<div class="pat"><div class="frame">${frame(f)}</div><div class="ex">${ex}</div></div>`).join("")}</div></details>
+    <details><summary>Cultural notes</summary><div class="inner notes">${L.notes.map(([b,t])=>`<div><b>${b}</b>${t}</div>`).join("")}</div></details>
+    <details><summary>Audio settings</summary><div class="inner">
+      <div class="controls" style="justify-content:flex-start"><span class="small muted">Speed</span>
+        <div class="seg" role="group" aria-label="Speech speed" id="rate"><button data-rate="0.7">Slow</button><button data-rate="0.95">Normal</button></div></div>
+      <p class="small muted" id="voiceinfo">${voiceText()}</p></div></details>
+  </div>
+</section>
+
+<section class="stage" id="roleplay">
+  <div class="stage-h"><span class="n">2</span><h2>Role play</h2></div>
+  <p class="lede">${L.goal}</p>
+  <ol class="steps">
+    <li>Open ChatGPT and start a <b>new chat</b>.</li>
+    <li>Copy the prompt below, paste it as a text message, and send it.</li>
+    <li>In the same chat, tap the <b>voice</b> button and say <b>"Hola"</b>.</li>
+    <li>When you're done, say <b>"Terminamos"</b> to get feedback.</li>
+  </ol>
+  <div class="prompt"><div class="bar"><span>Role-play prompt for ChatGPT</span><button class="btn primary" data-copy="p-roleplay">Copy</button></div><pre id="p-roleplay">${esc(rolePrompt(L))}</pre></div>
+  <p style="margin-top:1.4rem"><b>Things you can say anytime</b></p>
+  <div class="saylist"><div><b>ayuda</b>a hint for what to say next</div><div><b>más despacio</b>slower and simpler</div><div><b>otra vez</b>repeat the last line</div><div><b>terminamos</b>end and get feedback</div></div>
+  <div class="tip"><b>Push yourself:</b> use at least three of your 8 phrases. If you freeze, use your repair phrase (<i>${rep[0]}</i>) instead of switching to English.</div>
+</section>
+
+<section class="stage" id="feedback">
+  <div class="stage-h"><span class="n">3</span><h2>Feedback</h2></div>
+  <p class="lede">Get ChatGPT's quick spoken feedback first. For a closer look, paste the transcript into Claude afterward.</p>
+  <div class="block"><h3>Quick, in ChatGPT</h3><p>Say <b>"Terminamos"</b>. ${L.partner} drops the role and gives you one strength, up to three corrections, and a new phrase. Repeat each corrected sentence out loud twice.</p></div>
+  <div class="block"><h3>Deeper, in Claude</h3><p>Speech recognition often fixes your grammar before the AI sees it, so spoken feedback can miss errors. Copy the transcript from the ChatGPT chat and paste it under this prompt.</p>
+    <div class="prompt"><div class="bar"><span>Transcript-review prompt for Claude</span><button class="btn primary" data-copy="p-review">Copy</button></div><pre id="p-review">${esc(reviewPrompt(L,core,sa))}</pre></div></div>
+  <div class="block"><h3><label for="notes">Your notes</label></h3><p class="muted small">What did you want to say but couldn't? Add the corrections you want to remember. Saved in this browser.</p>
+    <textarea id="notes" placeholder="e.g. Wanted to say … → …"></textarea></div>
+</section>
+
+<section class="stage" id="again">
+  <div class="stage-h"><span class="n">4</span><h2>Otra vez</h2></div>
+  <p class="lede">Repeating the task right after feedback builds fluency. Stay in the same ChatGPT chat, copy one of these, and go again using your corrections.</p>
+  <div class="twists">${twists.map(([t,l,d,p],i)=>`<div class="twist"><h4>${t}<span class="lvl${i===0?" rec":""}">${l}</span></h4><p>${d}</p><button class="btn" data-copy="tw${i}">Copy</button><pre id="tw${i}">${esc(p)}</pre></div>`).join("")}</div>
+</section>
+
+<section class="stage" id="check">
+  <div class="stage-h"><span class="n">5</span><h2>¿Lo logré?</h2></div>
+  <p class="lede">Be honest. "Casi" means you did it, but with help or long pauses. Saved in this browser.</p>
+  <div id="sa" style="margin-top:1.2rem">${sa.map((s,i)=>`<div class="sarow"><div>${s}</div><div class="seg rating" role="group" aria-label="${esc(s)}">${LBL.map((l,v)=>`<button data-i="${i}" data-v="${v}" aria-pressed="${ratings[i]===v}">${l}</button>`).join("")}</div></div>`).join("")}</div>
+  <div class="finish"><button class="btn primary" id="copy-summary">Copy session summary</button><button class="btn" id="reset">Reset this lesson</button></div>
+  <p class="muted small" style="margin-top:.6rem">Paste the summary into Claude to track progress or plan the next lesson.</p>
+  <div id="reset-confirm" class="confirm" hidden>Clear your checked phrases, notes, and ratings for this lesson?
+    <div class="finish" style="margin-top:.6rem"><button class="btn" id="reset-yes">Yes, clear them</button><button class="btn" id="reset-no">Cancel</button></div></div>
+</section>
+
+<div class="next">
+  ${prev?`<a class="btn" href="#l${prev}">← ${+prev}. ${LESSONS[prev].title}</a>`:`<a class="btn" href="#inicio">← All lessons</a>`}
+  ${nxt?`<a class="btn primary" href="#l${nxt}">${+nxt}. ${LESSONS[nxt].title} →</a>`:`<a class="btn" href="#inicio">All lessons</a>`}
+</div>`;
+
+  /* core phrases */
+  function renderCore(){
+    $("#core").innerHTML=core.map(([es,en],i)=>`<div class="row chk${learned[es]?" done":""}"><input type="checkbox" id="core${i}" data-es="${esc(es)}" ${learned[es]?"checked":""} aria-label="I can say: ${esc(es)}">${row(es,en)}</div>`).join("");
+    $("#phr-count").textContent=`${core.filter(([es])=>learned[es]).length} of 8 learned`;
+  }
+  renderCore();
+  $("#core").addEventListener("change",e=>{const c=e.target;if(!c.dataset.es)return;learned[c.dataset.es]=c.checked;S.set("learned",learned);c.closest(".row").classList.toggle("done",c.checked);$("#phr-count").textContent=`${core.filter(([es])=>learned[es]).length} of 8 learned`});
+
+  /* show / hide */
+  function setVis(target,mode,save=true){
+    const el=document.getElementById(target);
+    el.classList.remove("mask-es","mask-en","masked");
+    $$(".peek",el).forEach(r=>r.classList.remove("peek"));
+    if(mode!=="all")el.classList.add("masked",...mode.split(" "));
+    $$(`[data-vis="${target}"] button`).forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
+    if(save){const v=S.get("vis",{});v[target]=mode;S.set("vis",v)}
+  }
+  $$("[data-vis]").forEach(g=>g.addEventListener("click",e=>{const b=e.target.closest("button");if(b)setVis(g.dataset.vis,b.dataset.mode)}));
+  Object.entries(S.get("vis",{})).forEach(([t,md])=>{if(document.getElementById(t)&&$(`[data-vis="${t}"] [data-mode="${md}"]`))setVis(t,md,false)});
+
+  /* speed */
+  function setRate(r){rate=r;G.set("rate",r);$$("#rate button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.rate===r)))}
+  $$("#rate button").forEach(b=>b.addEventListener("click",()=>setRate(+b.dataset.rate)));
+  setRate(rate);
+
+  /* drill */
+  $("#qd").addEventListener("click",e=>{const b=e.target.closest(".reveal");if(!b)return;$("#qa"+b.dataset.q).hidden=false;b.hidden=true;speak(strip(qd[b.dataset.q][1]))});
+
+  /* dialogue */
+  const clearPlaying=()=>$$(".line.playing").forEach(l=>l.classList.remove("playing"));
+  $("#play-all").onclick=()=>{
+    if(!("speechSynthesis" in window)){toast("This browser has no speech voices");return}
+    speechSynthesis.cancel();
+    L.dialogue.forEach(([w,es],i)=>{const u=utter(strip(es),w==="m"?0:(voices.length>1?1:0));
+      u.onstart=()=>{clearPlaying();const el=$("#dl"+i);if(el)el.classList.add("playing")};
+      if(i===L.dialogue.length-1)u.onend=clearPlaying;
+      speechSynthesis.speak(u)});
+  };
+  $("#stop-all").onclick=()=>{stopSpeech();clearPlaying()};
+
+  /* notes */
+  const notes=$("#notes");notes.value=S.get("notes","");
+  notes.addEventListener("input",()=>S.set("notes",notes.value));
+
+  /* self assessment */
+  $("#sa").addEventListener("click",e=>{const b=e.target.closest(".rating button");if(!b)return;const i=+b.dataset.i,v=+b.dataset.v;ratings[i]=v;S.set("ratings",ratings);
+    $$("button",b.parentElement).forEach(x=>x.setAttribute("aria-pressed",String(+x.dataset.v===v)))});
+  $("#copy-summary").onclick=e=>{
+    const d=new Date().toISOString().slice(0,10);
+    const lines=[`Spanish self-study · Lección ${+L.id} · ${L.title} (CEFR ${L.level}: ${L.cando}) · ${d}`,"",
+      `Core phrases learned: ${core.filter(([es])=>learned[es]).length}/8`,"","Self-assessment:",
+      ...sa.map((s,i)=>`- ${s}: ${ratings[i]==null?"(not rated)":LBL[ratings[i]]}`),"","My notes:",notes.value.trim()||"(none)"];
+    copyText(lines.join("\n"),e.currentTarget);
+  };
+
+  /* collapsible */
+  const folds=$$("section.stage, .step",app);
+  function setFold(el,c,save=true){
+    el.classList.toggle("collapsed",c);
+    const b=$(":scope > .stage-h .fold, :scope > .step-h .fold",el);
+    if(b){b.setAttribute("aria-expanded",String(!c));b.setAttribute("aria-label",(c?"Expand ":"Collapse ")+b.dataset.name)}
+    if(save){collapsed[el.id]=c;S.set("collapsed",collapsed)}
+  }
+  folds.forEach(el=>{
+    const h=$(":scope > .stage-h, :scope > .step-h",el);
+    h.insertAdjacentHTML("beforeend",`<button class="fold" data-name="${esc($("h2,h3",h).textContent)}">${CHEV}</button>`);
+    h.addEventListener("click",()=>setFold(el,!el.classList.contains("collapsed")));
+    setFold(el,!!collapsed[el.id],false);
+  });
+  $("#expand-all").onclick=()=>folds.forEach(el=>setFold(el,false));
+  $("#collapse-all").onclick=()=>$$("section.stage",app).forEach(el=>setFold(el,true));
+
+  /* reset */
+  $("#reset").onclick=()=>{$("#reset-confirm").hidden=false};
+  $("#reset-no").onclick=()=>{$("#reset-confirm").hidden=true};
+  $("#reset-yes").onclick=()=>{S.clear();learned={};ratings={};collapsed={};notes.value="";renderCore();
+    ["dlg","core","hear","vocab"].forEach(t=>setVis(t,"all",false));folds.forEach(el=>setFold(el,false,false));
+    $$(".rating button").forEach(b=>b.setAttribute("aria-pressed","false"));$("#reset-confirm").hidden=true;toast("Lesson reset")};
+
+  /* stage bar */
+  const tabs=$$("nav.stages [data-go]");
+  tabs.forEach(b=>b.addEventListener("click",()=>{const s=document.getElementById(b.dataset.go);setFold(s,false);s.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}));
+  io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)tabs.forEach(b=>b.classList.toggle("on",b.dataset.go===en.target.id))})},{rootMargin:"-40% 0px -55% 0px"});
+  $$("section.stage",app).forEach(s=>io.observe(s));
+}
+
+/* ---------- router ---------- */
+function route(){
+  stopSpeech();
+  if(io){io.disconnect();io=null}
+  const m=location.hash.match(/^#l(\d\d)$/);
+  if(m&&LESSONS[m[1]])renderLesson(LESSONS[m[1]]);else renderHub();
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+route();
+})();
+</script>

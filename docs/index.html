@@ -1,0 +1,1788 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14291F">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Español en Voz Alta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bungee&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one calm reading column, rows instead of boxes, one accent colour; the painted scene board is the only loud element */
+:root{
+  --bg:#F5F6F8; --surface:#FFFFFF; --ink:#1B2236; --muted:#5B6376; --line:#E2E5EB;
+  --blue:#2A56A8; --blue-soft:#E9EEF8; --mark:#FBEFD3; --mark-ink:#8A5A00; --ok:#2E7D4F; --warn:#B3352B;
+  --board:#14291F; --board-ink:#F5EFDF; --board-accent:#F2B33D; --board-red:#F08A70;
+  --display:"Bungee","Arial Black",Impact,sans-serif;
+  --body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161F; --surface:#182030; --ink:#E4E8EF; --muted:#A3ABBB; --line:#283245;
+  --blue:#9DB8F0; --blue-soft:#1E2A42; --mark:#3A2F14; --mark-ink:#F2C46A; --ok:#72C996; --warn:#EE8A7E;
+  color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#11161F; --surface:#182030; --ink:#E4E8EF; --muted:#A3ABBB; --line:#283245;
+  --blue:#9DB8F0; --blue-soft:#1E2A42; --mark:#3A2F14; --mark-ink:#F2C46A; --ok:#72C996; --warn:#EE8A7E;
+  color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6}
+.wrap{max-width:740px;margin:0 auto;padding-inline:20px;padding-block:32px 96px}
+h1,h2,h3{text-wrap:balance;line-height:1.2;margin:0;font-weight:700}
+p{margin:.4rem 0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.eyebrow{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:4px}
+a{color:var(--blue)}
+
+/* ---------- hub ---------- */
+.hub-h{display:grid;gap:.8rem}
+.hub-h h1{font-size:clamp(2.2rem,8vw,3rem);letter-spacing:-.01em}
+.hub-h .lede{color:var(--muted);max-width:58ch}
+.cycle{display:flex;flex-wrap:wrap;gap:.35rem .5rem;align-items:center;font-size:.88rem;margin-top:.4rem}
+.cycle span{background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:.2rem .7rem;font-weight:700}
+.cycle i{color:var(--muted);font-style:normal}
+.level{margin-top:3rem}
+.level-h{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.6rem}
+.level-h h2{font-size:1.4rem}
+.level-h .muted{font-size:.9rem}
+.lrow{display:grid;grid-template-columns:2.6rem 1fr auto;gap:.3rem .9rem;align-items:center;padding:.85rem .3rem;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.lrows{border-top:1px solid var(--line)}
+a.lrow:hover .lt{color:var(--blue)}
+.lrow .num{font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums;font-size:1.05rem}
+.lrow .lt{font-weight:700}
+.lrow .lc{font-size:.92rem;color:var(--muted);display:block}
+.lrow .lp{font-size:.8rem;color:var(--muted);display:block}
+.lrow.soon .num,.lrow.soon .lt{color:var(--muted)}
+.lrow.soon .lt{font-weight:400}
+.pill{font-size:.75rem;font-weight:700;padding:.2rem .65rem;border-radius:99px;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
+.pill.prog{background:var(--mark);color:var(--mark-ink);border-color:transparent}
+.pill.done{background:var(--ok);color:var(--surface);border-color:transparent}
+@media (max-width:560px){.lrow{grid-template-columns:2.2rem 1fr}.lrow .pill{grid-column:2;justify-self:start}}
+
+/* ---------- lesson header ---------- */
+.back{font-size:.92rem;font-weight:700;text-decoration:none;display:inline-block;margin-bottom:1.2rem}
+header.lesson{display:grid;gap:1rem}
+header.lesson h1{font-size:clamp(2.1rem,7vw,2.8rem);letter-spacing:-.01em}
+.meta{font-size:.92rem;color:var(--muted)}
+.cando{font-size:1.15rem;line-height:1.5;padding-left:1rem;border-left:3px solid var(--blue)}
+.cando .eyebrow{display:block;margin-bottom:.15rem}
+
+/* sticky stage bar */
+nav.stages{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin:2rem -20px 0;padding:.55rem 20px;display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none}
+nav.stages button{flex:0 0 auto;border:0;background:none;color:var(--muted);font-weight:700;font-size:.9rem;padding:.35rem .75rem;border-radius:99px;white-space:nowrap}
+nav.stages button.on{background:var(--ink);color:var(--bg)}
+nav.stages .t{font-weight:400;opacity:.7;margin-left:.3rem;font-size:.8rem}
+.foldall{margin-left:auto;display:flex;gap:.1rem;flex:0 0 auto;align-items:center}
+nav.stages .foldall button{font-size:.8rem;padding:.35rem .5rem}
+nav.stages .foldall button:hover{color:var(--blue)}
+
+/* stages */
+section.stage{padding-top:3.5rem;scroll-margin-top:3.4rem}
+section.stage + section.stage{margin-top:2rem;border-top:1px solid var(--line)}
+.stage-h{display:flex;align-items:baseline;gap:.7rem}
+.stage-h h2{font-size:1.75rem}
+.stage-h .n{color:var(--blue);font-size:1.75rem;font-weight:700;font-variant-numeric:tabular-nums}
+.lede{color:var(--muted);margin-top:.5rem;max-width:60ch}
+
+.step{margin-top:2.8rem}
+.step-h{display:grid;gap:.1rem;margin-bottom:.9rem}
+.step-h h3{font-size:1.25rem}
+.step-h .eyebrow{color:var(--blue)}
+.step-h p{color:var(--muted);font-size:.95rem;margin:.1rem 0 0}
+
+/* collapsible */
+.stage-h,.step-h{position:relative;padding-right:2.8rem;cursor:pointer}
+.fold{position:absolute;right:0;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--muted);display:grid;place-items:center;padding:0}
+.fold:hover{border-color:var(--blue);color:var(--blue)}
+.fold svg{width:16px;height:16px;transition:transform .2s}
+.collapsed > .stage-h .fold svg,.collapsed > .step-h .fold svg{transform:rotate(-90deg)}
+.stage.collapsed > :not(.stage-h),.step.collapsed > :not(.step-h),.step.collapsed .step-h p{display:none}
+.step.collapsed .step-h{margin-bottom:0}
+.step.collapsed{margin-top:1.6rem}
+
+/* scene board */
+.board{background:var(--board);color:var(--board-ink);border-radius:12px;padding:1.5rem 1.5rem 1.2rem;box-shadow:inset 0 0 0 6px #0d1d15, inset 0 0 0 8px #3a5444}
+.board h4{font-family:var(--display);font-weight:400;color:var(--board-accent);font-size:clamp(1.3rem,5vw,1.8rem);margin:0;text-align:center}
+.board .sub{text-align:center;font-size:.85rem;opacity:.8;margin-bottom:1.1rem}
+.board .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 2.2rem}
+@media (max-width:560px){.board .cols{grid-template-columns:1fr}}
+.board h5{font-family:var(--display);font-weight:400;font-size:.9rem;color:var(--board-red);margin:0 0 .3rem;letter-spacing:.04em}
+.board h5:not(:first-child){margin-top:.9rem}
+.board ul{list-style:none;margin:0;padding:0}
+.board li{display:flex;gap:.4rem;align-items:baseline;font-size:1rem}
+.board li .dots{flex:1;border-bottom:2px dotted rgba(245,239,223,.3);transform:translateY(-4px)}
+.board li .p{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--board-accent);white-space:nowrap}
+.board .note{margin-top:1rem;font-size:.85rem;opacity:.85;text-align:center}
+.board .map svg{display:block;width:100%;height:auto;max-width:560px;margin:0 auto}
+.map .st{fill:#2C4A3A}.map .bk{fill:#1B3528}.map .park{fill:#2F5B3F}
+.map text{fill:#F5EFDF;font-family:var(--body);font-size:11px}
+.map .lm{font-weight:700}
+.map .sl{font-size:8.5px;letter-spacing:.08em;fill:#BFD6C7}
+.map .dot{fill:#F2B33D}.map .you{fill:#F08A70;stroke:#F5EFDF;stroke-width:2}
+.map .youl{fill:#F08A70;font-size:9.5px;font-weight:700}
+.map .n{stroke:#BFD6C7;stroke-width:2;fill:none}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;margin-bottom:.6rem}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;color:var(--muted);padding:.35rem .8rem;font-size:.85rem;font-weight:700}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.btn{border:1px solid var(--line);background:var(--surface);padding:.45rem .95rem;border-radius:99px;font-weight:700;font-size:.9rem;display:inline-flex;gap:.4rem;align-items:center;text-decoration:none;color:var(--ink)}
+.btn:hover{border-color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:var(--surface)}
+.count{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+
+.say{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:0;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;padding:0}
+.say:hover{background:var(--blue);color:var(--surface)}
+.say svg{width:16px;height:16px}
+
+/* rows */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:center;padding:.65rem .2rem;border-bottom:1px solid var(--line)}
+.row.chk{grid-template-columns:auto auto 1fr}
+.row .es-t{font-weight:700;display:inline}
+.row .en-t{display:block;font-size:.9rem;color:var(--muted)}
+.row input{width:20px;height:20px;accent-color:var(--ok);margin:0}
+.row.done .es-t{color:var(--ok)}
+.vrows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}
+@media (max-width:600px){.vrows{grid-template-columns:1fr}}
+.vgroup + .vgroup{margin-top:1.4rem}
+.vgroup .eyebrow{margin-bottom:.3rem}
+.masked .row{cursor:pointer}
+.mask-es .row:not(.peek) .es-t,.mask-en .row:not(.peek) .en-t{color:transparent;background:var(--line);border-radius:4px;user-select:none}
+
+.pat{padding:.7rem 0;border-bottom:1px solid var(--line)}
+.pat:first-child{border-top:1px solid var(--line)}
+.pat .frame{font-weight:700}
+.slot{background:var(--mark);color:var(--mark-ink);padding:0 .35rem;border-radius:4px}
+.pat .ex{font-size:.92rem;color:var(--muted)}
+
+.line{grid-template-columns:5.5rem 1fr auto}
+.line .who{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.line.c .who{color:var(--blue)}
+.line .es-t{font-weight:400}
+.line.c .es-t{font-weight:700}
+.line.playing{background:var(--mark)}
+@media (max-width:480px){.line{grid-template-columns:1fr auto}.line .who{grid-column:1 / -1;margin-bottom:-.5rem}}
+
+.qrow{padding:.8rem .2rem;border-bottom:1px solid var(--line);display:grid;gap:.35rem}
+.qrow:first-child{border-top:1px solid var(--line)}
+.qrow .ans{display:flex;gap:.6rem;align-items:center;font-weight:700;color:var(--blue)}
+.reveal{justify-self:start;border:0;background:none;color:var(--blue);font-weight:700;padding:0;font-size:.92rem;text-decoration:underline;text-underline-offset:3px}
+
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;padding:.8rem .2rem;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:.8rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--muted);font-weight:400;font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"−"}
+summary .count{margin-left:auto}
+details .inner{padding:0 0 1rem}
+details .inner .rows{border-top:0}
+.notes{display:grid;gap:.7rem;font-size:.95rem}
+.notes b{display:block}
+
+ol.steps{padding-left:1.3rem;margin:1rem 0}
+ol.steps li{margin:.35rem 0}
+.prompt{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;margin-top:1rem}
+.prompt .bar{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.55rem .7rem .55rem 1rem;border-bottom:1px solid var(--line)}
+.prompt .bar span{font-weight:700;font-size:.92rem}
+.prompt pre{margin:0;padding:1rem;font-family:var(--mono);font-size:.8rem;line-height:1.55;white-space:pre-wrap;word-break:break-word;max-height:300px;overflow:auto;color:var(--muted)}
+.copied{background:var(--ok)!important;border-color:var(--ok)!important;color:var(--surface)!important}
+.saylist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.2rem 2rem;margin-top:.6rem}
+@media (max-width:560px){.saylist{grid-template-columns:1fr}}
+.saylist div{padding:.45rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.saylist b{color:var(--blue);margin-right:.4rem}
+.tip{margin-top:1.4rem;padding:.9rem 1.1rem;background:var(--blue-soft);border-radius:10px;font-size:.95rem}
+
+.block{margin-top:1.8rem}
+.block h3{font-size:1.1rem;margin-bottom:.3rem}
+textarea{width:100%;min-height:120px;font:inherit;font-size:.95rem;padding:.8rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);resize:vertical;margin-top:.5rem}
+.twists{display:grid;margin-top:1rem;border-top:1px solid var(--line)}
+.twist{padding:1rem .2rem;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;align-items:start}
+.twist h4{margin:0;font-size:1.02rem}
+.twist .lvl{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-left:.5rem}
+.twist .lvl.rec{color:var(--ok)}
+.twist p{grid-column:1;margin:0;font-size:.93rem;color:var(--muted)}
+.twist .btn{grid-row:1 / span 2;grid-column:2;align-self:center}
+.twist pre{display:none}
+
+.sarow{display:grid;grid-template-columns:1fr auto;gap:.8rem;align-items:center;padding:.75rem .2rem;border-bottom:1px solid var(--line)}
+.sarow:first-child{border-top:1px solid var(--line)}
+@media (max-width:600px){.sarow{grid-template-columns:1fr}}
+.rating button[aria-pressed="true"][data-v="0"]{background:var(--warn);color:var(--surface)}
+.rating button[aria-pressed="true"][data-v="1"]{background:var(--mark-ink);color:var(--surface)}
+.rating button[aria-pressed="true"][data-v="2"]{background:var(--ok);color:var(--surface)}
+.finish{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem}
+.confirm{margin-top:1rem;padding:.9rem 1.1rem;border:1px solid var(--warn);border-radius:10px}
+.next{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:.5rem 1rem;border-radius:8px;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap" id="app"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+// l01.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["01"] = {
+  id: "01", level: "A1", title: "Mucho gusto", minutes: 25,
+  cando: "I can introduce myself: my name, where I'm from, where I live, and my job.",
+  scale: "Overall spoken interaction",
+  reg: "tú", partner: "Mariana", place: "Intercambio · Coyoacán, CDMX",
+  scene: "I met Mariana, an architect, at a language exchange in Mexico City and introduced myself",
+  goal: "You're at a language exchange (intercambio) in a café in Coyoacán. ChatGPT plays Mariana. Introduce yourself, and find out three things about her.",
+  boardStep: ["Prepara tu ficha", "Fill in the blanks in your head before you start. Mariana will ask all four."],
+  board: {
+    title: "Intercambio", sub: "Café La Selva · Coyoacán, CDMX · jueves 7 pm",
+    cols: [
+      [{ h: "Tu ficha", items: [["Me llamo…"], ["Soy de…"], ["Vivo en…"], ["Trabajo en… / Soy…"], ["Hablo inglés y un poco de español."]] }],
+      [{ h: "Pregúntale", items: [["¿Cómo te llamas?"], ["¿De dónde eres?"], ["¿Dónde vives?"], ["¿A qué te dedicas?"]] }]
+    ],
+    note: "Mariana will also ask you something you didn't prepare."
+  },
+  dialogue: [
+    ["m", "¡Hola! Me llamo Mariana. ¿Cómo te llamas?", "Hi! My name is Mariana. What's your name?"],
+    ["c", "Hola, me llamo Alex. Mucho gusto.", "Hi, my name is Alex. Nice to meet you."],
+    ["m", "Mucho gusto, Alex. ¿De dónde eres?", "Nice to meet you, Alex. Where are you from?"],
+    ["c", "Soy de Estados Unidos. ¿Y tú?", "I'm from the United States. And you?"],
+    ["m", "Soy de Puebla, pero vivo aquí en Coyoacán.", "I'm from Puebla, but I live here in Coyoacán."],
+    ["c", "¡Qué bien! Yo vivo en Chicago.", "Great! I live in Chicago."],
+    ["m", "¿Y a qué te dedicas?", "And what do you do?"],
+    ["c", "Trabajo en una universidad. Enseño inglés.", "I work at a university. I teach English."],
+    ["m", "¡Qué interesante! Yo soy arquitecta.", "How interesting! I'm an architect."],
+    ["c", "¿Hablas inglés?", "Do you speak English?"],
+    ["m", "Un poco. ¿Y tú hablas español?", "A little. And do you speak Spanish?"],
+    ["c", "Sí, un poco. Estoy aprendiendo.", "Yes, a little. I'm learning."],
+    ["m", "¡Hablas muy bien! Bueno, nos vemos el jueves.", "You speak very well! Well, see you Thursday."],
+    ["c", "Igualmente. ¡Hasta luego!", "Same to you. See you later!"]
+  ],
+  core: [
+    ["Hola, me llamo Alex. Mucho gusto.", "Hi, my name is Alex. Nice to meet you. (use your name)"],
+    ["¿Cómo te llamas?", "What's your name?"],
+    ["Soy de Estados Unidos.", "I'm from the United States. (use your country)"],
+    ["¿De dónde eres?", "Where are you from?"],
+    ["Vivo en Chicago.", "I live in Chicago. (use your city)"],
+    ["Trabajo en una universidad.", "I work at a university."],
+    ["¿A qué te dedicas?", "What do you do for work?"]
+  ],
+  hear: [
+    ["Mucho gusto.", "Nice to meet you."],
+    ["Igualmente.", "Likewise."],
+    ["¿Y tú?", "And you?"],
+    ["¿Dónde vives?", "Where do you live?"],
+    ["¿Hablas inglés?", "Do you speak English?"],
+    ["¡Qué interesante!", "How interesting!"]
+  ],
+  extra: [
+    ["Encantado. / Encantada.", "Pleased to meet you. (m / f)"],
+    ["Soy profesor. / Soy profesora.", "I'm a teacher. (m / f)"],
+    ["Enseño inglés.", "I teach English."],
+    ["Estoy aprendiendo español.", "I'm learning Spanish."],
+    ["Hablo un poco de español.", "I speak a little Spanish."],
+    ["¿Cómo se escribe?", "How do you spell it?"],
+    ["¿Por qué estudias español?", "(you'll hear) Why are you studying Spanish?"],
+    ["Porque viajo a México.", "Because I travel to Mexico."],
+    ["Hasta luego.", "See you later."],
+    ["Nos vemos.", "See you."]
+  ],
+  vocab: [
+    ["Lugares", [["Estados Unidos", "the United States"], ["Canadá", "Canada"], ["México", "Mexico"], ["la ciudad", "city"], ["el país", "country"], ["el barrio", "neighborhood"]]],
+    ["Trabajos", [["el profesor, la profesora", "teacher"], ["el ingeniero, la ingeniera", "engineer"], ["el arquitecto, la arquitecta", "architect"], ["el médico, la médica", "doctor"], ["el estudiante, la estudiante", "student"], ["jubilado, jubilada", "retired"]]],
+    ["Verbos", [["me llamo, te llamas", "my name is, your name is"], ["soy, eres", "I am, you are (origin, job)"], ["vivo, vives", "I live, you live"], ["trabajo, trabajas", "I work, you work"], ["hablo, hablas", "I speak, you speak"]]]
+  ],
+  qd: [
+    ["Say hello, your name, and nice to meet you.", "Hola, me llamo Alex. Mucho gusto."],
+    ["Ask her name.", "¿Cómo te llamas?"],
+    ["Say what country you're from.", "Soy de Estados Unidos."],
+    ["Ask where she's from.", "¿De dónde eres?"],
+    ["Say what city you live in.", "Vivo en Chicago."],
+    ["Ask what she does for work.", "¿A qué te dedicas?"],
+    ["Say where you work.", "Trabajo en una universidad."]
+  ],
+  patterns: [
+    ["Soy de [país / ciudad]", "Soy de Canadá. ¿De dónde eres?"],
+    ["Vivo en [lugar]", "Vivo en Chicago. Use <i>en</i>, not <i>a</i>."],
+    ["Soy [profesión] · Trabajo en [lugar]", "No <i>un / una</i> before a job: <i>Soy profesor</i>, not <i>Soy un profesor</i>."],
+    ["… ¿Y tú?", "Bounce any question back: <i>Soy de Canadá. ¿Y tú?</i>"]
+  ],
+  notes: [
+    ["Tú or usted?", "At a language exchange, people your age use <i>tú</i>. With older strangers or in formal settings, start with <i>usted</i>."],
+    ["Greetings", "Mexicans often greet with a handshake. Friends, and women greeting anyone they know, add one light kiss on the right cheek."],
+    ["¿A qué te dedicas?", "The most natural way to ask about a job. <i>¿Qué haces?</i> can also mean \"what are you doing right now?\""],
+    ["Intercambios", "Language exchanges are popular in Mexico City: half the time in Spanish, half in English."]
+  ],
+  prompt: {
+    role: `You are Mariana, 28, an architect from Puebla who lives in Coyoacán, Mexico City. We just met at a Thursday-night language exchange (intercambio) at Café La Selva. Use "tú" with me.`,
+    infoTitle: "ABOUT YOU (MARIANA)",
+    info: `From Puebla. Lives in Coyoacán with a roommate. Works at a small architecture firm. Speaks a little English. Likes coffee and walking in the Viveros park.`,
+    twist: `After I say my name, say it back slightly wrong once, so I have to correct you. Later, ask me one question I probably didn't prepare: "¿Por qué estudias español?"`,
+    lead: `Lead like a friendly new acquaintance: say hi, then ask my name, where I'm from, where I live, and what I do, one at a time. Answer my questions about you. After each of my answers, react briefly ("¡Qué bien!") and ask the next question.`,
+    recast: `I say "Yo soy vivo en Chicago" and you say "Ah, vives en Chicago. ¡Qué bien!"`
+  },
+  twists: [
+    ["Otra persona", "Harder", "Meet Don Ernesto, an older man. Use usted this time.", `Otra vez, por favor. New person: you are Don Ernesto, 65, a retired teacher from Guadalajara. We both use "usted". Same rules.`],
+    ["Más preguntas", "Harder", "Ask at least three extra questions beyond the basics.", `Otra vez, por favor. This time give a little more detail about yourself, and I'll try to ask you at least three extra questions. Same rules.`]
+  ],
+  sa: [
+    "I can say my name and ask someone's name",
+    "I can say where I'm from and ask where someone is from",
+    "I can say where I live",
+    "I can say what I do and ask about someone's job",
+    "I can bounce a question back with \"¿Y tú?\""
+  ]
+};
+
+// l02.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["02"] = {
+  id: "02", level: "A1", title: "Mi familia", minutes: 25,
+  cando: "I can ask and answer simple questions about family.",
+  scale: "Information exchange",
+  reg: "tú", partner: "Doña Lupe", place: "Casa de Lupe · Oaxaca",
+  scene: "my host mother Doña Lupe in Oaxaca showed me family photos and we talked about our families",
+  goal: "You've just arrived at your homestay in Oaxaca. ChatGPT plays Doña Lupe, your host mother, showing family photos. Find out who is in her family, and tell her about yours.",
+  boardStep: ["Prepara tu familia", "Lupe's family is a surprise. Prepare yours, and the questions you'll ask her."],
+  board: {
+    title: "Las fotos de Lupe", sub: "Oaxaca de Juárez · en la cocina",
+    cols: [
+      [{ h: "Tu familia", items: [["¿Estás casado / casada?"], ["¿Tienes hijos? ¿Cuántos?"], ["¿Tienes hermanos?"], ["¿Cómo se llaman?"], ["¿Cuántos años tienen?"]] }],
+      [{ h: "Pregúntale a Lupe", items: [["¿Quién es él / ella?"], ["¿Tienes hijos?"], ["¿Cómo se llama?"], ["¿Cuántos años tiene?"], ["¿Dónde vive?"]] }]
+    ],
+    note: "One photo will be a surprise. Ask questions until you know who it is."
+  },
+  dialogue: [
+    ["m", "Mira, esta es mi familia.", "Look, this is my family."],
+    ["c", "¡Qué bonita! ¿Quién es él?", "How lovely! Who is he?"],
+    ["m", "Es mi esposo, Javier.", "He's my husband, Javier."],
+    ["c", "¿Tienes hijos?", "Do you have children?"],
+    ["m", "Sí, tengo dos hijos: Daniel y Sofía.", "Yes, I have two children: Daniel and Sofía."],
+    ["c", "¿Cuántos años tiene Sofía?", "How old is Sofía?"],
+    ["m", "Tiene treinta años. Es enfermera. ¿Y tú? ¿Tienes hermanos?", "She's thirty. She's a nurse. And you? Do you have siblings?"],
+    ["c", "Sí, tengo un hermano y dos hermanas.", "Yes, I have a brother and two sisters."],
+    ["m", "¿Cómo se llama tu hermano?", "What's your brother's name?"],
+    ["c", "Se llama Ben. Vive en Texas.", "His name is Ben. He lives in Texas."],
+    ["m", "¿Y tienes hijos?", "And do you have children?"],
+    ["c", "Sí, tengo una hija. Tiene doce años.", "Yes, I have a daughter. She's twelve."],
+    ["m", "¡Qué bien! ¿Tienes una foto?", "How nice! Do you have a photo?"],
+    ["c", "Sí, mira. Esta es mi hija.", "Yes, look. This is my daughter."],
+    ["m", "¡Qué linda!", "How cute!"]
+  ],
+  core: [
+    ["¿Tienes hijos?", "Do you have children?"],
+    ["¿Tienes hermanos?", "Do you have brothers and sisters?"],
+    ["Tengo dos hermanos.", "I have two siblings."],
+    ["¿Quién es él? / ¿Quién es ella?", "Who is he? / Who is she?"],
+    ["¿Cómo se llama?", "What's his / her name?"],
+    ["¿Cuántos años tiene?", "How old is he / she?"],
+    ["Esta es mi hija.", "This is my daughter."]
+  ],
+  hear: [
+    ["Mira, esta es mi familia.", "Look, this is my family."],
+    ["Es mi esposo.", "He's my husband."],
+    ["¿Estás casado? / ¿Estás casada?", "Are you married? (m / f)"],
+    ["¿Dónde vive?", "Where does he / she live?"],
+    ["¿A qué se dedica?", "What does he / she do?"],
+    ["¡Qué bonita familia!", "What a lovely family!"]
+  ],
+  extra: [
+    ["Este es mi hermano.", "This is my brother."],
+    ["Estoy casado. / Estoy casada.", "I'm married. (m / f)"],
+    ["No tengo hijos.", "I don't have children."],
+    ["Soy hijo único. / Soy hija única.", "I'm an only child. (m / f)"],
+    ["Mis padres viven en Arizona.", "My parents live in Arizona."],
+    ["Es mayor que yo.", "He / she is older than me."],
+    ["Es menor que yo.", "He / she is younger than me."],
+    ["Se llama Sofía. Tiene treinta años.", "Her name is Sofía. She's thirty."],
+    ["Tengo un perro.", "I have a dog."],
+    ["¿Y tus padres? ¿Dónde viven?", "(you'll hear) And your parents? Where do they live?"]
+  ],
+  vocab: [
+    ["La familia", [["el padre, la madre", "father, mother"], ["los padres", "parents"], ["el esposo, la esposa", "husband, wife"], ["el hijo, la hija", "son, daughter"], ["el hermano, la hermana", "brother, sister"], ["el abuelo, la abuela", "grandfather, grandmother"], ["el nieto, la nieta", "grandson, granddaughter"], ["el tío, la tía", "uncle, aunt"], ["el primo, la prima", "cousin"]]],
+    ["Describir", [["mayor", "older"], ["menor", "younger"], ["casado, casada", "married"], ["soltero, soltera", "single"], ["la mascota", "pet"]]],
+    ["Números", [["veinte", "20"], ["treinta", "30"], ["cuarenta", "40"], ["cincuenta", "50"], ["sesenta", "60"], ["setenta", "70"]]]
+  ],
+  qd: [
+    ["Ask if she has children.", "¿Tienes hijos?"],
+    ["Say you have two siblings.", "Tengo dos hermanos."],
+    ["Point to a photo and ask who he is.", "¿Quién es él?"],
+    ["Ask the person's name.", "¿Cómo se llama?"],
+    ["Ask how old he is.", "¿Cuántos años tiene?"],
+    ["Say your daughter is twelve.", "Mi hija tiene doce años."],
+    ["Show a photo: \"This is my brother.\"", "Este es mi hermano."]
+  ],
+  patterns: [
+    ["Tengo + [número] + [hijos / hermanos]", "Tengo dos hijos. · No tengo hermanos."],
+    ["¿Cuántos años tiene + [persona]?", "Age uses <i>tener</i>: <i>Tiene treinta años</i>, not <i>Es treinta</i>."],
+    ["mi / mis + [persona]", "mi hermano · mis hermanos · mis padres"],
+    ["este / esta + es + mi…", "Showing a photo: <i>Este es mi hermano. Esta es mi hija.</i>"]
+  ],
+  notes: [
+    ["Hijos = children", "<i>¿Tienes hijos?</i> asks about sons and daughters together. <i>Hermanos</i> covers brothers and sisters."],
+    ["Family first", "Asking about family is normal small talk in Mexico, and people love showing photos."],
+    ["Two last names", "Mexicans use two surnames, the father's then the mother's: Guadalupe Ruiz Méndez."],
+    ["Lupe = Guadalupe", "Many nicknames shorten a name: Lupe (Guadalupe), Pepe (José), Paco (Francisco), Lalo (Eduardo)."]
+  ],
+  prompt: {
+    role: `You are Doña Lupe (Guadalupe), 60, my host mother in Oaxaca City. I just arrived to stay with you. We're at the kitchen table looking at family photos on your phone. You prefer "tú" and use "tú" with me.`,
+    infoTitle: "YOUR FAMILY (I DON'T KNOW THIS YET)",
+    info: `Husband: Javier, 62, a retired math teacher. Son: Daniel, 35, engineer, lives in Monterrey, has two kids: Mateo (6) and Valeria (3). Daughter: Sofía, 30, nurse, lives in Oaxaca, single. Dog: Canelo, 8.`,
+    twist: `One photo is a surprise: your sister Rosa, 55, who lives in Los Angeles. Don't say who she is until I ask. Also ask me one question I may not have prepared: "¿Y tus padres? ¿Dónde viven?"`,
+    lead: `Show me photos one at a time and let me ask questions. Answer briefly, then ask about my family. Make it two-way: about half your turns should be questions about my family.`,
+    recast: `I say "Mi hermana es treinta años" and you say "Ah, tu hermana tiene treinta años."`
+  },
+  twists: [
+    ["La familia de un amigo", "Harder", "Talk about a friend's family instead of your own (él / ella forms).", `Otra vez, por favor. This time ask me about my best friend's family instead of mine, so I have to use él / ella forms. Same rules.`],
+    ["Foto misteriosa", "Harder", "Lupe describes a photo and you guess who it is. Then you switch.", `Otra vez, por favor. This time describe a person in a family photo without saying who it is (age, job, where they live). I ask questions and guess. Then I'll describe one of mine. Same rules.`]
+  ],
+  sa: [
+    "I can ask if someone has children or siblings",
+    "I can say who is in my family",
+    "I can ask and say names (se llama…)",
+    "I can ask and say ages with tener",
+    "I can ask follow-up questions about a photo"
+  ]
+};
+
+// l03.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["03"] = {
+  id: "03", level: "A1", title: "En el mercado", minutes: 25,
+  cando: "I can buy things at a market or shop, using numbers, prices and quantities.",
+  scale: "Transactions to obtain goods and services",
+  reg: "usted", partner: "Doña Carmen", place: "Mercado de Coyoacán, CDMX",
+  scene: "I bought fruit and vegetables from Doña Carmen at the Mercado de Coyoacán",
+  goal: "It's Saturday morning at the Mercado de Coyoacán. ChatGPT plays Doña Carmen, a fruit and vegetable vendor. Buy everything on your list, and check your change.",
+  boardStep: ["Mira los precios", "These are Doña Carmen's prices. Your shopping list is on the right."],
+  board: {
+    title: "Frutas y Verduras Carmen", sub: "Mercado de Coyoacán · precios de hoy",
+    cols: [
+      [{ h: "Frutas", items: [["Mango (kilo)", "$45"], ["Plátano (kilo)", "$25"], ["Papaya (pieza)", "$40"], ["Aguacate (pieza)", "$15"], ["Limón (kilo)", "$35"]] },
+       { h: "Verduras", items: [["Jitomate (kilo)", "$28"], ["Cebolla (kilo)", "$30"], ["Chile serrano (kilo)", "$40"], ["Cilantro (manojo)", "$10"]] }],
+      [{ h: "Tu lista", items: [["1 kilo de jitomate"], ["Medio kilo de limones"], ["3 aguacates"], ["Un manojo de cilantro"], ["Fruta para el desayuno"]] }]
+    ],
+    note: "You have one $200 note. Count your change."
+  },
+  dialogue: [
+    ["m", "¡Pásele, pásele! ¿Qué va a llevar?", "Come on in! What will you take?"],
+    ["c", "Buenos días. ¿A cómo está el jitomate?", "Good morning. How much are the tomatoes today?"],
+    ["m", "A veintiocho el kilo.", "Twenty-eight a kilo."],
+    ["c", "Me da un kilo, por favor.", "A kilo, please."],
+    ["m", "Aquí tiene. ¿Qué más?", "Here you go. What else?"],
+    ["c", "¿Tiene aguacates?", "Do you have avocados?"],
+    ["m", "Sí, a quince la pieza. ¿Para hoy o para mañana?", "Yes, fifteen each. For today or tomorrow?"],
+    ["c", "Para hoy. Me da tres, por favor.", "For today. Three, please."],
+    ["m", "Muy bien. ¿Algo más?", "Very good. Anything else?"],
+    ["c", "Medio kilo de limones y un manojo de cilantro.", "Half a kilo of limes and a bunch of cilantro."],
+    ["m", "Listo. ¿Es todo?", "Done. Is that all?"],
+    ["c", "Sí, es todo. ¿Cuánto es?", "Yes, that's all. How much is it?"],
+    ["m", "Son cien pesos con cincuenta.", "That's 100.50 pesos."],
+    ["c", "Aquí tiene. Gracias.", "Here you go. Thanks."],
+    ["m", "Gracias a usted. ¡Que le vaya bien!", "Thank you. Have a good day!"]
+  ],
+  core: [
+    ["Buenos días.", "Good morning."],
+    ["¿A cómo está el jitomate?", "How much are the tomatoes (today)?"],
+    ["Me da un kilo, por favor.", "A kilo, please."],
+    ["Medio kilo de limones.", "Half a kilo of limes."],
+    ["¿Tiene aguacates?", "Do you have avocados?"],
+    ["Es todo, gracias.", "That's all, thanks."],
+    ["¿Cuánto es?", "How much is it?"]
+  ],
+  hear: [
+    ["¡Pásele, pásele!", "Come on in! (vendors calling shoppers)"],
+    ["¿Qué va a llevar?", "What are you going to take?"],
+    ["¿Qué más?", "What else?"],
+    ["A veintiocho el kilo.", "Twenty-eight a kilo."],
+    ["¿Para hoy o para mañana?", "For today or tomorrow? (how ripe)"],
+    ["Son cien pesos con cincuenta.", "That's 100.50 pesos."]
+  ],
+  extra: [
+    ["¿Cuánto cuesta el kilo?", "How much is a kilo?"],
+    ["Me da tres, por favor.", "Three, please."],
+    ["Un cuarto de kilo.", "A quarter kilo."],
+    ["Un manojo de cilantro.", "A bunch of cilantro."],
+    ["¿Me da una bolsa?", "Can I have a bag?"],
+    ["¿Tiene cambio de doscientos?", "Do you have change for 200?"],
+    ["¿Me da a probar?", "Can I try some?"],
+    ["¿Están maduros?", "Are they ripe?"],
+    ["Me falta cambio.", "I'm missing some change."],
+    ["Ya no hay papaya.", "(you'll hear) There's no papaya left."]
+  ],
+  vocab: [
+    ["Frutas y verduras", [["el mango", "mango"], ["el plátano", "banana"], ["la papaya", "papaya"], ["el aguacate", "avocado"], ["el limón", "lime"], ["el jitomate", "tomato (Mexico)"], ["la cebolla", "onion"], ["el chile serrano", "serrano pepper"], ["el cilantro", "cilantro"]]],
+    ["Cantidades", [["el kilo", "kilo"], ["medio kilo", "half a kilo"], ["un cuarto", "a quarter (kilo)"], ["la pieza", "piece, each"], ["el manojo", "bunch"], ["la bolsa", "bag"]]],
+    ["Dinero", [["el peso", "peso"], ["el cambio", "change"], ["cien", "100"], ["doscientos", "200"], ["con cincuenta", "and 50 centavos"]]]
+  ],
+  qd: [
+    ["Greet the vendor in the morning.", "Buenos días."],
+    ["Ask today's price of tomatoes.", "¿A cómo está el jitomate?"],
+    ["Ask for one kilo.", "Me da un kilo, por favor."],
+    ["Ask for half a kilo of limes.", "Medio kilo de limones, por favor."],
+    ["Ask if she has avocados.", "¿Tiene aguacates?"],
+    ["Say that's everything.", "Es todo, gracias."],
+    ["Ask how much it all is.", "¿Cuánto es?"]
+  ],
+  patterns: [
+    ["¿A cómo está + [producto]?", "Market phrase for today's price: <i>¿A cómo están los mangos?</i>"],
+    ["Me da + [cantidad] + de + [producto]", "Me da medio kilo de limones."],
+    ["a + [precio] + el kilo / la pieza", "<i>A quince la pieza</i> = fifteen each."],
+    ["¿Tiene + [producto]?", "Use <i>usted</i> with vendors: ¿Tiene fresas?"]
+  ],
+  notes: [
+    ["Jitomate, not tomate", "In central Mexico red tomatoes are <i>jitomates</i>. <i>Tomate</i> often means the green tomatillo."],
+    ["¡Pásele!", "Vendors call <i>¡Pásele!</i> or <i>¿Qué le damos?</i> to invite you in. Answer with a smile and <i>Buenos días</i>."],
+    ["Para hoy o para mañana", "Vendors choose avocados for when you'll eat them: ripe today, or tomorrow."],
+    ["Small bills", "Bring coins and small bills. A $500 note can be hard to change at a market stand."]
+  ],
+  prompt: {
+    role: `You are Doña Carmen, a friendly fruit and vegetable vendor at the Mercado de Coyoacán in Mexico City. It's Saturday morning. I'm a customer. Use "usted" with me.`,
+    infoTitle: "YOUR PRICES (pesos)",
+    info: `Mango $45 per kilo, plátano $25 per kilo, papaya $40 each, aguacate $15 each, limón $35 per kilo, jitomate $28 per kilo, cebolla $30 per kilo, chile serrano $40 per kilo, cilantro $10 per bunch (manojo).`,
+    twist: `You have no papayas today. When I pay with a $200 note, give me $10 too little in change, so I have to notice and say something.`,
+    lead: `Call me over ("¡Pásele!"), ask what I want, give prices when I ask, ask "¿qué más?" after each item, ask "¿para hoy o para mañana?" for avocados, and give the total when I'm done. Say prices clearly.`,
+    recast: `I say "Quiero un kilo jitomate" and you say "Un kilo de jitomate, claro."`
+  },
+  twists: [
+    ["Regatear", "Harder", "Prices are higher today. Ask politely for a better price.", `Otra vez, por favor. This time your prices are a little higher than before, and I'll try to ask for a better price. Accept a small discount if I ask nicely. Same rules.`],
+    ["Guacamole", "Harder", "Buy everything for guacamole for six people, without a list.", `Otra vez, por favor. New situation: I need everything for guacamole for six people, and I have no list. Help me only if I ask. Same rules.`]
+  ],
+  sa: [
+    "I can greet a vendor and ask for a product",
+    "I can ask prices and understand the answer",
+    "I can ask for quantities (kilo, medio kilo, pieza)",
+    "I can say what else I want and when I'm done",
+    "I can check the total and my change"
+  ]
+};
+
+// l04.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["04"] = {
+  id: "04", level: "A1", title: "Un café, por favor", minutes: 25,
+  cando: "I can order a simple meal or drink.",
+  scale: "Transactions to obtain goods and services",
+  reg: "usted", partner: "Lucía", place: "Café El Jardín · San Miguel de Allende",
+  scene: "I ordered breakfast from Lucía, a server at a café in San Miguel de Allende",
+  goal: "It's Sunday morning at Café El Jardín in San Miguel de Allende. ChatGPT plays Lucía, your server. Order a drink and breakfast, ask one question about the menu, and ask for the check.",
+  boardStep: ["Mira el menú", "Lucía uses this exact menu in the role play."],
+  board: {
+    title: "Café El Jardín", sub: "San Miguel de Allende, Gto. · Desayunos",
+    cols: [
+      [{ h: "Bebidas calientes", items: [["Café americano", "$35"], ["Café de olla", "$40"], ["Capuchino", "$50"], ["Chocolate caliente", "$45"], ["Té", "$30"]] },
+       { h: "Bebidas frías", items: [["Jugo de naranja", "$40"], ["Licuado de plátano", "$50"], ["Agua", "$20"]] }],
+      [{ h: "Para comer", items: [["Chilaquiles verdes o rojos", "$95"], ["Huevos rancheros", "$90"], ["Molletes", "$70"], ["Concha (pan dulce)", "$18"]] }]
+    ],
+    note: "Something on the menu might not be available today."
+  },
+  dialogue: [
+    ["m", "Buenos días. ¿Qué le traigo?", "Good morning. What can I bring you?"],
+    ["c", "Buenos días. Un café de olla, por favor.", "Good morning. A café de olla, please."],
+    ["m", "Claro. ¿Algo de comer?", "Sure. Anything to eat?"],
+    ["c", "Sí. ¿Qué son los molletes?", "Yes. What are molletes?"],
+    ["m", "Son pan con frijoles y queso.", "They're bread with beans and cheese."],
+    ["c", "Mmm. Quiero unos chilaquiles, por favor.", "Mmm. I'd like chilaquiles, please."],
+    ["m", "¿Verdes o rojos?", "Green or red?"],
+    ["c", "Verdes, por favor.", "Green, please."],
+    ["m", "¿Con huevo o con pollo?", "With egg or chicken?"],
+    ["c", "Con huevo.", "With egg."],
+    ["m", "Muy bien. ¿Algo más?", "Very good. Anything else?"],
+    ["c", "Una concha también. Es todo, gracias.", "A concha too. That's all, thanks."],
+    ["m", "Ahorita se lo traigo.", "I'll bring it right away."],
+    ["c", "La cuenta, por favor.", "The check, please."],
+    ["m", "Son ciento cincuenta y tres pesos.", "That's 153 pesos."],
+    ["c", "Aquí tiene. Gracias.", "Here you go. Thanks."]
+  ],
+  core: [
+    ["Buenos días.", "Good morning."],
+    ["Un café de olla, por favor.", "A café de olla, please."],
+    ["Quiero unos chilaquiles, por favor.", "I'd like chilaquiles, please."],
+    ["¿Qué son los molletes?", "What are molletes?"],
+    ["Verdes, por favor.", "Green, please."],
+    ["Es todo, gracias.", "That's all, thanks."],
+    ["La cuenta, por favor.", "The check, please."]
+  ],
+  hear: [
+    ["¿Qué le traigo?", "What can I bring you?"],
+    ["¿Algo de comer?", "Anything to eat?"],
+    ["¿Verdes o rojos?", "Green or red?"],
+    ["¿Con huevo o con pollo?", "With egg or chicken?"],
+    ["¿Algo más?", "Anything else?"],
+    ["Ahorita se lo traigo.", "I'll bring it right away."]
+  ],
+  extra: [
+    ["Para mí, un jugo de naranja.", "For me, an orange juice."],
+    ["¿Tiene leche de almendra?", "Do you have almond milk?"],
+    ["Sin azúcar, por favor.", "No sugar, please."],
+    ["Un vaso de agua, por favor.", "A glass of water, please."],
+    ["¿Qué me recomienda?", "What do you recommend?"],
+    ["¿Pica?", "Is it spicy?"],
+    ["Más café, por favor.", "More coffee, please."],
+    ["¿Aceptan tarjeta?", "Do you take cards?"],
+    ["Está muy rico.", "It's delicious."],
+    ["Hoy no tenemos café de olla.", "(you'll hear) We don't have café de olla today."]
+  ],
+  vocab: [
+    ["Bebidas", [["el café americano", "black coffee"], ["el café de olla", "coffee with cinnamon and cane sugar"], ["el chocolate caliente", "hot chocolate"], ["el té", "tea"], ["el jugo de naranja", "orange juice"], ["el licuado", "smoothie with milk"], ["la leche", "milk"], ["el azúcar", "sugar"]]],
+    ["Comida", [["los chilaquiles", "tortilla chips in salsa"], ["los huevos rancheros", "fried eggs on tortillas with salsa"], ["los molletes", "bread with beans and cheese"], ["el pan dulce", "sweet bread"], ["la concha", "shell-topped sweet bun"], ["el huevo", "egg"], ["el pollo", "chicken"], ["el queso", "cheese"]]],
+    ["En la mesa", [["el mesero, la mesera", "server"], ["la cuenta", "the check"], ["el vaso", "glass"], ["la taza", "cup"], ["la servilleta", "napkin"]]]
+  ],
+  qd: [
+    ["Greet the server in the morning.", "Buenos días."],
+    ["Order a café de olla.", "Un café de olla, por favor."],
+    ["Ask what molletes are.", "¿Qué son los molletes?"],
+    ["Order chilaquiles.", "Quiero unos chilaquiles, por favor."],
+    ["The server asks \"¿Verdes o rojos?\" Choose green.", "Verdes, por favor."],
+    ["Say that's all.", "Es todo, gracias."],
+    ["Ask for the check.", "La cuenta, por favor."]
+  ],
+  patterns: [
+    ["Un / una + [bebida] + por favor", "Un café americano, por favor. · Una concha, por favor."],
+    ["Quiero + [comida]", "Quiero los chilaquiles. <i>Quisiera</i> sounds softer."],
+    ["¿Qué es / Qué son + [plato]?", "¿Qué son los molletes? · ¿Qué es el café de olla?"],
+    ["[A] o [B]?", "Answer a choice with just the choice: <i>¿Verdes o rojos?</i> — <i>Verdes.</i>"]
+  ],
+  notes: [
+    ["Chilaquiles", "A classic Mexican breakfast: fried tortilla pieces in green or red salsa, often with egg or chicken."],
+    ["Café de olla", "Coffee brewed in a clay pot with cinnamon and piloncillo (raw cane sugar)."],
+    ["Asking for the check", "Servers won't bring the check until you ask. Say <i>La cuenta, por favor</i>, or mime writing in the air."],
+    ["Pan dulce", "Bakeries sell sweet bread by the piece. The <i>concha</i> is named for its shell-shaped top."]
+  ],
+  prompt: {
+    role: `You are Lucía, a friendly server at Café El Jardín in San Miguel de Allende. It's Sunday morning. I'm a customer. Use "usted" with me.`,
+    infoTitle: "MENU (pesos)",
+    info: `Hot drinks: café americano $35, café de olla $40, capuchino $50, chocolate caliente $45, té $30
+Cold drinks: jugo de naranja $40, licuado de plátano $50, agua $20
+Food: chilaquiles verdes o rojos $95 (con huevo o con pollo), huevos rancheros $90, molletes $70, concha $18`,
+    twist: `You are out of café de olla today. Only say so if I order it, then offer café americano. If I order chilaquiles, ask "¿verdes o rojos?" and "¿con huevo o con pollo?".`,
+    lead: `Greet me, take my drink order, ask if I want to eat, explain dishes in very simple words if I ask, ask "¿algo más?", and give the total when I ask for the check.`,
+    recast: `I say "Yo quiero un café de la olla" and you say "Un café de olla, muy bien."`
+  },
+  twists: [
+    ["Para dos", "Harder", "Order for you and a friend who doesn't drink coffee and is vegetarian.", `Otra vez, por favor. This time I'm ordering for me and a friend. My friend doesn't drink coffee and is vegetarian. Same rules.`],
+    ["Un error", "Harder", "Lucía brings the wrong drink. Fix it politely.", `Otra vez, por favor. This time, bring me the wrong drink and let me fix it politely. Same rules.`]
+  ],
+  sa: [
+    "I can order a drink",
+    "I can order food",
+    "I can ask what a dish is",
+    "I can answer choice questions (¿verdes o rojos?)",
+    "I can ask for the check and pay"
+  ]
+};
+
+// l05.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["05"] = {
+  id: "05", level: "A1", title: "¿A qué hora?", minutes: 25,
+  cando: "I can ask and tell the time, the day, and the date.",
+  scale: "Information exchange",
+  reg: "usted", partner: "Rodrigo", place: "Escuela de español · Guanajuato",
+  scene: "on my first day at a Spanish school in Guanajuato, I asked the receptionist Rodrigo about times, days, and dates",
+  goal: "It's your first day at a Spanish school in Guanajuato. ChatGPT plays Rodrigo, the receptionist. Find out when classes and activities happen, and find the one thing on the schedule that has changed.",
+  boardStep: ["Mira el horario", "This is your printed schedule. One thing on it has changed."],
+  board: {
+    title: "Escuela de Español", sub: "Guanajuato, Gto. · Marzo",
+    cols: [
+      [{ h: "Clases", items: [["Lunes a jueves", "9:00–13:00"], ["Viernes", "9:00–12:00"]] },
+       { h: "Actividades", items: [["Clase de salsa", "mar 19:00"], ["Tour de callejones", "mié 17:00"], ["Cine en español", "vie 18:30"]] }],
+      [{ h: "Fechas", items: [["Inicio del curso", "lun 3/3"], ["Excursión a Dolores Hidalgo", "sáb 8/3"], ["Fin del curso", "vie 28/3"]] }]
+    ],
+    note: "One thing on this schedule has changed. Ask questions to find it."
+  },
+  dialogue: [
+    ["m", "¡Buenos días! ¿En qué le puedo ayudar?", "Good morning! How can I help you?"],
+    ["c", "Buenos días. ¿A qué hora empiezan las clases?", "Good morning. What time do classes start?"],
+    ["m", "Empiezan a las nueve.", "They start at nine."],
+    ["c", "¿Y a qué hora terminan?", "And what time do they end?"],
+    ["m", "A la una de la tarde. Los viernes, a las doce.", "At one in the afternoon. On Fridays, at twelve."],
+    ["c", "¿Qué día es la clase de salsa?", "What day is the salsa class?"],
+    ["m", "Es el martes, a las siete de la noche.", "It's on Tuesday, at seven in the evening."],
+    ["c", "¿Qué hora es ahora?", "What time is it now?"],
+    ["m", "Son las nueve menos diez. ¡Su clase empieza pronto!", "It's ten to nine. Your class starts soon!"],
+    ["c", "¿Cuándo es la excursión?", "When is the trip?"],
+    ["m", "Es el sábado ocho de marzo.", "It's on Saturday, March 8."],
+    ["c", "¿Y cuándo termina el curso?", "And when does the course end?"],
+    ["m", "El viernes veintiocho de marzo.", "Friday, March 28."],
+    ["c", "Muchas gracias.", "Thank you very much."],
+    ["m", "De nada. ¡Que le vaya bien!", "You're welcome. Have a good day!"]
+  ],
+  core: [
+    ["¿Qué hora es?", "What time is it?"],
+    ["¿A qué hora empieza la clase?", "What time does the class start?"],
+    ["¿A qué hora termina?", "What time does it end?"],
+    ["¿Qué día es la clase de salsa?", "What day is the salsa class?"],
+    ["¿Cuándo es la excursión?", "When is the trip?"],
+    ["Es el sábado ocho de marzo.", "It's on Saturday, March 8."],
+    ["A las siete de la noche.", "At seven in the evening."]
+  ],
+  hear: [
+    ["Son las nueve menos diez.", "It's ten to nine."],
+    ["Es la una.", "It's one o'clock."],
+    ["A las nueve y media.", "At nine-thirty."],
+    ["De lunes a jueves.", "Monday to Thursday."],
+    ["El primero de marzo.", "March first."],
+    ["Mañana en la mañana.", "Tomorrow morning."]
+  ],
+  extra: [
+    ["¿Qué día es hoy?", "What day is today?"],
+    ["Hoy es lunes.", "Today is Monday."],
+    ["¿Qué fecha es hoy?", "What's the date today?"],
+    ["Hoy es tres de marzo.", "Today is March 3."],
+    ["¿Está abierto el domingo?", "Is it open on Sunday?"],
+    ["¿Hasta qué hora?", "Until what time?"],
+    ["Son las tres y cuarto.", "It's 3:15."],
+    ["¿A qué hora sale el autobús?", "What time does the bus leave?"],
+    ["¿A qué hora llega usted normalmente?", "(you'll hear) What time do you usually arrive?"],
+    ["Cambió de día.", "(you'll hear) It changed days."]
+  ],
+  vocab: [
+    ["Los días", [["lunes", "Monday"], ["martes", "Tuesday"], ["miércoles", "Wednesday"], ["jueves", "Thursday"], ["viernes", "Friday"], ["sábado", "Saturday"], ["domingo", "Sunday"], ["el fin de semana", "weekend"]]],
+    ["La hora", [["la una", "one o'clock"], ["las dos", "two o'clock"], ["y cuarto", "quarter past"], ["y media", "half past"], ["menos cuarto", "quarter to"], ["de la mañana", "a.m."], ["de la tarde", "in the afternoon"], ["de la noche", "in the evening, at night"]]],
+    ["Las fechas", [["hoy", "today"], ["mañana", "tomorrow"], ["pasado mañana", "the day after tomorrow"], ["la semana", "week"], ["el mes", "month"], ["marzo", "March"], ["el primero", "the first (of the month)"]]]
+  ],
+  qd: [
+    ["Ask what time it is.", "¿Qué hora es?"],
+    ["Ask what time the class starts.", "¿A qué hora empieza la clase?"],
+    ["Ask what time it ends.", "¿A qué hora termina?"],
+    ["Ask what day the salsa class is.", "¿Qué día es la clase de salsa?"],
+    ["Ask when the trip is.", "¿Cuándo es la excursión?"],
+    ["Say \"at seven in the evening\".", "A las siete de la noche."],
+    ["Say \"It's on Saturday, March 8\".", "Es el sábado ocho de marzo."]
+  ],
+  patterns: [
+    ["Son las + [hora] · Es la una", "Plural for every hour except one: <i>Son las tres</i>, <i>Es la una</i>."],
+    ["a las + [hora]", "At a time: <i>La clase empieza a las nueve.</i>"],
+    ["el + [día] + [número] + de + [mes]", "<i>El sábado ocho de marzo.</i> Days and months are lowercase."],
+    ["¿A qué hora + [verbo]?", "¿A qué hora empieza? · ¿A qué hora termina? · ¿A qué hora abre?"]
+  ],
+  notes: [
+    ["24-hour time", "Schedules often use 24-hour time (19:00), but people say <i>a las siete de la noche</i>."],
+    ["Date order", "Mexico writes day/month: 8/3 is March 8, not August 3."],
+    ["Ahorita", "<i>Ahorita</i> can mean right now, soon, or much later. Ask <i>¿A qué hora exactamente?</i>"],
+    ["Mañana", "<i>Mañana</i> = tomorrow. <i>La mañana</i> = the morning. <i>Mañana en la mañana</i> = tomorrow morning."]
+  ],
+  prompt: {
+    role: `You are Rodrigo, the receptionist at a Spanish language school in Guanajuato. It's my first day: Monday, March 3, at 8:50 in the morning. I'm a new student asking about the schedule. Use "usted" with me.`,
+    infoTitle: "THE SCHEDULE",
+    info: `Classes: Monday to Thursday 9:00–13:00, Friday 9:00–12:00. Salsa class: Tuesday 19:00. Tour of the callejones: Wednesday 17:00. Movie night: Friday 18:30. Course starts Monday, March 3. Trip to Dolores Hidalgo: Saturday, March 8; the bus leaves at 8:00 and returns at 18:00. Course ends Friday, March 28.`,
+    twist: `This week the salsa class moved to Thursday at 20:00 (my printed schedule says Tuesday). Tell me only when I ask about salsa. Also ask me one question: "¿A qué hora llega usted normalmente?"`,
+    lead: `Answer my questions about times, days, and dates. Say times the way people speak ("a las siete de la noche"), not as 24-hour numbers. Sometimes ask me a short question back, like what time it is now.`,
+    recast: `I say "¿La clase empieza en las nueve?" and you say "Sí, empieza a las nueve."`
+  },
+  twists: [
+    ["La excursión", "Harder", "Ask everything about the Saturday trip: leaving, returning, signing up.", `Otra vez, por favor. This time I'll ask only about the Saturday trip: what time it leaves, when it returns, and the last day to sign up. Add one detail I have to ask about. Same rules.`],
+    ["Por teléfono", "Harder", "Call the school. Don't look at the schedule.", `Otra vez, por favor. This time it's a phone call. Start with "Escuela de Español, buenas tardes." I won't look at the schedule. Same rules.`]
+  ],
+  sa: [
+    "I can ask and tell the time",
+    "I can ask when something starts and ends",
+    "I can ask and say what day something is",
+    "I can understand and say dates",
+    "I can use de la mañana / tarde / noche correctly"
+  ]
+};
+
+// l06.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["06"] = {
+  id: "06", level: "A1", title: "Me gusta", minutes: 25,
+  cando: "I can say what I like and don't like (food, activities).",
+  scale: "Conversation",
+  reg: "tú", partner: "Diego", place: "Carne asada · Monterrey",
+  scene: "at a Saturday carne asada in Monterrey, I talked with Diego about what we like and don't like",
+  goal: "You're at a Saturday carne asada at Diego's house in Monterrey. ChatGPT plays Diego, your friend's cousin. Talk about food, sports, music, and free time, and politely say no to something.",
+  boardStep: ["Mira la mesa", "Diego will offer you food and ask what you like."],
+  board: {
+    title: "Carne Asada", sub: "Casa de Diego · Monterrey, N.L. · sábado",
+    cols: [
+      [{ h: "En la mesa", items: [["Carne asada"], ["Frijoles charros"], ["Elotes"], ["Salsa de molcajete (pica mucho)"], ["Tripas"], ["Agua de limón"]] }],
+      [{ h: "Temas", items: [["El fútbol: Rayados o Tigres"], ["La música: norteña, rock"], ["El cine"], ["Viajar, cocinar, leer"], ["Los fines de semana"]] }]
+    ],
+    note: "Diego will offer you something you may not like. Say no politely."
+  },
+  dialogue: [
+    ["m", "¡Hola! ¿Te gusta la carne asada?", "Hi! Do you like carne asada?"],
+    ["c", "¡Sí, me gusta mucho!", "Yes, I like it a lot!"],
+    ["m", "¿Y te gusta el fútbol?", "And do you like soccer?"],
+    ["c", "Más o menos. Me gusta más el básquetbol.", "So-so. I like basketball more."],
+    ["m", "¿En serio? A mí me encanta el fútbol. Soy de Rayados.", "Really? I love soccer. I'm a Rayados fan."],
+    ["c", "¿Qué música te gusta?", "What music do you like?"],
+    ["m", "Me gusta la música norteña. ¿Y a ti?", "I like norteña music. And you?"],
+    ["c", "No me gusta mucho. Me gusta el rock.", "I don't like it much. I like rock."],
+    ["m", "¡A mí también! ¿Quieres un elote?", "Me too! Do you want some corn?"],
+    ["c", "Sí, gracias. Me encantan los elotes.", "Yes, thanks. I love corn on the cob."],
+    ["m", "¿Te gusta el picante?", "Do you like spicy food?"],
+    ["c", "Un poco. No me gusta muy picante.", "A little. I don't like it very spicy."],
+    ["m", "Entonces esta salsa no. ¡Pica mucho!", "Then not this salsa. It's really hot!"],
+    ["c", "¿Qué te gusta hacer los fines de semana?", "What do you like to do on weekends?"],
+    ["m", "Me gusta subir al cerro con mis amigos.", "I like hiking up the mountain with my friends."],
+    ["c", "¡Qué padre!", "Cool!"]
+  ],
+  core: [
+    ["Me gusta mucho.", "I like it a lot."],
+    ["No me gusta mucho.", "I don't like it much."],
+    ["Me encantan los elotes.", "I love corn on the cob."],
+    ["¿Te gusta el fútbol?", "Do you like soccer?"],
+    ["¿Qué música te gusta?", "What music do you like?"],
+    ["¿Y a ti?", "And you?"],
+    ["A mí también. / A mí no.", "Me too. / Not me."]
+  ],
+  hear: [
+    ["¿Quieres más?", "Do you want more?"],
+    ["A mí me encanta.", "I love it."],
+    ["¿En serio?", "Really?"],
+    ["¡Qué padre!", "Cool! (Mexico)"],
+    ["A mí tampoco.", "Me neither."],
+    ["¿Qué te gusta hacer?", "What do you like to do?"]
+  ],
+  extra: [
+    ["Me gusta más el básquetbol.", "I like basketball more."],
+    ["Prefiero el café.", "I prefer coffee."],
+    ["No me gusta nada.", "I don't like it at all."],
+    ["Me gusta cocinar.", "I like to cook."],
+    ["Me gusta leer.", "I like to read."],
+    ["Me gusta viajar.", "I like to travel."],
+    ["No, gracias. Estoy lleno. / Estoy llena.", "No thanks, I'm full. (m / f)"],
+    ["Está muy rico.", "It's delicious."],
+    ["¿Cuál es tu comida favorita?", "What's your favorite food?"],
+    ["Mi comida favorita es la pizza.", "My favorite food is pizza."]
+  ],
+  vocab: [
+    ["Comida", [["la carne asada", "grilled beef"], ["el elote", "corn on the cob"], ["los frijoles", "beans"], ["la salsa", "salsa"], ["el picante", "spicy food"], ["las tripas", "tripe"], ["el postre", "dessert"]]],
+    ["Actividades", [["el fútbol", "soccer"], ["el básquetbol", "basketball"], ["la música", "music"], ["el cine", "movies"], ["viajar", "to travel"], ["cocinar", "to cook"], ["leer", "to read"], ["caminar", "to walk"]]],
+    ["Opiniones", [["me gusta", "I like"], ["me encanta", "I love"], ["no me gusta nada", "I don't like it at all"], ["prefiero", "I prefer"], ["favorito, favorita", "favorite"], ["padre", "cool (Mexico)"], ["aburrido, aburrida", "boring"]]]
+  ],
+  qd: [
+    ["Say you like it a lot.", "Me gusta mucho."],
+    ["Ask if he likes soccer.", "¿Te gusta el fútbol?"],
+    ["Say you don't like it much.", "No me gusta mucho."],
+    ["Say you love tacos.", "Me encantan los tacos."],
+    ["Ask what music he likes.", "¿Qué música te gusta?"],
+    ["He likes rock. Say you do too.", "A mí también."],
+    ["Bounce the question back: \"And you?\"", "¿Y a ti?"]
+  ],
+  patterns: [
+    ["Me gusta + [una cosa / verbo]", "Me gusta el café. · Me gusta leer."],
+    ["Me gustan + [cosas]", "Plural things take <i>gustan</i>: <i>Me gustan los elotes.</i>"],
+    ["A mí también · A mí tampoco", "Agree with <i>también</i> after a yes, <i>tampoco</i> after a no."],
+    ["¿Te gusta…? · ¿Y a ti?", "Ask a friend with <i>te gusta</i>. Bounce it back with <i>¿Y a ti?</i>"]
+  ],
+  notes: [
+    ["Carne asada", "In northern Mexico, the weekend <i>carne asada</i> with family and friends is a big tradition."],
+    ["¡Qué padre!", "Mexican for \"how cool!\". You'll also hear <i>¡Qué chido!</i>"],
+    ["Rayados vs. Tigres", "Monterrey has two rival soccer teams. <i>¿De qué equipo eres?</i> starts a long conversation."],
+    ["Saying no politely", "Say <i>No, gracias, estoy lleno / llena</i> or <i>Está muy rico, pero…</i> instead of a flat no."]
+  ],
+  prompt: {
+    role: `You are Diego, 32, a friendly guy from Monterrey. We're at a Saturday carne asada at your house. I'm a friend of your cousin and we just met. Use "tú" with me.`,
+    infoTitle: "ABOUT YOU (DIEGO)",
+    info: `Loves soccer (a Rayados fan), norteña music and rock, hiking up the Cerro de la Silla, and cooking carne asada. Doesn't like cats, cold weather, or reggaetón. Favorite food: cabrito.`,
+    twist: `Offer me a very spicy salsa and some tripas, so I have to say no politely. Also say you don't like one thing I say I like, so I have to react ("¿En serio? ¿Por qué?").`,
+    lead: `Offer me food and ask what I like: food, sports, music, weekend activities. Share your own likes after mine. React to my answers ("¡A mí también!", "¿En serio?") and ask the next question.`,
+    recast: `I say "Me gusta los tacos" and you say "¿Te gustan los tacos? ¡A mí también!"`
+  },
+  twists: [
+    ["Lo que no te gusta", "Harder", "Diego asks only about things you don't like.", `Otra vez, por favor. This time ask about things I don't like: foods, music, chores. I'll practice saying no politely and using "tampoco". Same rules.`],
+    ["¿Y tu familia?", "Harder", "Talk about what your family members like (le gusta / les gusta).", `Otra vez, por favor. This time ask what my family members like, so I have to use "le gusta" and "les gusta". Same rules.`]
+  ],
+  sa: [
+    "I can say what I like and love",
+    "I can say what I don't like, politely",
+    "I can ask what someone likes",
+    "I can agree or disagree (también / tampoco)",
+    "I can use gusta vs. gustan"
+  ]
+};
+
+// l07.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["07"] = {
+  id: "07", level: "A1", title: "Mi casa", minutes: 25,
+  cando: "I can describe where I live in simple phrases.",
+  scale: "Sustained monologue: describing",
+  reg: "tú", partner: "Claudia", place: "Videollamada · Mérida",
+  scene: "on a video call with Claudia from Mérida, planning a home exchange, I described my home and neighborhood",
+  goal: "You're on a video call with Claudia from Mérida to plan a home exchange: she'll stay in your home, and you'll stay in hers. Describe your home and neighborhood, and talk for at least 30 seconds without stopping.",
+  boardStep: ["Prepara tu descripción", "Claudia will ask these questions. Plan an answer for each."],
+  board: {
+    title: "Intercambio de Casas", sub: "Videollamada con Claudia · Mérida, Yuc.",
+    cols: [
+      [{ h: "Claudia va a preguntar", items: [["¿Dónde vives?"], ["¿Es casa o departamento?"], ["¿Cuántas recámaras tiene?"], ["¿Cómo es tu barrio?"], ["¿Qué hay cerca?"]] }],
+      [{ h: "Tus frases", items: [["Vivo en…"], ["Es… (pequeña, cómoda)"], ["Tiene… (tres recámaras)"], ["Hay… (un parque)"], ["Está cerca de…"], ["Me gusta porque…"]] }]
+    ],
+    note: "Goal: talk about your home for 30 seconds without stopping."
+  },
+  dialogue: [
+    ["m", "¡Hola! Cuéntame, ¿dónde vives?", "Hi! Tell me, where do you live?"],
+    ["c", "Vivo en Denver, en un barrio tranquilo.", "I live in Denver, in a quiet neighborhood."],
+    ["m", "¿Es una casa o un departamento?", "Is it a house or an apartment?"],
+    ["c", "Es una casa. No es muy grande, pero es cómoda.", "It's a house. It's not very big, but it's comfortable."],
+    ["m", "¿Cuántas recámaras tiene?", "How many bedrooms does it have?"],
+    ["c", "Tiene tres recámaras y dos baños.", "It has three bedrooms and two bathrooms."],
+    ["m", "¿Y cómo es la cocina?", "And what's the kitchen like?"],
+    ["c", "La cocina es pequeña, pero tiene mucha luz.", "The kitchen is small, but it has lots of light."],
+    ["m", "¿Hay jardín?", "Is there a yard?"],
+    ["c", "Sí, hay un jardín pequeño atrás.", "Yes, there's a small yard in the back."],
+    ["m", "¿Qué hay cerca de tu casa?", "What's near your house?"],
+    ["c", "Hay un parque, un supermercado y una cafetería.", "There's a park, a supermarket, and a café."],
+    ["m", "¿Te gusta tu barrio?", "Do you like your neighborhood?"],
+    ["c", "Sí, me gusta mucho porque es tranquilo.", "Yes, I like it a lot because it's quiet."],
+    ["m", "¡Qué bonito! Mi casa en Mérida es vieja, pero muy fresca.", "How nice! My house in Mérida is old, but very cool inside."]
+  ],
+  core: [
+    ["Vivo en una casa.", "I live in a house."],
+    ["Vivo en un departamento.", "I live in an apartment."],
+    ["Es pequeña, pero cómoda.", "It's small but comfortable."],
+    ["Tiene tres recámaras.", "It has three bedrooms."],
+    ["Hay un parque cerca.", "There's a park nearby."],
+    ["Está cerca del centro.", "It's near downtown."],
+    ["Me gusta porque es tranquilo.", "I like it because it's quiet."]
+  ],
+  hear: [
+    ["Cuéntame.", "Tell me."],
+    ["¿Cómo es tu casa?", "What's your house like?"],
+    ["¿Cuántos cuartos tiene?", "How many rooms does it have?"],
+    ["¿Qué hay cerca?", "What's nearby?"],
+    ["¿Está lejos del centro?", "Is it far from downtown?"],
+    ["¿Y qué más?", "And what else?"]
+  ],
+  extra: [
+    ["Mi casa tiene dos pisos.", "My house has two floors."],
+    ["Vivo en el tercer piso.", "I live on the third floor."],
+    ["Hay una cocina, una sala y un comedor.", "There's a kitchen, a living room and a dining room."],
+    ["Tiene un jardín pequeño.", "It has a small yard."],
+    ["Está lejos del centro.", "It's far from downtown."],
+    ["Hay mucho tráfico.", "There's a lot of traffic."],
+    ["Vivo con mi familia.", "I live with my family."],
+    ["Vivo solo. / Vivo sola.", "I live alone. (m / f)"],
+    ["Mi cuarto favorito es la cocina.", "My favorite room is the kitchen."],
+    ["¿Y tu cuarto favorito? ¿Por qué?", "(you'll hear) And your favorite room? Why?"]
+  ],
+  vocab: [
+    ["La casa", [["el departamento", "apartment (Mexico)"], ["la recámara", "bedroom (Mexico)"], ["el baño", "bathroom"], ["la cocina", "kitchen"], ["la sala", "living room"], ["el comedor", "dining room"], ["el jardín", "yard, garden"], ["el piso", "floor, story"], ["la cochera", "garage"]]],
+    ["El barrio", [["el barrio, la colonia", "neighborhood"], ["el parque", "park"], ["la tienda", "store"], ["el supermercado", "supermarket"], ["la parada de autobús", "bus stop"], ["el centro", "downtown"]]],
+    ["Describir", [["grande", "big"], ["pequeño, pequeña", "small"], ["viejo, vieja", "old"], ["cómodo, cómoda", "comfortable"], ["tranquilo, tranquila", "quiet"], ["ruidoso, ruidosa", "noisy"], ["cerca de", "near"], ["lejos de", "far from"]]]
+  ],
+  qd: [
+    ["Say you live in an apartment.", "Vivo en un departamento."],
+    ["Say it's small but comfortable.", "Es pequeño, pero cómodo."],
+    ["Say it has two bedrooms.", "Tiene dos recámaras."],
+    ["Say there's a park nearby.", "Hay un parque cerca."],
+    ["Say it's near downtown.", "Está cerca del centro."],
+    ["Say you like your neighborhood because it's quiet.", "Me gusta mi barrio porque es tranquilo."],
+    ["Ask what her house is like.", "¿Cómo es tu casa?"]
+  ],
+  patterns: [
+    ["Hay + [cosa]", "\"There is / there are\": <i>Hay un parque. Hay dos baños.</i>"],
+    ["Tiene + [número] + [cuartos]", "Mi casa tiene tres recámaras."],
+    ["Está + cerca de / lejos de + [lugar]", "Location uses <i>estar</i>: <i>Está cerca del centro.</i> (de + el = del)"],
+    ["Es + [adjetivo]", "Description uses <i>ser</i>: <i>Es pequeña. Es tranquilo.</i>"]
+  ],
+  notes: [
+    ["Recámara", "In Mexico a bedroom is a <i>recámara</i>. You'll also hear <i>cuarto</i>."],
+    ["Colonia", "Mexican cities are divided into <i>colonias</i>. An address includes it: <i>Col. Centro</i>."],
+    ["Departamento", "Mexicans say <i>departamento</i> (or <i>depa</i>) for apartment. <i>Piso</i> means a floor."],
+    ["Mérida houses", "Old Mérida houses have high ceilings, tiled floors, and an inner patio to stay cool."]
+  ],
+  prompt: {
+    role: `You are Claudia, 45, from Mérida, Yucatán. We're on a video call planning a home exchange: you'll stay in my home and I'll stay in yours. Use "tú" with me.`,
+    infoTitle: "YOUR HOME (CLAUDIA)",
+    info: `An old one-story house in the Santiago neighborhood, near downtown Mérida. Three bedrooms, two bathrooms, a big kitchen, an inner patio with plants, and a small pool. It's hot, so every room has a fan. Near a market, a park, and a church. Quiet at night, noisy on Sunday mornings because of the market.`,
+    twist: `Ask me one question I probably didn't prepare: "¿Y tu cuarto favorito? ¿Por qué?" Also misunderstand one thing I say once (for example, think I said "grande" when I said "pequeña"), so I have to correct you.`,
+    lead: `Ask me open questions and let me talk. Encourage longer answers: after a short answer, say "¿Y qué más?" or "Cuéntame más." Later I'll ask about your home; answer in 2 short sentences.`,
+    recast: `I say "Mi casa es cerca del centro" and you say "Ah, está cerca del centro. ¡Qué bien!"`
+  },
+  twists: [
+    ["Sin parar", "Harder", "Describe your home for 60 seconds without interruption.", `Otra vez, por favor. This time just say "Cuéntame de tu casa" and then listen. Don't interrupt for 60 seconds, then ask two follow-up questions. Same rules.`],
+    ["Tu casa ideal", "Harder", "Describe your dream home instead.", `Otra vez, por favor. This time ask me about my dream home: where it is, what it has, and why. Same rules.`]
+  ],
+  sa: [
+    "I can say what kind of home I live in",
+    "I can say how many rooms it has (tiene / hay)",
+    "I can describe it with adjectives (es…)",
+    "I can say what's nearby (está cerca de…)",
+    "I can talk for 30 seconds without stopping"
+  ]
+};
+
+// l08.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["08"] = {
+  id: "08", level: "A1", title: "¿Dónde está?", minutes: 25,
+  cando: "I can ask where something is and understand a simple answer.",
+  scale: "Information exchange",
+  reg: "usted", partner: "Fernanda", place: "Hotel Casa Colonial · Puebla",
+  scene: "I just checked in at a hotel in Puebla and asked the receptionist Fernanda where things are",
+  goal: "You just checked in at Hotel Casa Colonial in Puebla. ChatGPT plays Fernanda, the receptionist. Find out where everything on your list is, and check the directions you hear.",
+  boardStep: ["Tu lista", "You don't know where these are. Ask Fernanda."],
+  board: {
+    title: "Hotel Casa Colonial", sub: "Puebla, Pue. · Recepción",
+    cols: [
+      [{ h: "En el hotel", items: [["El baño", "?"], ["El elevador", "?"], ["El restaurante", "?"], ["La alberca", "?"], ["Tu cuarto: 304", "?"]] }],
+      [{ h: "Cerca del hotel", items: [["Un cajero automático", "?"], ["Una farmacia", "?"], ["El zócalo", "?"], ["Una tienda", "?"]] }]
+    ],
+    note: "Repeat key words to check what you heard: ¿A la izquierda?"
+  },
+  dialogue: [
+    ["c", "Disculpe, ¿dónde está el baño?", "Excuse me, where is the bathroom?"],
+    ["m", "Está allí, a la derecha.", "It's over there, on the right."],
+    ["c", "Gracias. ¿Y el elevador?", "Thanks. And the elevator?"],
+    ["m", "Está al fondo, a la izquierda.", "It's at the back, on the left."],
+    ["c", "¿Hay un cajero automático cerca?", "Is there an ATM nearby?"],
+    ["m", "Sí, hay uno en la esquina, al lado de la farmacia.", "Yes, there's one on the corner, next to the pharmacy."],
+    ["c", "¿En qué piso está el restaurante?", "What floor is the restaurant on?"],
+    ["m", "Está en el segundo piso.", "It's on the second floor."],
+    ["c", "¿Está lejos el zócalo?", "Is the main square far?"],
+    ["m", "No, está muy cerca. A dos cuadras.", "No, it's very close. Two blocks away."],
+    ["c", "¿A dos cuadras?", "Two blocks?"],
+    ["m", "Sí, todo derecho por esta calle.", "Yes, straight down this street."],
+    ["c", "Perfecto. Muchas gracias.", "Perfect. Thank you very much."],
+    ["m", "Con mucho gusto.", "My pleasure."]
+  ],
+  core: [
+    ["Disculpe, ¿dónde está el baño?", "Excuse me, where is the bathroom?"],
+    ["¿Hay un cajero automático cerca?", "Is there an ATM nearby?"],
+    ["¿Está lejos?", "Is it far?"],
+    ["¿A la derecha o a la izquierda?", "To the right or to the left?"],
+    ["¿En qué piso está?", "What floor is it on?"],
+    ["¿A dos cuadras?", "Two blocks? (checking)"],
+    ["Muchas gracias.", "Thank you very much."]
+  ],
+  hear: [
+    ["Está allí.", "It's over there."],
+    ["A la derecha.", "On the right."],
+    ["A la izquierda.", "On the left."],
+    ["Todo derecho.", "Straight ahead."],
+    ["Al fondo.", "At the back, at the end."],
+    ["A dos cuadras.", "Two blocks away."]
+  ],
+  extra: [
+    ["¿Dónde están los elevadores?", "Where are the elevators?"],
+    ["¿Dónde hay una farmacia?", "Where is there a pharmacy?"],
+    ["¿Está cerca?", "Is it close?"],
+    ["Está en el segundo piso.", "It's on the second floor."],
+    ["Está al lado de la recepción.", "It's next to reception."],
+    ["Está enfrente del hotel.", "It's across from the hotel."],
+    ["Está en la esquina.", "It's on the corner."],
+    ["¿Me lo puede mostrar en el mapa?", "Can you show me on the map?"],
+    ["No tenemos alberca.", "(you'll hear) We don't have a pool."],
+    ["Con mucho gusto.", "(you'll hear) My pleasure."]
+  ],
+  vocab: [
+    ["Lugares", [["el baño", "bathroom"], ["el elevador", "elevator"], ["la escalera", "stairs"], ["la recepción", "reception"], ["la alberca", "swimming pool (Mexico)"], ["el cajero automático", "ATM"], ["la farmacia", "pharmacy"], ["el zócalo", "main square"], ["la tienda", "store"]]],
+    ["¿Dónde?", [["aquí", "here"], ["allí", "there"], ["a la derecha", "on the right"], ["a la izquierda", "on the left"], ["todo derecho", "straight ahead"], ["al fondo", "at the back"], ["al lado de", "next to"], ["enfrente de", "across from"], ["en la esquina", "on the corner"]]],
+    ["Pisos y distancia", [["la planta baja", "ground floor"], ["el primer piso", "first floor up"], ["el segundo piso", "second floor"], ["la cuadra", "block"], ["cerca", "near"], ["lejos", "far"]]]
+  ],
+  qd: [
+    ["Get her attention and ask where the bathroom is.", "Disculpe, ¿dónde está el baño?"],
+    ["Ask if there's an ATM nearby.", "¿Hay un cajero automático cerca?"],
+    ["Ask if it's far.", "¿Está lejos?"],
+    ["Ask what floor the restaurant is on.", "¿En qué piso está el restaurante?"],
+    ["You heard \"a la izquierda\". Check it.", "¿A la izquierda?"],
+    ["Ask if it's to the right or left.", "¿A la derecha o a la izquierda?"],
+    ["Thank her.", "Muchas gracias."]
+  ],
+  patterns: [
+    ["¿Dónde está + [el / la lugar]?", "For a specific place: <i>¿Dónde está la recepción?</i>"],
+    ["¿Hay + [un / una lugar] + cerca?", "For any one: <i>¿Hay una farmacia cerca?</i>"],
+    ["Está + [lugar / dirección]", "Está a la derecha. · Está al lado de la tienda."],
+    ["¿[palabra clave]?", "Repeat key words with a question tone to check: <i>¿A la izquierda? ¿Dos cuadras?</i>"]
+  ],
+  notes: [
+    ["Disculpe", "Start with <i>Disculpe</i> to get a stranger's attention politely."],
+    ["Planta baja", "The ground floor is <i>planta baja (PB)</i>. The <i>primer piso</i> is one floor up."],
+    ["El zócalo", "The main square of many Mexican cities is called the <i>zócalo</i>."],
+    ["Cuadras", "Directions are usually given in blocks: <i>a tres cuadras</i> = three blocks away."]
+  ],
+  prompt: {
+    role: `You are Fernanda, the receptionist at Hotel Casa Colonial in Puebla. I'm a guest who just checked in. Use "usted" with me.`,
+    infoTitle: "WHERE THINGS ARE",
+    info: `Bathroom: to the right of reception. Elevator: at the back, on the left. Restaurant: second floor. Pool: the hotel has none. Room 304: third floor; take the elevator, then turn left. ATM: on the corner, next to the pharmacy. Pharmacy: on the corner, one block away. Zócalo: two blocks, straight down this street. Convenience store (OXXO): across from the hotel.`,
+    twist: `If I ask for the pool, say the hotel doesn't have one. Once, give two directions at once a little fast ("al fondo a la izquierda, y después a la derecha"), so I need to check or ask you to repeat.`,
+    lead: `Answer where things are with short, clear directions (a la derecha, al fondo, en el segundo piso). Wait for my questions. After each answer, ask "¿Algo más?"`,
+    recast: `I say "¿Dónde es el baño?" and you say "¿El baño? Está a la derecha."`
+  },
+  twists: [
+    ["En el centro comercial", "Harder", "You're in a mall looking for four things.", `Otra vez, por favor. New place: you work at the information desk of a shopping mall. I need the bathrooms, a phone store, the food court, and the exit to the taxis. Make up where they are. Same rules.`],
+    ["Tú das direcciones", "Harder", "Switch roles: a tourist asks you where things are.", `Otra vez, por favor. Switch roles: you are a tourist asking me where things are in the hotel. Use the same locations, and I'll give the directions. Same rules.`]
+  ],
+  sa: [
+    "I can get someone's attention politely",
+    "I can ask where something is (¿Dónde está…?)",
+    "I can ask if something is nearby (¿Hay… cerca?)",
+    "I can understand simple directions (derecha, izquierda, todo derecho)",
+    "I can check what I heard by repeating it"
+  ]
+};
+
+// l09.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["09"] = {
+  id: "09", level: "A2", title: "En la taquería", minutes: 28,
+  cando: "I can order food at a restaurant or taquería and ask about the menu.",
+  scale: "Transactions to obtain goods and services",
+  reg: "usted", partner: "Don Beto", place: "Taquería El Güero · Guadalajara",
+  scene: "I ordered food at a taquería in Guadalajara from a server named Don Beto",
+  goal: "You're a customer at Taquería El Güero, and ChatGPT plays Don Beto, the server. Order a full meal, ask at least two questions about the menu, and pay.",
+  boardStep: ["Mira el menú", "Don Beto uses this exact menu in the role play."],
+  board: {
+    title: "Taquería El Güero", sub: "Guadalajara, Jal. · Precios en pesos",
+    cols: [
+      [{ h: "Tacos (maíz)", items: [["Al pastor", "$22"], ["De asada", "$25"], ["De suadero", "$22"], ["De carnitas", "$24"], ["Campechano", "$26"]] },
+       { h: "Especialidades", items: [["Gringa al pastor", "$55"], ["Quesadilla de queso", "$40"]] }],
+      [{ h: "Extras", items: [["Guacamole", "$35"], ["Frijoles charros", "$35"]] },
+       { h: "Para tomar", items: [["Agua de horchata", "$30"], ["Agua de jamaica", "$30"], ["Refresco", "$28"]] },
+       { h: "Salsas", items: [["Verde · pica poco"], ["Roja · pica mucho"]] }]
+    ],
+    note: "Something unexpected might happen when you order. Be ready to adapt."
+  },
+  dialogue: [
+    ["m", "¡Buenas noches! ¿Para aquí o para llevar?", "Good evening! For here or to go?"],
+    ["c", "Para aquí, por favor.", "For here, please."],
+    ["m", "Muy bien. ¿Qué le sirvo?", "Very good. What can I get you?"],
+    ["c", "¿Qué me recomienda?", "What do you recommend?"],
+    ["m", "Los de pastor están muy buenos hoy.", "The al pastor ones are really good today."],
+    ["c", "Entonces me da tres tacos al pastor, por favor.", "Then I'll have three al pastor tacos, please."],
+    ["m", "¿Con todo?", "With everything?"],
+    ["c", "Con cilantro, pero sin cebolla.", "With cilantro, but no onion."],
+    ["m", "Claro. ¿Algo de tomar?", "Sure. Anything to drink?"],
+    ["c", "Una de jamaica, por favor. ¿La salsa roja pica mucho?", "A jamaica, please. Is the red salsa very spicy?"],
+    ["m", "Sí, pica bastante. La verde pica menos.", "Yes, it's pretty hot. The green one is milder."],
+    ["c", "Entonces la verde. Es todo, gracias.", "The green one, then. That's all, thanks."],
+    ["m", "Ahorita se los traigo. ¡Provecho!", "I'll bring them right away. Enjoy!"],
+    ["c", "Gracias. ¿Cuánto le debo?", "Thanks. How much do I owe you?"],
+    ["m", "Son noventa y seis pesos.", "That's 96 pesos."],
+    ["c", "Aquí tiene. Quédese con el cambio.", "Here you go. Keep the change."],
+    ["m", "¡Muchas gracias! Que le vaya bien.", "Thank you! Take care."]
+  ],
+  core: [
+    ["Para aquí, por favor.", "To eat here, please."],
+    ["¿Qué me recomienda?", "What do you recommend?"],
+    ["¿Qué lleva el campechano?", "What's in the campechano?"],
+    ["Me da dos de asada, por favor.", "Can I have two asada tacos, please?"],
+    ["Sin cebolla, por favor.", "No onion, please."],
+    ["Es todo, gracias.", "That's all, thanks."],
+    ["¿Cuánto le debo?", "How much do I owe you?"]
+  ],
+  hear: [
+    ["¿Para aquí o para llevar?", "For here or to go?"],
+    ["¿Qué le sirvo?", "What can I get you?"],
+    ["¿Con todo?", "With everything (onion and cilantro)?"],
+    ["¿Algo de tomar?", "Anything to drink?"],
+    ["¿Va a querer algo más?", "Will you want anything else?"],
+    ["Ya no hay. Se nos acabó.", "There's none left. We ran out."]
+  ],
+  extra: [
+    ["Buenas noches.", "Good evening."],
+    ["Para llevar, por favor.", "To go, please."],
+    ["¿La salsa roja pica mucho?", "Is the red salsa very spicy?"],
+    ["¿Cuánto cuesta la gringa?", "How much is the gringa?"],
+    ["¿Tienen algo sin carne?", "Do you have anything without meat?"],
+    ["Quisiera una gringa al pastor.", "I'd like a gringa al pastor."],
+    ["Para mí, dos de asada y uno de carnitas.", "For me, two asada and one carnitas."],
+    ["Con todo, por favor.", "With everything, please."],
+    ["Y de tomar, un agua de horchata.", "And to drink, a horchata."],
+    ["¿Me trae la cuenta, por favor?", "Could you bring me the bill, please?"],
+    ["¿Aceptan tarjeta?", "Do you take cards?"],
+    ["Quédese con el cambio.", "Keep the change."],
+    ["¿Qué significa “suadero”?", "What does “suadero” mean?"],
+    ["Ahorita se los traigo.", "(you'll hear) I'll bring them right away."],
+    ["¡Provecho!", "(you'll hear) Enjoy your meal!"],
+    ["¿Va a pagar con tarjeta o en efectivo?", "(you'll hear) Card or cash?"]
+  ],
+  vocab: [
+    ["Los rellenos", [["al pastor", "spit-roasted marinated pork"], ["de asada", "grilled beef"], ["de suadero", "slow-cooked beef"], ["de carnitas", "braised pork"], ["campechano", "a mix of two meats"]]],
+    ["En el plato", [["la tortilla de maíz", "corn tortilla"], ["la gringa", "flour tortilla, cheese and al pastor"], ["la quesadilla", "tortilla folded with cheese"], ["la salsa", "salsa"], ["la cebolla", "onion"], ["el cilantro", "cilantro"], ["la piña", "pineapple"], ["el limón", "lime"], ["los frijoles charros", "bean stew with pork and chile"]]],
+    ["Para tomar", [["el agua de horchata", "sweet rice and cinnamon drink"], ["el agua de jamaica", "hibiscus drink"], ["el refresco", "soda"]]],
+    ["Pedir y pagar", [["el mesero, la mesera", "server"], ["para aquí", "to eat here"], ["para llevar", "to go"], ["pica", "it's spicy"], ["la cuenta", "the bill"], ["en efectivo", "in cash"], ["con tarjeta", "by card"], ["el cambio", "change (money)"], ["la propina", "tip"]]]
+  ],
+  qd: [
+    ["You want to eat at the taquería, not take it home.", "Para aquí, por favor."],
+    ["Ask the server what's good.", "¿Qué me recomienda?"],
+    ["Ask what's in the campechano.", "¿Qué lleva el campechano?"],
+    ["Order two asada tacos.", "Me da dos de asada, por favor."],
+    ["You don't want onion.", "Sin cebolla, por favor."],
+    ["You're done ordering.", "Es todo, gracias."],
+    ["Ask how much you owe.", "¿Cuánto le debo?"]
+  ],
+  patterns: [
+    ["Me da / Quisiera + [número] + de + [relleno]", "Me da <b>tres de pastor</b>, por favor. In Mexico, \"tacos\" is often dropped: <i>dos de asada</i>."],
+    ["con / sin + [ingrediente]", "Sin cebolla, por favor. · <b>Con todo</b> = with onion and cilantro."],
+    ["¿Qué lleva + [el plato]?", "¿Qué lleva el campechano? = What's in the campechano?"],
+    ["¿Me [trae / puede / da] …?", "Use <i>usted</i> with the server: ¿Me trae la cuenta? ¿Me lo puede repetir?"]
+  ],
+  notes: [
+    ["\"Me da…\" is polite", "In Mexico, <i>me da</i> is the normal way to order. <i>Me pone</i> sounds Spanish from Spain."],
+    ["Getting attention", "Say <i>¡Joven!</i> or <i>¡Señorita!</i> to a server, or <i>Disculpe</i>, which works for anyone."],
+    ["¡Provecho!", "Servers and other diners say it when food arrives. Answer <i>¡Gracias!</i>"],
+    ["Limón = lime", "The green wedges on the table are <i>limones</i>."],
+    ["Paying at taco stands", "At street stands you often pay after eating. Ask <i>¿Cuánto le debo?</i> and say what you ate."],
+    ["Propina", "In sit-down taquerías, leave 10–15%. <i>Quédese con el cambio</i> means \"keep the change\"."]
+  ],
+  prompt: {
+    role: `You are Don Beto, the friendly server at Taquería El Güero in Guadalajara. It's a busy Friday night. I'm a customer. Address me with "usted".`,
+    infoTitle: "MENU (pesos)",
+    info: `Tacos de maíz: al pastor $22, de asada $25, de suadero $22, de carnitas $24, campechano $26
+Especialidades: gringa al pastor $55, quesadilla de queso $40
+Extras: guacamole $35, frijoles charros $35
+Para tomar: agua de horchata $30, agua de jamaica $30, refresco $28
+Salsas: verde (pica poco), roja (pica mucho)`,
+    twist: `Today you are out of suadero. Only say so if I order it, then suggest something similar. If I don't order it, offer me today's special before I finish: 2 gringas for $90.`,
+    lead: `Lead the scene like a real server: greet me, ask "¿para aquí o para llevar?", take my order, ask "¿con todo?", ask about drinks, ask if I want anything else, and give me the total when I ask for the bill.`,
+    recast: `I say "dos taco de asada" and you say "Dos tacos de asada, perfecto."`
+  },
+  twists: [
+    ["Para tres", "Harder", "Order to go for you and two friends. One doesn't eat meat, one doesn't like spicy food.", `Otra vez, por favor. New situation: I'm ordering para llevar for me and two friends. One friend doesn't eat meat and one doesn't like spicy food. Same rules.`],
+    ["Algo salió mal", "Challenge", "Part of your order arrives wrong, and the card machine isn't working.", `Otra vez, por favor. This time, bring me one wrong item, and when I pay, the card terminal isn't working. Make me solve both problems. Same rules.`]
+  ],
+  sa: [
+    "I can greet the server and say \"para aquí\" or \"para llevar\"",
+    "I can order items with quantities and fillings",
+    "I can ask what a dish has in it and what they recommend",
+    "I can say what I want con / sin",
+    "I can handle a surprise (sold out, a special)",
+    "I can ask for the bill and pay"
+  ]
+};
+
+// l10.js
+window.LESSONS = window.LESSONS || {};
+LESSONS["10"] = {
+  id: "10", level: "A2", title: "¿Cómo llego?", minutes: 28,
+  cando: "I can ask for and give directions using a map or landmarks.",
+  scale: "Information exchange",
+  reg: "usted", partner: "Sra. Elena", place: "Centro · mapa de práctica",
+  scene: "in a Mexican town center I asked Señora Elena for directions, then gave her directions using a map we both had",
+  goal: "You're standing at the corner of Juárez and Allende, next to the main square. ChatGPT plays Señora Elena, a local. Get directions to two places, then give her directions to two places.",
+  boardStep: ["Mira el mapa", "You and Señora Elena have the same map. You are at the red dot."],
+  board: {
+    title: "Centro", sub: "Mapa de práctica · el norte está arriba",
+    svg: `<svg viewBox="0 0 420 320" role="img" aria-label="Map: three streets west to east (Hidalgo, Juárez, Morelos) and three north to south (Allende, Zaragoza, Guerrero). You are at Juárez and Allende.">
+  <rect class="st" x="30" y="40" width="360" height="20"/>
+  <rect class="st" x="30" y="150" width="360" height="20"/>
+  <rect class="st" x="30" y="260" width="360" height="20"/>
+  <rect class="st" x="50" y="20" width="20" height="280"/>
+  <rect class="st" x="200" y="20" width="20" height="280"/>
+  <rect class="st" x="350" y="20" width="20" height="280"/>
+  <rect class="bk" x="74" y="64" width="122" height="82" rx="4"/>
+  <rect class="bk" x="224" y="64" width="122" height="82" rx="4"/>
+  <rect class="bk" x="74" y="174" width="122" height="82" rx="4"/>
+  <rect class="bk" x="224" y="174" width="122" height="82" rx="4"/>
+  <rect class="park" x="86" y="74" width="98" height="58" rx="4"/>
+  <text class="lm" x="135" y="107" text-anchor="middle">Jardín Principal</text>
+  <text class="sl" x="135" y="53.5" text-anchor="middle">CALLE HIDALGO</text>
+  <text class="sl" x="285" y="163.5" text-anchor="middle">CALLE JUÁREZ</text>
+  <text class="sl" x="135" y="273.5" text-anchor="middle">CALLE MORELOS</text>
+  <text class="sl" transform="translate(63.5 225) rotate(-90)" text-anchor="middle">ALLENDE</text>
+  <text class="sl" transform="translate(213.5 225) rotate(-90)" text-anchor="middle">ZARAGOZA</text>
+  <text class="sl" transform="translate(363.5 225) rotate(-90)" text-anchor="middle">GUERRERO</text>
+  <circle class="dot" cx="285" cy="76" r="4"/><text class="lm" x="285" y="96" text-anchor="middle">La Parroquia</text>
+  <circle class="dot" cx="338" cy="136" r="4"/><text class="lm" x="328" y="140" text-anchor="end">Banco</text>
+  <circle class="dot" cx="186" cy="184" r="4"/><text class="lm" x="176" y="188" text-anchor="end">Farmacia</text>
+  <circle class="dot" cx="135" cy="244" r="4"/><text class="lm" x="135" y="232" text-anchor="middle">Mercado</text>
+  <circle class="dot" cx="234" cy="212" r="4"/><text class="lm" x="243" y="216">Hotel Real</text>
+  <circle class="dot" cx="338" cy="246" r="4"/><text class="lm" x="328" y="250" text-anchor="end">Museo</text>
+  <circle class="you" cx="80" cy="141" r="6"/>
+  <text class="youl" x="78" y="163.5">Usted está aquí</text>
+  <path class="n" d="M400 52 L400 30 M394 38 L400 30 L406 38"/><text class="sl" x="400" y="64" text-anchor="middle">N</text>
+</svg>`,
+    note: "Part 1: ask for directions. Part 2: Elena asks you."
+  },
+  dialogue: [
+    ["c", "Disculpe, ¿cómo llego al museo?", "Excuse me, how do I get to the museum?"],
+    ["m", "¿Al museo? Mire, siga todo derecho por la calle Juárez.", "To the museum? Look, go straight along Juárez Street."],
+    ["c", "¿Todo derecho por Juárez?", "Straight along Juárez?"],
+    ["m", "Sí. En la segunda esquina, en Guerrero, dé vuelta a la derecha.", "Yes. At the second corner, at Guerrero, turn right."],
+    ["c", "¿A la derecha en Guerrero?", "Right on Guerrero?"],
+    ["m", "Exacto. Camine una cuadra. El museo está en la esquina, a la derecha.", "Exactly. Walk one block. The museum is on the corner, on the right."],
+    ["c", "¿Está lejos?", "Is it far?"],
+    ["m", "No, son como cinco minutos caminando.", "No, it's about five minutes on foot."],
+    ["c", "¿Y hay una farmacia cerca?", "And is there a pharmacy nearby?"],
+    ["m", "Sí, en la esquina de Juárez y Zaragoza, enfrente del jardín.", "Yes, at the corner of Juárez and Zaragoza, across from the square."],
+    ["c", "Perfecto. Muchas gracias.", "Perfect. Thank you very much."],
+    ["m", "De nada. Oiga, ¿usted sabe dónde está el banco?", "You're welcome. Say, do you know where the bank is?"],
+    ["c", "Sí. Siga por Juárez dos cuadras. El banco está a la izquierda, antes de Guerrero.", "Yes. Go along Juárez two blocks. The bank is on the left, before Guerrero."],
+    ["m", "¡Muchas gracias!", "Thank you so much!"]
+  ],
+  core: [
+    ["Disculpe, ¿cómo llego al museo?", "Excuse me, how do I get to the museum?"],
+    ["¿Está lejos?", "Is it far?"],
+    ["Siga todo derecho.", "Go straight ahead."],
+    ["Dé vuelta a la derecha.", "Turn right."],
+    ["Dé vuelta a la izquierda.", "Turn left."],
+    ["En la segunda esquina.", "At the second corner."],
+    ["Está enfrente del jardín.", "It's across from the square."]
+  ],
+  hear: [
+    ["Mire…", "Look… (to get your attention)"],
+    ["Camine dos cuadras.", "Walk two blocks."],
+    ["Hasta el semáforo.", "Up to the traffic light."],
+    ["Está en la esquina.", "It's on the corner."],
+    ["Como a cinco minutos.", "About five minutes away."],
+    ["No tiene pérdida.", "You can't miss it."]
+  ],
+  extra: [
+    ["¿Cómo llego a la parroquia?", "How do I get to the church?"],
+    ["¿Por dónde está el mercado?", "Whereabouts is the market?"],
+    ["¿Me lo puede mostrar en el mapa?", "Can you show me on the map?"],
+    ["Cruce la calle.", "Cross the street."],
+    ["Siga por la calle Juárez.", "Continue along Juárez Street."],
+    ["Está entre el banco y el hotel.", "It's between the bank and the hotel."],
+    ["Está al lado del mercado.", "It's next to the market."],
+    ["¿Se puede ir caminando?", "Can you walk there?"],
+    ["Oiga, ¿sabe dónde está la parroquia?", "Excuse me, do you know where the church is?"],
+    ["¿Seguro? Creo que no…", "(you'll hear) Are you sure? I don't think so…"]
+  ],
+  vocab: [
+    ["Moverse", [["siga", "continue, go (seguir)"], ["dé vuelta", "turn (dar vuelta)"], ["camine", "walk (caminar)"], ["cruce", "cross (cruzar)"], ["tome", "take (tomar)"]]],
+    ["La calle", [["la calle", "street"], ["la avenida", "avenue"], ["la esquina", "corner"], ["la cuadra", "block"], ["el semáforo", "traffic light"], ["el jardín, la plaza", "town square"], ["la parroquia", "parish church"]]],
+    ["Posición", [["todo derecho", "straight ahead"], ["a la derecha", "on the right"], ["a la izquierda", "on the left"], ["enfrente de", "across from"], ["al lado de", "next to"], ["entre", "between"], ["en la esquina de", "on the corner of"], ["hasta", "up to, until"]]]
+  ],
+  qd: [
+    ["Ask how to get to the museum.", "Disculpe, ¿cómo llego al museo?"],
+    ["Ask if it's far.", "¿Está lejos?"],
+    ["Tell someone to go straight ahead.", "Siga todo derecho."],
+    ["Tell someone to turn left.", "Dé vuelta a la izquierda."],
+    ["Say \"at the second corner\".", "En la segunda esquina."],
+    ["Say the pharmacy is across from the square.", "La farmacia está enfrente del jardín."],
+    ["Check: \"right on Guerrero?\"", "¿A la derecha en Guerrero?"]
+  ],
+  patterns: [
+    ["¿Cómo llego a + [lugar]?", "a + el = al: <i>¿Cómo llego al museo?</i> · <i>¿Cómo llego a la plaza?</i>"],
+    ["[Siga / Dé vuelta / Camine] + …", "Directions use <i>usted</i> commands: <i>Siga todo derecho. Dé vuelta a la izquierda.</i>"],
+    ["en la + [primera / segunda] + esquina", "<i>En la segunda esquina, dé vuelta a la derecha.</i>"],
+    ["Está + enfrente de / al lado de / entre…", "de + el = del: <i>Está enfrente del jardín.</i>"]
+  ],
+  notes: [
+    ["Dé vuelta", "Mexicans say <i>dé vuelta</i> or <i>da vuelta</i> for \"turn\". <i>Gire</i> and <i>doble</i> are understood too."],
+    ["El jardín", "In many Mexican towns the main square is called <i>el jardín</i>, with the <i>parroquia</i> next to it."],
+    ["Ahí nomás", "Locals may say <i>ahí nomás</i>, \"just right there\", even when it's a few blocks away."],
+    ["Ask twice", "If directions get long, ask a second person. It's normal and polite."]
+  ],
+  prompt: {
+    role: `You are Señora Elena, a friendly local in the town center. I'm a visitor standing at the corner of Juárez and Allende, next to the Jardín Principal. Use "usted" with me.`,
+    infoTitle: "THE MAP (we both have it; north is up)",
+    info: `Three streets run west to east: Hidalgo (north), Juárez (middle), Morelos (south). Three streets run north to south: Allende (west), Zaragoza (middle), Guerrero (east). They make four blocks.
+- Northwest block: Jardín Principal (the main square). I'm at its southwest corner, Juárez and Allende.
+- Northeast block: La Parroquia (church) on Hidalgo. Banco on Juárez, at the corner of Guerrero.
+- Southwest block: Farmacia at the corner of Juárez and Zaragoza. Mercado on Morelos.
+- Southeast block: Hotel Real on Zaragoza. Museo at the corner of Morelos and Guerrero.`,
+    twist: `PART 1: I'll ask you how to get to two places. Give directions that are correct for this map. PART 2: Then ask me how to get to La Parroquia and then the Hotel Real from where I am, and follow my directions. If my directions don't match the map, say "¿Seguro? Creo que no…" and let me fix them.`,
+    lead: `Give directions in short steps ("Siga todo derecho por Juárez. En la segunda esquina, dé vuelta a la derecha."). Give one or two steps at a time and wait for me to check. Use "usted" commands.`,
+    recast: `I say "¿Cómo llego a el museo?" and you say "¿Al museo? Mire…"`
+  },
+  twists: [
+    ["Desde el mercado", "Harder", "Start at the market. Ask for the bank and the church.", `Otra vez, por favor. This time I'm standing at the Mercado on Morelos. I'll ask how to get to the Banco and the Parroquia, then you ask me how to get to the Museo. Same rules.`],
+    ["Sin mapa", "Challenge", "Don't look at the map. Listen, then repeat the route back.", `Otra vez, por favor. I won't look at the map. Give me directions to the Museo and I'll repeat them back to check. Same rules.`]
+  ],
+  sa: [
+    "I can ask how to get somewhere",
+    "I can understand step-by-step directions",
+    "I can check directions by repeating them",
+    "I can give directions with siga / dé vuelta / camine",
+    "I can say where a place is (enfrente de, al lado de)"
+  ]
+};
+
+</script>
+<script>
+(function(){
+const LESSONS=window.LESSONS||{};
+const IDS=Object.keys(LESSONS).sort();
+const UPCOMING=[
+ [11,"A2","Make plans with a friend"],[12,"A2","Describe my daily routine and job"],[13,"A2","Buy a bus ticket, ask about schedules"],
+ [14,"A2","Talk about last weekend"],[15,"A2","Book a hotel room or check in"],[16,"A2","Shop for clothes"],
+ [17,"A2","Describe family, friends, colleagues"],[18,"A2","Invitations and apologies"],
+ [19,"A2+","Explain a problem and ask for a fix"],[20,"A2+","Compare two things and say which I prefer"],[21,"A2+","Describe symptoms at a pharmacy"],
+ [22,"A2+","Tell a story about a past trip"],[23,"A2+","Talk about plans for the weekend or vacation"],
+ [24,"B1","Handle unexpected travel problems"],[25,"B1","Make a complaint"],[26,"B1","Give and justify opinions"],
+ [27,"B1","Tell the plot of a movie or book"],[28,"B1","Describe a hope or ambition"],[29,"B1","Keep small talk going"],
+ [30,"B1","Ask for and follow detailed instructions"],[31,"B1","Take part in a short interview"],[32,"B1","Talk about my work as a teacher"]
+];
+const LEVELS=[["A1","Beginner"],["A2","Elementary"],["A2+","Strong elementary"],["B1","Intermediate"]];
+const REP={"tú":["Perdón, ¿puedes repetir más despacio?","Sorry, can you repeat that more slowly?"],"usted":["Perdón, ¿me lo puede repetir más despacio?","Sorry, can you repeat that more slowly?"]};
+const LBL=["Todavía no","Casi","¡Sí!"];
+
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const strip=s=>String(s).replace(/<[^>]+>/g,"");
+function mkStore(p){return{
+  get(k,d){try{const v=localStorage.getItem(p+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(p+k,JSON.stringify(v))}catch(e){}},
+  clear(){try{Object.keys(localStorage).filter(k=>k.startsWith(p)).forEach(k=>localStorage.removeItem(k))}catch(e){}}}}
+const G=mkStore("spanish-course:");
+const LS=id=>mkStore("spanish-l"+id+":");
+const app=$("#app");
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove("show"),1800)}
+
+/* ---------- speech ---------- */
+let rate=G.get("rate",0.7),voices=[];
+function pickVoices(){
+  if(!("speechSynthesis" in window))return;
+  const rank=v=>/es[-_]MX/i.test(v.lang)?0:/es[-_](US|419)/i.test(v.lang)?1:2;
+  voices=speechSynthesis.getVoices().filter(v=>/^es/i.test(v.lang)).sort((a,b)=>rank(a)-rank(b));
+  const vi=$("#voiceinfo");if(vi)vi.textContent=voiceText();
+}
+function voiceText(){return voices.length?`Voice: ${voices[0].name} (${voices[0].lang}).`:"No Spanish voice found in this browser. Edge and Chrome include good Mexican Spanish voices."}
+if("speechSynthesis" in window){pickVoices();speechSynthesis.onvoiceschanged=pickVoices}
+function utter(text,vi){const u=new SpeechSynthesisUtterance(text);u.lang="es-MX";u.rate=rate;const v=voices[vi||0]||voices[0];if(v)u.voice=v;return u}
+function speak(text){if(!("speechSynthesis" in window)){toast("This browser has no speech voices");return}speechSynthesis.cancel();speechSynthesis.speak(utter(text))}
+function stopSpeech(){if("speechSynthesis" in window)speechSynthesis.cancel()}
+
+const SPK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>';
+const CHEV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+const sayBtn=t=>`<button class="say" data-say="${esc(strip(t))}" aria-label="Hear: ${esc(strip(t))}">${SPK}</button>`;
+const row=(es,en)=>`${sayBtn(es)}<div style="min-width:0"><span class="es-t">${es}</span><span class="en-t">${en}</span></div>`;
+
+/* ---------- global delegation ---------- */
+function flash(btn,label){const o=btn.textContent;btn.textContent=label;btn.classList.add("copied");setTimeout(()=>{btn.textContent=o;btn.classList.remove("copied")},1500)}
+function copyText(text,btn){
+  if(!navigator.clipboard){toast("Select the text and copy it with Ctrl+C");return}
+  navigator.clipboard.writeText(text).then(()=>flash(btn,"Copied"),()=>toast("Select the text and copy it with Ctrl+C"));
+}
+document.addEventListener("click",e=>{
+  const s=e.target.closest("[data-say]");if(s){speak(s.dataset.say);return}
+  const c=e.target.closest("[data-copy]");if(c){const el=document.getElementById(c.dataset.copy);if(el)copyText(el.textContent,c);return}
+  if(e.target.closest("input,button,a,summary"))return;
+  const r=e.target.closest(".masked .row");if(r)r.classList.toggle("peek");
+});
+
+/* ---------- progress ---------- */
+function progress(L){
+  const S=LS(L.id),learned=S.get("learned",{}),ratings=S.get("ratings",{});
+  const n=L.core.concat([REP[L.reg]]).filter(([es])=>learned[es]).length;
+  const rated=Object.values(ratings),yes=rated.filter(v=>v===2).length,total=L.sa.length+1;
+  if(rated.length)return{cls:"done",txt:`¡Sí! ${yes} of ${total}`};
+  if(n)return{cls:"prog",txt:`${n} of 8 phrases`};
+  return{cls:"",txt:"Not started"};
+}
+
+/* ---------- hub ---------- */
+let io=null;
+function renderHub(){
+  document.title="Español en Voz Alta";
+  const groups=LEVELS.map(([lv,name])=>{
+    const ready=IDS.filter(id=>LESSONS[id].level===lv).map(id=>{const L=LESSONS[id],p=progress(L);
+      return `<a class="lrow" href="#l${id}"><span class="num">${+id}</span><span style="min-width:0"><span class="lt">${L.title}</span><span class="lc">${L.cando}</span><span class="lp">${L.partner} · ${L.place}</span></span><span class="pill ${p.cls}">${p.txt}</span></a>`});
+    const soon=UPCOMING.filter(u=>u[1]===lv&&!LESSONS[String(u[0]).padStart(2,"0")]).map(([n,,t])=>`<div class="lrow soon"><span class="num">${n}</span><span class="lt">${t}</span><span class="pill">Coming</span></div>`);
+    if(!ready.length&&!soon.length)return"";
+    return `<section class="level"><div class="level-h"><h2>${lv}</h2><span class="muted">${name}</span></div><div class="lrows">${ready.join("")}${soon.join("")}</div></section>`;
+  }).join("");
+  app.innerHTML=`<header class="hub-h">
+    <div class="meta">Spanish speaking practice · CEFR A1–B1 · Español de México</div>
+    <h1>Español en voz alta</h1>
+    <p class="lede">Each lesson is one CEFR can-do statement. You prepare the language, role-play the situation with ChatGPT voice, get feedback, try again, and check yourself.</p>
+    <div class="cycle"><span>Prepárate</span><i>→</i><span>Role play</span><i>→</i><span>Feedback</span><i>→</i><span>Otra vez</span><i>→</i><span>¿Lo logré?</span></div>
+  </header>${groups}`;
+}
+
+/* ---------- lesson ---------- */
+function boardHtml(B){
+  const body=B.svg?`<div class="map">${B.svg}</div>`:`<div class="cols">${B.cols.map(col=>`<div>${col.map(g=>`<h5>${g.h}</h5><ul>${g.items.map(([a,b])=>`<li>${a}${b!=null?`<span class="dots"></span><span class="p">${b}</span>`:""}</li>`).join("")}</ul>`).join("")}</div>`).join("")}</div>`;
+  return `<div class="board" aria-label="${esc(B.title)}"><h4>${B.title}</h4><div class="sub">${B.sub}</div>${body}${B.note?`<div class="note">${B.note}</div>`:""}</div>`;
+}
+const frame=f=>f.replace(/\[([^\]]+)\]/g,'<span class="slot">$1</span>');
+
+function rolePrompt(L){
+  const a1=L.level==="A1",P=L.prompt;
+  return `Let's do a Spanish speaking role play. I'm ${a1?"an A1 (beginner)":"an "+L.level} learner practicing this CEFR goal: "${L.cando}" Use Mexican Spanish.
+
+YOUR ROLE
+${P.role}
+
+${P.infoTitle}
+${P.info}
+
+TWIST
+${P.twist}
+
+HOW TO TALK TO ME
+- Speak only Spanish, slowly and clearly. Use 1 or 2 short sentences per turn.
+- ${a1?"Use very simple A1 words and short questions.":"Use everyday A2 words."} Ask one question at a time.
+- ${P.lead}
+- If I make a mistake, don't stop to explain. Repeat the correct form naturally in your reply. Example: ${P.recast}
+- If I'm stuck, or I say "ayuda", give me a short hint: the beginning of a sentence I could say.
+- If I say "más despacio" or "otra vez", repeat it more slowly with simpler words.
+- If I speak English, answer in simple Spanish and help me say it in Spanish.
+- Don't end the scene yourself.
+
+FEEDBACK
+When I say "terminamos", leave the role and speak English. Keep the feedback under one minute:
+1. One thing I did well.
+2. Up to three corrections, most useful first: what I said, then a better way to say it. Say the Spanish slowly.
+3. One new phrase to use next time.
+My speech is transcribed automatically and errors may get cleaned up, so mention anything you weren't sure you heard correctly. Then ask if I want to try again.
+
+If you understand, reply only: "Listo. ${L.reg==="tú"?"Di":"Diga"} 'hola' para empezar."`;
+}
+function reviewPrompt(L,core,sa){
+  const next={"A1":"A1+","A2":"A2+","A2+":"B1","B1":"B1+"}[L.level];
+  return `I'm an ${L.level} Spanish learner (Mexican Spanish). Below is the transcript of a voice role play: ${L.scene}.
+CEFR goal: "${L.cando}"
+
+My 8 target phrases: ${core.map(c=>strip(c[0])).join(" · ")}
+
+My speech was transcribed by speech recognition, which often corrects grammar and removes hesitations. Treat my lines as a best-case version of what I actually said.
+
+Please give me:
+1. Can-do check. For each, say yes / partly / no with a short quote: ${sa.join(" · ")}.
+2. My top 3 corrections or upgrades: what I said → more natural Mexican Spanish → why (one line).
+3. Which target phrases I used and which I avoided.
+4. Two phrases to focus on in my next attempt.
+5. My side of the conversation rewritten at a solid ${next} level, so I can read it aloud.
+Keep explanations short and in English.
+
+TRANSCRIPT:
+`;
+}
+
+function renderLesson(L){
+  const S=LS(L.id),rep=REP[L.reg];
+  const core=L.core.concat([rep]);
+  const qd=L.qd.concat([["You didn't catch that. Ask them to repeat it slowly.",rep[0]]]);
+  const sa=L.sa.concat(["I can fix a misunderstanding without switching to English"]);
+  const twists=[["Lo mismo","Start here","Same scene. Aim to be faster and use every correction.","Otra vez, por favor. Same scene, same rules. I'll try to use your corrections."]]
+    .concat(L.twists,[["A velocidad real","Challenge","Same scene at a natural speed, with more Mexican expressions.","Otra vez, por favor. Same scene, but speak at a natural speed and use a few more everyday Mexican expressions. Still recast my mistakes."]]);
+  const you=L.reg==="tú"?"Tú":"Usted";
+  const m=L.minutes, prepM=m-18;
+  let learned=S.get("learned",{}),ratings=S.get("ratings",{}),collapsed=S.get("collapsed",{});
+  const idx=IDS.indexOf(L.id),prev=IDS[idx-1],nxt=IDS[idx+1];
+  document.title=`${+L.id}. ${L.title} · Español en Voz Alta`;
+
+  app.innerHTML=`
+<a class="back" href="#inicio">← All lessons</a>
+<header class="lesson">
+  <div class="meta">Lección ${+L.id} · CEFR ${L.level} · ${L.scale} · about ${m} min</div>
+  <h1>${L.title}</h1>
+  <p class="cando"><span class="eyebrow">Can-do</span>${L.cando}</p>
+</header>
+<nav class="stages" aria-label="Lesson stages">
+  <button data-go="prep" class="on">1 Prepárate<span class="t">${prepM}′</span></button>
+  <button data-go="roleplay">2 Role play<span class="t">6′</span></button>
+  <button data-go="feedback">3 Feedback<span class="t">5′</span></button>
+  <button data-go="again">4 Otra vez<span class="t">5′</span></button>
+  <button data-go="check">5 ¿Lo logré?<span class="t">2′</span></button>
+  <div class="foldall"><button id="expand-all">Expand all</button><button id="collapse-all">Collapse all</button></div>
+</nav>
+
+<section class="stage" id="prep">
+  <div class="stage-h"><span class="n">1</span><h2>Prepárate</h2></div>
+  <p class="lede">See the whole conversation first, then learn the 8 phrases you need most and practice saying them from memory.</p>
+  <div class="step" id="p1">
+    <div class="step-h"><span class="eyebrow">Paso 1</span><h3>${L.boardStep[0]}</h3><p>${L.boardStep[1]}</p></div>
+    ${boardHtml(L.board)}
+  </div>
+  <div class="step" id="p2">
+    <div class="step-h"><span class="eyebrow">Paso 2</span><h3>Escucha el diálogo</h3><p>Listen once with the English showing. Then hide the English and listen again.</p></div>
+    <div class="controls">
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="btn primary" id="play-all"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Play</button>
+        <button class="btn" id="stop-all">Stop</button>
+      </div>
+      <div class="seg" role="group" aria-label="Dialogue text" data-vis="dlg">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-en" aria-pressed="false">Hide English</button><button data-mode="mask-es mask-en" aria-pressed="false">Hide all</button>
+      </div>
+    </div>
+    <div class="rows" id="dlg">${L.dialogue.map(([w,es,en],i)=>`<div class="row line ${w}" id="dl${i}"><span class="who">${w==="m"?L.partner:you}</span><div style="min-width:0"><span class="es-t">${es}</span><span class="en-t">${en}</span></div>${sayBtn(es)}</div>`).join("")}</div>
+  </div>
+  <div class="step" id="p3">
+    <div class="step-h"><span class="eyebrow">Paso 3</span><h3>Aprende 8 frases</h3><p>These are the ones you'll use. Say each out loud, then hide the Spanish and recall it from the English. Tap a row to peek. Check it off when you can say it without looking.</p></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Phrase text" data-vis="core">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-es" aria-pressed="false">Hide Spanish</button><button data-mode="mask-en" aria-pressed="false">Hide English</button>
+      </div>
+      <span class="count" id="phr-count"></span>
+    </div>
+    <div class="rows" id="core"></div>
+    <h3 style="font-size:1.05rem;margin:1.8rem 0 .2rem">You'll hear</h3>
+    <p class="muted small" style="margin-bottom:.6rem">Hide the English and see if you know what ${L.partner} is saying.</p>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Listening text" data-vis="hear">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-en" aria-pressed="false">Hide English</button><button data-mode="mask-es mask-en" aria-pressed="false">Audio only</button>
+      </div>
+    </div>
+    <div class="rows" id="hear">${L.hear.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div>
+  </div>
+  <div class="step" id="p4">
+    <div class="step-h"><span class="eyebrow">Paso 4</span><h3>Vocabulario</h3><p>Hide one language and test yourself. Tap a row to peek.</p></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Vocabulary text" data-vis="vocab">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-es" aria-pressed="false">Hide Spanish</button><button data-mode="mask-en" aria-pressed="false">Hide English</button>
+      </div>
+    </div>
+    <div id="vocab">${L.vocab.map(([g,items])=>`<div class="vgroup"><div class="eyebrow">${g}</div><div class="vrows">${items.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div></div>`).join("")}</div>
+  </div>
+  <div class="step" id="p5">
+    <div class="step-h"><span class="eyebrow">Paso 5</span><h3>¿Qué dirías?</h3><p>Say your answer out loud first, then check it.</p></div>
+    <div id="qd">${qd.map(([s,a],i)=>`<div class="qrow"><div>${i+1}. ${s}</div><button class="reveal" data-q="${i}">Show answer</button><div class="ans" hidden id="qa${i}">${sayBtn(a)}<span>${a}</span></div></div>`).join("")}</div>
+  </div>
+  <div class="step" id="p6">
+    <div class="step-h"><span class="eyebrow">Extra</span><h3>If you have time</h3></div>
+    <details><summary>More phrases <span class="count">${L.extra.length}</span></summary><div class="inner"><div class="rows">${L.extra.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div></div></details>
+    <details><summary>Patterns</summary><div class="inner">${L.patterns.map(([f,ex])=>`<div class="pat"><div class="frame">${frame(f)}</div><div class="ex">${ex}</div></div>`).join("")}</div></details>
+    <details><summary>Cultural notes</summary><div class="inner notes">${L.notes.map(([b,t])=>`<div><b>${b}</b>${t}</div>`).join("")}</div></details>
+    <details><summary>Audio settings</summary><div class="inner">
+      <div class="controls" style="justify-content:flex-start"><span class="small muted">Speed</span>
+        <div class="seg" role="group" aria-label="Speech speed" id="rate"><button data-rate="0.7">Slow</button><button data-rate="0.95">Normal</button></div></div>
+      <p class="small muted" id="voiceinfo">${voiceText()}</p></div></details>
+  </div>
+</section>
+
+<section class="stage" id="roleplay">
+  <div class="stage-h"><span class="n">2</span><h2>Role play</h2></div>
+  <p class="lede">${L.goal}</p>
+  <ol class="steps">
+    <li>Open ChatGPT and start a <b>new chat</b>.</li>
+    <li>Copy the prompt below, paste it as a text message, and send it.</li>
+    <li>In the same chat, tap the <b>voice</b> button and say <b>"Hola"</b>.</li>
+    <li>When you're done, say <b>"Terminamos"</b> to get feedback.</li>
+  </ol>
+  <div class="prompt"><div class="bar"><span>Role-play prompt for ChatGPT</span><button class="btn primary" data-copy="p-roleplay">Copy</button></div><pre id="p-roleplay">${esc(rolePrompt(L))}</pre></div>
+  <p style="margin-top:1.4rem"><b>Things you can say anytime</b></p>
+  <div class="saylist"><div><b>ayuda</b>a hint for what to say next</div><div><b>más despacio</b>slower and simpler</div><div><b>otra vez</b>repeat the last line</div><div><b>terminamos</b>end and get feedback</div></div>
+  <div class="tip"><b>Push yourself:</b> use at least three of your 8 phrases. If you freeze, use your repair phrase (<i>${rep[0]}</i>) instead of switching to English.</div>
+</section>
+
+<section class="stage" id="feedback">
+  <div class="stage-h"><span class="n">3</span><h2>Feedback</h2></div>
+  <p class="lede">Get ChatGPT's quick spoken feedback first. For a closer look, paste the transcript into Claude afterward.</p>
+  <div class="block"><h3>Quick, in ChatGPT</h3><p>Say <b>"Terminamos"</b>. ${L.partner} drops the role and gives you one strength, up to three corrections, and a new phrase. Repeat each corrected sentence out loud twice.</p></div>
+  <div class="block"><h3>Deeper, in Claude</h3><p>Speech recognition often fixes your grammar before the AI sees it, so spoken feedback can miss errors. Copy the transcript from the ChatGPT chat and paste it under this prompt.</p>
+    <div class="prompt"><div class="bar"><span>Transcript-review prompt for Claude</span><button class="btn primary" data-copy="p-review">Copy</button></div><pre id="p-review">${esc(reviewPrompt(L,core,sa))}</pre></div></div>
+  <div class="block"><h3><label for="notes">Your notes</label></h3><p class="muted small">What did you want to say but couldn't? Add the corrections you want to remember. Saved in this browser.</p>
+    <textarea id="notes" placeholder="e.g. Wanted to say … → …"></textarea></div>
+</section>
+
+<section class="stage" id="again">
+  <div class="stage-h"><span class="n">4</span><h2>Otra vez</h2></div>
+  <p class="lede">Repeating the task right after feedback builds fluency. Stay in the same ChatGPT chat, copy one of these, and go again using your corrections.</p>
+  <div class="twists">${twists.map(([t,l,d,p],i)=>`<div class="twist"><h4>${t}<span class="lvl${i===0?" rec":""}">${l}</span></h4><p>${d}</p><button class="btn" data-copy="tw${i}">Copy</button><pre id="tw${i}">${esc(p)}</pre></div>`).join("")}</div>
+</section>
+
+<section class="stage" id="check">
+  <div class="stage-h"><span class="n">5</span><h2>¿Lo logré?</h2></div>
+  <p class="lede">Be honest. "Casi" means you did it, but with help or long pauses. Saved in this browser.</p>
+  <div id="sa" style="margin-top:1.2rem">${sa.map((s,i)=>`<div class="sarow"><div>${s}</div><div class="seg rating" role="group" aria-label="${esc(s)}">${LBL.map((l,v)=>`<button data-i="${i}" data-v="${v}" aria-pressed="${ratings[i]===v}">${l}</button>`).join("")}</div></div>`).join("")}</div>
+  <div class="finish"><button class="btn primary" id="copy-summary">Copy session summary</button><button class="btn" id="reset">Reset this lesson</button></div>
+  <p class="muted small" style="margin-top:.6rem">Paste the summary into Claude to track progress or plan the next lesson.</p>
+  <div id="reset-confirm" class="confirm" hidden>Clear your checked phrases, notes, and ratings for this lesson?
+    <div class="finish" style="margin-top:.6rem"><button class="btn" id="reset-yes">Yes, clear them</button><button class="btn" id="reset-no">Cancel</button></div></div>
+</section>
+
+<div class="next">
+  ${prev?`<a class="btn" href="#l${prev}">← ${+prev}. ${LESSONS[prev].title}</a>`:`<a class="btn" href="#inicio">← All lessons</a>`}
+  ${nxt?`<a class="btn primary" href="#l${nxt}">${+nxt}. ${LESSONS[nxt].title} →</a>`:`<a class="btn" href="#inicio">All lessons</a>`}
+</div>`;
+
+  /* core phrases */
+  function renderCore(){
+    $("#core").innerHTML=core.map(([es,en],i)=>`<div class="row chk${learned[es]?" done":""}"><input type="checkbox" id="core${i}" data-es="${esc(es)}" ${learned[es]?"checked":""} aria-label="I can say: ${esc(es)}">${row(es,en)}</div>`).join("");
+    $("#phr-count").textContent=`${core.filter(([es])=>learned[es]).length} of 8 learned`;
+  }
+  renderCore();
+  $("#core").addEventListener("change",e=>{const c=e.target;if(!c.dataset.es)return;learned[c.dataset.es]=c.checked;S.set("learned",learned);c.closest(".row").classList.toggle("done",c.checked);$("#phr-count").textContent=`${core.filter(([es])=>learned[es]).length} of 8 learned`});
+
+  /* show / hide */
+  function setVis(target,mode,save=true){
+    const el=document.getElementById(target);
+    el.classList.remove("mask-es","mask-en","masked");
+    $$(".peek",el).forEach(r=>r.classList.remove("peek"));
+    if(mode!=="all")el.classList.add("masked",...mode.split(" "));
+    $$(`[data-vis="${target}"] button`).forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
+    if(save){const v=S.get("vis",{});v[target]=mode;S.set("vis",v)}
+  }
+  $$("[data-vis]").forEach(g=>g.addEventListener("click",e=>{const b=e.target.closest("button");if(b)setVis(g.dataset.vis,b.dataset.mode)}));
+  Object.entries(S.get("vis",{})).forEach(([t,md])=>{if(document.getElementById(t)&&$(`[data-vis="${t}"] [data-mode="${md}"]`))setVis(t,md,false)});
+
+  /* speed */
+  function setRate(r){rate=r;G.set("rate",r);$$("#rate button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.rate===r)))}
+  $$("#rate button").forEach(b=>b.addEventListener("click",()=>setRate(+b.dataset.rate)));
+  setRate(rate);
+
+  /* drill */
+  $("#qd").addEventListener("click",e=>{const b=e.target.closest(".reveal");if(!b)return;$("#qa"+b.dataset.q).hidden=false;b.hidden=true;speak(strip(qd[b.dataset.q][1]))});
+
+  /* dialogue */
+  const clearPlaying=()=>$$(".line.playing").forEach(l=>l.classList.remove("playing"));
+  $("#play-all").onclick=()=>{
+    if(!("speechSynthesis" in window)){toast("This browser has no speech voices");return}
+    speechSynthesis.cancel();
+    L.dialogue.forEach(([w,es],i)=>{const u=utter(strip(es),w==="m"?0:(voices.length>1?1:0));
+      u.onstart=()=>{clearPlaying();const el=$("#dl"+i);if(el)el.classList.add("playing")};
+      if(i===L.dialogue.length-1)u.onend=clearPlaying;
+      speechSynthesis.speak(u)});
+  };
+  $("#stop-all").onclick=()=>{stopSpeech();clearPlaying()};
+
+  /* notes */
+  const notes=$("#notes");notes.value=S.get("notes","");
+  notes.addEventListener("input",()=>S.set("notes",notes.value));
+
+  /* self assessment */
+  $("#sa").addEventListener("click",e=>{const b=e.target.closest(".rating button");if(!b)return;const i=+b.dataset.i,v=+b.dataset.v;ratings[i]=v;S.set("ratings",ratings);
+    $$("button",b.parentElement).forEach(x=>x.setAttribute("aria-pressed",String(+x.dataset.v===v)))});
+  $("#copy-summary").onclick=e=>{
+    const d=new Date().toISOString().slice(0,10);
+    const lines=[`Spanish self-study · Lección ${+L.id} · ${L.title} (CEFR ${L.level}: ${L.cando}) · ${d}`,"",
+      `Core phrases learned: ${core.filter(([es])=>learned[es]).length}/8`,"","Self-assessment:",
+      ...sa.map((s,i)=>`- ${s}: ${ratings[i]==null?"(not rated)":LBL[ratings[i]]}`),"","My notes:",notes.value.trim()||"(none)"];
+    copyText(lines.join("\n"),e.currentTarget);
+  };
+
+  /* collapsible */
+  const folds=$$("section.stage, .step",app);
+  function setFold(el,c,save=true){
+    el.classList.toggle("collapsed",c);
+    const b=$(":scope > .stage-h .fold, :scope > .step-h .fold",el);
+    if(b){b.setAttribute("aria-expanded",String(!c));b.setAttribute("aria-label",(c?"Expand ":"Collapse ")+b.dataset.name)}
+    if(save){collapsed[el.id]=c;S.set("collapsed",collapsed)}
+  }
+  folds.forEach(el=>{
+    const h=$(":scope > .stage-h, :scope > .step-h",el);
+    h.insertAdjacentHTML("beforeend",`<button class="fold" data-name="${esc($("h2,h3",h).textContent)}">${CHEV}</button>`);
+    h.addEventListener("click",()=>setFold(el,!el.classList.contains("collapsed")));
+    setFold(el,!!collapsed[el.id],false);
+  });
+  $("#expand-all").onclick=()=>folds.forEach(el=>setFold(el,false));
+  $("#collapse-all").onclick=()=>$$("section.stage",app).forEach(el=>setFold(el,true));
+
+  /* reset */
+  $("#reset").onclick=()=>{$("#reset-confirm").hidden=false};
+  $("#reset-no").onclick=()=>{$("#reset-confirm").hidden=true};
+  $("#reset-yes").onclick=()=>{S.clear();learned={};ratings={};collapsed={};notes.value="";renderCore();
+    ["dlg","core","hear","vocab"].forEach(t=>setVis(t,"all",false));folds.forEach(el=>setFold(el,false,false));
+    $$(".rating button").forEach(b=>b.setAttribute("aria-pressed","false"));$("#reset-confirm").hidden=true;toast("Lesson reset")};
+
+  /* stage bar */
+  const tabs=$$("nav.stages [data-go]");
+  tabs.forEach(b=>b.addEventListener("click",()=>{const s=document.getElementById(b.dataset.go);setFold(s,false);s.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}));
+  io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)tabs.forEach(b=>b.classList.toggle("on",b.dataset.go===en.target.id))})},{rootMargin:"-40% 0px -55% 0px"});
+  $$("section.stage",app).forEach(s=>io.observe(s));
+}
+
+/* ---------- router ---------- */
+function route(){
+  stopSpeech();
+  if(io){io.disconnect();io=null}
+  const m=location.hash.match(/^#l(\d\d)$/);
+  if(m&&LESSONS[m[1]])renderLesson(LESSONS[m[1]]);else renderHub();
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+route();
+})();
+</script>
+
+</html>
