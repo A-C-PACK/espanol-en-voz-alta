@@ -217,6 +217,10 @@ textarea{width:100%;min-height:120px;font:inherit;font-size:.95rem;padding:.8rem
 .confirm{margin-top:1rem;padding:.9rem 1.1rem;border:1px solid var(--warn);border-radius:10px}
 .next{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
+.var-done{display:flex;gap:.6rem;align-items:center;margin-top:1.2rem;font-weight:700;font-size:.95rem}
+.var-done input{width:20px;height:20px;accent-color:var(--ok);margin:0}
+.step-h .eyebrow .ok{color:var(--ok);margin-left:.4rem}
+.vsub{font-size:1.05rem;margin:1.6rem 0 .5rem}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:.5rem 1rem;border-radius:8px;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.show{opacity:1}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -327,8 +331,8 @@ function boardHtml(B){
 }
 const frame=f=>f.replace(/\[([^\]]+)\]/g,'<span class="slot">$1</span>');
 
-function rolePrompt(L){
-  const a1=L.level==="A1",P=L.prompt;
+function rolePrompt(L,V){
+  const a1=L.level==="A1",P=V?V.prompt:L.prompt,reg=V&&V.reg||L.reg;
   return `Let's do a Spanish speaking role play. I'm ${a1?"an A1 (beginner)":"an "+L.level} learner practicing this CEFR goal: "${L.cando}" Use Mexican Spanish.
 
 YOUR ROLE
@@ -336,10 +340,10 @@ ${P.role}
 
 ${P.infoTitle}
 ${P.info}
-
+${P.twist?`
 TWIST
 ${P.twist}
-
+`:""}
 HOW TO TALK TO ME
 - Speak only Spanish, slowly and clearly. Use 1 or 2 short sentences per turn.
 - ${a1?"Use very simple A1 words and short questions.":"Use everyday A2 words."} Ask one question at a time.
@@ -357,7 +361,7 @@ When I say "terminamos", leave the role and speak English. Keep the feedback und
 3. One new phrase to use next time.
 My speech is transcribed automatically and errors may get cleaned up, so mention anything you weren't sure you heard correctly. Then ask if I want to try again.
 
-If you understand, reply only: "Listo. ${L.reg==="tú"?"Di":"Diga"} 'hola' para empezar."`;
+If you understand, reply only: "Listo. ${reg==="tú"?"Di":"Diga"} 'hola' para empezar."`;
 }
 function reviewPrompt(L,core,sa){
   const next={"A1":"A1+","A2":"A2+","A2+":"B1","B1":"B1+"}[L.level];
@@ -388,8 +392,9 @@ function renderLesson(L){
   const twists=[["Lo mismo","Start here","Same scene. Aim to be faster and use every correction.","Otra vez, por favor. Same scene, same rules. I'll try to use your corrections."]]
     .concat(L.twists,[["A velocidad real","Challenge","Same scene at a natural speed, with more Mexican expressions.","Otra vez, por favor. Same scene, but speak at a natural speed and use a few more everyday Mexican expressions. Still recast my mistakes."]]);
   const you=L.reg==="tú"?"Tú":"Usted";
+  const vars=L.vars||[];
   const m=L.minutes, prepM=m-18;
-  let learned=S.get("learned",{}),ratings=S.get("ratings",{}),collapsed=S.get("collapsed",{});
+  let learned=S.get("learned",{}),ratings=S.get("ratings",{}),collapsed=S.get("collapsed",{}),varsDone=S.get("varsDone",{});
   const idx=IDS.indexOf(L.id),prev=IDS[idx-1],nxt=IDS[idx+1];
   document.title=`${+L.id}. ${L.title} · Español en Voz Alta`;
 
@@ -406,6 +411,7 @@ function renderLesson(L){
   <button data-go="feedback">3 Feedback<span class="t">5′</span></button>
   <button data-go="again">4 Otra vez<span class="t">5′</span></button>
   <button data-go="check">5 ¿Lo logré?<span class="t">2′</span></button>
+  ${vars.length?`<button data-go="vary">6 Variaciones<span class="t">otro día</span></button>`:""}
   <div class="foldall"><button id="expand-all">Expand all</button><button id="collapse-all">Collapse all</button></div>
 </nav>
 
@@ -513,6 +519,27 @@ function renderLesson(L){
     <div class="finish" style="margin-top:.6rem"><button class="btn" id="reset-yes">Yes, clear them</button><button class="btn" id="reset-no">Cancel</button></div></div>
 </section>
 
+${vars.length?`<section class="stage" id="vary">
+  <div class="stage-h"><span class="n">6</span><h2>Variaciones</h2></div>
+  <p class="lede">Come back on another day. Same can-do, but a new place and new information. Learn the new words for one variation, then play it in a new ChatGPT chat.</p>
+  ${vars.map((V,i)=>`<div class="step collapsed" id="v${i+1}" data-closed="1">
+    <div class="step-h"><span class="eyebrow">Variación ${i+1}<span class="ok" id="vok${i}">${varsDone[i]?"✓ Hecho":""}</span></span><h3>${V.title}</h3><p>${V.partner} · ${V.place}</p></div>
+    <p>${V.goal}</p>
+    ${boardHtml(V.board)}
+    <h4 class="vsub">Palabras nuevas</h4>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="New words, variation ${i+1}" data-vis="vw${i}">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-es" aria-pressed="false">Hide Spanish</button><button data-mode="mask-en" aria-pressed="false">Hide English</button>
+      </div>
+    </div>
+    <div class="rows" id="vw${i}">${V.words.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div>
+    <h4 class="vsub">Frases útiles</h4>
+    <div class="rows">${V.phrases.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div>
+    <div class="prompt"><div class="bar"><span>Role-play prompt: ${V.title}</span><button class="btn primary" data-copy="p-var${i}">Copy</button></div><pre id="p-var${i}">${esc(rolePrompt(L,V))}</pre></div>
+    <label class="var-done"><input type="checkbox" data-var="${i}" ${varsDone[i]?"checked":""}>I did this variation</label>
+  </div>`).join("")}
+</section>
+`:""}
 <div class="next">
   ${prev?`<a class="btn" href="#l${prev}">← ${+prev}. ${LESSONS[prev].title}</a>`:`<a class="btn" href="#inicio">← All lessons</a>`}
   ${nxt?`<a class="btn primary" href="#l${nxt}">${+nxt}. ${LESSONS[nxt].title} →</a>`:`<a class="btn" href="#inicio">All lessons</a>`}
@@ -562,6 +589,9 @@ function renderLesson(L){
   const notes=$("#notes");notes.value=S.get("notes","");
   notes.addEventListener("input",()=>S.set("notes",notes.value));
 
+  /* variations */
+  $$("[data-var]").forEach(c=>c.addEventListener("change",()=>{const i=+c.dataset.var;varsDone[i]=c.checked;S.set("varsDone",varsDone);$("#vok"+i).textContent=c.checked?"✓ Hecho":""}));
+
   /* self assessment */
   $("#sa").addEventListener("click",e=>{const b=e.target.closest(".rating button");if(!b)return;const i=+b.dataset.i,v=+b.dataset.v;ratings[i]=v;S.set("ratings",ratings);
     $$("button",b.parentElement).forEach(x=>x.setAttribute("aria-pressed",String(+x.dataset.v===v)))});
@@ -569,7 +599,8 @@ function renderLesson(L){
     const d=new Date().toISOString().slice(0,10);
     const lines=[`Spanish self-study · Lección ${+L.id} · ${L.title} (CEFR ${L.level}: ${L.cando}) · ${d}`,"",
       `Core phrases learned: ${core.filter(([es])=>learned[es]).length}/8`,"","Self-assessment:",
-      ...sa.map((s,i)=>`- ${s}: ${ratings[i]==null?"(not rated)":LBL[ratings[i]]}`),"","My notes:",notes.value.trim()||"(none)"];
+      ...sa.map((s,i)=>`- ${s}: ${ratings[i]==null?"(not rated)":LBL[ratings[i]]}`),
+      ...(vars.length?["",`Variations done: ${vars.filter((V,i)=>varsDone[i]).map(V=>V.title).join(", ")||"none yet"}`]:[]),"","My notes:",notes.value.trim()||"(none)"];
     copyText(lines.join("\n"),e.currentTarget);
   };
 
@@ -585,7 +616,7 @@ function renderLesson(L){
     const h=$(":scope > .stage-h, :scope > .step-h",el);
     h.insertAdjacentHTML("beforeend",`<button class="fold" data-name="${esc($("h2,h3",h).textContent)}">${CHEV}</button>`);
     h.addEventListener("click",()=>setFold(el,!el.classList.contains("collapsed")));
-    setFold(el,!!collapsed[el.id],false);
+    setFold(el,el.id in collapsed?!!collapsed[el.id]:el.dataset.closed==="1",false);
   });
   $("#expand-all").onclick=()=>folds.forEach(el=>setFold(el,false));
   $("#collapse-all").onclick=()=>$$("section.stage",app).forEach(el=>setFold(el,true));
@@ -593,8 +624,9 @@ function renderLesson(L){
   /* reset */
   $("#reset").onclick=()=>{$("#reset-confirm").hidden=false};
   $("#reset-no").onclick=()=>{$("#reset-confirm").hidden=true};
-  $("#reset-yes").onclick=()=>{S.clear();learned={};ratings={};collapsed={};notes.value="";renderCore();
-    ["dlg","core","hear","vocab"].forEach(t=>setVis(t,"all",false));folds.forEach(el=>setFold(el,false,false));
+  $("#reset-yes").onclick=()=>{S.clear();learned={};ratings={};collapsed={};varsDone={};notes.value="";renderCore();
+    $$("[data-vis]").forEach(g=>setVis(g.dataset.vis,"all",false));folds.forEach(el=>setFold(el,el.dataset.closed==="1",false));
+    $$("[data-var]").forEach(c=>{c.checked=false;$("#vok"+c.dataset.var).textContent=""});
     $$(".rating button").forEach(b=>b.setAttribute("aria-pressed","false"));$("#reset-confirm").hidden=true;toast("Lesson reset")};
 
   /* stage bar */

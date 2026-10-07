@@ -7,6 +7,7 @@ A self-study Spanish speaking course built around CEFR can-do statements (A1–B
 3. **Feedback**: quick spoken feedback in ChatGPT, or paste the transcript into Claude with the review prompt.
 4. **Otra vez**: repeat the task with a twist.
 5. **¿Lo logré?**: rate yourself against the can-do statement.
+6. **Variaciones** (another day): the same can-do in three new places, each with its own menu or information, new words, and its own prompt.
 
 Progress (checked phrases, notes, ratings) is saved in your browser only.
 
@@ -36,6 +37,7 @@ node course/build.js
 ```
 
 - `course/data/lNN.js`: one file per lesson (all content and prompt details)
+- `course/data/vNN.js`: the three variations for that lesson (new context and information)
 - `course/src/template.html`: the shared page (hub and lesson view)
 - Output: `docs/index.html` (served by GitHub Pages)
 

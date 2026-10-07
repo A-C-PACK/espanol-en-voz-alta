@@ -224,6 +224,10 @@ textarea{width:100%;min-height:120px;font:inherit;font-size:.95rem;padding:.8rem
 .confirm{margin-top:1rem;padding:.9rem 1.1rem;border:1px solid var(--warn);border-radius:10px}
 .next{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
+.var-done{display:flex;gap:.6rem;align-items:center;margin-top:1.2rem;font-weight:700;font-size:.95rem}
+.var-done input{width:20px;height:20px;accent-color:var(--ok);margin:0}
+.step-h .eyebrow .ok{color:var(--ok);margin-left:.4rem}
+.vsub{font-size:1.05rem;margin:1.6rem 0 .5rem}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:.5rem 1rem;border-radius:8px;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.show{opacity:1}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -1395,6 +1399,1033 @@ LESSONS["10"] = {
   ]
 };
 
+// v01.js
+LESSONS["01"].vars = [
+  {
+    title: "En el hostal", partner: "Tomás", place: "Hostal Casa Ollin · Oaxaca",
+    goal: "You meet another traveler on the hostel terrace. Introduce yourself, say why you're in Oaxaca and for how long, and find out three things about him.",
+    board: {
+      title: "Hostal Casa Ollin", sub: "Oaxaca de Juárez · la terraza · 9 pm",
+      cols: [
+        [{ h: "Tu ficha", items: [["Me llamo…"], ["Soy de…"], ["Estoy de vacaciones / Estoy aquí por…"], ["Me quedo… días."]] }],
+        [{ h: "Pregúntale", items: [["¿De dónde eres?"], ["¿Viajas solo?"], ["¿Cuánto tiempo vas a estar aquí?"], ["¿Adónde vas después?"]] }]
+      ],
+      note: "Tomás is Mexican too, but not from Oaxaca."
+    },
+    words: [
+      ["el hostal", "hostel"], ["el viaje", "trip"], ["viajar", "to travel"], ["solo, sola", "alone"],
+      ["de vacaciones", "on vacation"], ["la semana", "week"], ["el día", "day"], ["después", "after, next"],
+      ["el estudiante, la estudiante", "student"], ["la carrera", "university degree"]
+    ],
+    phrases: [
+      ["Estoy de vacaciones.", "I'm on vacation."],
+      ["Me quedo una semana.", "I'm staying a week."],
+      ["¿Viajas solo?", "Are you traveling alone?"],
+      ["¿Cuánto tiempo vas a estar aquí?", "How long are you going to be here?"],
+      ["¿Qué estudias?", "What are you studying?"]
+    ],
+    prompt: {
+      role: `You are Tomás, 24, a traveler staying at Hostal Casa Ollin in Oaxaca. We just met on the hostel's terrace at night. Use "tú" with me.`,
+      infoTitle: "ABOUT YOU (TOMÁS)",
+      info: `From Monterrey. Studies biology at university (la carrera de biología). Traveling alone for two weeks: one week in Oaxaca, then Chiapas. Doesn't speak English. Likes hiking and trying new food. Has a dog named Firulais at home.`,
+      lead: `Lead like a friendly traveler: say hi, ask my name, where I'm from, why I'm in Oaxaca, and how long I'm staying, one at a time. Answer my questions about you. React briefly ("¡Qué padre!") and ask the next question.`,
+      recast: `I say "Yo estoy aquí por una semana" and you say "Ah, te quedas una semana. ¡Qué padre!"`
+    }
+  },
+  {
+    title: "En un congreso", partner: "Dra. Patricia Ruiz", place: "Congreso de maestros · Guadalajara", reg: "usted",
+    goal: "A coffee break at a teachers' conference. Introduce yourself formally, say what you teach and where, and find out about her work.",
+    board: {
+      title: "Congreso de Maestros", sub: "Guadalajara, Jal. · el café de las 11",
+      cols: [
+        [{ h: "Tu ficha", items: [["Me llamo…"], ["Soy de… / Vivo en…"], ["Doy clases de… en…"], ["Trabajo con adultos / con niños."]] }],
+        [{ h: "Pregúntele", items: [["¿Cómo se llama?"], ["¿De dónde es?"], ["¿Dónde trabaja?"], ["¿Qué enseña?"], ["¿Va a presentar hoy?"]] }]
+      ],
+      note: "This is a formal setting. Use usted with Dra. Ruiz."
+    },
+    words: [
+      ["el congreso", "conference"], ["la ponencia", "talk, presentation"], ["el maestro, la maestra", "teacher"],
+      ["enseñar", "to teach"], ["dar clases de…", "to teach (a subject)"], ["la universidad", "university"],
+      ["los alumnos", "students"], ["el colega, la colega", "colleague"], ["el gafete", "name badge"], ["encantado, encantada", "pleased to meet you"]
+    ],
+    phrases: [
+      ["Encantado. / Encantada.", "Pleased to meet you."],
+      ["Doy clases de inglés.", "I teach English."],
+      ["¿Usted dónde trabaja?", "Where do you work?"],
+      ["¿Usted también da clases?", "Do you teach too?"],
+      ["¿Va a presentar hoy?", "Are you presenting today?"]
+    ],
+    prompt: {
+      role: `You are Dra. Patricia Ruiz, 52, a university professor. We just met during the coffee break at a teachers' conference in Guadalajara. This is a professional setting, so use "usted" with me.`,
+      infoTitle: "ABOUT YOU (PATRICIA)",
+      info: `From Guadalajara, lives in Zapopan. Has taught English at the Universidad de Guadalajara for 20 years. Teaches future English teachers. Is presenting a talk (una ponencia) today at 4 pm about reading. Speaks English well but prefers to speak Spanish today.`,
+      lead: `Lead like a polite colleague: introduce yourself, ask my name, where I'm from, and what I teach and where, one at a time. Answer my questions about you. React briefly ("¡Qué interesante!") and ask the next question.`,
+      recast: `I say "Yo enseño de inglés" and you say "Ah, usted enseña inglés. ¡Qué interesante!"`
+    }
+  },
+  {
+    title: "En el avión", partner: "Don Ernesto", place: "Vuelo a Cancún", reg: "usted",
+    goal: "Your seatmate on a flight starts a conversation. Introduce yourself, say why you're traveling, and find out about him and his trip.",
+    board: {
+      title: "Vuelo 214", sub: "Ciudad de México → Cancún · asiento 18B",
+      cols: [
+        [{ h: "Tu ficha", items: [["Me llamo…"], ["Soy de…"], ["Voy a Cancún de vacaciones / por trabajo."], ["Viajo solo / sola / con…"]] }],
+        [{ h: "Pregúntele", items: [["¿Usted es de Cancún?"], ["¿Viaja de vacaciones?"], ["¿A qué se dedica?"], ["¿Tiene familia en Cancún?"]] }]
+      ],
+      note: "Don Ernesto is older and friendly. Use usted with him."
+    },
+    words: [
+      ["el vuelo", "flight"], ["el avión", "plane"], ["el asiento", "seat"], ["la ventanilla", "window seat"],
+      ["el pasillo", "aisle"], ["jubilado, jubilada", "retired"], ["visitar", "to visit"], ["la nieta, el nieto", "granddaughter, grandson"],
+      ["por trabajo", "for work"], ["primera vez", "first time"]
+    ],
+    phrases: [
+      ["Voy a Cancún de vacaciones.", "I'm going to Cancún on vacation."],
+      ["Es mi primera vez en Cancún.", "It's my first time in Cancún."],
+      ["¿Usted vive en Cancún?", "Do you live in Cancún?"],
+      ["¿Y usted a qué se dedica?", "And what do you do?"],
+      ["¡Qué bonito!", "How nice!"]
+    ],
+    prompt: {
+      role: `You are Don Ernesto, 68, a friendly retired man sitting next to me on a flight from Mexico City to Cancún. You start the conversation. Use "usted" with me.`,
+      infoTitle: "ABOUT YOU (DON ERNESTO)",
+      info: `From Mérida, lives in Mérida. Retired (jubilado); he was a mechanic for 40 years. Going to Cancún to visit his daughter and his granddaughter Sofi, who turns 5 on Saturday. Has three children. Likes baseball and fishing.`,
+      lead: `Start with "¿Va a Cancún de vacaciones?" Ask my name, where I'm from, why I'm traveling, and what I do, one at a time. Answer my questions about you. React briefly ("¡Qué bonito!") and ask the next question.`,
+      recast: `I say "Yo voy en Cancún por vacaciones" and you say "Ah, va a Cancún de vacaciones. ¡Qué bonito!"`
+    }
+  }
+];
+
+// v02.js
+LESSONS["02"].vars = [
+  {
+    title: "La fiesta de cumpleaños", partner: "Andrea", place: "Casa de Andrea · Querétaro",
+    goal: "Your new neighbor invited you to her son's birthday party. Find out who everyone in her family is, and tell her about yours.",
+    board: {
+      title: "¡Feliz cumpleaños, Emiliano!", sub: "Querétaro, Qro. · en el jardín · sábado",
+      cols: [
+        [{ h: "Tu familia", items: [["¿Tienes hermanos? ¿Mayores o menores?"], ["¿Tienes sobrinos?"], ["¿Dónde viven tus papás?"], ["¿Eres hijo único / hija única?"]] }],
+        [{ h: "Pregúntale a Andrea", items: [["¿Cuántos años cumple?"], ["¿Quién es él / ella?"], ["¿Cuántos hijos tienes?"], ["¿Tus papás viven aquí?"]] }]
+      ],
+      note: "Andrea has family far away. Find out who and where."
+    },
+    words: [
+      ["el cumpleaños", "birthday"], ["cumplir … años", "to turn … (age)"], ["el esposo, la esposa", "husband, wife"],
+      ["el vecino, la vecina", "neighbor"], ["los papás", "parents"], ["mayor", "older"], ["menor", "younger"],
+      ["el sobrino, la sobrina", "nephew, niece"], ["los abuelos", "grandparents"], ["hijo único, hija única", "only child"]
+    ],
+    phrases: [
+      ["¿Cuántos años cumple?", "How old is he turning?"],
+      ["Tengo un hermano mayor.", "I have an older brother."],
+      ["Soy hijo único. / Soy hija única.", "I'm an only child."],
+      ["Mis papás viven en…", "My parents live in…"],
+      ["Tengo dos sobrinos.", "I have two nephews (or a nephew and niece)."]
+    ],
+    prompt: {
+      role: `You are Andrea, 34, my new neighbor in Querétaro. We're at your son Emiliano's birthday party in your garden. Use "tú" with me.`,
+      infoTitle: "YOUR FAMILY (I DON'T KNOW THIS YET)",
+      info: `Husband: Luis, 36, a doctor. Children: Emiliano, turning 8 today, and Renata, 5. Your parents, Jorge and Elena, live in Querétaro, 10 minutes away, and they're at the party. Your younger brother Pablo, 30, lives in Canada and isn't at the party. Your older sister Mónica lives in Mexico City and has a baby girl.`,
+      lead: `Point out people at the party one at a time ("Mira, él es…") and let me ask questions. Answer briefly, then ask about my family. About half your turns should be questions about my family.`,
+      recast: `I say "Mi hermano es mayor que yo, tiene treinta y cinco" and you say "Ah, tu hermano mayor tiene treinta y cinco años."`
+    }
+  },
+  {
+    title: "En una boda", partner: "Don Rafael", place: "Una boda · Puebla", reg: "usted",
+    goal: "At a wedding, you sit next to the bride's grandfather. Find out about his big family, and tell him about yours.",
+    board: {
+      title: "Ximena & Iván", sub: "Puebla, Pue. · la boda · mesa 7",
+      cols: [
+        [{ h: "Tu familia", items: [["¿Tiene usted abuelos? ¿Tíos? ¿Primos?"], ["¿Su familia es grande o pequeña?"], ["¿Está casado / casada?"]] }],
+        [{ h: "Pregúntele a Don Rafael", items: [["¿Usted es el abuelo de la novia?"], ["¿Cuántos hijos tiene?"], ["¿Cuántos nietos tiene?"], ["¿Quién es…?"]] }]
+      ],
+      note: "Don Rafael has a very big family. Use usted with him."
+    },
+    words: [
+      ["la boda", "wedding"], ["la novia, el novio", "bride, groom"], ["casarse", "to get married"],
+      ["el abuelo, la abuela", "grandfather, grandmother"], ["el nieto, la nieta", "grandson, granddaughter"],
+      ["el tío, la tía", "uncle, aunt"], ["el primo, la prima", "cousin"], ["grande", "big"], ["pequeña", "small"], ["casado, casada", "married"]
+    ],
+    phrases: [
+      ["¿Usted es el abuelo de la novia?", "Are you the bride's grandfather?"],
+      ["¿Cuántos nietos tiene?", "How many grandchildren do you have?"],
+      ["Mi familia es pequeña.", "My family is small."],
+      ["Tengo muchos primos.", "I have a lot of cousins."],
+      ["¡Qué familia tan grande!", "What a big family!"]
+    ],
+    prompt: {
+      role: `You are Don Rafael, 72, the grandfather of the bride at a wedding in Puebla. I'm a guest sitting next to you at table 7. Use "usted" with me.`,
+      infoTitle: "YOUR FAMILY (I DON'T KNOW THIS YET)",
+      info: `Wife: Doña Carmen, 69, dancing right now. Four children: Rosa, Felipe, Ana, and Miguel. Eleven grandchildren. The bride, Ximena, 27, is Rosa's daughter; she's a lawyer and is marrying Iván, an architect from Veracruz. Your grandson Toño, 19, is the DJ tonight. Your brother Luis is 80 and lives in Los Angeles.`,
+      lead: `Start by asking how I know the bride or groom. Point out family members one at a time and let me ask questions. Answer briefly, then ask about my family. About half your turns should be questions about my family.`,
+      recast: `I say "Usted tiene muchos nietas" and you say "Sí, tengo muchos nietos. ¡Once!"`
+    }
+  },
+  {
+    title: "Tu árbol genealógico", partner: "Marisol", place: "Clase de español en línea",
+    goal: "Your online Spanish teacher asks you to describe your family tree. Describe your family in detail, then ask about hers.",
+    board: {
+      title: "Mi árbol genealógico", sub: "Clase de español · videollamada",
+      cols: [
+        [{ h: "Describe a tu familia", items: [["Somos … en mi familia."], ["Mi papá se llama… Tiene… años."], ["Mi hermana está casada / es soltera."], ["Vivo con… / Vivo solo, sola."]] }],
+        [{ h: "Pregúntale a Marisol", items: [["¿Tienes hijos?"], ["¿Con quién vives?"], ["¿Tienes hermanos?"], ["¿Dónde vive tu familia?"]] }]
+      ],
+      note: "Marisol will ask for details: names, ages, jobs, and where people live."
+    },
+    words: [
+      ["el árbol genealógico", "family tree"], ["la pareja", "partner"], ["soltero, soltera", "single"],
+      ["casado, casada", "married"], ["divorciado, divorciada", "divorced"], ["los gemelos", "twins"],
+      ["vivir con", "to live with"], ["el mayor, la mayor", "the oldest"], ["el menor, la menor", "the youngest"], ["el trabajo", "job"]
+    ],
+    phrases: [
+      ["Somos cuatro en mi familia.", "There are four of us in my family."],
+      ["Vivo con mi pareja.", "I live with my partner."],
+      ["Mi hermana es soltera.", "My sister is single."],
+      ["Yo soy el mayor. / Yo soy la mayor.", "I'm the oldest."],
+      ["¿Con quién vives?", "Who do you live with?"]
+    ],
+    prompt: {
+      role: `You are Marisol, 40, my online Spanish teacher from Mexico City. Today's class activity: I describe my family tree. Use "tú" with me.`,
+      infoTitle: "YOUR FAMILY (MARISOL)",
+      info: `You live with your mother, Rosario, 68, and your son Leo, 12. You're divorced. Your sister Claudia, 37, lives in Toluca and has twin girls, Ana and Paula, 7. Your father died a few years ago. You have a cat named Mole.`,
+      lead: `Ask me to describe my family. Ask follow-up questions about each person: name, age, job, where they live. Encourage longer answers ("¿Y qué más?"). Near the end, invite me to ask about your family.`,
+      recast: `I say "Mi hermana es treinta y dos y es casada" and you say "Ah, tu hermana tiene treinta y dos años y está casada."`
+    }
+  }
+];
+
+// v03.js
+LESSONS["03"].vars = [
+  {
+    title: "La carnicería", partner: "Don Chema", place: "Mercado de San Juan · CDMX",
+    goal: "Buy meat and eggs for a carne asada at the market butcher. Ask prices, buy by weight, ask for a cut, and check the total.",
+    board: {
+      title: "Carnicería Don Chema", sub: "Mercado de San Juan, CDMX · precio por kilo",
+      cols: [
+        [{ h: "Res", items: [["Bistec", "$240"], ["Arrachera", "$320"], ["Carne molida", "$190"]] },
+         { h: "Cerdo", items: [["Chuleta", "$160"], ["Chorizo", "$140"]] }],
+        [{ h: "Pollo", items: [["Pechuga", "$150"], ["Muslo y pierna", "$95"]] },
+         { h: "Otros", items: [["Huevo (kilo)", "$45"]] },
+         { h: "Tu lista", items: [["1 kilo de arrachera"], ["½ kilo de chorizo"], ["Un cuarto de huevo"]] }]
+      ],
+      note: "In Mexican markets, eggs are often sold by the kilo."
+    },
+    words: [
+      ["la carnicería", "butcher shop"], ["la carne de res", "beef"], ["el cerdo", "pork"], ["el pollo", "chicken"],
+      ["la pechuga", "breast"], ["el bistec", "thin steak"], ["la arrachera", "skirt steak"], ["la carne molida", "ground meat"],
+      ["la chuleta", "pork chop"], ["un cuarto (de kilo)", "a quarter kilo"], ["delgadito", "nice and thin"], ["el huevo", "egg"]
+    ],
+    phrases: [
+      ["¿A cómo está la arrachera?", "How much is the skirt steak?"],
+      ["Me da un kilo de arrachera, por favor.", "A kilo of skirt steak, please."],
+      ["¿Me la corta delgadita?", "Could you cut it thin for me?"],
+      ["Un cuarto de huevo, por favor.", "A quarter kilo of eggs, please."],
+      ["¿Cuánto es de todo?", "How much is it all together?"]
+    ],
+    prompt: {
+      role: `You are Don Chema, a friendly butcher at the Mercado de San Juan in Mexico City. It's Saturday morning. I'm a customer. Use "usted" with me.`,
+      infoTitle: "YOUR PRICES (pesos per kilo)",
+      info: `Res: bistec $240, arrachera $320, carne molida $190. Cerdo: chuleta $160, chorizo $140. Pollo: pechuga $150, muslo y pierna $95. Huevo: $45 per kilo. You can cut meat thin (delgadito) or thick (gruesa).`,
+      lead: `Call me over ("¡Pásele, güero/güera! ¿Qué le damos?"), ask what I want, give prices when I ask, ask "¿Se la corto delgadita?" for steak, ask "¿Qué más?" after each item, and give the total when I'm done. Say prices clearly.`,
+      recast: `I say "Quiero un kilo de la arrachera" and you say "Un kilo de arrachera, claro."`
+    }
+  },
+  {
+    title: "La panadería", partner: "Lupita", place: "Panadería La Espiga · Toluca",
+    goal: "In a Mexican bakery you pick bread with a tray and tongs, then pay at the register. Ask what the breads are called, buy what's on your list, and pay.",
+    board: {
+      title: "Panadería La Espiga", sub: "Toluca, Méx. · pan dulce y salado",
+      cols: [
+        [{ h: "Pan dulce", items: [["Concha", "$14"], ["Cuernito", "$15"], ["Oreja", "$16"], ["Dona", "$18"], ["Rol de canela", "$22"]] }],
+        [{ h: "Pan salado", items: [["Bolillo", "$4"], ["Telera", "$5"]] },
+         { h: "De temporada", items: [["Pan de muerto", "$45"]] },
+         { h: "Tu lista", items: [["Pan para el desayuno de 4 personas"], ["6 bolillos"]] }]
+      ],
+      note: "You only have a $500 bill. Ask if they have change."
+    },
+    words: [
+      ["la panadería", "bakery"], ["la charola", "tray"], ["las pinzas", "tongs"], ["la concha", "sweet bun with a shell-shaped top"],
+      ["el cuernito", "small croissant"], ["la oreja", "palmier (ear-shaped pastry)"], ["el bolillo", "crusty white roll"],
+      ["la telera", "flat roll for tortas"], ["la bolsa", "bag"], ["la caja", "register"], ["el cambio", "change"], ["el billete", "bill (money)"]
+    ],
+    phrases: [
+      ["¿Cómo se llama este pan?", "What's this bread called?"],
+      ["Son dos conchas y seis bolillos.", "It's two conchas and six bolillos."],
+      ["¿Tiene pan de muerto?", "Do you have pan de muerto?"],
+      ["¿Tiene cambio de quinientos?", "Do you have change for 500?"],
+      ["¿Me da una bolsa, por favor?", "Could I have a bag, please?"]
+    ],
+    prompt: {
+      role: `You are Lupita, the cashier at Panadería La Espiga in Toluca. It's 8 am. I bring my tray to the register. Use "usted" with me.`,
+      infoTitle: "YOUR PRICES (pesos)",
+      info: `Pan dulce: concha $14, cuernito $15, oreja $16, dona $18, rol de canela $22. Pan salado: bolillo $4, telera $5. Pan de muerto $45 (in season). Bags are free. You have change for a $500 bill, but you'll ask if I have something smaller first.`,
+      lead: `Greet me and ask what I have on my tray. Count each item back to me ("Dos conchas…"). If I ask what a bread is, explain in very simple words. Ask "¿Algo más?", tell me the total, and ask "¿No tiene más chico?" if I pay with $500.`,
+      recast: `I say "Tengo dos concha y seis bolillo" and you say "Dos conchas y seis bolillos, muy bien."`
+    }
+  },
+  {
+    title: "El tianguis de artesanías", partner: "Don Arturo", place: "Tlaquepaque · Jalisco",
+    goal: "Buy gifts at a crafts stand. Ask prices, compare two things, ask for a small discount, and pay.",
+    board: {
+      title: "Artesanías Don Arturo", sub: "Tlaquepaque, Jal. · domingo",
+      cols: [
+        [{ h: "Barro", items: [["Taza", "$60"], ["Jarrito", "$45"], ["Plato pintado", "$120"]] },
+         { h: "Textiles", items: [["Servilleta bordada", "$80"], ["Bolsa de palma", "$150"]] }],
+        [{ h: "Otros", items: [["Alebrije chico", "$200"], ["Alebrije grande", "$450"]] },
+         { h: "Tu lista", items: [["3 regalos"], ["Presupuesto: $400"]] }]
+      ],
+      note: "Prices are not fixed. If you buy several things, ask for a discount."
+    },
+    words: [
+      ["el tianguis", "open-air market"], ["la artesanía", "handicraft"], ["el barro", "clay"], ["la taza", "mug"],
+      ["el jarrito", "small clay cup"], ["pintado, pintada", "painted"], ["bordado, bordada", "embroidered"], ["el alebrije", "painted fantasy animal figure"],
+      ["el regalo", "gift"], ["el descuento", "discount"], ["más barato", "cheaper"], ["este, esta", "this one"]
+    ],
+    phrases: [
+      ["¿Cuánto cuesta esta taza?", "How much is this mug?"],
+      ["¿Tiene uno más chico?", "Do you have a smaller one?"],
+      ["¿Me hace un descuento?", "Can you give me a discount?"],
+      ["Si llevo tres, ¿cuánto me deja?", "If I take three, what price will you give me?"],
+      ["Es para regalo.", "It's a gift."]
+    ],
+    prompt: {
+      role: `You are Don Arturo, a friendly crafts vendor at the Sunday market in Tlaquepaque, Jalisco. I'm a customer looking for gifts. Use "usted" with me.`,
+      infoTitle: "YOUR PRICES (pesos)",
+      info: `Barro: taza $60, jarrito $45, plato pintado $120. Textiles: servilleta bordada $80, bolsa de palma $150. Alebrije chico $200, alebrije grande $450. Everything is handmade by local families. If I buy two or more things and ask for a discount, take about 10% off. If I only buy one, say the price is already very good.`,
+      lead: `Invite me to look ("Pásele, sin compromiso"). Answer my questions about prices and materials, and suggest gifts. Ask who the gift is for. Bargain gently, offer to wrap gifts in newspaper, and give the total.`,
+      recast: `I say "¿Cuánto cuesta el taza?" and you say "¿La taza? Sesenta pesos."`
+    }
+  }
+];
+
+// v04.js
+LESSONS["04"].vars = [
+  {
+    title: "En la juguería", partner: "Rosa", place: "Mercado de Coyoacán · CDMX",
+    goal: "A juice stand in the market. Order a juice or licuado in the size you want, ask what's in a drink, and order something to eat.",
+    board: {
+      title: "Jugos Rosita", sub: "Mercado de Coyoacán, CDMX · chico / grande",
+      cols: [
+        [{ h: "Jugos", items: [["Naranja", "$30 / $40"], ["Zanahoria", "$30 / $40"], ["Jugo verde", "$35 / $45"]] },
+         { h: "Licuados", items: [["Plátano", "$40 / $50"], ["Fresa", "$40 / $50"], ["Mamey", "$45 / $55"]] }],
+        [{ h: "Para comer", items: [["Sincronizada", "$45"], ["Quesadilla", "$40"], ["Coctel de fruta", "$45"]] },
+         { h: "Extras", items: [["Avena", "$5"], ["Granola", "$10"]] }]
+      ],
+      note: "Licuados come con leche or con agua."
+    },
+    words: [
+      ["el jugo", "juice"], ["el licuado", "smoothie"], ["chico", "small"], ["grande", "large"],
+      ["con leche", "with milk"], ["con agua", "with water"], ["la zanahoria", "carrot"], ["el nopal", "cactus paddle"],
+      ["el apio", "celery"], ["la piña", "pineapple"], ["la sincronizada", "tortilla, ham, and cheese, grilled"], ["la avena", "oats"]
+    ],
+    phrases: [
+      ["Un jugo de naranja grande, por favor.", "A large orange juice, please."],
+      ["¿Qué tiene el jugo verde?", "What's in the green juice?"],
+      ["Un licuado de plátano con leche.", "A banana smoothie with milk."],
+      ["Para llevar, por favor.", "To go, please."],
+      ["¿Me da una sincronizada?", "Could I have a sincronizada?"]
+    ],
+    prompt: {
+      role: `You are Rosa, who runs the juice stand Jugos Rosita in the Mercado de Coyoacán, Mexico City. It's a weekday morning. I'm a customer at the counter. Use "usted" with me.`,
+      infoTitle: "MENU (pesos, chico / grande)",
+      info: `Jugos: naranja $30/$40, zanahoria $30/$40, jugo verde (nopal, piña, apio, perejil, naranja) $35/$45
+Licuados (con leche o con agua): plátano $40/$50, fresa $40/$50, mamey $45/$55. Extras: avena $5, granola $10.
+Para comer: sincronizada $45, quesadilla $40, coctel de fruta $45. You have no fresa today; only say so if I order it.`,
+      lead: `Greet me ("¿Qué le damos?"), ask "¿Chico o grande?", ask "¿Con leche o con agua?" for licuados, ask "¿Para aquí o para llevar?", ask if I want something to eat, and give the total when I ask.`,
+      recast: `I say "Quiero jugo verde en grande" and you say "Un jugo verde grande, muy bien."`
+    }
+  },
+  {
+    title: "Chocolate y tamales", partner: "Julián", place: "Chocolatería La Soledad · Oaxaca",
+    goal: "An evening snack at a chocolate shop in Oaxaca. Order a hot drink and something to eat, ask what one item is, and ask for the check.",
+    board: {
+      title: "Chocolatería La Soledad", sub: "Oaxaca de Juárez · la merienda",
+      cols: [
+        [{ h: "Bebidas calientes", items: [["Chocolate con agua", "$45"], ["Chocolate con leche", "$50"], ["Champurrado", "$45"], ["Café de olla", "$40"]] }],
+        [{ h: "Para comer", items: [["Pan de yema", "$25"], ["Tamal de mole", "$35"], ["Tamal de rajas", "$30"], ["Tamal de dulce", "$30"]] },
+         { h: "Para llevar", items: [["Chocolate en tablilla (½ kg)", "$150"]] }]
+      ],
+      note: "In Oaxaca, hot chocolate is often made with water."
+    },
+    words: [
+      ["la merienda", "evening snack"], ["el chocolate con agua", "hot chocolate made with water"], ["el champurrado", "thick hot chocolate made with corn"],
+      ["el pan de yema", "egg-yolk bread"], ["el tamal", "steamed corn dough with filling"], ["de mole", "with mole sauce"],
+      ["de rajas", "with chile strips and cheese"], ["de dulce", "sweet"], ["la hoja de plátano", "banana leaf"], ["caliente", "hot"], ["la taza", "cup"]
+    ],
+    phrases: [
+      ["Un chocolate con agua, por favor.", "A hot chocolate made with water, please."],
+      ["¿Qué es el champurrado?", "What is champurrado?"],
+      ["¿El tamal de rajas pica?", "Is the rajas tamal spicy?"],
+      ["Y un pan de yema.", "And an egg-yolk bread."],
+      ["La cuenta, por favor.", "The check, please."]
+    ],
+    prompt: {
+      role: `You are Julián, a server at Chocolatería La Soledad in Oaxaca. It's 7 pm, time for the merienda. I'm a customer sitting at a table. Use "usted" with me.`,
+      infoTitle: "MENU (pesos)",
+      info: `Bebidas: chocolate con agua $45 (the traditional Oaxacan way), chocolate con leche $50, champurrado $45 (thick chocolate drink made with corn dough), café de olla $40
+Para comer: pan de yema $25 (for dipping in chocolate), tamal de mole $35 (chicken, in banana leaf), tamal de rajas $30 (chile and cheese, pica poquito), tamal de dulce $30
+Para llevar: chocolate en tablilla, half kilo $150`,
+      lead: `Greet me, ask what I'd like to drink first, then offer something to eat. Explain items in very simple words if I ask. Ask "¿Algo más?" and give the total when I ask for the check.`,
+      recast: `I say "Quiero un chocolate de agua" and you say "Un chocolate con agua, muy bien."`
+    }
+  },
+  {
+    title: "Desayuno en el hotel", partner: "Gerardo", place: "Hotel Cuatro Ríos · Morelia",
+    goal: "Breakfast at your hotel's restaurant. Order eggs the way you like them, a drink, and a side, ask for more coffee, and charge it to your room.",
+    board: {
+      title: "Restaurante Cuatro Ríos", sub: "Morelia, Mich. · desayunos 7–12",
+      cols: [
+        [{ h: "Huevos al gusto", items: [["Estrellados", "$90"], ["Revueltos", "$90"], ["A la mexicana", "$95"], ["Con jamón", "$95"]] },
+         { h: "Otros platos", items: [["Hot cakes", "$85"], ["Enfrijoladas", "$95"], ["Fruta picada", "$70"]] }],
+        [{ h: "Bebidas", items: [["Café americano", "$35"], ["Jugo de naranja", "$45"], ["Jugo de toronja", "$45"], ["Té", "$30"]] },
+         { h: "Acompañantes", items: [["Pan tostado", "$30"], ["Frijoles", "$25"]] },
+         { h: "Tu cuarto", items: [["Habitación 215"]] }]
+      ],
+      note: "Refills of café americano are free."
+    },
+    words: [
+      ["al gusto", "the way you like"], ["estrellados", "fried (sunny side up)"], ["revueltos", "scrambled"],
+      ["a la mexicana", "with tomato, onion, and chile"], ["los hot cakes", "pancakes"], ["las enfrijoladas", "tortillas in bean sauce"],
+      ["la fruta picada", "chopped fruit"], ["el pan tostado", "toast"], ["la toronja", "grapefruit"], ["la habitación", "hotel room"], ["cargar", "to charge (to a room)"]
+    ],
+    phrases: [
+      ["Unos huevos revueltos, por favor.", "Scrambled eggs, please."],
+      ["¿Me trae más café, por favor?", "Could you bring me more coffee?"],
+      ["Con pan tostado, por favor.", "With toast, please."],
+      ["¿Lo puede cargar a mi habitación?", "Can you charge it to my room?"],
+      ["Es la habitación doscientos quince.", "It's room 215."]
+    ],
+    prompt: {
+      role: `You are Gerardo, a server at the restaurant of Hotel Cuatro Ríos in Morelia. It's 8 am. I'm a hotel guest in room 215. Use "usted" with me.`,
+      infoTitle: "MENU (pesos)",
+      info: `Huevos al gusto (served with frijoles and tortillas): estrellados $90, revueltos $90, a la mexicana $95, con jamón $95
+Otros: hot cakes $85, enfrijoladas $95, fruta picada $70
+Bebidas: café americano $35 (free refills), jugo de naranja $45, jugo de toronja $45, té $30
+Acompañantes: pan tostado $30, frijoles $25
+Guests can charge breakfast to their room (cargar a la habitación).`,
+      lead: `Greet me, offer coffee first, then ask what I'd like to eat. Ask "¿Cómo quiere sus huevos?" and "¿Con tortillas o pan tostado?". Offer more coffee during the meal. At the end, ask "¿Lo cargo a su habitación?" and ask for my room number.`,
+      recast: `I say "Quiero los huevos revuelto" and you say "Huevos revueltos, muy bien."`
+    }
+  }
+];
+
+// v05.js
+LESSONS["05"].vars = [
+  {
+    title: "En el museo", partner: "Karla", place: "Museo Regional · Querétaro",
+    goal: "You're at a museum information desk. Find out the opening hours, when the guided tours are, and when a special event happens.",
+    board: {
+      title: "Museo Regional", sub: "Querétaro, Qro. · hoy: jueves 13, 3:40 pm",
+      cols: [
+        [{ h: "Horario", items: [["Martes a domingo", "?"], ["Lunes", "?"]] },
+         { h: "Visitas guiadas", items: [["En español", "?"], ["Sábado", "?"]] }],
+        [{ h: "Eventos", items: [["Concierto de guitarra", "?"], ["Taller para niños", "?"]] },
+         { h: "Entrada", items: [["General", "$95"], ["Domingo", "?"]] }]
+      ],
+      note: "Ask questions to fill in every \"?\"."
+    },
+    words: [
+      ["abierto", "open"], ["cerrado", "closed"], ["abrir", "to open"], ["cerrar", "to close"],
+      ["la visita guiada", "guided tour"], ["el taller", "workshop"], ["el concierto", "concert"], ["la entrada", "admission, ticket"],
+      ["gratis", "free"], ["hoy", "today"], ["mañana", "tomorrow"], ["de la tarde", "in the afternoon"]
+    ],
+    phrases: [
+      ["¿A qué hora abren?", "What time do you open?"],
+      ["¿A qué hora cierran?", "What time do you close?"],
+      ["¿Abren los lunes?", "Are you open on Mondays?"],
+      ["¿Hay visita guiada hoy?", "Is there a guided tour today?"],
+      ["¿Qué día es el concierto?", "What day is the concert?"]
+    ],
+    prompt: {
+      role: `You are Karla, who works at the information desk of the Museo Regional in Querétaro. It's Thursday the 13th, at 3:40 pm. I'm a visitor. Use "usted" with me.`,
+      infoTitle: "THE SCHEDULE",
+      info: `Open Tuesday to Sunday, 9:00–18:00. Closed on Monday. Guided tours in Spanish: every day at 11:00 and 16:00; on Saturday also at 13:00. Guitar concert: Friday the 14th at 19:30, free. Children's workshop: Saturday at 10:00. Admission $95; free on Sunday. The 16:00 tour today leaves in 20 minutes.`,
+      lead: `Answer my questions about days, times, and dates. Say times the way people speak ("a las cuatro de la tarde"), not as 24-hour numbers. Sometimes ask me a short question back, like "¿Quiere ir a la visita de hoy?"`,
+      recast: `I say "¿El museo abre en lunes?" and you say "¿Los lunes? No, los lunes está cerrado."`
+    }
+  },
+  {
+    title: "En el gimnasio", partner: "Iván", place: "Gimnasio Fuerza · Mérida", reg: "tú",
+    goal: "You want to join a gym. Find out the opening hours, which days and times the classes are, and the monthly price.",
+    board: {
+      title: "Gimnasio Fuerza", sub: "Mérida, Yuc. · hoy: lunes, 6:15 pm",
+      cols: [
+        [{ h: "Horario", items: [["Lunes a viernes", "?"], ["Sábado", "?"], ["Domingo", "?"]] }],
+        [{ h: "Clases", items: [["Yoga", "?"], ["Spinning", "?"], ["Zumba", "?"]] },
+         { h: "Precio", items: [["Al mes", "?"], ["La promoción termina", "?"]] }]
+      ],
+      note: "Gyms in Mexico are usually informal, so Iván uses tú."
+    },
+    words: [
+      ["el gimnasio", "gym"], ["la clase de yoga", "yoga class"], ["la membresía", "membership"], ["al mes", "per month"],
+      ["la promoción", "special offer"], ["temprano", "early"], ["tarde", "late"], ["de la mañana", "in the morning"],
+      ["de la noche", "at night"], ["todos los días", "every day"], ["entre semana", "on weekdays"], ["el fin de semana", "weekend"]
+    ],
+    phrases: [
+      ["¿A qué hora abren?", "What time do you open?"],
+      ["¿Hay clase de yoga hoy?", "Is there a yoga class today?"],
+      ["¿Qué días es la clase de spinning?", "Which days is the spin class?"],
+      ["¿Cuánto cuesta al mes?", "How much is it per month?"],
+      ["¿Hasta cuándo es la promoción?", "Until when is the offer?"]
+    ],
+    prompt: {
+      role: `You are Iván, 25, who works at the front desk of Gimnasio Fuerza in Mérida. It's Monday at 6:15 pm. I'm thinking about joining. Use "tú" with me.`,
+      infoTitle: "THE SCHEDULE",
+      info: `Open Monday to Friday 6:00–22:00, Saturday 7:00–14:00, closed Sunday. Yoga: Monday and Wednesday at 7:00 and 19:00. Spinning: Tuesday and Thursday at 6:30 and 20:00. Zumba: Saturday at 9:00. Membership: $650 a month; promotion $500 a month if I sign up before Friday the 31st. Today's yoga class starts in 45 minutes.`,
+      lead: `Answer my questions about days, times, and prices. Say times the way people speak ("a las siete de la noche"), not as 24-hour numbers. Ask what exercise I like and suggest a class.`,
+      recast: `I say "¿El yoga es en los lunes?" and you say "Sí, el yoga es los lunes y los miércoles."`
+    }
+  },
+  {
+    title: "Una cita con la doctora", partner: "Paty", place: "Consultorio Dra. Gómez · Monterrey",
+    goal: "Call a doctor's office to make an appointment. Find out which days and times are free, choose one, and confirm the day, date, and time.",
+    board: {
+      title: "Consultorio Dra. Gómez", sub: "Monterrey, N.L. · hoy: martes 14, 9:30 am",
+      cols: [
+        [{ h: "Horario de la doctora", items: [["Lunes a viernes", "?"], ["Sábado", "?"]] }],
+        [{ h: "Tus horas libres", items: [["Miércoles", "toda la tarde"], ["Jueves", "después de las 4"], ["Viernes", "antes de las 12"]] },
+         { h: "Tu cita", items: [["Día y hora", "?"]] }]
+      ],
+      note: "Repeat the day and time back to confirm your appointment."
+    },
+    words: [
+      ["la cita", "appointment"], ["el consultorio", "doctor's office"], ["la doctora", "doctor (woman)"], ["libre", "free, available"],
+      ["disponible", "available"], ["y cuarto", "quarter past"], ["y media", "half past"], ["menos cuarto", "quarter to"],
+      ["antes de", "before"], ["después de", "after"], ["llegar", "to arrive"], ["confirmar", "to confirm"]
+    ],
+    phrases: [
+      ["Quisiera hacer una cita, por favor.", "I'd like to make an appointment, please."],
+      ["¿Tiene algo el jueves?", "Do you have anything on Thursday?"],
+      ["¿A qué hora?", "At what time?"],
+      ["Sí, el jueves a las cinco está bien.", "Yes, Thursday at five is fine."],
+      ["Entonces, el jueves dieciséis a las cinco.", "So, Thursday the 16th at five."]
+    ],
+    prompt: {
+      role: `You are Paty, the receptionist at Dra. Gómez's medical office in Monterrey. It's Tuesday the 14th, 9:30 am. I'm calling to make an appointment. Use "usted" with me.`,
+      infoTitle: "THE DOCTOR'S SCHEDULE",
+      info: `The doctor sees patients Monday to Friday 10:00–14:00 and 16:00–19:00. No Saturday hours. Free appointments this week: Wednesday 15 at 11:30, Thursday 16 at 17:00, Friday 17 at 10:00. Next week, Monday 20 at 12:15. Patients should arrive 15 minutes early. Ask for my name.`,
+      lead: `Answer the phone ("Consultorio de la doctora Gómez, buenos días"). Offer the free times one at a time and let me choose. Say times the way people speak ("a las cinco de la tarde", "a las doce y cuarto"). Confirm the day, date, and time at the end and remind me to arrive 15 minutes early.`,
+      recast: `I say "¿Tiene cita en jueves?" and you say "¿El jueves? Sí, el jueves tengo a las cinco de la tarde."`
+    }
+  }
+];
+
+// v06.js
+LESSONS["06"].vars = [
+  {
+    title: "La posada", partner: "Fer", place: "Posada de la oficina · CDMX",
+    goal: "A December office party (posada). Chat with a coworker about food, music, and holidays, say what you like more, and politely say no to something.",
+    board: {
+      title: "La Posada", sub: "Ciudad de México · viernes de diciembre",
+      cols: [
+        [{ h: "En la mesa", items: [["Ponche de frutas"], ["Tamales"], ["Buñuelos"], ["Pozole"], ["Ponche con piquete (con alcohol)"]] }],
+        [{ h: "Temas", items: [["La música: cumbia, salsa"], ["Bailar"], ["La Navidad"], ["Las vacaciones"], ["La comida favorita"]] }]
+      ],
+      note: "Fer will ask you to dance. Say yes or no politely."
+    },
+    words: [
+      ["la posada", "December Christmas party"], ["el ponche", "warm fruit punch"], ["los buñuelos", "crispy fried dough with syrup"],
+      ["el pozole", "hominy soup"], ["la piñata", "piñata"], ["bailar", "to dance"], ["la cumbia", "cumbia (music)"],
+      ["la Navidad", "Christmas"], ["las vacaciones", "vacation"], ["preferir", "to prefer"], ["más", "more"], ["nada", "(not) at all"]
+    ],
+    phrases: [
+      ["¿Te gusta bailar?", "Do you like to dance?"],
+      ["Me gusta más la salsa.", "I like salsa more."],
+      ["Prefiero el pozole.", "I prefer the pozole."],
+      ["No me gusta nada.", "I don't like it at all."],
+      ["Gracias, pero no bailo.", "Thanks, but I don't dance."]
+    ],
+    prompt: {
+      role: `You are Fer (Fernanda), 29, my coworker in Mexico City. We're at the office posada on a Friday night in December. We don't know each other well yet. Use "tú" with me.`,
+      infoTitle: "ABOUT YOU (FER)",
+      info: `Loves salsa dancing and cumbia, Pumas soccer, tacos al pastor, and reading novels. Favorite food: pozole. Doesn't like running, cold weather, or beer (prefers mezcal). For the holidays, she's going to Veracruz to see her family. At some point, invite me to dance.`,
+      lead: `Offer me food and drinks from the table and ask what I like: food, music, dancing, holidays. Share your own likes after mine. React to my answers ("¡A mí también!", "¿En serio?") and ask the next question.`,
+      recast: `I say "Me gusta mucho los tamales" and you say "¿Te gustan mucho los tamales? ¡A mí también!"`
+    }
+  },
+  {
+    title: "Un partido de béisbol", partner: "Kike", place: "Estadio · Hermosillo",
+    goal: "At a baseball game, chat with the fan sitting next to you. Talk about sports, food, and music, and find two things you both like.",
+    board: {
+      title: "¡Vamos Naranjeros!", sub: "Hermosillo, Son. · estadio · domingo",
+      cols: [
+        [{ h: "En el estadio", items: [["Cerveza"], ["Cacahuates"], ["Hot dogs sonorenses"], ["Elotes"], ["Refrescos"]] }],
+        [{ h: "Temas", items: [["El béisbol o el fútbol"], ["Tu equipo favorito"], ["La música: banda, rock"], ["El calor"], ["La comida de Sonora"]] }]
+      ],
+      note: "Kike will offer you some food. Accept or say no politely."
+    },
+    words: [
+      ["el béisbol", "baseball"], ["el partido", "game, match"], ["el equipo", "team"], ["el estadio", "stadium"],
+      ["ganar", "to win"], ["perder", "to lose"], ["el aficionado, la aficionada", "fan"], ["los cacahuates", "peanuts"],
+      ["la banda", "Mexican brass band music"], ["el calor", "heat"], ["favorito, favorita", "favorite"], ["ver", "to watch"]
+    ],
+    phrases: [
+      ["¿Cuál es tu equipo favorito?", "What's your favorite team?"],
+      ["Me gusta más el béisbol que el fútbol.", "I like baseball more than soccer."],
+      ["No me gusta el calor.", "I don't like the heat."],
+      ["¿Te gusta la banda?", "Do you like banda music?"],
+      ["No, gracias. Estoy bien.", "No thanks. I'm fine."]
+    ],
+    prompt: {
+      role: `You are Kike (Enrique), 40, a big Naranjeros fan from Hermosillo, Sonora. We're sitting next to each other at a baseball game on a hot Sunday. Use "tú" with me.`,
+      infoTitle: "ABOUT YOU (KIKE)",
+      info: `Loves baseball (Naranjeros), cold beer, carne asada, hot dogs sonorenses, and banda music. Has season tickets. Doesn't like soccer much, or spicy food (strange for a Mexican, he jokes). Thinks the heat is normal. At some point, offer me some cacahuates.`,
+      lead: `Start by asking if I like baseball. Ask about sports, food, music, and the weather, one at a time. Share your own likes after mine. React to my answers ("¡No manches!", "¡Eso!") and ask the next question.`,
+      recast: `I say "Me gusta el béisbol más de fútbol" and you say "Te gusta más el béisbol que el fútbol. ¡Eso!"`
+    }
+  },
+  {
+    title: "Un compañero de cuarto", partner: "Sofía", place: "Departamento compartido · Guadalajara",
+    goal: "You're meeting someone who might rent a room in your apartment. Find out her likes and habits, tell her yours, and decide if you would get along.",
+    board: {
+      title: "Se renta cuarto", sub: "Guadalajara, Jal. · entrevista",
+      cols: [
+        [{ h: "Pregúntale", items: [["¿Te gustan los animales?"], ["¿Te gusta cocinar?"], ["¿Te gustan las fiestas?"], ["¿Te gusta levantarte temprano?"]] }],
+        [{ h: "Tus frases", items: [["Me gusta… / Me encanta…"], ["No me gusta…"], ["Prefiero…"], ["A mí también. / A mí no."]] }]
+      ],
+      note: "Sofía has one thing you might not like. Find out what."
+    },
+    words: [
+      ["el compañero de cuarto", "roommate"], ["el gato", "cat"], ["el perro", "dog"], ["cocinar", "to cook"],
+      ["limpiar", "to clean"], ["el ruido", "noise"], ["la fiesta", "party"], ["tranquilo, tranquila", "calm, quiet"],
+      ["ordenado, ordenada", "tidy"], ["levantarse", "to get up"], ["temprano", "early"], ["la música alta", "loud music"]
+    ],
+    phrases: [
+      ["¿Te gustan los animales?", "Do you like animals?"],
+      ["Me encanta cocinar.", "I love to cook."],
+      ["No me gustan las fiestas en casa.", "I don't like parties at home."],
+      ["Me gusta levantarme temprano.", "I like to get up early."],
+      ["Prefiero un lugar tranquilo.", "I prefer a quiet place."]
+    ],
+    prompt: {
+      role: `You are Sofía, 26, a graphic designer looking to rent a room in my apartment in Guadalajara. This is our first meeting, in my living room. Use "tú" with me.`,
+      infoTitle: "ABOUT YOU (SOFÍA)",
+      info: `Loves cooking (especially Italian food), yoga, plants, and quiet evenings. Gets up at 6 am. Doesn't like loud music, parties at home, or mess. Has a cat named Chispa and wants to bring her (only mention it if I ask about animals, or near the end). Works from home three days a week.`,
+      lead: `Ask what I like and what my habits are: cooking, cleaning, music, parties, mornings. Share your own likes after mine. React to my answers ("¡Qué bien!", "Mmm, ¿en serio?") and ask the next question. At the end, ask "¿Entonces, qué piensas?"`,
+      recast: `I say "Me gusta los gatos" and you say "¿Te gustan los gatos? ¡Qué bien!"`
+    }
+  }
+];
+
+// v07.js
+LESSONS["07"].vars = [
+  {
+    title: "Buscando departamento", partner: "Sr. Méndez", place: "Colonia Roma · CDMX", reg: "usted",
+    goal: "You're viewing an apartment for rent. Ask about the apartment, and describe where you live now and what you need.",
+    board: {
+      title: "Se renta departamento", sub: "Colonia Roma, CDMX · visita con el dueño",
+      cols: [
+        [{ h: "Pregúntele", items: [["¿En qué piso está?"], ["¿Hay elevador?"], ["¿Está amueblado?"], ["¿Cuánto es la renta?"], ["¿Qué hay cerca?"]] }],
+        [{ h: "Él va a preguntar", items: [["¿Dónde vive ahora?"], ["¿Cómo es su casa ahora?"], ["¿Por qué busca departamento?"]] }]
+      ],
+      note: "The apartment has one big problem. Ask questions to find it."
+    },
+    words: [
+      ["el departamento", "apartment"], ["el piso", "floor"], ["el elevador", "elevator"], ["la sala", "living room"],
+      ["el comedor", "dining room"], ["el balcón", "balcony"], ["la renta", "rent"], ["amueblado", "furnished"],
+      ["ruidoso", "noisy"], ["luminoso", "bright, full of light"], ["el dueño, la dueña", "owner"], ["la estación de metro", "metro station"]
+    ],
+    phrases: [
+      ["¿En qué piso está?", "What floor is it on?"],
+      ["¿Está amueblado?", "Is it furnished?"],
+      ["Ahora vivo en una casa con…", "Right now I live in a house with…"],
+      ["Mi departamento es pequeño, pero luminoso.", "My apartment is small but bright."],
+      ["Busco algo más tranquilo.", "I'm looking for something quieter."]
+    ],
+    prompt: {
+      role: `You are Señor Méndez, 60, the owner of an apartment for rent in Colonia Roma, Mexico City. I'm visiting the apartment to see if I want to rent it. Use "usted" with me.`,
+      infoTitle: "THE APARTMENT",
+      info: `Fourth floor, no elevator (the big problem; only say so if I ask about floors or stairs). Two bedrooms, one bathroom, a small kitchen, a living-dining room, and a balcony over the street. Very bright. Not furnished, but has a stove and a refrigerator. Rent: $14,000 a month. Near the Insurgentes metro station, a market, and many cafés. The street is noisy on weekends.`,
+      lead: `Show me the apartment one room at a time. Ask me where I live now, what my home is like, and why I'm looking. Encourage longer answers ("¿Y qué más?", "Cuénteme más"). Answer my questions about the apartment in 1–2 short sentences.`,
+      recast: `I say "Mi casa ahora es en el centro" and you say "Ah, su casa está en el centro. Muy bien."`
+    }
+  },
+  {
+    title: "Una amiga de visita", partner: "Mónica", place: "Llamada con Monterrey",
+    goal: "A friend from Monterrey wants to visit you. Describe your home, where she'll sleep, and your neighborhood, so she can plan her trip.",
+    board: {
+      title: "¡Mónica viene de visita!", sub: "Llamada · Monterrey → tu ciudad",
+      cols: [
+        [{ h: "Mónica va a preguntar", items: [["¿Dónde voy a dormir?"], ["¿Cómo es tu colonia?"], ["¿Hay supermercado cerca?"], ["¿Cómo llego del aeropuerto?"]] }],
+        [{ h: "Tus frases", items: [["Puedes dormir en…"], ["Mi colonia es…"], ["Hay un… a cinco minutos."], ["Está a… minutos a pie."]] }]
+      ],
+      note: "Goal: describe your neighborhood for 30 seconds without stopping."
+    },
+    words: [
+      ["el cuarto de visitas", "guest room"], ["el sofá cama", "sofa bed"], ["el jardín", "garden, yard"], ["el garaje", "garage"],
+      ["la colonia", "neighborhood (Mexico)"], ["la parada de autobús", "bus stop"], ["el supermercado", "supermarket"],
+      ["a pie", "on foot"], ["en coche", "by car"], ["seguro, segura", "safe"], ["las tiendas", "shops"], ["los vecinos", "neighbors"]
+    ],
+    phrases: [
+      ["Puedes dormir en el sofá cama.", "You can sleep on the sofa bed."],
+      ["Mi colonia es tranquila y segura.", "My neighborhood is quiet and safe."],
+      ["Hay un supermercado a cinco minutos.", "There's a supermarket five minutes away."],
+      ["Está a diez minutos a pie.", "It's ten minutes on foot."],
+      ["Del aeropuerto, es mejor tomar un taxi.", "From the airport, it's better to take a taxi."]
+    ],
+    prompt: {
+      role: `You are Mónica, 38, my friend from Monterrey. You're planning to visit me next month and stay at my home for four days. We're on the phone. Use "tú" with me.`,
+      infoTitle: "ABOUT YOU (MÓNICA)",
+      info: `You live in a house in San Pedro, Monterrey, with a garden and two dogs. You've never been to my city. You like walking, coffee shops, and markets. You're worried about the cold, about where you'll sleep, and about getting from the airport.`,
+      lead: `Ask me open questions about my home and neighborhood: where you'll sleep, what's nearby, how to get around, what the weather is like. After a short answer, say "¿Y qué más?" or "Cuéntame más." Later I'll ask about your home; answer in 2 short sentences.`,
+      recast: `I say "Mi colonia es muy segura y es cerca del parque" and you say "Ah, tu colonia está cerca del parque. ¡Qué padre!"`
+    }
+  },
+  {
+    title: "En el taxi", partner: "Don Toño", place: "Un taxi · Ciudad de México", reg: "usted",
+    goal: "A chatty taxi driver asks about where you live. Describe your city, your neighborhood, the weather, and your home.",
+    board: {
+      title: "Taxi", sub: "Ciudad de México · del aeropuerto al centro",
+      cols: [
+        [{ h: "Don Toño va a preguntar", items: [["¿De dónde es usted?"], ["¿Cómo es su ciudad?"], ["¿Vive en casa o en departamento?"], ["¿Hace frío allá?"]] }],
+        [{ h: "Tus frases", items: [["Mi ciudad es…"], ["Vivo cerca de… / lejos de…"], ["En invierno hace…"], ["Mi barrio es…"]] }]
+      ],
+      note: "Ask Don Toño about his neighborhood too."
+    },
+    words: [
+      ["la ciudad", "city"], ["el barrio", "neighborhood"], ["el centro", "downtown"], ["las afueras", "outskirts"],
+      ["el tráfico", "traffic"], ["el clima", "weather, climate"], ["hace frío", "it's cold"], ["hace calor", "it's hot"],
+      ["la nieve", "snow"], ["lejos de", "far from"], ["cerca de", "close to"], ["grande, pequeña", "big, small"]
+    ],
+    phrases: [
+      ["Mi ciudad es grande, pero tranquila.", "My city is big but quiet."],
+      ["Vivo un poco lejos del centro.", "I live a little far from downtown."],
+      ["En invierno hace mucho frío.", "In winter it's very cold."],
+      ["No hay mucho tráfico.", "There isn't much traffic."],
+      ["¿Y usted dónde vive?", "And where do you live?"]
+    ],
+    prompt: {
+      role: `You are Don Toño, 58, a friendly, talkative taxi driver in Mexico City. I'm your passenger, going from the airport to the city center. Use "usted" with me.`,
+      infoTitle: "ABOUT YOU (DON TOÑO)",
+      info: `You live in Iztapalapa in a two-story house with your wife, your daughter, and two grandchildren. Your neighborhood is busy and has a great market. There is a lot of traffic. You've never been to the United States, and you're curious about the weather and houses there.`,
+      lead: `Ask me where I'm from, and then open questions about my city, neighborhood, home, and weather. After a short answer, say "¿Ah, sí? ¿Y qué más?" or "Cuénteme." When I ask about your neighborhood, answer in 2 short sentences.`,
+      recast: `I say "En mi ciudad hay mucho frío en invierno" and you say "Ah, hace mucho frío en invierno. ¡Qué frío!"`
+    }
+  }
+];
+
+// v08.js
+LESSONS["08"].vars = [
+  {
+    title: "En el supermercado", partner: "Jorge", place: "Supermercado El Ahorro · León",
+    goal: "You can't find what you need in a big supermarket. Ask an employee where each item on your list is, and check what you hear.",
+    board: {
+      title: "Supermercado El Ahorro", sub: "León, Gto. · tu lista",
+      cols: [
+        [{ h: "Tu lista", items: [["La leche", "?"], ["El café", "?"], ["El jabón para trastes", "?"], ["El agua", "?"], ["Las tortillas", "?"]] }],
+        [{ h: "Y también", items: [["El baño", "?"], ["Las cajas", "?"]] }]
+      ],
+      note: "Repeat key words to check: ¿En el pasillo cinco?"
+    },
+    words: [
+      ["el pasillo", "aisle"], ["al fondo", "at the back"], ["la caja", "checkout"], ["los lácteos", "dairy"],
+      ["la leche", "milk"], ["el jabón para trastes", "dish soap"], ["la limpieza", "cleaning products"], ["las bebidas", "drinks"],
+      ["la tortillería", "tortilla counter"], ["junto a", "next to"], ["la entrada", "entrance"], ["la salida", "exit"]
+    ],
+    phrases: [
+      ["Disculpe, ¿dónde está la leche?", "Excuse me, where's the milk?"],
+      ["¿En qué pasillo está el café?", "Which aisle is the coffee in?"],
+      ["¿Dónde encuentro el jabón para trastes?", "Where can I find dish soap?"],
+      ["¿Al fondo, a la derecha?", "At the back, on the right?"],
+      ["¿Junto a la panadería?", "Next to the bakery?"]
+    ],
+    prompt: {
+      role: `You are Jorge, an employee at Supermercado El Ahorro in León, Guanajuato. You're stocking shelves. I'm a customer. Use "usted" with me.`,
+      infoTitle: "WHERE THINGS ARE",
+      info: `Frutas y verduras: at the entrance, on the left. Panadería: on the right of the entrance. Café and cereal: aisle 3. Cleaning products, including jabón para trastes: aisle 5. Drinks and water: aisle 7. Milk and cheese (lácteos): at the back, on the right, next to the meat. Tortillería: at the back, on the left, next to the panadería. Bathroom: next to customer service (atención a clientes), at the front. Cajas: at the front, by the exit.`,
+      lead: `Answer where things are with short, clear directions (en el pasillo cinco, al fondo, a la derecha, junto a). Wait for my questions. After each answer, ask "¿Algo más?"`,
+      recast: `I say "¿Dónde es la leche?" and you say "¿La leche? Está al fondo, a la derecha."`
+    }
+  },
+  {
+    title: "En el aeropuerto", partner: "Ana", place: "Aeropuerto de Cancún · Terminal 3",
+    goal: "Your flight leaves in an hour. At the information desk, find your gate and three other places, and check the directions you hear.",
+    board: {
+      title: "Información", sub: "Aeropuerto de Cancún · Terminal 3",
+      cols: [
+        [{ h: "Tu vuelo", items: [["Puerta B12", "?"]] },
+         { h: "Necesitas", items: [["Un baño", "?"], ["Un cajero automático", "?"], ["Una casa de cambio", "?"], ["Una farmacia", "?"]] }],
+        [{ h: "Y también", items: [["¿Hay wifi?", "?"], ["¿Dónde se puede comer?", "?"]] }]
+      ],
+      note: "Ask if the places are upstairs or downstairs."
+    },
+    words: [
+      ["la puerta", "gate"], ["la sala de espera", "waiting area"], ["la casa de cambio", "currency exchange"], ["el cajero automático", "ATM"],
+      ["arriba", "upstairs"], ["abajo", "downstairs"], ["la planta alta", "upper floor"], ["las escaleras", "stairs"],
+      ["la escalera eléctrica", "escalator"], ["el mostrador", "counter"], ["la contraseña", "password"], ["caminar", "to walk"]
+    ],
+    phrases: [
+      ["Disculpe, ¿dónde está la puerta B12?", "Excuse me, where is gate B12?"],
+      ["¿Arriba o abajo?", "Upstairs or downstairs?"],
+      ["¿Dónde puedo cambiar dinero?", "Where can I exchange money?"],
+      ["¿Está lejos de aquí?", "Is it far from here?"],
+      ["¿Hay wifi gratis?", "Is there free wifi?"]
+    ],
+    prompt: {
+      role: `You are Ana, who works at the information desk in Terminal 3 of the Cancún airport, after security. I'm a passenger. Use "usted" with me.`,
+      infoTitle: "WHERE THINGS ARE",
+      info: `Gate B12: upstairs (planta alta). Take the escalator, turn right, and walk about 10 minutes; it's at the end. Bathrooms: next to the escalator, on both floors. ATM: across from the café, on this floor. Currency exchange: there is none after security; only at arrivals. Pharmacy: upstairs, next to gate B5. Restaurants: upstairs, in the middle. Free wifi: yes, the network is "Aeropuerto Cancún", no password.`,
+      lead: `Answer where things are with short, clear directions (arriba, a la derecha, al final, junto a, enfrente de). Wait for my questions. After each answer, ask "¿Algo más?"`,
+      recast: `I say "¿Dónde es la puerta be doce?" and you say "¿La puerta B12? Está arriba."`
+    }
+  },
+  {
+    title: "En la universidad", partner: "Daniela", place: "Universidad · Guanajuato", reg: "tú",
+    goal: "It's your first day on a university campus. Ask a student where your classroom and other places are, and check the directions you hear.",
+    board: {
+      title: "Universidad de Guanajuato", sub: "Campus · primer día",
+      cols: [
+        [{ h: "Buscas", items: [["Salón 12, edificio C", "?"], ["La biblioteca", "?"], ["La oficina de idiomas", "?"]] }],
+        [{ h: "Y también", items: [["Los baños", "?"], ["Fotocopias", "?"], ["La cafetería", "?"]] }]
+      ],
+      note: "Students use tú with each other."
+    },
+    words: [
+      ["el edificio", "building"], ["el salón", "classroom"], ["la biblioteca", "library"], ["la oficina", "office"],
+      ["el pasillo", "hallway"], ["el sótano", "basement"], ["la planta baja", "ground floor"], ["las fotocopias", "photocopies"],
+      ["al final de", "at the end of"], ["detrás de", "behind"], ["enfrente de", "across from"], ["las escaleras", "stairs"]
+    ],
+    phrases: [
+      ["Oye, ¿dónde está el edificio C?", "Hey, where is building C?"],
+      ["¿En qué piso está el salón doce?", "What floor is classroom 12 on?"],
+      ["¿Al final del pasillo?", "At the end of the hallway?"],
+      ["¿Dónde puedo sacar copias?", "Where can I make copies?"],
+      ["¡Gracias, eres muy amable!", "Thanks, you're very kind!"]
+    ],
+    prompt: {
+      role: `You are Daniela, 21, a student at the university in Guanajuato. You're sitting outside building A. I'm a new student and it's my first day. Use "tú" with me.`,
+      infoTitle: "WHERE THINGS ARE",
+      info: `Building C: behind building A; walk past the cafetería. Classroom 12: building C, ground floor (planta baja), at the end of the hallway. Library: building B, second floor. Language office (oficina de idiomas): building A, third floor; take the stairs, there's no elevator. Bathrooms: on every floor, next to the stairs. Photocopies: in the library basement (sótano). Cafetería: across from building A.`,
+      lead: `Answer where things are with short, clear directions (detrás de, al final del pasillo, en el segundo piso). Be friendly and casual. After each answer, ask "¿Algo más?" or "¿Qué más buscas?"`,
+      recast: `I say "¿Dónde es la biblioteca?" and you say "¿La biblioteca? Está en el edificio B."`
+    }
+  }
+];
+
+// v09.js
+LESSONS["09"].vars = [
+  {
+    title: "Restaurante de mariscos", partner: "Julio", place: "Mariscos El Faro · Mazatlán",
+    goal: "A sit-down seafood restaurant by the beach. Ask for a table, order a starter, a main dish, and a drink, ask how one dish is prepared, and ask for the check.",
+    board: {
+      title: "Mariscos El Faro", sub: "Mazatlán, Sin. · Precios en pesos",
+      cols: [
+        [{ h: "Entradas", items: [["Coctel de camarón", "$160"], ["Aguachile", "$180"], ["Tostada de ceviche", "$65"]] },
+         { h: "Platos fuertes", items: [["Pescado zarandeado (kilo)", "$420"], ["Filete al mojo de ajo", "$210"], ["Camarones a la diabla", "$230"], ["Camarones empanizados", "$220"]] }],
+        [{ h: "Para tomar", items: [["Limonada", "$45"], ["Agua mineral", "$40"], ["Cerveza", "$50"]] },
+         { h: "Postre", items: [["Flan napolitano", "$60"]] },
+         { h: "Todos los platos incluyen", items: [["Arroz y ensalada"]] }]
+      ],
+      note: "At a sit-down restaurant, the server brings the check only when you ask."
+    },
+    words: [
+      ["los mariscos", "seafood"], ["el camarón", "shrimp"], ["el pescado", "fish (as food)"], ["el filete", "fillet"],
+      ["al mojo de ajo", "in garlic butter"], ["a la diabla", "in a spicy red chile sauce"], ["empanizado", "breaded"],
+      ["el aguachile", "raw shrimp in lime and chile"], ["la entrada", "starter"], ["el plato fuerte", "main course"],
+      ["la carta", "menu"], ["el postre", "dessert"]
+    ],
+    phrases: [
+      ["Una mesa para dos, por favor.", "A table for two, please."],
+      ["¿Me trae la carta, por favor?", "Could you bring me the menu?"],
+      ["De entrada, un coctel de camarón.", "As a starter, a shrimp cocktail."],
+      ["¿Cómo preparan el pescado?", "How do you prepare the fish?"],
+      ["¿Pica mucho?", "Is it very spicy?"]
+    ],
+    prompt: {
+      role: `You are Julio, a server at Mariscos El Faro, a sit-down seafood restaurant on the beach in Mazatlán. It's Sunday afternoon. I'm a customer arriving at the door. Use "usted" with me.`,
+      infoTitle: "MENU (pesos)",
+      info: `Entradas: coctel de camarón $160, aguachile $180 (pica mucho), tostada de ceviche $65
+Platos fuertes (include rice and salad): pescado zarandeado $420 per kilo (grilled whole fish with a mild chile marinade, for 2–3 people, takes 40 minutes), filete al mojo de ajo $210, camarones a la diabla $230 (pica mucho), camarones empanizados $220
+Para tomar: limonada $45, agua mineral $40, cerveza $50
+Postre: flan napolitano $60`,
+      lead: `Lead like a real server: ask how many people, seat me, bring the menu, ask for drinks first, then the starter and main course. After the meal, ask if I want dessert or coffee. Bring the check only when I ask, and ask "¿Va a pagar con tarjeta o en efectivo?"`,
+      recast: `I say "Yo quiero el camarones a diabla" and you say "Los camarones a la diabla, muy bien."`
+    }
+  },
+  {
+    title: "Comida corrida", partner: "Doña Mary", place: "Fonda Doña Mary · Ciudad de México",
+    goal: "A small family restaurant with a set lunch. Find out what's included, choose each course, and ask about the agua del día.",
+    board: {
+      title: "Fonda Doña Mary", sub: "Colonia Roma, CDMX · Comida corrida $95",
+      cols: [
+        [{ h: "Primer tiempo", items: [["Sopa de fideo"], ["Consomé de pollo"]] },
+         { h: "Segundo tiempo", items: [["Arroz rojo"], ["Espagueti"]] },
+         { h: "Plato fuerte", items: [["Pollo en mole"], ["Bistec a la mexicana"], ["Enchiladas verdes"], ["Chile relleno", "+$15"]] }],
+        [{ h: "Postre", items: [["Gelatina"], ["Arroz con leche"]] },
+         { h: "Incluye", items: [["Tortillas o bolillo"], ["Agua del día"]] },
+         { h: "Agua del día", items: [["¿? Pregunte"]] }]
+      ],
+      note: "One plato fuerte may be sold out today."
+    },
+    words: [
+      ["la comida corrida", "set lunch menu"], ["la fonda", "small family restaurant"], ["el primer tiempo", "first course"],
+      ["la sopa de fideo", "thin noodle soup"], ["el consomé", "clear broth"], ["el guisado", "stew, main dish"],
+      ["el mole", "rich chile and chocolate sauce"], ["a la mexicana", "with tomato, onion, and chile"], ["el chile relleno", "stuffed poblano pepper"],
+      ["la gelatina", "jello"], ["el arroz con leche", "rice pudding"], ["el agua del día", "today's fruit drink"]
+    ],
+    phrases: [
+      ["¿Qué incluye la comida corrida?", "What comes with the set lunch?"],
+      ["De primero, la sopa de fideo.", "For the first course, the noodle soup."],
+      ["De plato fuerte, el pollo en mole.", "For the main course, the chicken in mole."],
+      ["¿De qué es el agua del día?", "What flavor is today's drink?"],
+      ["¿Me trae más tortillas, por favor?", "Could you bring me more tortillas?"]
+    ],
+    prompt: {
+      role: `You are Doña Mary, the owner and server of Fonda Doña Mary, a small family restaurant in Colonia Roma, Mexico City. It's 2:30 pm on a weekday and it's busy. I'm a customer. Use "usted" with me.`,
+      infoTitle: "TODAY'S COMIDA CORRIDA ($95)",
+      info: `Primer tiempo: sopa de fideo or consomé de pollo
+Segundo tiempo: arroz rojo or espagueti
+Plato fuerte: pollo en mole, bistec a la mexicana, enchiladas verdes, chile relleno (+$15). The enchiladas verdes are sold out today; only say so if I order them.
+Postre: gelatina or arroz con leche
+Includes tortillas or bolillo, and the agua del día: today it's limón con chía.`,
+      lead: `Greet me and ask if I want the comida corrida. Then ask for each course one at a time: "¿De primero?", "¿Arroz o espagueti?", "¿Y de plato fuerte?". Ask "¿Tortillas o bolillo?". Offer dessert at the end, and give the total when I ask.`,
+      recast: `I say "Para primero quiero la sopa de fideos" and you say "De primero, sopa de fideo. Muy bien."`
+    }
+  },
+  {
+    title: "La tortería", partner: "Don Polo", place: "Tortas Los Cuates · Puebla",
+    goal: "A busy torta shop. Order tortas to go with changes, ask what comes on them, and order a licuado.",
+    board: {
+      title: "Tortas Los Cuates", sub: "Puebla, Pue. · Para aquí y para llevar",
+      cols: [
+        [{ h: "Tortas", items: [["De milanesa", "$75"], ["De pierna", "$70"], ["De jamón", "$55"], ["Hawaiana", "$75"], ["Cubana", "$95"]] },
+         { h: "Extras", items: [["Queso extra", "$15"], ["Aguacate extra", "$15"]] }],
+        [{ h: "Licuados", items: [["Plátano", "$45"], ["Fresa", "$45"], ["Mamey", "$55"]] },
+         { h: "Jugos", items: [["Naranja", "$40"], ["Zanahoria", "$40"]] },
+         { h: "Todas llevan", items: [["Frijoles, mayonesa, jitomate"], ["Cebolla, aguacate, chiles en vinagre"]] }]
+      ],
+      note: "Ask what's in the cubana before you order it."
+    },
+    words: [
+      ["la torta", "Mexican sandwich"], ["el bolillo", "crusty white roll"], ["la milanesa", "breaded thin steak"],
+      ["la pierna", "roast pork leg"], ["el jamón", "ham"], ["la cubana", "torta with many meats"],
+      ["los chiles en vinagre", "pickled jalapeños"], ["la mayonesa", "mayonnaise"], ["el licuado", "milkshake-style smoothie"],
+      ["el mamey", "sweet orange tropical fruit"], ["la bolsa", "bag"], ["tardar", "to take (time)"]
+    ],
+    phrases: [
+      ["Una de milanesa para llevar, por favor.", "One milanesa torta to go, please."],
+      ["¿Qué lleva la cubana?", "What's on the cubana?"],
+      ["Sin chiles, por favor.", "Without chiles, please."],
+      ["Con queso extra.", "With extra cheese."],
+      ["¿Cuánto tiempo tarda?", "How long does it take?"]
+    ],
+    prompt: {
+      role: `You are Don Polo, the owner of Tortas Los Cuates in Puebla. It's lunchtime and busy. I'm a customer at the counter. Use "usted" with me.`,
+      infoTitle: "MENU (pesos)",
+      info: `Tortas: milanesa $75, pierna $70, jamón $55, hawaiana (jamón, piña, queso) $75, cubana $95 (milanesa, pierna, jamón, salchicha, huevo, queso)
+Every torta comes with frijoles, mayonesa, jitomate, cebolla, aguacate, and chiles en vinagre.
+Extras: queso $15, aguacate $15
+Licuados: plátano $45, fresa $45, mamey $55. Jugos: naranja $40, zanahoria $40.
+Tortas take about 10 minutes.`,
+      lead: `Ask "¿Para aquí o para llevar?", take my order one torta at a time, and ask "¿Con todo?" for each. Ask about drinks, repeat the order back, and tell me the total and how long it will take.`,
+      recast: `I say "Quiero un torta de milanesa" and you say "Una torta de milanesa, claro."`
+    }
+  }
+];
+
+// v10.js
+LESSONS["10"].vars = [
+  {
+    title: "En el metro", partner: "Oficial Rocío", place: "Metro Hidalgo · CDMX",
+    goal: "You're at Hidalgo metro station. Ask a police officer how to get to three places by metro: which line, which direction, how many stops, and where to change.",
+    board: {
+      title: "Metro Hidalgo", sub: "Ciudad de México · Líneas 2 y 3",
+      cols: [
+        [{ h: "Líneas aquí", items: [["Línea 2 (azul): Tasqueña ↔ Cuatro Caminos"], ["Línea 3 (verde): Universidad ↔ Indios Verdes"]] }],
+        [{ h: "Quieres ir a", items: [["Bellas Artes", "?"], ["El Zócalo", "?"], ["El Bosque de Chapultepec", "?"]] }]
+      ],
+      note: "One trip needs a transfer. Ask where to change lines."
+    },
+    words: [
+      ["la línea", "line"], ["la dirección", "direction (end of the line)"], ["la estación", "station"], ["bajarse", "to get off"],
+      ["transbordar", "to change lines"], ["el andén", "platform"], ["la siguiente", "the next one"], ["la tarjeta", "transit card"],
+      ["recargar", "to top up (a card)"], ["la salida", "exit"], ["tomar", "to take"]
+    ],
+    phrases: [
+      ["Disculpe, ¿cómo llego al Zócalo?", "Excuse me, how do I get to the Zócalo?"],
+      ["¿Qué línea tomo?", "Which line do I take?"],
+      ["¿En qué dirección?", "In which direction?"],
+      ["¿Cuántas estaciones son?", "How many stations is it?"],
+      ["¿Tengo que transbordar?", "Do I have to change lines?"]
+    ],
+    prompt: {
+      role: `You are Oficial Rocío, a friendly police officer at Hidalgo metro station in Mexico City. I'm a visitor asking for directions. Use "usted" with me.`,
+      infoTitle: "THE ROUTES FROM HIDALGO",
+      info: `Bellas Artes: Línea 2 (blue), dirección Tasqueña, one station. Or walk 5 minutes east on Avenida Hidalgo.
+Zócalo: Línea 2, dirección Tasqueña, three stations (Bellas Artes, Allende, Zócalo). Get off at Zócalo/Tenochtitlan.
+Bosque de Chapultepec: Línea 3 (green), dirección Universidad, two stations to Balderas. Change (transbordar) to Línea 1 (pink), dirección Observatorio, four stations to Chapultepec.
+A ride costs $5 with the card; you can top up (recargar) at the machines.`,
+      lead: `Give directions in short steps ("Tome la línea dos, dirección Tasqueña."). Give one or two steps at a time and wait for me to check. Use "usted" commands.`,
+      recast: `I say "¿Qué línea tomo por el Zócalo?" and you say "¿Para el Zócalo? Tome la línea dos."`
+    }
+  },
+  {
+    title: "Un pueblo pequeño", partner: "Don Pancho", place: "Santa Rosa · un pueblo de práctica",
+    goal: "You just got off the bus in a small town with no street signs. Use landmarks to find three places: your hotel, an ATM, and the river.",
+    board: {
+      title: "Santa Rosa", sub: "Pueblo de práctica · estás en la parada del autobús",
+      cols: [
+        [{ h: "Buscas", items: [["Hotel Posada Rosa", "?"], ["Un cajero automático", "?"], ["El balneario (el río)", "?"]] }],
+        [{ h: "Puntos de referencia", items: [["La avenida principal"], ["El mercado"], ["La iglesia y el kiosco"], ["La farmacia"], ["La casa azul"]] }]
+      ],
+      note: "There are no street names here. Listen for landmarks."
+    },
+    words: [
+      ["el pueblo", "town, village"], ["el kiosco", "bandstand"], ["la iglesia", "church"], ["el balneario", "swimming spot, water park"],
+      ["el río", "river"], ["el camino", "path"], ["la carretera", "highway"], ["la parada", "stop"],
+      ["hasta el final", "all the way to the end"], ["a mano derecha", "on the right-hand side"], ["detrás de", "behind"], ["subir", "to go up"]
+    ],
+    phrases: [
+      ["Disculpe, ¿cómo llego al Hotel Posada Rosa?", "Excuse me, how do I get to the Hotel Posada Rosa?"],
+      ["¿Hay un cajero por aquí?", "Is there an ATM around here?"],
+      ["¿Después del mercado?", "After the market?"],
+      ["¿Detrás de la iglesia?", "Behind the church?"],
+      ["¿Se puede ir caminando?", "Can you walk there?"]
+    ],
+    prompt: {
+      role: `You are Don Pancho, an older man who sells newspapers next to the bus stop in Santa Rosa, a small town with no street signs. I just got off the bus. Use "usted" with me.`,
+      infoTitle: "THE TOWN (only you know this)",
+      info: `The bus stop is on the highway (carretera), at the south end of town. The main avenue (avenida principal) goes north from the bus stop, five blocks uphill, to the church and the kiosco.
+- ATM: the only one is inside the OXXO, right next to the bus stop.
+- Market: two blocks up the main avenue, on the right. The pharmacy is across from the market.
+- Hotel Posada Rosa: three blocks up the main avenue, turn left at the bakery, half a block. It's a blue house.
+- Balneario on the river: behind the church. Take the dirt path on the right of the church and walk about 10 minutes downhill.`,
+      lead: `Give directions using landmarks, in short steps ("Suba por la avenida principal. Pase el mercado."). Give one or two steps at a time and wait for me to check. Use "usted" commands.`,
+      recast: `I say "¿El hotel está después de la mercado?" and you say "Sí, después del mercado. Una cuadra más."`
+    }
+  },
+  {
+    title: "Tú das las indicaciones", partner: "Don Memo", place: "Un taxi · Querétaro",
+    goal: "This time you have the directions. Guide a taxi driver to your friend's house, step by step, and answer his questions.",
+    board: {
+      title: "Casa de tu amiga", sub: "Querétaro, Qro. · desde el centro",
+      cols: [
+        [{ h: "Tu ruta", items: [["1. Avenida Universidad, hacia el norte"], ["2. Pase dos semáforos"], ["3. En el tercer semáforo, a la derecha"], ["4. Calle Pino, dos cuadras"]] }],
+        [{ h: "La casa", items: [["Calle Pino 45"], ["Amarilla, a la izquierda"], ["Enfrente de un parque"], ["Junto a una tiendita"]] }]
+      ],
+      note: "Don Memo will make one mistake. Correct him."
+    },
+    words: [
+      ["el semáforo", "traffic light"], ["la glorieta", "roundabout"], ["la avenida", "avenue"], ["la calle", "street"],
+      ["hacia el norte", "toward the north"], ["seguir", "to keep going"], ["pasar", "to go past"], ["dar vuelta", "to turn"],
+      ["parar", "to stop"], ["el número", "house number"], ["la tiendita", "corner store"], ["aquí está bien", "here is fine"]
+    ],
+    phrases: [
+      ["Siga derecho por Avenida Universidad.", "Go straight on Avenida Universidad."],
+      ["En el tercer semáforo, dé vuelta a la derecha.", "At the third light, turn right."],
+      ["No, en el siguiente.", "No, at the next one."],
+      ["Es la casa amarilla, a la izquierda.", "It's the yellow house on the left."],
+      ["Aquí está bien, gracias.", "Here is fine, thanks."]
+    ],
+    prompt: {
+      role: `You are Don Memo, a taxi driver in Querétaro. I'm your passenger and I'm giving you directions to my friend's house. You don't know the address. Use "usted" with me.`,
+      infoTitle: "THE ROUTE (I have it; you don't)",
+      info: `The correct route, so you can check my directions: from downtown, go north on Avenida Universidad. Pass two traffic lights. At the third light, turn right onto Calle Pino. Go two blocks. The house is number 45, yellow, on the left, across from a park and next to a small store. Make ONE mistake on purpose: try to turn right at the second light, so I have to correct you.`,
+      lead: `Ask me where we're going, then follow my directions one step at a time. Ask short questions to check ("¿Aquí a la derecha?", "¿Sigo derecho?", "¿Cuál casa?"). Narrate what you see ("Ya pasamos un semáforo"). Don't give me the directions yourself.`,
+      recast: `I say "En el tres semáforo, gire a derecha" and you say "¿En el tercer semáforo, a la derecha? Muy bien."`
+    }
+  }
+];
+
 </script>
 <script>
 (function(){
@@ -1495,8 +2526,8 @@ function boardHtml(B){
 }
 const frame=f=>f.replace(/\[([^\]]+)\]/g,'<span class="slot">$1</span>');
 
-function rolePrompt(L){
-  const a1=L.level==="A1",P=L.prompt;
+function rolePrompt(L,V){
+  const a1=L.level==="A1",P=V?V.prompt:L.prompt,reg=V&&V.reg||L.reg;
   return `Let's do a Spanish speaking role play. I'm ${a1?"an A1 (beginner)":"an "+L.level} learner practicing this CEFR goal: "${L.cando}" Use Mexican Spanish.
 
 YOUR ROLE
@@ -1504,10 +2535,10 @@ ${P.role}
 
 ${P.infoTitle}
 ${P.info}
-
+${P.twist?`
 TWIST
 ${P.twist}
-
+`:""}
 HOW TO TALK TO ME
 - Speak only Spanish, slowly and clearly. Use 1 or 2 short sentences per turn.
 - ${a1?"Use very simple A1 words and short questions.":"Use everyday A2 words."} Ask one question at a time.
@@ -1525,7 +2556,7 @@ When I say "terminamos", leave the role and speak English. Keep the feedback und
 3. One new phrase to use next time.
 My speech is transcribed automatically and errors may get cleaned up, so mention anything you weren't sure you heard correctly. Then ask if I want to try again.
 
-If you understand, reply only: "Listo. ${L.reg==="tú"?"Di":"Diga"} 'hola' para empezar."`;
+If you understand, reply only: "Listo. ${reg==="tú"?"Di":"Diga"} 'hola' para empezar."`;
 }
 function reviewPrompt(L,core,sa){
   const next={"A1":"A1+","A2":"A2+","A2+":"B1","B1":"B1+"}[L.level];
@@ -1556,8 +2587,9 @@ function renderLesson(L){
   const twists=[["Lo mismo","Start here","Same scene. Aim to be faster and use every correction.","Otra vez, por favor. Same scene, same rules. I'll try to use your corrections."]]
     .concat(L.twists,[["A velocidad real","Challenge","Same scene at a natural speed, with more Mexican expressions.","Otra vez, por favor. Same scene, but speak at a natural speed and use a few more everyday Mexican expressions. Still recast my mistakes."]]);
   const you=L.reg==="tú"?"Tú":"Usted";
+  const vars=L.vars||[];
   const m=L.minutes, prepM=m-18;
-  let learned=S.get("learned",{}),ratings=S.get("ratings",{}),collapsed=S.get("collapsed",{});
+  let learned=S.get("learned",{}),ratings=S.get("ratings",{}),collapsed=S.get("collapsed",{}),varsDone=S.get("varsDone",{});
   const idx=IDS.indexOf(L.id),prev=IDS[idx-1],nxt=IDS[idx+1];
   document.title=`${+L.id}. ${L.title} · Español en Voz Alta`;
 
@@ -1574,6 +2606,7 @@ function renderLesson(L){
   <button data-go="feedback">3 Feedback<span class="t">5′</span></button>
   <button data-go="again">4 Otra vez<span class="t">5′</span></button>
   <button data-go="check">5 ¿Lo logré?<span class="t">2′</span></button>
+  ${vars.length?`<button data-go="vary">6 Variaciones<span class="t">otro día</span></button>`:""}
   <div class="foldall"><button id="expand-all">Expand all</button><button id="collapse-all">Collapse all</button></div>
 </nav>
 
@@ -1681,6 +2714,27 @@ function renderLesson(L){
     <div class="finish" style="margin-top:.6rem"><button class="btn" id="reset-yes">Yes, clear them</button><button class="btn" id="reset-no">Cancel</button></div></div>
 </section>
 
+${vars.length?`<section class="stage" id="vary">
+  <div class="stage-h"><span class="n">6</span><h2>Variaciones</h2></div>
+  <p class="lede">Come back on another day. Same can-do, but a new place and new information. Learn the new words for one variation, then play it in a new ChatGPT chat.</p>
+  ${vars.map((V,i)=>`<div class="step collapsed" id="v${i+1}" data-closed="1">
+    <div class="step-h"><span class="eyebrow">Variación ${i+1}<span class="ok" id="vok${i}">${varsDone[i]?"✓ Hecho":""}</span></span><h3>${V.title}</h3><p>${V.partner} · ${V.place}</p></div>
+    <p>${V.goal}</p>
+    ${boardHtml(V.board)}
+    <h4 class="vsub">Palabras nuevas</h4>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="New words, variation ${i+1}" data-vis="vw${i}">
+        <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-es" aria-pressed="false">Hide Spanish</button><button data-mode="mask-en" aria-pressed="false">Hide English</button>
+      </div>
+    </div>
+    <div class="rows" id="vw${i}">${V.words.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div>
+    <h4 class="vsub">Frases útiles</h4>
+    <div class="rows">${V.phrases.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div>
+    <div class="prompt"><div class="bar"><span>Role-play prompt: ${V.title}</span><button class="btn primary" data-copy="p-var${i}">Copy</button></div><pre id="p-var${i}">${esc(rolePrompt(L,V))}</pre></div>
+    <label class="var-done"><input type="checkbox" data-var="${i}" ${varsDone[i]?"checked":""}>I did this variation</label>
+  </div>`).join("")}
+</section>
+`:""}
 <div class="next">
   ${prev?`<a class="btn" href="#l${prev}">← ${+prev}. ${LESSONS[prev].title}</a>`:`<a class="btn" href="#inicio">← All lessons</a>`}
   ${nxt?`<a class="btn primary" href="#l${nxt}">${+nxt}. ${LESSONS[nxt].title} →</a>`:`<a class="btn" href="#inicio">All lessons</a>`}
@@ -1730,6 +2784,9 @@ function renderLesson(L){
   const notes=$("#notes");notes.value=S.get("notes","");
   notes.addEventListener("input",()=>S.set("notes",notes.value));
 
+  /* variations */
+  $$("[data-var]").forEach(c=>c.addEventListener("change",()=>{const i=+c.dataset.var;varsDone[i]=c.checked;S.set("varsDone",varsDone);$("#vok"+i).textContent=c.checked?"✓ Hecho":""}));
+
   /* self assessment */
   $("#sa").addEventListener("click",e=>{const b=e.target.closest(".rating button");if(!b)return;const i=+b.dataset.i,v=+b.dataset.v;ratings[i]=v;S.set("ratings",ratings);
     $$("button",b.parentElement).forEach(x=>x.setAttribute("aria-pressed",String(+x.dataset.v===v)))});
@@ -1737,7 +2794,8 @@ function renderLesson(L){
     const d=new Date().toISOString().slice(0,10);
     const lines=[`Spanish self-study · Lección ${+L.id} · ${L.title} (CEFR ${L.level}: ${L.cando}) · ${d}`,"",
       `Core phrases learned: ${core.filter(([es])=>learned[es]).length}/8`,"","Self-assessment:",
-      ...sa.map((s,i)=>`- ${s}: ${ratings[i]==null?"(not rated)":LBL[ratings[i]]}`),"","My notes:",notes.value.trim()||"(none)"];
+      ...sa.map((s,i)=>`- ${s}: ${ratings[i]==null?"(not rated)":LBL[ratings[i]]}`),
+      ...(vars.length?["",`Variations done: ${vars.filter((V,i)=>varsDone[i]).map(V=>V.title).join(", ")||"none yet"}`]:[]),"","My notes:",notes.value.trim()||"(none)"];
     copyText(lines.join("\n"),e.currentTarget);
   };
 
@@ -1753,7 +2811,7 @@ function renderLesson(L){
     const h=$(":scope > .stage-h, :scope > .step-h",el);
     h.insertAdjacentHTML("beforeend",`<button class="fold" data-name="${esc($("h2,h3",h).textContent)}">${CHEV}</button>`);
     h.addEventListener("click",()=>setFold(el,!el.classList.contains("collapsed")));
-    setFold(el,!!collapsed[el.id],false);
+    setFold(el,el.id in collapsed?!!collapsed[el.id]:el.dataset.closed==="1",false);
   });
   $("#expand-all").onclick=()=>folds.forEach(el=>setFold(el,false));
   $("#collapse-all").onclick=()=>$$("section.stage",app).forEach(el=>setFold(el,true));
@@ -1761,8 +2819,9 @@ function renderLesson(L){
   /* reset */
   $("#reset").onclick=()=>{$("#reset-confirm").hidden=false};
   $("#reset-no").onclick=()=>{$("#reset-confirm").hidden=true};
-  $("#reset-yes").onclick=()=>{S.clear();learned={};ratings={};collapsed={};notes.value="";renderCore();
-    ["dlg","core","hear","vocab"].forEach(t=>setVis(t,"all",false));folds.forEach(el=>setFold(el,false,false));
+  $("#reset-yes").onclick=()=>{S.clear();learned={};ratings={};collapsed={};varsDone={};notes.value="";renderCore();
+    $$("[data-vis]").forEach(g=>setVis(g.dataset.vis,"all",false));folds.forEach(el=>setFold(el,el.dataset.closed==="1",false));
+    $$("[data-var]").forEach(c=>{c.checked=false;$("#vok"+c.dataset.var).textContent=""});
     $$(".rating button").forEach(b=>b.setAttribute("aria-pressed","false"));$("#reset-confirm").hidden=true;toast("Lesson reset")};
 
   /* stage bar */

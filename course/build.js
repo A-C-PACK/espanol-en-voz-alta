@@ -1,11 +1,11 @@
-// Builds dist/espanol-en-voz-alta.html from src/template.html and data/l*.js.
+// Builds dist/espanol-en-voz-alta.html from src/template.html, data/l*.js (lessons) and data/v*.js (variations).
 // Usage: node build.js
 const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
 const dataDir = path.join(root, "data");
-const files = fs.readdirSync(dataDir).filter(f => /^l\d+\.js$/.test(f)).sort();
+const files = fs.readdirSync(dataDir).filter(f => /^[lv]\d+\.js$/.test(f)).sort();
 const data = files.map(f => `// ${f}\n` + fs.readFileSync(path.join(dataDir, f), "utf8")).join("\n");
 
 const template = fs.readFileSync(path.join(root, "src", "template.html"), "utf8");
@@ -31,4 +31,4 @@ ${out}
 const docs = path.join(root, "..", "docs");
 fs.mkdirSync(docs, { recursive: true });
 fs.writeFileSync(path.join(docs, "index.html"), page);
-console.log(`Built ${files.length} lessons -> dist/espanol-en-voz-alta.html and docs/index.html (${Math.round(out.length / 1024)} KB)`);
+console.log(`Built ${files.length} data files -> dist/espanol-en-voz-alta.html and docs/index.html (${Math.round(out.length / 1024)} KB)`);
