@@ -36,6 +36,8 @@ a{color:var(--blue)}
 /* ---------- hub ---------- */
 .hub-h{display:grid;gap:.8rem}
 .hub-h h1{font-size:clamp(2.2rem,8vw,3rem);letter-spacing:-.01em}
+.hub-h h1.banner{margin:0;line-height:0}
+.hub-h h1.banner img{display:block;width:100%;height:auto;aspect-ratio:1536/640;border-radius:10px;background:var(--board)}
 .hub-h .lede{color:var(--muted);max-width:58ch}
 .cycle{display:flex;flex-wrap:wrap;gap:.35rem .5rem;align-items:center;font-size:.88rem;margin-top:.4rem}
 .cycle span{background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:.2rem .7rem;font-weight:700}
@@ -289,16 +291,23 @@ function pickVoices(){
   voices=speechSynthesis.getVoices().filter(v=>/^es/i.test(v.lang)).sort((a,b)=>rank(a)-rank(b));
   const vi=$("#voiceinfo");if(vi)vi.textContent=voiceText();
 }
-function voiceText(){return voices.length?`Voice: ${voices[0].name} (${voices[0].lang}).`:"No Spanish voice found in this browser. Edge and Chrome include good Mexican Spanish voices."}
+function voiceText(){return "Dialogue and vocabulary use recorded Mexican voices. Other phrases use "+(voices.length?`the browser voice: ${voices[0].name} (${voices[0].lang}).`:"the browser voice, but none was found for Spanish. Edge and Chrome include good Mexican Spanish voices.")}
 if("speechSynthesis" in window){pickVoices();speechSynthesis.onvoiceschanged=pickVoices}
 function utter(text,vi){const u=new SpeechSynthesisUtterance(text);u.lang="es-MX";u.rate=rate;const v=voices[vi||0]||voices[0];if(v)u.voice=v;return u}
-function speak(text){if(!("speechSynthesis" in window)){toast("This browser has no speech voices");return}speechSynthesis.cancel();speechSynthesis.speak(utter(text))}
-function stopSpeech(){if("speechSynthesis" in window)speechSynthesis.cancel()}
+function speak(text){stopSpeech();if(!("speechSynthesis" in window)){toast("This browser has no speech voices");return}speechSynthesis.speak(utter(text))}
+/* recorded voices (CDMX cast); anything without a clip falls back to the browser voice */
+const AU=window.AUDIO||{base:"",clips:{}},player=new Audio();let chain=0;
+const clipUrl=k=>k&&AU.clips[k]?AU.base+AU.clips[k]+".mp3":null;
+const clipRate=()=>rate<0.9?0.8:1;
+function playClip(url,onend,fail){player.src=url;player.playbackRate=clipRate();player.preservesPitch=true;player.onended=onend||null;
+  return player.play().catch(e=>{if(e.name!=="AbortError")fail()})}
+function say(text,key){const u=clipUrl(key);if(u){stopSpeech();playClip(u,null,()=>speak(text))}else speak(text)}
+function stopSpeech(){chain++;player.pause();player.onended=null;if("speechSynthesis" in window)speechSynthesis.cancel()}
 
 const SPK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>';
 const CHEV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
-const sayBtn=t=>`<button class="say" data-say="${esc(strip(t))}" aria-label="Hear: ${esc(strip(t))}">${SPK}</button>`;
-const row=(es,en)=>`${sayBtn(es)}<div style="min-width:0"><span class="es-t">${es}</span><span class="en-t">${en}</span></div>`;
+const sayBtn=(t,k)=>`<button class="say" data-say="${esc(strip(t))}"${clipUrl(k)?` data-clip="${esc(k)}"`:""} aria-label="Hear: ${esc(strip(t))}">${SPK}</button>`;
+const row=(es,en,k)=>`${sayBtn(es,k)}<div style="min-width:0"><span class="es-t">${es}</span><span class="en-t">${en}</span></div>`;
 
 /* ---------- global delegation ---------- */
 function flash(btn,label){const o=btn.textContent;btn.textContent=label;btn.classList.add("copied");setTimeout(()=>{btn.textContent=o;btn.classList.remove("copied")},1500)}
@@ -307,7 +316,7 @@ function copyText(text,btn){
   navigator.clipboard.writeText(text).then(()=>flash(btn,"Copied"),()=>toast("Select the text and copy it with Ctrl+C"));
 }
 document.addEventListener("click",e=>{
-  const s=e.target.closest("[data-say]");if(s){speak(s.dataset.say);return}
+  const s=e.target.closest("[data-say]");if(s){say(s.dataset.say,s.dataset.clip);return}
   const c=e.target.closest("[data-copy]");if(c){const el=document.getElementById(c.dataset.copy);if(el)copyText(el.textContent,c);return}
   if(e.target.closest("input,button,a,summary"))return;
   const r=e.target.closest(".masked .row");if(r)r.classList.toggle("peek");
@@ -336,7 +345,7 @@ function renderHub(){
   }).join("");
   app.innerHTML=`<header class="hub-h">
     <div class="meta">Spanish speaking practice · CEFR A1–B1 · Español de México</div>
-    <h1>Español en voz alta</h1>
+    <h1 class="banner"><img src="__BANNER__" alt="Español en voz alta" width="1536" height="640"></h1>
     <p class="lede">Each lesson is based on a can-do statement adapted from the CEFR Companion Volume (Council of Europe, 2020). You prepare the language, role-play the situation with ChatGPT voice, get feedback, try again, and check yourself.</p>
     <div class="cycle"><span>Prepárate</span><i>→</i><span>Role play</span><i>→</i><span>Feedback</span><i>→</i><span>Otra vez</span><i>→</i><span>¿Lo logré?</span></div>
   </header>${groups}`;
@@ -380,26 +389,6 @@ When I say "terminamos", leave the role and speak English. Keep the feedback und
 My speech is transcribed automatically and errors may get cleaned up, so mention anything you weren't sure you heard correctly. Then ask if I want to try again.
 
 If you understand, reply only: "Listo. ${reg==="tú"?"Di":"Diga"} 'hola' para empezar."`;
-}
-function reviewPrompt(L,core,sa){
-  const next={"A1":"A1+","A2":"A2+","A2+":"B1","B1":"B1+"}[L.level];
-  return `I'm an ${L.level} Spanish learner (Mexican Spanish). Below is the transcript of a voice role play: ${L.scene}.
-CEFR goal: "${L.cando}"
-
-My 8 target phrases: ${core.map(c=>strip(c[0])).join(" · ")}
-
-My speech was transcribed by speech recognition, which often corrects grammar and removes hesitations. Treat my lines as a best-case version of what I actually said.
-
-Please give me:
-1. Can-do check. For each, say yes / partly / no with a short quote: ${sa.join(" · ")}.
-2. My top 3 corrections or upgrades: what I said → more natural Mexican Spanish → why (one line).
-3. Which target phrases I used and which I avoided.
-4. Two phrases to focus on in my next attempt.
-5. My side of the conversation rewritten at a solid ${next} level, so I can read it aloud.
-Keep explanations short and in English.
-
-TRANSCRIPT:
-`;
 }
 
 function renderLesson(L){
@@ -452,7 +441,7 @@ function renderLesson(L){
         <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-en" aria-pressed="false">Hide English</button><button data-mode="mask-es mask-en" aria-pressed="false">Hide all</button>
       </div>
     </div>
-    <div class="rows" id="dlg">${L.dialogue.map(([w,es,en],i)=>`<div class="row line ${w}" id="dl${i}"><span class="who">${w==="m"?L.partner:you}</span><div style="min-width:0"><span class="es-t">${es}</span><span class="en-t">${en}</span></div>${sayBtn(es)}</div>`).join("")}</div>
+    <div class="rows" id="dlg">${L.dialogue.map(([w,es,en],i)=>`<div class="row line ${w}" id="dl${i}"><span class="who">${w==="m"?L.partner:you}</span><div style="min-width:0"><span class="es-t">${es}</span><span class="en-t">${en}</span></div>${sayBtn(es,`d${L.id}:${i}`)}</div>`).join("")}</div>
   </div>
   <div class="step" id="p3">
     <div class="step-h"><span class="eyebrow">Paso 3</span><h3>Aprende 8 frases</h3><p>These are the ones you'll use. Say each out loud, then hide the Spanish and recall it from the English. Tap a row to peek. Check it off when you can say it without looking.</p></div>
@@ -479,7 +468,7 @@ function renderLesson(L){
         <button data-mode="all" aria-pressed="true">Show all</button><button data-mode="mask-es" aria-pressed="false">Hide Spanish</button><button data-mode="mask-en" aria-pressed="false">Hide English</button>
       </div>
     </div>
-    <div id="vocab">${L.vocab.map(([g,items])=>`<div class="vgroup"><div class="eyebrow">${g}</div><div class="vrows">${items.map(([es,en])=>`<div class="row">${row(es,en)}</div>`).join("")}</div></div>`).join("")}</div>
+    <div id="vocab">${L.vocab.map(([g,items])=>`<div class="vgroup"><div class="eyebrow">${g}</div><div class="vrows">${items.map(([es,en])=>`<div class="row">${row(es,en,"v:"+es)}</div>`).join("")}</div></div>`).join("")}</div>
   </div>
   <div class="step" id="p5">
     <div class="step-h"><span class="eyebrow">Paso 5</span><h3>¿Qué dirías?</h3><p>Say your answer out loud first, then check it.</p></div>
@@ -514,10 +503,8 @@ function renderLesson(L){
 
 <section class="stage" id="feedback">
   <div class="stage-h"><span class="n">3</span><h2>Feedback</h2></div>
-  <p class="lede">Get ChatGPT's quick spoken feedback first. For a closer look, paste the transcript into Claude afterward.</p>
+  <p class="lede">Get ChatGPT's quick spoken feedback, then note what you want to remember.</p>
   <div class="block"><h3>Quick, in ChatGPT</h3><p>Say <b>"Terminamos"</b>. ${L.partner} drops the role and gives you one strength, up to three corrections, and a new phrase. Repeat each corrected sentence out loud twice.</p></div>
-  <div class="block"><h3>Deeper, in Claude</h3><p>Speech recognition often fixes your grammar before the AI sees it, so spoken feedback can miss errors. Copy the transcript from the ChatGPT chat and paste it under this prompt.</p>
-    <div class="prompt"><div class="bar"><span>Transcript-review prompt for Claude</span><button class="btn primary" data-copy="p-review">Copy</button></div><pre id="p-review">${esc(reviewPrompt(L,core,sa))}</pre></div></div>
   <div class="block"><h3><label for="notes">Your notes</label></h3><p class="muted small">What did you want to say but couldn't? Add the corrections you want to remember. Saved in this browser.</p>
     <textarea id="notes" placeholder="e.g. Wanted to say … → …"></textarea></div>
 </section>
@@ -594,13 +581,19 @@ ${vars.length?`<section class="stage" id="vary">
 
   /* dialogue */
   const clearPlaying=()=>$$(".line.playing").forEach(l=>l.classList.remove("playing"));
+  /* one line at a time: the recording if there is one, else the browser voice */
   $("#play-all").onclick=()=>{
-    if(!("speechSynthesis" in window)){toast("This browser has no speech voices");return}
-    speechSynthesis.cancel();
-    L.dialogue.forEach(([w,es],i)=>{const u=utter(strip(es),w==="m"?0:(voices.length>1?1:0));
-      u.onstart=()=>{clearPlaying();const el=$("#dl"+i);if(el)el.classList.add("playing")};
-      if(i===L.dialogue.length-1)u.onend=clearPlaying;
-      speechSynthesis.speak(u)});
+    stopSpeech();const run=chain;
+    const next=i=>{
+      if(run!==chain)return;
+      clearPlaying();if(i>=L.dialogue.length)return;
+      const [w,es]=L.dialogue[i],el=$("#dl"+i);if(el)el.classList.add("playing");
+      const go=()=>setTimeout(()=>next(i+1),350),u=clipUrl(`d${L.id}:${i}`);
+      const tts=()=>{if(!("speechSynthesis" in window)){go();return}
+        const t=utter(strip(es),w==="m"?0:(voices.length>1?1:0));t.onend=go;speechSynthesis.speak(t)};
+      if(u)playClip(u,go,tts);else tts();
+    };
+    next(0);
   };
   $("#stop-all").onclick=()=>{stopSpeech();clearPlaying()};
 
