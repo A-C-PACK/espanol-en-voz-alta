@@ -1,0 +1,5537 @@
+[
+ {
+  "id": "24031e89d552",
+  "who": "VALERIA",
+  "text": "¡Hola! Me llamo Mariana. ¿Cómo te llamas?"
+ },
+ {
+  "id": "29aee42e002f",
+  "who": "YO",
+  "text": "Hola, me llamo Alex. Mucho gusto."
+ },
+ {
+  "id": "f22cfa9c9ebb",
+  "who": "VALERIA",
+  "text": "Mucho gusto, Alex. ¿De dónde eres?"
+ },
+ {
+  "id": "7eef860fe45e",
+  "who": "YO",
+  "text": "Soy de Estados Unidos. ¿Y tú?"
+ },
+ {
+  "id": "03c3c0792f76",
+  "who": "VALERIA",
+  "text": "Soy de Puebla, pero vivo aquí en Coyoacán."
+ },
+ {
+  "id": "e9cb7821c74c",
+  "who": "YO",
+  "text": "¡Qué bien! Yo vivo en Chicago."
+ },
+ {
+  "id": "eccb73e43a42",
+  "who": "VALERIA",
+  "text": "¿Y a qué te dedicas?"
+ },
+ {
+  "id": "a78cc786d951",
+  "who": "YO",
+  "text": "Trabajo en una universidad. Enseño inglés."
+ },
+ {
+  "id": "af02a706abd9",
+  "who": "VALERIA",
+  "text": "¡Qué interesante! Yo soy arquitecta."
+ },
+ {
+  "id": "10d8403449cf",
+  "who": "YO",
+  "text": "¿Hablas inglés?"
+ },
+ {
+  "id": "f2236ee7c1e9",
+  "who": "VALERIA",
+  "text": "Un poco. ¿Y tú hablas español?"
+ },
+ {
+  "id": "784fa2ddca48",
+  "who": "YO",
+  "text": "Sí, un poco. Estoy aprendiendo."
+ },
+ {
+  "id": "f345c193e518",
+  "who": "VALERIA",
+  "text": "¡Hablas muy bien! Bueno, nos vemos el jueves."
+ },
+ {
+  "id": "e234bae39f5e",
+  "who": "YO",
+  "text": "Igualmente. ¡Hasta luego!"
+ },
+ {
+  "id": "3ef4a70f0edd",
+  "who": "PATRICIA",
+  "text": "Estados Unidos"
+ },
+ {
+  "id": "f31f5ee698c8",
+  "who": "PATRICIA",
+  "text": "Canadá"
+ },
+ {
+  "id": "e7fdc4b7938c",
+  "who": "PATRICIA",
+  "text": "México"
+ },
+ {
+  "id": "6f1b1f5b9f7a",
+  "who": "PATRICIA",
+  "text": "la ciudad"
+ },
+ {
+  "id": "54b2c3cddf59",
+  "who": "PATRICIA",
+  "text": "el país"
+ },
+ {
+  "id": "bb28ddacb381",
+  "who": "PATRICIA",
+  "text": "el barrio"
+ },
+ {
+  "id": "ffc453a355d2",
+  "who": "PATRICIA",
+  "text": "el profesor, la profesora"
+ },
+ {
+  "id": "cb431ab8b105",
+  "who": "PATRICIA",
+  "text": "el ingeniero, la ingeniera"
+ },
+ {
+  "id": "7fc2eec385a0",
+  "who": "PATRICIA",
+  "text": "el arquitecto, la arquitecta"
+ },
+ {
+  "id": "e8ed54ae388a",
+  "who": "PATRICIA",
+  "text": "el médico, la médica"
+ },
+ {
+  "id": "d43e9b450771",
+  "who": "PATRICIA",
+  "text": "el estudiante, la estudiante"
+ },
+ {
+  "id": "e56e8c9d80b0",
+  "who": "PATRICIA",
+  "text": "jubilado, jubilada"
+ },
+ {
+  "id": "1ba6b4bd5a4a",
+  "who": "PATRICIA",
+  "text": "me llamo, te llamas"
+ },
+ {
+  "id": "a097b3d479d8",
+  "who": "PATRICIA",
+  "text": "soy, eres"
+ },
+ {
+  "id": "2c3bc738f906",
+  "who": "PATRICIA",
+  "text": "vivo, vives"
+ },
+ {
+  "id": "04503fabb7c8",
+  "who": "PATRICIA",
+  "text": "trabajo, trabajas"
+ },
+ {
+  "id": "df7e9d83a100",
+  "who": "PATRICIA",
+  "text": "hablo, hablas"
+ },
+ {
+  "id": "0eb2ba6a3ec7",
+  "who": "ROCIO",
+  "text": "Mira, esta es mi familia."
+ },
+ {
+  "id": "e98d9b187d60",
+  "who": "YO",
+  "text": "¡Qué bonita! ¿Quién es él?"
+ },
+ {
+  "id": "1923e725a29a",
+  "who": "ROCIO",
+  "text": "Es mi esposo, Javier."
+ },
+ {
+  "id": "d98bbc885039",
+  "who": "YO",
+  "text": "¿Tienes hijos?"
+ },
+ {
+  "id": "5dbdfe1a179e",
+  "who": "ROCIO",
+  "text": "Sí, tengo dos hijos: Daniel y Sofía."
+ },
+ {
+  "id": "24da9d474d9f",
+  "who": "YO",
+  "text": "¿Cuántos años tiene Sofía?"
+ },
+ {
+  "id": "46607e152930",
+  "who": "ROCIO",
+  "text": "Tiene treinta años. Es enfermera. ¿Y tú? ¿Tienes hermanos?"
+ },
+ {
+  "id": "dc2aeb6cb79b",
+  "who": "YO",
+  "text": "Sí, tengo un hermano y dos hermanas."
+ },
+ {
+  "id": "95ed7c14c1d0",
+  "who": "ROCIO",
+  "text": "¿Cómo se llama tu hermano?"
+ },
+ {
+  "id": "a96bfa785608",
+  "who": "YO",
+  "text": "Se llama Ben. Vive en Texas."
+ },
+ {
+  "id": "0dee68902e4f",
+  "who": "ROCIO",
+  "text": "¿Y tienes hijos?"
+ },
+ {
+  "id": "bb853498756d",
+  "who": "YO",
+  "text": "Sí, tengo una hija. Tiene doce años."
+ },
+ {
+  "id": "d349da9a5bca",
+  "who": "ROCIO",
+  "text": "¡Qué bien! ¿Tienes una foto?"
+ },
+ {
+  "id": "f5b74aff2a96",
+  "who": "YO",
+  "text": "Sí, mira. Esta es mi hija."
+ },
+ {
+  "id": "6b5656488505",
+  "who": "ROCIO",
+  "text": "¡Qué linda!"
+ },
+ {
+  "id": "b04b07b730b6",
+  "who": "PATRICIA",
+  "text": "el padre, la madre"
+ },
+ {
+  "id": "d641f90d250c",
+  "who": "PATRICIA",
+  "text": "los padres"
+ },
+ {
+  "id": "7181c9482e97",
+  "who": "PATRICIA",
+  "text": "el esposo, la esposa"
+ },
+ {
+  "id": "36b93c28175d",
+  "who": "PATRICIA",
+  "text": "el hijo, la hija"
+ },
+ {
+  "id": "b292a207e6ad",
+  "who": "PATRICIA",
+  "text": "el hermano, la hermana"
+ },
+ {
+  "id": "eefbdda509ed",
+  "who": "PATRICIA",
+  "text": "el abuelo, la abuela"
+ },
+ {
+  "id": "a42c8c6a86aa",
+  "who": "PATRICIA",
+  "text": "el nieto, la nieta"
+ },
+ {
+  "id": "66ac58f5bb42",
+  "who": "PATRICIA",
+  "text": "el tío, la tía"
+ },
+ {
+  "id": "483146fadac1",
+  "who": "PATRICIA",
+  "text": "el primo, la prima"
+ },
+ {
+  "id": "8445f2672fb0",
+  "who": "PATRICIA",
+  "text": "mayor"
+ },
+ {
+  "id": "c5e575019d15",
+  "who": "PATRICIA",
+  "text": "menor"
+ },
+ {
+  "id": "b7fcef8a24d6",
+  "who": "PATRICIA",
+  "text": "casado, casada"
+ },
+ {
+  "id": "85683eff5309",
+  "who": "PATRICIA",
+  "text": "soltero, soltera"
+ },
+ {
+  "id": "75998e665378",
+  "who": "PATRICIA",
+  "text": "la mascota"
+ },
+ {
+  "id": "b0f84e4e7708",
+  "who": "PATRICIA",
+  "text": "veinte"
+ },
+ {
+  "id": "269c8dc79257",
+  "who": "PATRICIA",
+  "text": "treinta"
+ },
+ {
+  "id": "e8154e8368ac",
+  "who": "PATRICIA",
+  "text": "cuarenta"
+ },
+ {
+  "id": "1250cc296456",
+  "who": "PATRICIA",
+  "text": "cincuenta"
+ },
+ {
+  "id": "9e3acc70f557",
+  "who": "PATRICIA",
+  "text": "sesenta"
+ },
+ {
+  "id": "ea2291a8b31d",
+  "who": "PATRICIA",
+  "text": "setenta"
+ },
+ {
+  "id": "720d8983494c",
+  "who": "CHELA",
+  "text": "¡Pásele, pásele! ¿Qué va a llevar?"
+ },
+ {
+  "id": "dc122ca8c3dc",
+  "who": "YO",
+  "text": "Buenos días. ¿A cómo está el jitomate?"
+ },
+ {
+  "id": "5e2032a4f035",
+  "who": "CHELA",
+  "text": "A veintiocho el kilo."
+ },
+ {
+  "id": "0a83d6a72ebe",
+  "who": "YO",
+  "text": "Me da un kilo, por favor."
+ },
+ {
+  "id": "1ec8fcc49648",
+  "who": "CHELA",
+  "text": "Aquí tiene. ¿Qué más?"
+ },
+ {
+  "id": "9a34a211dd55",
+  "who": "YO",
+  "text": "¿Tiene aguacates?"
+ },
+ {
+  "id": "a2ecc736a4d3",
+  "who": "CHELA",
+  "text": "Sí, a quince la pieza. ¿Para hoy o para mañana?"
+ },
+ {
+  "id": "8860eaa4b09b",
+  "who": "YO",
+  "text": "Para hoy. Me da tres, por favor."
+ },
+ {
+  "id": "151a9b6bb866",
+  "who": "CHELA",
+  "text": "Muy bien. ¿Algo más?"
+ },
+ {
+  "id": "874b2f86f37e",
+  "who": "YO",
+  "text": "Medio kilo de limones y un manojo de cilantro."
+ },
+ {
+  "id": "ca26e8ded46f",
+  "who": "CHELA",
+  "text": "Listo. ¿Es todo?"
+ },
+ {
+  "id": "b8358063ab6e",
+  "who": "YO",
+  "text": "Sí, es todo. ¿Cuánto es?"
+ },
+ {
+  "id": "395789da0e18",
+  "who": "CHELA",
+  "text": "Son cien pesos con cincuenta."
+ },
+ {
+  "id": "3ba1aaec1c48",
+  "who": "YO",
+  "text": "Aquí tiene. Gracias."
+ },
+ {
+  "id": "e18ae61f8319",
+  "who": "CHELA",
+  "text": "Gracias a usted. ¡Que le vaya bien!"
+ },
+ {
+  "id": "9853aa9a1dff",
+  "who": "PATRICIA",
+  "text": "el mango"
+ },
+ {
+  "id": "fcb29481d600",
+  "who": "PATRICIA",
+  "text": "el plátano"
+ },
+ {
+  "id": "ed1768512b8b",
+  "who": "PATRICIA",
+  "text": "la papaya"
+ },
+ {
+  "id": "aebffd7c4410",
+  "who": "PATRICIA",
+  "text": "el aguacate"
+ },
+ {
+  "id": "6f603d774482",
+  "who": "PATRICIA",
+  "text": "el limón"
+ },
+ {
+  "id": "2071e108061e",
+  "who": "PATRICIA",
+  "text": "el jitomate"
+ },
+ {
+  "id": "6ebf10ac7142",
+  "who": "PATRICIA",
+  "text": "la cebolla"
+ },
+ {
+  "id": "a475fec43802",
+  "who": "PATRICIA",
+  "text": "el chile serrano"
+ },
+ {
+  "id": "3d630a8f760b",
+  "who": "PATRICIA",
+  "text": "el cilantro"
+ },
+ {
+  "id": "ddbaf13425a0",
+  "who": "PATRICIA",
+  "text": "el kilo"
+ },
+ {
+  "id": "e7463026a143",
+  "who": "PATRICIA",
+  "text": "medio kilo"
+ },
+ {
+  "id": "08b0421bf0f6",
+  "who": "PATRICIA",
+  "text": "un cuarto"
+ },
+ {
+  "id": "c8d0963c51c7",
+  "who": "PATRICIA",
+  "text": "la pieza"
+ },
+ {
+  "id": "613f104f4307",
+  "who": "PATRICIA",
+  "text": "el manojo"
+ },
+ {
+  "id": "9ec235cbdbe3",
+  "who": "PATRICIA",
+  "text": "la bolsa"
+ },
+ {
+  "id": "73d067efbe73",
+  "who": "PATRICIA",
+  "text": "el peso"
+ },
+ {
+  "id": "3d433ab29249",
+  "who": "PATRICIA",
+  "text": "el cambio"
+ },
+ {
+  "id": "5ca34edba918",
+  "who": "PATRICIA",
+  "text": "cien"
+ },
+ {
+  "id": "9a40cf35a7b7",
+  "who": "PATRICIA",
+  "text": "doscientos"
+ },
+ {
+  "id": "f9c523cca9fc",
+  "who": "PATRICIA",
+  "text": "con cincuenta"
+ },
+ {
+  "id": "fa1b488d6002",
+  "who": "LUPE",
+  "text": "Buenos días. ¿Qué le traigo?"
+ },
+ {
+  "id": "1cd3c194629f",
+  "who": "YO",
+  "text": "Buenos días. Un café de olla, por favor."
+ },
+ {
+  "id": "4fda8ff34abc",
+  "who": "LUPE",
+  "text": "Claro. ¿Algo de comer?"
+ },
+ {
+  "id": "86768eed6fe2",
+  "who": "YO",
+  "text": "Sí. ¿Qué son los molletes?"
+ },
+ {
+  "id": "4f4d0bd95d64",
+  "who": "LUPE",
+  "text": "Son pan con frijoles y queso."
+ },
+ {
+  "id": "ca031791488a",
+  "who": "YO",
+  "text": "Mmm. Quiero unos chilaquiles, por favor."
+ },
+ {
+  "id": "3aa5e7cf2f92",
+  "who": "LUPE",
+  "text": "¿Verdes o rojos?"
+ },
+ {
+  "id": "1576059021e6",
+  "who": "YO",
+  "text": "Verdes, por favor."
+ },
+ {
+  "id": "110e633e5ff8",
+  "who": "LUPE",
+  "text": "¿Con huevo o con pollo?"
+ },
+ {
+  "id": "e2558bbc5f65",
+  "who": "YO",
+  "text": "Con huevo."
+ },
+ {
+  "id": "56cf8171fd81",
+  "who": "LUPE",
+  "text": "Muy bien. ¿Algo más?"
+ },
+ {
+  "id": "a9f43e0ad59c",
+  "who": "YO",
+  "text": "Una concha también. Es todo, gracias."
+ },
+ {
+  "id": "924e5d9d114b",
+  "who": "LUPE",
+  "text": "Ahorita se lo traigo."
+ },
+ {
+  "id": "7d8ddfbd98d7",
+  "who": "YO",
+  "text": "La cuenta, por favor."
+ },
+ {
+  "id": "904c2e254bde",
+  "who": "LUPE",
+  "text": "Son ciento cincuenta y tres pesos."
+ },
+ {
+  "id": "bc0db201c43a",
+  "who": "PATRICIA",
+  "text": "el café americano"
+ },
+ {
+  "id": "71414ca92f25",
+  "who": "PATRICIA",
+  "text": "el café de olla"
+ },
+ {
+  "id": "4cc96006d9d2",
+  "who": "PATRICIA",
+  "text": "el chocolate caliente"
+ },
+ {
+  "id": "983f677a6364",
+  "who": "PATRICIA",
+  "text": "el té"
+ },
+ {
+  "id": "8b9879c5cc2d",
+  "who": "PATRICIA",
+  "text": "el jugo de naranja"
+ },
+ {
+  "id": "7d6af1578ff2",
+  "who": "PATRICIA",
+  "text": "el licuado"
+ },
+ {
+  "id": "07b0827b44c0",
+  "who": "PATRICIA",
+  "text": "la leche"
+ },
+ {
+  "id": "c7fa43bcda19",
+  "who": "PATRICIA",
+  "text": "el azúcar"
+ },
+ {
+  "id": "8a1661725b27",
+  "who": "PATRICIA",
+  "text": "los chilaquiles"
+ },
+ {
+  "id": "90fcf4ae0c8c",
+  "who": "PATRICIA",
+  "text": "los huevos rancheros"
+ },
+ {
+  "id": "3f567664673a",
+  "who": "PATRICIA",
+  "text": "los molletes"
+ },
+ {
+  "id": "9ba0bb5b9acd",
+  "who": "PATRICIA",
+  "text": "el pan dulce"
+ },
+ {
+  "id": "e853660b1bd5",
+  "who": "PATRICIA",
+  "text": "la concha"
+ },
+ {
+  "id": "ff03e7abe205",
+  "who": "PATRICIA",
+  "text": "el huevo"
+ },
+ {
+  "id": "b6e2b8160faa",
+  "who": "PATRICIA",
+  "text": "el pollo"
+ },
+ {
+  "id": "43dce81ff3c2",
+  "who": "PATRICIA",
+  "text": "el queso"
+ },
+ {
+  "id": "0e30842c8420",
+  "who": "PATRICIA",
+  "text": "el mesero, la mesera"
+ },
+ {
+  "id": "3bf4a19da682",
+  "who": "PATRICIA",
+  "text": "la cuenta"
+ },
+ {
+  "id": "882e3ca7e96d",
+  "who": "PATRICIA",
+  "text": "el vaso"
+ },
+ {
+  "id": "25cbb95e9de8",
+  "who": "PATRICIA",
+  "text": "la taza"
+ },
+ {
+  "id": "f883a978ca18",
+  "who": "PATRICIA",
+  "text": "la servilleta"
+ },
+ {
+  "id": "5e6a625cd5b4",
+  "who": "DOCTOR",
+  "text": "¡Buenos días! ¿En qué le puedo ayudar?"
+ },
+ {
+  "id": "8beb3132c77b",
+  "who": "YO",
+  "text": "Buenos días. ¿A qué hora empiezan las clases?"
+ },
+ {
+  "id": "bb89c09ae794",
+  "who": "DOCTOR",
+  "text": "Empiezan a las nueve."
+ },
+ {
+  "id": "db272063b6ab",
+  "who": "YO",
+  "text": "¿Y a qué hora terminan?"
+ },
+ {
+  "id": "2df24440f2ee",
+  "who": "DOCTOR",
+  "text": "A la una de la tarde. Los viernes, a las doce."
+ },
+ {
+  "id": "b26e9d35f30b",
+  "who": "YO",
+  "text": "¿Qué día es la clase de salsa?"
+ },
+ {
+  "id": "43685aff9b1a",
+  "who": "DOCTOR",
+  "text": "Es el martes, a las siete de la noche."
+ },
+ {
+  "id": "6aed97167639",
+  "who": "YO",
+  "text": "¿Qué hora es ahora?"
+ },
+ {
+  "id": "c82aef0e37a0",
+  "who": "DOCTOR",
+  "text": "Son las nueve menos diez. ¡Su clase empieza pronto!"
+ },
+ {
+  "id": "57a7d7867953",
+  "who": "YO",
+  "text": "¿Cuándo es la excursión?"
+ },
+ {
+  "id": "4c70c9aa2a3c",
+  "who": "DOCTOR",
+  "text": "Es el sábado ocho de marzo."
+ },
+ {
+  "id": "37eed7aa0f0d",
+  "who": "YO",
+  "text": "¿Y cuándo termina el curso?"
+ },
+ {
+  "id": "a15d77e8a668",
+  "who": "DOCTOR",
+  "text": "El viernes veintiocho de marzo."
+ },
+ {
+  "id": "39c9a110a498",
+  "who": "YO",
+  "text": "Muchas gracias."
+ },
+ {
+  "id": "ef9103c55a9d",
+  "who": "DOCTOR",
+  "text": "De nada. ¡Que le vaya bien!"
+ },
+ {
+  "id": "0fd09362a907",
+  "who": "PATRICIA",
+  "text": "lunes"
+ },
+ {
+  "id": "451e01676385",
+  "who": "PATRICIA",
+  "text": "martes"
+ },
+ {
+  "id": "0cfc53743ad8",
+  "who": "PATRICIA",
+  "text": "miércoles"
+ },
+ {
+  "id": "994c09b25c7b",
+  "who": "PATRICIA",
+  "text": "jueves"
+ },
+ {
+  "id": "7bdfb39247ff",
+  "who": "PATRICIA",
+  "text": "viernes"
+ },
+ {
+  "id": "ac3a742e619c",
+  "who": "PATRICIA",
+  "text": "sábado"
+ },
+ {
+  "id": "ef717470a5c2",
+  "who": "PATRICIA",
+  "text": "domingo"
+ },
+ {
+  "id": "aa39a5e8340a",
+  "who": "PATRICIA",
+  "text": "el fin de semana"
+ },
+ {
+  "id": "27a1eeb635cd",
+  "who": "PATRICIA",
+  "text": "la una"
+ },
+ {
+  "id": "189523fbe09a",
+  "who": "PATRICIA",
+  "text": "las dos"
+ },
+ {
+  "id": "46491646bbef",
+  "who": "PATRICIA",
+  "text": "y cuarto"
+ },
+ {
+  "id": "61d354298e77",
+  "who": "PATRICIA",
+  "text": "y media"
+ },
+ {
+  "id": "4d0afeeb01d9",
+  "who": "PATRICIA",
+  "text": "menos cuarto"
+ },
+ {
+  "id": "033adbfe6e88",
+  "who": "PATRICIA",
+  "text": "de la mañana"
+ },
+ {
+  "id": "c7b7afa8e230",
+  "who": "PATRICIA",
+  "text": "de la tarde"
+ },
+ {
+  "id": "2dc1c152a360",
+  "who": "PATRICIA",
+  "text": "de la noche"
+ },
+ {
+  "id": "2dc0c29f21a6",
+  "who": "PATRICIA",
+  "text": "hoy"
+ },
+ {
+  "id": "71f670a1b2c0",
+  "who": "PATRICIA",
+  "text": "mañana"
+ },
+ {
+  "id": "0835a91fedef",
+  "who": "PATRICIA",
+  "text": "pasado mañana"
+ },
+ {
+  "id": "7e7bfb6781ea",
+  "who": "PATRICIA",
+  "text": "la semana"
+ },
+ {
+  "id": "0c0cb8515796",
+  "who": "PATRICIA",
+  "text": "el mes"
+ },
+ {
+  "id": "cb40021ec08c",
+  "who": "PATRICIA",
+  "text": "marzo"
+ },
+ {
+  "id": "c06e2977d1ea",
+  "who": "PATRICIA",
+  "text": "el primero"
+ },
+ {
+  "id": "a547fe3af302",
+  "who": "GUERO",
+  "text": "¡Hola! ¿Te gusta la carne asada?"
+ },
+ {
+  "id": "1cebfc945ac6",
+  "who": "YO",
+  "text": "¡Sí, me gusta mucho!"
+ },
+ {
+  "id": "7475be7a0b21",
+  "who": "GUERO",
+  "text": "¿Y te gusta el fútbol?"
+ },
+ {
+  "id": "4d3e67f9882a",
+  "who": "YO",
+  "text": "Más o menos. Me gusta más el básquetbol."
+ },
+ {
+  "id": "a78ffa0dc70c",
+  "who": "GUERO",
+  "text": "¿En serio? A mí me encanta el fútbol. Soy de Rayados."
+ },
+ {
+  "id": "ad167702c01f",
+  "who": "YO",
+  "text": "¿Qué música te gusta?"
+ },
+ {
+  "id": "14dbf7e58047",
+  "who": "GUERO",
+  "text": "Me gusta la música norteña. ¿Y a ti?"
+ },
+ {
+  "id": "249ed9de8dcc",
+  "who": "YO",
+  "text": "No me gusta mucho. Me gusta el rock."
+ },
+ {
+  "id": "0692f1cbdc37",
+  "who": "GUERO",
+  "text": "¡A mí también! ¿Quieres un elote?"
+ },
+ {
+  "id": "0a75280d6b5a",
+  "who": "YO",
+  "text": "Sí, gracias. Me encantan los elotes."
+ },
+ {
+  "id": "d2072b24e0d2",
+  "who": "GUERO",
+  "text": "¿Te gusta el picante?"
+ },
+ {
+  "id": "66825af56387",
+  "who": "YO",
+  "text": "Un poco. No me gusta muy picante."
+ },
+ {
+  "id": "98a63270a8f0",
+  "who": "GUERO",
+  "text": "Entonces esta salsa no. ¡Pica mucho!"
+ },
+ {
+  "id": "81df593e57c7",
+  "who": "YO",
+  "text": "¿Qué te gusta hacer los fines de semana?"
+ },
+ {
+  "id": "c63136e7f7c0",
+  "who": "GUERO",
+  "text": "Me gusta subir al cerro con mis amigos."
+ },
+ {
+  "id": "414c7947abbd",
+  "who": "YO",
+  "text": "¡Qué padre!"
+ },
+ {
+  "id": "236a39ca26df",
+  "who": "PATRICIA",
+  "text": "la carne asada"
+ },
+ {
+  "id": "76a6005062c1",
+  "who": "PATRICIA",
+  "text": "el elote"
+ },
+ {
+  "id": "0f0a761d1de2",
+  "who": "PATRICIA",
+  "text": "los frijoles"
+ },
+ {
+  "id": "6ff36b55e15a",
+  "who": "PATRICIA",
+  "text": "la salsa"
+ },
+ {
+  "id": "a290d41aa743",
+  "who": "PATRICIA",
+  "text": "el picante"
+ },
+ {
+  "id": "5f91bacc3f7e",
+  "who": "PATRICIA",
+  "text": "las tripas"
+ },
+ {
+  "id": "ba443565fb76",
+  "who": "PATRICIA",
+  "text": "el postre"
+ },
+ {
+  "id": "a3dd14be2be1",
+  "who": "PATRICIA",
+  "text": "el fútbol"
+ },
+ {
+  "id": "d25fe2109804",
+  "who": "PATRICIA",
+  "text": "el básquetbol"
+ },
+ {
+  "id": "c55f1d395c1b",
+  "who": "PATRICIA",
+  "text": "la música"
+ },
+ {
+  "id": "8a10448437f4",
+  "who": "PATRICIA",
+  "text": "el cine"
+ },
+ {
+  "id": "ac5f1318ae5c",
+  "who": "PATRICIA",
+  "text": "viajar"
+ },
+ {
+  "id": "165347f0a181",
+  "who": "PATRICIA",
+  "text": "cocinar"
+ },
+ {
+  "id": "a183dd37ce60",
+  "who": "PATRICIA",
+  "text": "leer"
+ },
+ {
+  "id": "fc9726498b22",
+  "who": "PATRICIA",
+  "text": "caminar"
+ },
+ {
+  "id": "f05165022c84",
+  "who": "PATRICIA",
+  "text": "me gusta"
+ },
+ {
+  "id": "4619f92bdfa7",
+  "who": "PATRICIA",
+  "text": "me encanta"
+ },
+ {
+  "id": "290e3d5b0d37",
+  "who": "PATRICIA",
+  "text": "no me gusta nada"
+ },
+ {
+  "id": "5fa725bdc758",
+  "who": "PATRICIA",
+  "text": "prefiero"
+ },
+ {
+  "id": "2f190f324b45",
+  "who": "PATRICIA",
+  "text": "favorito, favorita"
+ },
+ {
+  "id": "38ace99f09f1",
+  "who": "PATRICIA",
+  "text": "padre"
+ },
+ {
+  "id": "589f78a8e771",
+  "who": "PATRICIA",
+  "text": "aburrido, aburrida"
+ },
+ {
+  "id": "d39a59cb0e8b",
+  "who": "MARISOL",
+  "text": "¡Hola! Cuéntame, ¿dónde vives?"
+ },
+ {
+  "id": "584ca340a267",
+  "who": "YO",
+  "text": "Vivo en Denver, en un barrio tranquilo."
+ },
+ {
+  "id": "1defc6b8e864",
+  "who": "MARISOL",
+  "text": "¿Es una casa o un departamento?"
+ },
+ {
+  "id": "6229f62fe335",
+  "who": "YO",
+  "text": "Es una casa. No es muy grande, pero es cómoda."
+ },
+ {
+  "id": "1cd6d4e05dae",
+  "who": "MARISOL",
+  "text": "¿Cuántas recámaras tiene?"
+ },
+ {
+  "id": "21406831bb53",
+  "who": "YO",
+  "text": "Tiene tres recámaras y dos baños."
+ },
+ {
+  "id": "623024d75302",
+  "who": "MARISOL",
+  "text": "¿Y cómo es la cocina?"
+ },
+ {
+  "id": "de5a95c167a6",
+  "who": "YO",
+  "text": "La cocina es pequeña, pero tiene mucha luz."
+ },
+ {
+  "id": "32038c9a0a3e",
+  "who": "MARISOL",
+  "text": "¿Hay jardín?"
+ },
+ {
+  "id": "1d8540eb1d6e",
+  "who": "YO",
+  "text": "Sí, hay un jardín pequeño atrás."
+ },
+ {
+  "id": "66a355dfaa42",
+  "who": "MARISOL",
+  "text": "¿Qué hay cerca de tu casa?"
+ },
+ {
+  "id": "affa62fc391c",
+  "who": "YO",
+  "text": "Hay un parque, un supermercado y una cafetería."
+ },
+ {
+  "id": "3e81805e21bd",
+  "who": "MARISOL",
+  "text": "¿Te gusta tu barrio?"
+ },
+ {
+  "id": "bdbe6835720c",
+  "who": "YO",
+  "text": "Sí, me gusta mucho porque es tranquilo."
+ },
+ {
+  "id": "18bd66168af3",
+  "who": "MARISOL",
+  "text": "¡Qué bonito! Mi casa en Mérida es vieja, pero muy fresca."
+ },
+ {
+  "id": "291a7dec9155",
+  "who": "PATRICIA",
+  "text": "el departamento"
+ },
+ {
+  "id": "2fdf0b7a9ba0",
+  "who": "PATRICIA",
+  "text": "la recámara"
+ },
+ {
+  "id": "afc0a728f198",
+  "who": "PATRICIA",
+  "text": "el baño"
+ },
+ {
+  "id": "86da9bbd8360",
+  "who": "PATRICIA",
+  "text": "la cocina"
+ },
+ {
+  "id": "ad8a6a1f735d",
+  "who": "PATRICIA",
+  "text": "la sala"
+ },
+ {
+  "id": "fdc38bae22bf",
+  "who": "PATRICIA",
+  "text": "el comedor"
+ },
+ {
+  "id": "1ee67fa76d3b",
+  "who": "PATRICIA",
+  "text": "el jardín"
+ },
+ {
+  "id": "f536e16ef10f",
+  "who": "PATRICIA",
+  "text": "el piso"
+ },
+ {
+  "id": "02fbdcf089b3",
+  "who": "PATRICIA",
+  "text": "la cochera"
+ },
+ {
+  "id": "cf2e5ec200ea",
+  "who": "PATRICIA",
+  "text": "el barrio, la colonia"
+ },
+ {
+  "id": "c841713fa27a",
+  "who": "PATRICIA",
+  "text": "el parque"
+ },
+ {
+  "id": "a1775a76b970",
+  "who": "PATRICIA",
+  "text": "la tienda"
+ },
+ {
+  "id": "5633301b9628",
+  "who": "PATRICIA",
+  "text": "el supermercado"
+ },
+ {
+  "id": "85fc74e6af19",
+  "who": "PATRICIA",
+  "text": "la parada de autobús"
+ },
+ {
+  "id": "e732c1f980ec",
+  "who": "PATRICIA",
+  "text": "el centro"
+ },
+ {
+  "id": "d5f042ee9eae",
+  "who": "PATRICIA",
+  "text": "grande"
+ },
+ {
+  "id": "528642e0e6f1",
+  "who": "PATRICIA",
+  "text": "pequeño, pequeña"
+ },
+ {
+  "id": "7d09c546f288",
+  "who": "PATRICIA",
+  "text": "viejo, vieja"
+ },
+ {
+  "id": "9bccce37ff6b",
+  "who": "PATRICIA",
+  "text": "cómodo, cómoda"
+ },
+ {
+  "id": "7ce02336c031",
+  "who": "PATRICIA",
+  "text": "tranquilo, tranquila"
+ },
+ {
+  "id": "a10a4143e641",
+  "who": "PATRICIA",
+  "text": "ruidoso, ruidosa"
+ },
+ {
+  "id": "098ea973e948",
+  "who": "PATRICIA",
+  "text": "cerca de"
+ },
+ {
+  "id": "45e2cdb3cf9f",
+  "who": "PATRICIA",
+  "text": "lejos de"
+ },
+ {
+  "id": "6c787fe822ba",
+  "who": "YO",
+  "text": "Disculpe, ¿dónde está el baño?"
+ },
+ {
+  "id": "91d0c99c25d7",
+  "who": "KARLA",
+  "text": "Está allí, a la derecha."
+ },
+ {
+  "id": "b15264c7f2ca",
+  "who": "YO",
+  "text": "Gracias. ¿Y el elevador?"
+ },
+ {
+  "id": "1835997123fa",
+  "who": "KARLA",
+  "text": "Está al fondo, a la izquierda."
+ },
+ {
+  "id": "247a36a5598c",
+  "who": "YO",
+  "text": "¿Hay un cajero automático cerca?"
+ },
+ {
+  "id": "06aa1a99b045",
+  "who": "KARLA",
+  "text": "Sí, hay uno en la esquina, al lado de la farmacia."
+ },
+ {
+  "id": "258160801071",
+  "who": "YO",
+  "text": "¿En qué piso está el restaurante?"
+ },
+ {
+  "id": "749de1eeed66",
+  "who": "KARLA",
+  "text": "Está en el segundo piso."
+ },
+ {
+  "id": "ac4d22738ede",
+  "who": "YO",
+  "text": "¿Está lejos el zócalo?"
+ },
+ {
+  "id": "bc7ff9ac8682",
+  "who": "KARLA",
+  "text": "No, está muy cerca. A dos cuadras."
+ },
+ {
+  "id": "2739986e8645",
+  "who": "YO",
+  "text": "¿A dos cuadras?"
+ },
+ {
+  "id": "364093fd561c",
+  "who": "KARLA",
+  "text": "Sí, todo derecho por esta calle."
+ },
+ {
+  "id": "c483d04e9678",
+  "who": "YO",
+  "text": "Perfecto. Muchas gracias."
+ },
+ {
+  "id": "ab67049f2946",
+  "who": "KARLA",
+  "text": "Con mucho gusto."
+ },
+ {
+  "id": "a2b7ae78143f",
+  "who": "PATRICIA",
+  "text": "el elevador"
+ },
+ {
+  "id": "9d5d80706a15",
+  "who": "PATRICIA",
+  "text": "la escalera"
+ },
+ {
+  "id": "086084e12c27",
+  "who": "PATRICIA",
+  "text": "la recepción"
+ },
+ {
+  "id": "dfe52de6ca50",
+  "who": "PATRICIA",
+  "text": "la alberca"
+ },
+ {
+  "id": "d1a5b6e6fea5",
+  "who": "PATRICIA",
+  "text": "el cajero automático"
+ },
+ {
+  "id": "0b227c35bfdb",
+  "who": "PATRICIA",
+  "text": "la farmacia"
+ },
+ {
+  "id": "9c9b3d35d794",
+  "who": "PATRICIA",
+  "text": "el zócalo"
+ },
+ {
+  "id": "a899ca57bb54",
+  "who": "PATRICIA",
+  "text": "aquí"
+ },
+ {
+  "id": "1b0ee39fd10e",
+  "who": "PATRICIA",
+  "text": "allí"
+ },
+ {
+  "id": "ef87436c7fed",
+  "who": "PATRICIA",
+  "text": "a la derecha"
+ },
+ {
+  "id": "b9ee142e1f9a",
+  "who": "PATRICIA",
+  "text": "a la izquierda"
+ },
+ {
+  "id": "9c1c5125a3ca",
+  "who": "PATRICIA",
+  "text": "todo derecho"
+ },
+ {
+  "id": "2c927c3cf87c",
+  "who": "PATRICIA",
+  "text": "al fondo"
+ },
+ {
+  "id": "2fdd9f761b11",
+  "who": "PATRICIA",
+  "text": "al lado de"
+ },
+ {
+  "id": "2681e51a36b2",
+  "who": "PATRICIA",
+  "text": "enfrente de"
+ },
+ {
+  "id": "248bd3836614",
+  "who": "PATRICIA",
+  "text": "en la esquina"
+ },
+ {
+  "id": "4a5c4520125b",
+  "who": "PATRICIA",
+  "text": "la planta baja"
+ },
+ {
+  "id": "cd463411dbd4",
+  "who": "PATRICIA",
+  "text": "el primer piso"
+ },
+ {
+  "id": "60ba1d3b78c2",
+  "who": "PATRICIA",
+  "text": "el segundo piso"
+ },
+ {
+  "id": "8e538f4d8374",
+  "who": "PATRICIA",
+  "text": "la cuadra"
+ },
+ {
+  "id": "46f3b9545b53",
+  "who": "PATRICIA",
+  "text": "cerca"
+ },
+ {
+  "id": "9c20965bdb2a",
+  "who": "PATRICIA",
+  "text": "lejos"
+ },
+ {
+  "id": "2165a7f3bfa1",
+  "who": "PEPE",
+  "text": "¡Buenas noches! ¿Para aquí o para llevar?"
+ },
+ {
+  "id": "ab9ff234b4cf",
+  "who": "YO",
+  "text": "Para aquí, por favor."
+ },
+ {
+  "id": "e343428f6ec4",
+  "who": "PEPE",
+  "text": "Muy bien. ¿Qué le sirvo?"
+ },
+ {
+  "id": "adf6b3624af2",
+  "who": "YO",
+  "text": "¿Qué me recomienda?"
+ },
+ {
+  "id": "7147c3eb61d8",
+  "who": "PEPE",
+  "text": "Los de pastor están muy buenos hoy."
+ },
+ {
+  "id": "1d9d7e64dd8a",
+  "who": "YO",
+  "text": "Entonces me da tres tacos al pastor, por favor."
+ },
+ {
+  "id": "137cbaa92635",
+  "who": "PEPE",
+  "text": "¿Con todo?"
+ },
+ {
+  "id": "6b664e3bd073",
+  "who": "YO",
+  "text": "Con cilantro, pero sin cebolla."
+ },
+ {
+  "id": "9892b6327a4c",
+  "who": "PEPE",
+  "text": "Claro. ¿Algo de tomar?"
+ },
+ {
+  "id": "e7bc1069db04",
+  "who": "YO",
+  "text": "Una de jamaica, por favor. ¿La salsa roja pica mucho?"
+ },
+ {
+  "id": "07e80c4b78a0",
+  "who": "PEPE",
+  "text": "Sí, pica bastante. La verde pica menos."
+ },
+ {
+  "id": "bfc493bff8d0",
+  "who": "YO",
+  "text": "Entonces la verde. Es todo, gracias."
+ },
+ {
+  "id": "4064c0e73298",
+  "who": "PEPE",
+  "text": "Ahorita se los traigo. ¡Provecho!"
+ },
+ {
+  "id": "47bca6b5fd68",
+  "who": "YO",
+  "text": "Gracias. ¿Cuánto le debo?"
+ },
+ {
+  "id": "a7e3bed66215",
+  "who": "PEPE",
+  "text": "Son noventa y seis pesos."
+ },
+ {
+  "id": "66e13d738524",
+  "who": "YO",
+  "text": "Aquí tiene. Quédese con el cambio."
+ },
+ {
+  "id": "f2e737a3c479",
+  "who": "PEPE",
+  "text": "¡Muchas gracias! Que le vaya bien."
+ },
+ {
+  "id": "57a7abeb2677",
+  "who": "PATRICIA",
+  "text": "al pastor"
+ },
+ {
+  "id": "3de281ffc24e",
+  "who": "PATRICIA",
+  "text": "de asada"
+ },
+ {
+  "id": "7970c22c6256",
+  "who": "PATRICIA",
+  "text": "de suadero"
+ },
+ {
+  "id": "ca0a0ba81c10",
+  "who": "PATRICIA",
+  "text": "de carnitas"
+ },
+ {
+  "id": "31d47b747418",
+  "who": "PATRICIA",
+  "text": "campechano"
+ },
+ {
+  "id": "84e6f14588c9",
+  "who": "PATRICIA",
+  "text": "la tortilla de maíz"
+ },
+ {
+  "id": "d54014c191c3",
+  "who": "PATRICIA",
+  "text": "la gringa"
+ },
+ {
+  "id": "b3d633f08bc1",
+  "who": "PATRICIA",
+  "text": "la quesadilla"
+ },
+ {
+  "id": "7ed356c7bcc2",
+  "who": "PATRICIA",
+  "text": "la piña"
+ },
+ {
+  "id": "f28cbc180e4f",
+  "who": "PATRICIA",
+  "text": "los frijoles charros"
+ },
+ {
+  "id": "7657f038ca43",
+  "who": "PATRICIA",
+  "text": "el agua de horchata"
+ },
+ {
+  "id": "20c2cd0ddc57",
+  "who": "PATRICIA",
+  "text": "el agua de jamaica"
+ },
+ {
+  "id": "88f739f8d1d4",
+  "who": "PATRICIA",
+  "text": "el refresco"
+ },
+ {
+  "id": "105019fee524",
+  "who": "PATRICIA",
+  "text": "para aquí"
+ },
+ {
+  "id": "e5df86b6df21",
+  "who": "PATRICIA",
+  "text": "para llevar"
+ },
+ {
+  "id": "2b8ae82fb074",
+  "who": "PATRICIA",
+  "text": "pica"
+ },
+ {
+  "id": "74fa940c8486",
+  "who": "PATRICIA",
+  "text": "en efectivo"
+ },
+ {
+  "id": "891e49f6a161",
+  "who": "PATRICIA",
+  "text": "con tarjeta"
+ },
+ {
+  "id": "75ae59a3f86f",
+  "who": "PATRICIA",
+  "text": "la propina"
+ },
+ {
+  "id": "88bbc3a28cdc",
+  "who": "YO",
+  "text": "Disculpe, ¿cómo llego al museo?"
+ },
+ {
+  "id": "11889ce84f2f",
+  "who": "SENORA",
+  "text": "¿Al museo? Mire, siga todo derecho por la calle Juárez."
+ },
+ {
+  "id": "62ac1f6bb0e9",
+  "who": "YO",
+  "text": "¿Todo derecho por Juárez?"
+ },
+ {
+  "id": "ee066b9bd986",
+  "who": "SENORA",
+  "text": "Sí. En la segunda esquina, en Guerrero, dé vuelta a la derecha."
+ },
+ {
+  "id": "94c6addbab28",
+  "who": "YO",
+  "text": "¿A la derecha en Guerrero?"
+ },
+ {
+  "id": "1a33de55212d",
+  "who": "SENORA",
+  "text": "Exacto. Camine una cuadra. El museo está en la esquina, a la derecha."
+ },
+ {
+  "id": "8a77a97348bb",
+  "who": "YO",
+  "text": "¿Está lejos?"
+ },
+ {
+  "id": "341f1b6e9d39",
+  "who": "SENORA",
+  "text": "No, son como cinco minutos caminando."
+ },
+ {
+  "id": "2262a7ad4050",
+  "who": "YO",
+  "text": "¿Y hay una farmacia cerca?"
+ },
+ {
+  "id": "d195ed8a3a89",
+  "who": "SENORA",
+  "text": "Sí, en la esquina de Juárez y Zaragoza, enfrente del jardín."
+ },
+ {
+  "id": "d1ebbdeb2d37",
+  "who": "SENORA",
+  "text": "De nada. Oiga, ¿usted sabe dónde está el banco?"
+ },
+ {
+  "id": "4eadde20c2b7",
+  "who": "YO",
+  "text": "Sí. Siga por Juárez dos cuadras. El banco está a la izquierda, antes de Guerrero."
+ },
+ {
+  "id": "d4896e806604",
+  "who": "SENORA",
+  "text": "¡Muchas gracias!"
+ },
+ {
+  "id": "b0c08f11221b",
+  "who": "PATRICIA",
+  "text": "siga"
+ },
+ {
+  "id": "7e97186e7f11",
+  "who": "PATRICIA",
+  "text": "dé vuelta"
+ },
+ {
+  "id": "6e122530bd9d",
+  "who": "PATRICIA",
+  "text": "camine"
+ },
+ {
+  "id": "dfab4db2c17e",
+  "who": "PATRICIA",
+  "text": "cruce"
+ },
+ {
+  "id": "9f2fa0c53450",
+  "who": "PATRICIA",
+  "text": "tome"
+ },
+ {
+  "id": "005741600f7d",
+  "who": "PATRICIA",
+  "text": "la calle"
+ },
+ {
+  "id": "9b87639c401e",
+  "who": "PATRICIA",
+  "text": "la avenida"
+ },
+ {
+  "id": "bf678522de84",
+  "who": "PATRICIA",
+  "text": "la esquina"
+ },
+ {
+  "id": "8d5a9f67d052",
+  "who": "PATRICIA",
+  "text": "el semáforo"
+ },
+ {
+  "id": "fc37b335f0d1",
+  "who": "PATRICIA",
+  "text": "el jardín, la plaza"
+ },
+ {
+  "id": "68e6fb046c44",
+  "who": "PATRICIA",
+  "text": "la parroquia"
+ },
+ {
+  "id": "425c4aea21b4",
+  "who": "PATRICIA",
+  "text": "entre"
+ },
+ {
+  "id": "9b30812d4071",
+  "who": "PATRICIA",
+  "text": "en la esquina de"
+ },
+ {
+  "id": "3e45823ee32b",
+  "who": "PATRICIA",
+  "text": "hasta"
+ },
+ {
+  "id": "d5b9f80c1eea",
+  "who": "VALERIA",
+  "text": "¡Hola! Oye, ¿qué vas a hacer el sábado?"
+ },
+ {
+  "id": "b44f0f48e646",
+  "who": "YO",
+  "text": "En la mañana estoy ocupado, pero en la tarde estoy libre. ¿Por qué?"
+ },
+ {
+  "id": "9a11221bac6b",
+  "who": "VALERIA",
+  "text": "¿Quieres ir al cine?"
+ },
+ {
+  "id": "bccc33e29f71",
+  "who": "YO",
+  "text": "Mmm, no sé. ¿Por qué no vamos a la lucha libre?"
+ },
+ {
+  "id": "2e5a6d64561d",
+  "who": "VALERIA",
+  "text": "¡Ay, sí! Nunca he ido. ¿A qué hora es?"
+ },
+ {
+  "id": "58591e6d58a5",
+  "who": "YO",
+  "text": "Empieza a las ocho y media, en la Arena Coliseo."
+ },
+ {
+  "id": "0481841d1cfd",
+  "who": "VALERIA",
+  "text": "Perfecto. ¿Y antes cenamos algo?"
+ },
+ {
+  "id": "7bd25f8ef905",
+  "who": "YO",
+  "text": "Buena idea. ¿Nos vemos a las siete?"
+ },
+ {
+  "id": "71acd6f86807",
+  "who": "VALERIA",
+  "text": "Uy, a las siete no puedo. Salgo de trabajar a las siete. ¿Qué tal a las siete y media?"
+ },
+ {
+  "id": "fc0375e5933f",
+  "who": "YO",
+  "text": "Está bien. ¿Dónde nos vemos?"
+ },
+ {
+  "id": "d0c6ab79b9e2",
+  "who": "VALERIA",
+  "text": "¿Qué tal enfrente de la catedral?"
+ },
+ {
+  "id": "21d8fdaa703c",
+  "who": "YO",
+  "text": "Perfecto. Entonces el sábado a las siete y media, enfrente de la catedral."
+ },
+ {
+  "id": "be638bbd7812",
+  "who": "VALERIA",
+  "text": "¡Va! Y el domingo, ¿vamos al tianguis de Tlaquepaque?"
+ },
+ {
+  "id": "50688113c924",
+  "who": "YO",
+  "text": "Gracias, pero el domingo prefiero descansar. ¿Otro día?"
+ },
+ {
+  "id": "a0e41596c199",
+  "who": "VALERIA",
+  "text": "Claro, otro día. ¡Nos vemos el sábado!"
+ },
+ {
+  "id": "7c1fe9eef5a2",
+  "who": "PATRICIA",
+  "text": "hacer planes"
+ },
+ {
+  "id": "5c72e7fc3ecc",
+  "who": "PATRICIA",
+  "text": "salir"
+ },
+ {
+  "id": "3f4923b0dd7b",
+  "who": "PATRICIA",
+  "text": "quedar en"
+ },
+ {
+  "id": "bc1cf4d2a402",
+  "who": "PATRICIA",
+  "text": "el plan"
+ },
+ {
+  "id": "829df159510e",
+  "who": "PATRICIA",
+  "text": "el boleto"
+ },
+ {
+  "id": "d306a0200f54",
+  "who": "PATRICIA",
+  "text": "la cartelera"
+ },
+ {
+  "id": "4592cbb9bbc0",
+  "who": "PATRICIA",
+  "text": "el tianguis"
+ },
+ {
+  "id": "3fe20cbcdc62",
+  "who": "PATRICIA",
+  "text": "en la mañana"
+ },
+ {
+  "id": "07ffa510c670",
+  "who": "PATRICIA",
+  "text": "en la tarde"
+ },
+ {
+  "id": "83b5da55a1b9",
+  "who": "PATRICIA",
+  "text": "en la noche"
+ },
+ {
+  "id": "070aa0aec17d",
+  "who": "PATRICIA",
+  "text": "antes de"
+ },
+ {
+  "id": "b952d5226738",
+  "who": "PATRICIA",
+  "text": "después de"
+ },
+ {
+  "id": "e628aec97edb",
+  "who": "PATRICIA",
+  "text": "temprano"
+ },
+ {
+  "id": "1718ee24320a",
+  "who": "PATRICIA",
+  "text": "tarde"
+ },
+ {
+  "id": "b3007b008df8",
+  "who": "PATRICIA",
+  "text": "libre"
+ },
+ {
+  "id": "dc94f8fef0b9",
+  "who": "PATRICIA",
+  "text": "ocupado, ocupada"
+ },
+ {
+  "id": "ad4f21c5f103",
+  "who": "PATRICIA",
+  "text": "me encantaría"
+ },
+ {
+  "id": "d8bf765f4ae9",
+  "who": "PATRICIA",
+  "text": "no puedo"
+ },
+ {
+  "id": "5df350d6acfa",
+  "who": "PATRICIA",
+  "text": "tengo que"
+ },
+ {
+  "id": "effe881594ea",
+  "who": "PATRICIA",
+  "text": "otro día"
+ },
+ {
+  "id": "0bf220f8d501",
+  "who": "MARI",
+  "text": "Bueno, cuénteme, ¿cómo es un día normal para usted?"
+ },
+ {
+  "id": "11cd69bdcf46",
+  "who": "YO",
+  "text": "Entre semana me levanto a las seis y media."
+ },
+ {
+  "id": "16a2b7c7764b",
+  "who": "MARI",
+  "text": "¡Qué temprano! ¿Y se baña en la mañana?"
+ },
+ {
+  "id": "6675c13275c9",
+  "who": "YO",
+  "text": "Sí, me baño y luego desayuno. Normalmente tomo café con pan."
+ },
+ {
+  "id": "26940388a8d6",
+  "who": "MARI",
+  "text": "Aquí desayunamos a las siete y media. ¿Está bien?"
+ },
+ {
+  "id": "372f80ccd672",
+  "who": "YO",
+  "text": "Perfecto. Mis clases empiezan a las nueve."
+ },
+ {
+  "id": "30c48bc59ad8",
+  "who": "MARI",
+  "text": "¿Y a qué se dedica allá en su país?"
+ },
+ {
+  "id": "000d56835407",
+  "who": "YO",
+  "text": "Soy maestro. Doy clases de inglés en una universidad."
+ },
+ {
+  "id": "d00a61f3fb17",
+  "who": "MARI",
+  "text": "¡Qué bonito! ¿Y le gusta?"
+ },
+ {
+  "id": "32edc6534112",
+  "who": "YO",
+  "text": "Sí, mucho. Por las mañanas doy clases y por las tardes preparo materiales."
+ },
+ {
+  "id": "12a573b3288b",
+  "who": "MARI",
+  "text": "¿Y aquí qué va a hacer en las tardes?"
+ },
+ {
+  "id": "d04529e5876b",
+  "who": "YO",
+  "text": "Después de la escuela, regreso, como, y luego camino por el centro."
+ },
+ {
+  "id": "99bc58d7fd00",
+  "who": "MARI",
+  "text": "Muy bien. ¿Y a qué hora se acuesta?"
+ },
+ {
+  "id": "cd0320e40c44",
+  "who": "YO",
+  "text": "Casi siempre me acuesto a las once."
+ },
+ {
+  "id": "ff461f351d6f",
+  "who": "MARI",
+  "text": "Perfecto, así no hay problema con el baño."
+ },
+ {
+  "id": "2fadbf9ab020",
+  "who": "PATRICIA",
+  "text": "levantarse"
+ },
+ {
+  "id": "d9102aa8f6d2",
+  "who": "PATRICIA",
+  "text": "despertarse"
+ },
+ {
+  "id": "b67fd6b8b43d",
+  "who": "PATRICIA",
+  "text": "bañarse"
+ },
+ {
+  "id": "0a4dba6c0dfd",
+  "who": "PATRICIA",
+  "text": "vestirse"
+ },
+ {
+  "id": "3789fd5a76cd",
+  "who": "PATRICIA",
+  "text": "desayunar"
+ },
+ {
+  "id": "6b3a7e1164f3",
+  "who": "PATRICIA",
+  "text": "comer"
+ },
+ {
+  "id": "e1cca524be09",
+  "who": "PATRICIA",
+  "text": "cenar"
+ },
+ {
+  "id": "0157e9954b44",
+  "who": "PATRICIA",
+  "text": "acostarse"
+ },
+ {
+  "id": "24347b7580f3",
+  "who": "PATRICIA",
+  "text": "trabajar"
+ },
+ {
+  "id": "d0b61055e9f6",
+  "who": "PATRICIA",
+  "text": "dar clases"
+ },
+ {
+  "id": "55e1e747aa80",
+  "who": "PATRICIA",
+  "text": "el horario"
+ },
+ {
+  "id": "b629ba767248",
+  "who": "PATRICIA",
+  "text": "la oficina"
+ },
+ {
+  "id": "8499d9d04913",
+  "who": "PATRICIA",
+  "text": "la reunión"
+ },
+ {
+  "id": "80065c75a0f5",
+  "who": "PATRICIA",
+  "text": "el compañero, la compañera"
+ },
+ {
+  "id": "5effdf099bb3",
+  "who": "PATRICIA",
+  "text": "salir del trabajo"
+ },
+ {
+  "id": "a63102b41f87",
+  "who": "PATRICIA",
+  "text": "entre semana"
+ },
+ {
+  "id": "8dc8e308556c",
+  "who": "PATRICIA",
+  "text": "primero"
+ },
+ {
+  "id": "0541a93c7a07",
+  "who": "PATRICIA",
+  "text": "luego"
+ },
+ {
+  "id": "fa27a7ca9cb2",
+  "who": "PATRICIA",
+  "text": "normalmente"
+ },
+ {
+  "id": "994866cd0f98",
+  "who": "PATRICIA",
+  "text": "casi siempre"
+ },
+ {
+  "id": "56f50f35d35a",
+  "who": "PATRICIA",
+  "text": "a veces"
+ },
+ {
+  "id": "5f0840fba349",
+  "who": "PATRICIA",
+  "text": "nunca"
+ },
+ {
+  "id": "7c1008ccd5e9",
+  "who": "TAQUILLERA",
+  "text": "Buenos días, ¿a dónde va?"
+ },
+ {
+  "id": "39cc72e73a5f",
+  "who": "YO",
+  "text": "Buenos días. Quiero un boleto a San Miguel de Allende para mañana, por favor."
+ },
+ {
+  "id": "bda5070b37bc",
+  "who": "TAQUILLERA",
+  "text": "¿A qué hora le gustaría salir?"
+ },
+ {
+  "id": "fe2d2abca8d8",
+  "who": "YO",
+  "text": "En la mañana. ¿A qué hora salen los autobuses?"
+ },
+ {
+  "id": "ae113d6c34b8",
+  "who": "TAQUILLERA",
+  "text": "Hay uno a las siete, uno de lujo a las nueve, y otro a las diez y media."
+ },
+ {
+  "id": "6a8639aac264",
+  "who": "YO",
+  "text": "¿Cuánto cuesta el de las nueve?"
+ },
+ {
+  "id": "95043570b9cb",
+  "who": "TAQUILLERA",
+  "text": "Setecientos veinte pesos. El de primera cuesta quinientos sesenta."
+ },
+ {
+  "id": "b2221fd46a10",
+  "who": "YO",
+  "text": "¿Cuánto tiempo hace a San Miguel?"
+ },
+ {
+  "id": "8a6ccfabf0b2",
+  "who": "TAQUILLERA",
+  "text": "Unas cuatro horas."
+ },
+ {
+  "id": "477f87daf4cb",
+  "who": "YO",
+  "text": "Entonces, el de las diez y media, por favor. ¿Es directo?"
+ },
+ {
+  "id": "2d646c61dbae",
+  "who": "TAQUILLERA",
+  "text": "Sí, es directo. ¿Sencillo o redondo?"
+ },
+ {
+  "id": "d1c7e15ba6d6",
+  "who": "YO",
+  "text": "Sencillo, por favor. ¿Hay un asiento de ventanilla?"
+ },
+ {
+  "id": "3b994c7af970",
+  "who": "TAQUILLERA",
+  "text": "Sí, el quince. ¿Me da su nombre?"
+ },
+ {
+  "id": "8db45d83b604",
+  "who": "YO",
+  "text": "Sí, claro. ¿Puedo pagar con tarjeta?"
+ },
+ {
+  "id": "4c2a8e20b933",
+  "who": "TAQUILLERA",
+  "text": "Sí. Sale del andén ocho. Llegue media hora antes."
+ },
+ {
+  "id": "f349d66bac37",
+  "who": "PATRICIA",
+  "text": "sencillo"
+ },
+ {
+  "id": "ead9989403a9",
+  "who": "PATRICIA",
+  "text": "redondo"
+ },
+ {
+  "id": "e09cadc33273",
+  "who": "PATRICIA",
+  "text": "la ida"
+ },
+ {
+  "id": "1372d88165de",
+  "who": "PATRICIA",
+  "text": "el regreso"
+ },
+ {
+  "id": "f01d06a5e9c3",
+  "who": "PATRICIA",
+  "text": "el asiento"
+ },
+ {
+  "id": "250bdb9a4c5b",
+  "who": "PATRICIA",
+  "text": "la ventanilla"
+ },
+ {
+  "id": "d12900d2d6e9",
+  "who": "PATRICIA",
+  "text": "el pasillo"
+ },
+ {
+  "id": "48b5f659a5d8",
+  "who": "PATRICIA",
+  "text": "la central de autobuses"
+ },
+ {
+  "id": "6ce678a5d89d",
+  "who": "PATRICIA",
+  "text": "la taquilla"
+ },
+ {
+  "id": "b34e12e2a4fe",
+  "who": "PATRICIA",
+  "text": "el andén"
+ },
+ {
+  "id": "1595873a5b24",
+  "who": "PATRICIA",
+  "text": "la sala de espera"
+ },
+ {
+  "id": "d778e7855477",
+  "who": "PATRICIA",
+  "text": "documentar"
+ },
+ {
+  "id": "5c8150775148",
+  "who": "PATRICIA",
+  "text": "la maleta"
+ },
+ {
+  "id": "0a8c90f94692",
+  "who": "PATRICIA",
+  "text": "llegar"
+ },
+ {
+  "id": "21c4c58dff78",
+  "who": "PATRICIA",
+  "text": "directo"
+ },
+ {
+  "id": "1e94559b38a8",
+  "who": "PATRICIA",
+  "text": "la parada"
+ },
+ {
+  "id": "3debf8569295",
+  "who": "PATRICIA",
+  "text": "primera clase"
+ },
+ {
+  "id": "20688e3edafd",
+  "who": "PATRICIA",
+  "text": "de lujo"
+ },
+ {
+  "id": "02f4d6e4155d",
+  "who": "PATRICIA",
+  "text": "la duración"
+ },
+ {
+  "id": "a3d37c16d46c",
+  "who": "POLICIA",
+  "text": "¡Buenos días! ¿Qué tal tu fin de semana?"
+ },
+ {
+  "id": "bffbdac2e485",
+  "who": "YO",
+  "text": "¡Muy bien, gracias! El sábado fui a Monte Albán."
+ },
+ {
+  "id": "64ac8d53d518",
+  "who": "POLICIA",
+  "text": "¡Qué padre! ¿Con quién fuiste?"
+ },
+ {
+  "id": "de4719f1d080",
+  "who": "YO",
+  "text": "Fui con dos compañeros de la escuela. Tomamos un tour."
+ },
+ {
+  "id": "2ab5ec42118e",
+  "who": "POLICIA",
+  "text": "¿Y qué te pareció?"
+ },
+ {
+  "id": "66f86fb7d74a",
+  "who": "YO",
+  "text": "Me encantó, pero hizo mucho calor."
+ },
+ {
+  "id": "30f112b1eb5c",
+  "who": "POLICIA",
+  "text": "Sí, allá arriba no hay sombra. ¿Y después?"
+ },
+ {
+  "id": "62d5c55c6259",
+  "who": "YO",
+  "text": "Después comimos tlayudas en el mercado. ¡Estuvieron riquísimas!"
+ },
+ {
+  "id": "80cb6a7f902f",
+  "who": "POLICIA",
+  "text": "¿Y el domingo qué hiciste?"
+ },
+ {
+  "id": "eef223b249a3",
+  "who": "YO",
+  "text": "En la mañana fui al tianguis de Tlacolula y compré un tapete."
+ },
+ {
+  "id": "5724ba907671",
+  "who": "POLICIA",
+  "text": "¡Qué bonito! ¿Y en la tarde?"
+ },
+ {
+  "id": "10e782981af8",
+  "who": "YO",
+  "text": "En la tarde no hice nada. Dormí una siesta y luego estudié un poco."
+ },
+ {
+  "id": "831e2853c3a8",
+  "who": "POLICIA",
+  "text": "Muy bien. Yo fui a una boda en Mitla. Bailé toda la noche."
+ },
+ {
+  "id": "64821fdfe9ee",
+  "who": "YO",
+  "text": "¡No me digas! ¿Y a qué hora regresaste?"
+ },
+ {
+  "id": "9c6e39d181e7",
+  "who": "POLICIA",
+  "text": "A las cuatro de la mañana. ¡Estoy muerta!"
+ },
+ {
+  "id": "9c9bb3a02168",
+  "who": "PATRICIA",
+  "text": "fui"
+ },
+ {
+  "id": "0d5a3b3d8409",
+  "who": "PATRICIA",
+  "text": "hice"
+ },
+ {
+  "id": "38cb24cf462e",
+  "who": "PATRICIA",
+  "text": "comí"
+ },
+ {
+  "id": "86492b13220e",
+  "who": "PATRICIA",
+  "text": "compré"
+ },
+ {
+  "id": "9b02d3470f4e",
+  "who": "PATRICIA",
+  "text": "vi"
+ },
+ {
+  "id": "3b0e8258457c",
+  "who": "PATRICIA",
+  "text": "salí"
+ },
+ {
+  "id": "a69af01a6e3f",
+  "who": "PATRICIA",
+  "text": "regresé"
+ },
+ {
+  "id": "0ce9d2e8192c",
+  "who": "PATRICIA",
+  "text": "me quedé"
+ },
+ {
+  "id": "ac5ea2ba1bcc",
+  "who": "PATRICIA",
+  "text": "el sábado"
+ },
+ {
+  "id": "50c451c8adcf",
+  "who": "PATRICIA",
+  "text": "el fin de semana pasado"
+ },
+ {
+  "id": "19d14b4abc05",
+  "who": "PATRICIA",
+  "text": "ayer"
+ },
+ {
+  "id": "574a8b5366b8",
+  "who": "PATRICIA",
+  "text": "anoche"
+ },
+ {
+  "id": "eba1afa83507",
+  "who": "PATRICIA",
+  "text": "después"
+ },
+ {
+  "id": "537de591cff3",
+  "who": "PATRICIA",
+  "text": "al final"
+ },
+ {
+  "id": "955206d93a99",
+  "who": "PATRICIA",
+  "text": "me encantó"
+ },
+ {
+  "id": "4082cf1e620f",
+  "who": "PATRICIA",
+  "text": "me gustó"
+ },
+ {
+  "id": "cbbed581a95f",
+  "who": "PATRICIA",
+  "text": "estuvo padrísimo"
+ },
+ {
+  "id": "5a3e41d9807d",
+  "who": "PATRICIA",
+  "text": "estuvo bien"
+ },
+ {
+  "id": "5a4e4ca1fea2",
+  "who": "PATRICIA",
+  "text": "estuvo aburrido"
+ },
+ {
+  "id": "bf4d22e8aee9",
+  "who": "PATRICIA",
+  "text": "hizo calor"
+ },
+ {
+  "id": "2ef2cdc83b4e",
+  "who": "PATRICIA",
+  "text": "riquísimo"
+ },
+ {
+  "id": "c55cc9bd7d4b",
+  "who": "DIEGO",
+  "text": "Buenas tardes, bienvenido. ¿En qué le puedo ayudar?"
+ },
+ {
+  "id": "7107b637fc82",
+  "who": "YO",
+  "text": "Buenas tardes. Tengo una reservación a nombre de Alex Johnson."
+ },
+ {
+  "id": "b07526b23549",
+  "who": "DIEGO",
+  "text": "Un momento Sí, aquí está. Tres noches, ¿verdad?"
+ },
+ {
+  "id": "a70b9d4e013b",
+  "who": "YO",
+  "text": "Sí, hasta el lunes. ¿El desayuno está incluido?"
+ },
+ {
+  "id": "614649a185b0",
+  "who": "DIEGO",
+  "text": "Sí, de siete y media a diez y media. ¿Me permite una identificación?"
+ },
+ {
+  "id": "3cdac42438d1",
+  "who": "YO",
+  "text": "Claro, aquí está mi pasaporte."
+ },
+ {
+  "id": "98c38147d025",
+  "who": "DIEGO",
+  "text": "Gracias. Le di la habitación doce, con dos camas individuales."
+ },
+ {
+  "id": "6ee1e75ea320",
+  "who": "YO",
+  "text": "Perdón, pero reservé una habitación con cama matrimonial."
+ },
+ {
+  "id": "df7485bae782",
+  "who": "DIEGO",
+  "text": "Ay, tiene razón. Déjeme ver Tengo una en el segundo piso, pero da a la calle."
+ },
+ {
+  "id": "39c0894f99f1",
+  "who": "YO",
+  "text": "¿Hay mucho ruido en la noche?"
+ },
+ {
+  "id": "aa0556f107d8",
+  "who": "DIEGO",
+  "text": "Los viernes un poco. Mañana la puedo cambiar a una más tranquila."
+ },
+ {
+  "id": "c2c7072ef633",
+  "who": "YO",
+  "text": "Está bien, gracias. ¿Cuál es la contraseña del wifi?"
+ },
+ {
+  "id": "d31d52420aca",
+  "who": "DIEGO",
+  "text": "Está en la llave: \"valle2024\". ¿Algo más?"
+ },
+ {
+  "id": "d2f1c2c399a6",
+  "who": "YO",
+  "text": "¿A qué hora es la salida?"
+ },
+ {
+  "id": "95081ee0e1d5",
+  "who": "DIEGO",
+  "text": "A las doce. Si quiere, le guardamos la maleta."
+ },
+ {
+  "id": "08f735b511af",
+  "who": "PATRICIA",
+  "text": "la habitación, el cuarto"
+ },
+ {
+  "id": "cd3b81ab51aa",
+  "who": "PATRICIA",
+  "text": "sencilla"
+ },
+ {
+  "id": "aa161fb2cd57",
+  "who": "PATRICIA",
+  "text": "doble"
+ },
+ {
+  "id": "d9494b815a46",
+  "who": "PATRICIA",
+  "text": "la cama matrimonial"
+ },
+ {
+  "id": "7fa5adb5c690",
+  "who": "PATRICIA",
+  "text": "la cama individual"
+ },
+ {
+  "id": "325c3919776a",
+  "who": "PATRICIA",
+  "text": "la llave"
+ },
+ {
+  "id": "90b9bce1daa2",
+  "who": "PATRICIA",
+  "text": "la cobija"
+ },
+ {
+  "id": "9ad9c78c1eb7",
+  "who": "PATRICIA",
+  "text": "la toalla"
+ },
+ {
+  "id": "f5b2ef359368",
+  "who": "PATRICIA",
+  "text": "la reservación"
+ },
+ {
+  "id": "3251d19c61c2",
+  "who": "PATRICIA",
+  "text": "la llegada"
+ },
+ {
+  "id": "51947e0acade",
+  "who": "PATRICIA",
+  "text": "la salida"
+ },
+ {
+  "id": "3d381bea684f",
+  "who": "PATRICIA",
+  "text": "la noche"
+ },
+ {
+  "id": "fbd418cb464a",
+  "who": "PATRICIA",
+  "text": "disponible"
+ },
+ {
+  "id": "06aaf29c6c62",
+  "who": "PATRICIA",
+  "text": "el depósito"
+ },
+ {
+  "id": "60d484f64db9",
+  "who": "PATRICIA",
+  "text": "la contraseña"
+ },
+ {
+  "id": "fafb35caa8fa",
+  "who": "PATRICIA",
+  "text": "el ruido"
+ },
+ {
+  "id": "574159dc48de",
+  "who": "PATRICIA",
+  "text": "da a la calle"
+ },
+ {
+  "id": "7e414a5c31e9",
+  "who": "PATRICIA",
+  "text": "cambiar de habitación"
+ },
+ {
+  "id": "9d22f4b10cba",
+  "who": "PATRICIA",
+  "text": "no funciona"
+ },
+ {
+  "id": "ae1415481541",
+  "who": "PATRICIA",
+  "text": "un error"
+ },
+ {
+  "id": "cbcd36e30959",
+  "who": "ROCIO",
+  "text": "Buenas tardes, ¿qué anda buscando?"
+ },
+ {
+  "id": "496fab964edf",
+  "who": "YO",
+  "text": "Busco una guayabera para una boda."
+ },
+ {
+  "id": "5f9ea17115f0",
+  "who": "ROCIO",
+  "text": "Muy bien. ¿De algodón o de lino?"
+ },
+ {
+  "id": "b03de6aeae91",
+  "who": "YO",
+  "text": "¿Cuál es la diferencia?"
+ },
+ {
+  "id": "e6e8b2933cb4",
+  "who": "ROCIO",
+  "text": "La de lino es más elegante y más fresca, pero es más cara."
+ },
+ {
+  "id": "79c1b104a5fc",
+  "who": "YO",
+  "text": "¿Tiene esta en azul, en talla mediana?"
+ },
+ {
+  "id": "a14b9a02676e",
+  "who": "ROCIO",
+  "text": "Sí, aquí tiene. ¿Se la quiere probar?"
+ },
+ {
+  "id": "b1a157bcf0d1",
+  "who": "YO",
+  "text": "Sí, ¿dónde están los probadores?"
+ },
+ {
+  "id": "1036e608a13c",
+  "who": "ROCIO",
+  "text": "Al fondo, a la izquierda."
+ },
+ {
+  "id": "bdb3bbb4e6ce",
+  "who": "YO",
+  "text": "Me queda un poco grande. ¿Tiene una talla más chica?"
+ },
+ {
+  "id": "f6727db980d2",
+  "who": "ROCIO",
+  "text": "En azul ya no, pero en blanco sí."
+ },
+ {
+  "id": "c200e5f74107",
+  "who": "YO",
+  "text": "A ver Esta me queda bien. ¿Cuánto cuesta?"
+ },
+ {
+  "id": "19a858fee8de",
+  "who": "ROCIO",
+  "text": "Setecientos noventa. Si lleva dos, le hago el quince por ciento."
+ },
+ {
+  "id": "dde660637c33",
+  "who": "YO",
+  "text": "Solo una, gracias. Me la llevo. ¿Aceptan tarjeta?"
+ },
+ {
+  "id": "ca108740f9de",
+  "who": "ROCIO",
+  "text": "Sí, claro. Pase a la caja, por favor."
+ },
+ {
+  "id": "b58705c9e120",
+  "who": "PATRICIA",
+  "text": "la guayabera"
+ },
+ {
+  "id": "06e5cfc01b15",
+  "who": "PATRICIA",
+  "text": "la camisa"
+ },
+ {
+  "id": "63818fedb953",
+  "who": "PATRICIA",
+  "text": "la playera"
+ },
+ {
+  "id": "b31c1cb54605",
+  "who": "PATRICIA",
+  "text": "el vestido"
+ },
+ {
+  "id": "93c04c31526e",
+  "who": "PATRICIA",
+  "text": "los pantalones"
+ },
+ {
+  "id": "4e7a27240d2a",
+  "who": "PATRICIA",
+  "text": "la falda"
+ },
+ {
+  "id": "fc7b4d5f9366",
+  "who": "PATRICIA",
+  "text": "los zapatos"
+ },
+ {
+  "id": "66b6c1b4b82a",
+  "who": "PATRICIA",
+  "text": "la manga corta, larga"
+ },
+ {
+  "id": "947ca8b39050",
+  "who": "PATRICIA",
+  "text": "la talla"
+ },
+ {
+  "id": "7f2af7003472",
+  "who": "PATRICIA",
+  "text": "el número"
+ },
+ {
+  "id": "dd6b678fdbe3",
+  "who": "PATRICIA",
+  "text": "chica, mediana, grande"
+ },
+ {
+  "id": "7fdc8eb6abd0",
+  "who": "PATRICIA",
+  "text": "el algodón"
+ },
+ {
+  "id": "e1f2906669af",
+  "who": "PATRICIA",
+  "text": "el lino"
+ },
+ {
+  "id": "100fc114a4de",
+  "who": "PATRICIA",
+  "text": "apretado, apretada"
+ },
+ {
+  "id": "e9475c38b9e5",
+  "who": "PATRICIA",
+  "text": "flojo, floja"
+ },
+ {
+  "id": "8d93556fe940",
+  "who": "PATRICIA",
+  "text": "el probador"
+ },
+ {
+  "id": "0f188e6d5b8f",
+  "who": "PATRICIA",
+  "text": "probarse"
+ },
+ {
+  "id": "80d9025d3e46",
+  "who": "PATRICIA",
+  "text": "quedar"
+ },
+ {
+  "id": "421c910db51e",
+  "who": "PATRICIA",
+  "text": "la caja"
+ },
+ {
+  "id": "cd73c5fbb8f7",
+  "who": "PATRICIA",
+  "text": "el descuento"
+ },
+ {
+  "id": "881840fa9d62",
+  "who": "PATRICIA",
+  "text": "el ticket"
+ },
+ {
+  "id": "934241c8220d",
+  "who": "PATRICIA",
+  "text": "cambiar"
+ },
+ {
+  "id": "7892645be965",
+  "who": "KARLA",
+  "text": "Bueno, ¿y cómo voy a reconocer a tu hermana?"
+ },
+ {
+  "id": "a7042ab53256",
+  "who": "YO",
+  "text": "Es alta y tiene el pelo rubio y corto. Usa lentes."
+ },
+ {
+  "id": "7c868106d22c",
+  "who": "KARLA",
+  "text": "Ok. ¿Y cómo es? ¿Es tímida?"
+ },
+ {
+  "id": "fd3dd49a290f",
+  "who": "YO",
+  "text": "¡Para nada! Es muy platicadora y simpática."
+ },
+ {
+  "id": "e6871b8168f7",
+  "who": "KARLA",
+  "text": "¡Qué bien! ¿Y tu colega?"
+ },
+ {
+  "id": "e46a4b1891bd",
+  "who": "YO",
+  "text": "David es bajo, calvo y tiene barba. Tiene como cincuenta años."
+ },
+ {
+  "id": "4fca4a57ba60",
+  "who": "KARLA",
+  "text": "¿Y qué tal es?"
+ },
+ {
+  "id": "d5b75bccf72c",
+  "who": "YO",
+  "text": "Parece serio, pero es muy chistoso. Le encanta el futbol."
+ },
+ {
+  "id": "c2d4d7bf9ca8",
+  "who": "KARLA",
+  "text": "Ah, entonces lo invito al partido del domingo. ¿Y la tercera?"
+ },
+ {
+  "id": "531bcafc61d7",
+  "who": "YO",
+  "text": "Priya es mi amiga del trabajo. Tiene el pelo negro y largo."
+ },
+ {
+  "id": "b6088fc5178a",
+  "who": "KARLA",
+  "text": "¿La que es vegetariana?"
+ },
+ {
+  "id": "ac36682c0bd5",
+  "who": "YO",
+  "text": "No, la vegetariana es mi hermana. Priya no come picante."
+ },
+ {
+  "id": "345e8b398174",
+  "who": "KARLA",
+  "text": "Ah, ok. Perdón. ¿Y cómo es ella?"
+ },
+ {
+  "id": "fa896889da53",
+  "who": "YO",
+  "text": "Es un poco tímida al principio, pero es muy inteligente."
+ },
+ {
+  "id": "5104e6826e71",
+  "who": "KARLA",
+  "text": "Perfecto. Ya me los imagino."
+ },
+ {
+  "id": "d0ea5d5a1f86",
+  "who": "PATRICIA",
+  "text": "alto, alta"
+ },
+ {
+  "id": "6ee7e923f8b2",
+  "who": "PATRICIA",
+  "text": "bajo, baja"
+ },
+ {
+  "id": "a61b7b5387e5",
+  "who": "PATRICIA",
+  "text": "delgado, delgada"
+ },
+ {
+  "id": "1e32d5c4c2cd",
+  "who": "PATRICIA",
+  "text": "el pelo corto, largo"
+ },
+ {
+  "id": "d6948609c1a9",
+  "who": "PATRICIA",
+  "text": "rubio, güero"
+ },
+ {
+  "id": "3e457d642c1d",
+  "who": "PATRICIA",
+  "text": "moreno, morena"
+ },
+ {
+  "id": "6011cfcf1e0b",
+  "who": "PATRICIA",
+  "text": "calvo"
+ },
+ {
+  "id": "5550a3577ee6",
+  "who": "PATRICIA",
+  "text": "la barba"
+ },
+ {
+  "id": "7c9fe77d2782",
+  "who": "PATRICIA",
+  "text": "los lentes"
+ },
+ {
+  "id": "f31beb94d89f",
+  "who": "PATRICIA",
+  "text": "simpático, simpática"
+ },
+ {
+  "id": "5c7ba3f6a093",
+  "who": "PATRICIA",
+  "text": "platicador, platicadora"
+ },
+ {
+  "id": "635b5ca71a6f",
+  "who": "PATRICIA",
+  "text": "tímido, tímida"
+ },
+ {
+  "id": "b43ac19c120d",
+  "who": "PATRICIA",
+  "text": "chistoso, chistosa"
+ },
+ {
+  "id": "ae1f867df841",
+  "who": "PATRICIA",
+  "text": "serio, seria"
+ },
+ {
+  "id": "21d772f4925b",
+  "who": "PATRICIA",
+  "text": "inteligente"
+ },
+ {
+  "id": "585ac1be5582",
+  "who": "PATRICIA",
+  "text": "trabajador, trabajadora"
+ },
+ {
+  "id": "0437741b41fe",
+  "who": "PATRICIA",
+  "text": "buena onda"
+ },
+ {
+  "id": "804a781d4be3",
+  "who": "PATRICIA",
+  "text": "el colega, la colega"
+ },
+ {
+  "id": "a8860288031a",
+  "who": "PATRICIA",
+  "text": "el jefe, la jefa"
+ },
+ {
+  "id": "3bef1767c4cd",
+  "who": "PATRICIA",
+  "text": "el amigo, la amiga"
+ },
+ {
+  "id": "4e31eecad25f",
+  "who": "PATRICIA",
+  "text": "llevarse bien"
+ },
+ {
+  "id": "9d1f423f9020",
+  "who": "YO",
+  "text": "¿Bueno? ¿Mauricio? Oye, perdóname por lo de anoche."
+ },
+ {
+  "id": "b3fea5ff4b42",
+  "who": "LALO",
+  "text": "Ah, hola. Sí, te estuvimos esperando"
+ },
+ {
+  "id": "8ca74d2f1dd2",
+  "who": "YO",
+  "text": "Lo siento mucho. Me quedé dormido y no vi tus mensajes."
+ },
+ {
+  "id": "1b00c8087ade",
+  "who": "LALO",
+  "text": "Bueno, no te preocupes. Esas cosas pasan."
+ },
+ {
+  "id": "74e42c3f02a6",
+  "who": "YO",
+  "text": "Qué pena, de verdad. ¿Qué tal estuvo la cena?"
+ },
+ {
+  "id": "9a27fc3eb3e1",
+  "who": "LALO",
+  "text": "Muy bonita. Oye, ¿qué vas a hacer el sábado veintiuno?"
+ },
+ {
+  "id": "217bd0b04ec1",
+  "who": "YO",
+  "text": "Creo que nada. ¿Por qué?"
+ },
+ {
+  "id": "f7851ca9a4c3",
+  "who": "LALO",
+  "text": "Son los quince años de mi hija Fer. ¿Quieres venir?"
+ },
+ {
+  "id": "b20e069b4a6a",
+  "who": "YO",
+  "text": "¡Claro que sí! Me encantaría. ¿A qué hora es?"
+ },
+ {
+  "id": "04c81b0b3701",
+  "who": "LALO",
+  "text": "A las siete, en el Salón Las Rosas. Es formal."
+ },
+ {
+  "id": "5dc132d1f325",
+  "who": "YO",
+  "text": "Perfecto, ahí estaré. ¿Y puedo llevar algo?"
+ },
+ {
+  "id": "4980fd0ea20a",
+  "who": "LALO",
+  "text": "No hace falta, solo tu presencia."
+ },
+ {
+  "id": "ab39916789de",
+  "who": "YO",
+  "text": "Oye, y para disculparme, te invito a cenar el jueves. ¿Puedes?"
+ },
+ {
+  "id": "ae47a74bc0c6",
+  "who": "LALO",
+  "text": "El jueves no puedo, pero el viernes sí."
+ },
+ {
+  "id": "631c1cdee291",
+  "who": "YO",
+  "text": "Va, el viernes. ¡Y esta vez no me duermo!"
+ },
+ {
+  "id": "b64bea64539c",
+  "who": "PATRICIA",
+  "text": "perdóname"
+ },
+ {
+  "id": "8bb61059afa9",
+  "who": "PATRICIA",
+  "text": "discúlpame"
+ },
+ {
+  "id": "ce6be5371486",
+  "who": "PATRICIA",
+  "text": "lo siento"
+ },
+ {
+  "id": "9842f9f905cb",
+  "who": "PATRICIA",
+  "text": "qué pena"
+ },
+ {
+  "id": "e260b03319de",
+  "who": "PATRICIA",
+  "text": "la culpa"
+ },
+ {
+  "id": "c6ad54de0615",
+  "who": "PATRICIA",
+  "text": "compensar"
+ },
+ {
+  "id": "fb82775802ae",
+  "who": "PATRICIA",
+  "text": "quedarse dormido"
+ },
+ {
+  "id": "29707ead6d58",
+  "who": "PATRICIA",
+  "text": "invitar"
+ },
+ {
+  "id": "2133b8389979",
+  "who": "PATRICIA",
+  "text": "la invitación"
+ },
+ {
+  "id": "ff115bd629fd",
+  "who": "PATRICIA",
+  "text": "los quince años, los quince"
+ },
+ {
+  "id": "1927bbfa71f7",
+  "who": "PATRICIA",
+  "text": "el salón de fiestas"
+ },
+ {
+  "id": "870b79bf7d5d",
+  "who": "PATRICIA",
+  "text": "formal"
+ },
+ {
+  "id": "1d0cbcd20c0d",
+  "who": "PATRICIA",
+  "text": "el regalo"
+ },
+ {
+  "id": "8cf6b2319508",
+  "who": "PATRICIA",
+  "text": "llevar"
+ },
+ {
+  "id": "0b99383739a7",
+  "who": "PATRICIA",
+  "text": "claro que sí"
+ },
+ {
+  "id": "fa206836c28f",
+  "who": "PATRICIA",
+  "text": "ahí estaré"
+ },
+ {
+  "id": "e367085a62bc",
+  "who": "PATRICIA",
+  "text": "no te preocupes"
+ },
+ {
+  "id": "3c294ceed96d",
+  "who": "PATRICIA",
+  "text": "no pasa nada"
+ },
+ {
+  "id": "d0314bccb4e5",
+  "who": "PATRICIA",
+  "text": "esas cosas pasan"
+ },
+ {
+  "id": "a8ff35f750c3",
+  "who": "PATRICIA",
+  "text": "no hace falta"
+ },
+ {
+  "id": "863fc27c4c78",
+  "who": "YO",
+  "text": "Buenas tardes. Compré esta licuadora ayer y no funciona."
+ },
+ {
+  "id": "df1386be0189",
+  "who": "DOCTOR",
+  "text": "A ver, ¿qué le pasa?"
+ },
+ {
+  "id": "c584f4f29de5",
+  "who": "YO",
+  "text": "Prende, pero no gira. Y hace un ruido muy raro."
+ },
+ {
+  "id": "f1dea0706589",
+  "who": "DOCTOR",
+  "text": "¿La usó con hielo?"
+ },
+ {
+  "id": "de135f41967d",
+  "who": "YO",
+  "text": "No, solo con fruta y leche. La usé una vez."
+ },
+ {
+  "id": "21bbd09b89fd",
+  "who": "DOCTOR",
+  "text": "Ok. ¿Trae el ticket?"
+ },
+ {
+  "id": "e2d2d67618d6",
+  "who": "YO",
+  "text": "Sí, aquí está. ¿Me la pueden cambiar por otra?"
+ },
+ {
+  "id": "b4b98ce55fd0",
+  "who": "DOCTOR",
+  "text": "Claro. ¿Y la caja?"
+ },
+ {
+  "id": "cec9057baf06",
+  "who": "YO",
+  "text": "La tiré, perdón. ¿Es un problema?"
+ },
+ {
+  "id": "7addd80ac8e3",
+  "who": "DOCTOR",
+  "text": "Para un cambio no, pero para un reembolso sí necesitamos la caja."
+ },
+ {
+  "id": "39dfea304dcc",
+  "who": "YO",
+  "text": "Está bien, prefiero un cambio. ¿Tienen otra igual?"
+ },
+ {
+  "id": "222356b7f9a4",
+  "who": "DOCTOR",
+  "text": "En blanca ya no. Tengo la negra, o la Turbo 800, que cuesta trescientos más."
+ },
+ {
+  "id": "bc011e1f2f4c",
+  "who": "YO",
+  "text": "La negra está bien. ¿Me la puede probar aquí, por favor?"
+ },
+ {
+  "id": "0cea42f22df6",
+  "who": "DOCTOR",
+  "text": "Sí, cómo no. Mire funciona perfecto."
+ },
+ {
+  "id": "dc38dac32a59",
+  "who": "YO",
+  "text": "Perfecto. Muchas gracias por su ayuda."
+ },
+ {
+  "id": "31add7f18d4c",
+  "who": "PATRICIA",
+  "text": "está descompuesto"
+ },
+ {
+  "id": "a5812ee2893c",
+  "who": "PATRICIA",
+  "text": "está roto"
+ },
+ {
+  "id": "0ccfd329509e",
+  "who": "PATRICIA",
+  "text": "prender, apagar"
+ },
+ {
+  "id": "4edbc18aaa1b",
+  "who": "PATRICIA",
+  "text": "girar"
+ },
+ {
+  "id": "8a0c33bc67fa",
+  "who": "PATRICIA",
+  "text": "equivocado"
+ },
+ {
+  "id": "00d571a8699f",
+  "who": "PATRICIA",
+  "text": "devolver"
+ },
+ {
+  "id": "bfc18fcd6654",
+  "who": "PATRICIA",
+  "text": "el reembolso"
+ },
+ {
+  "id": "0605048c010c",
+  "who": "PATRICIA",
+  "text": "reparar"
+ },
+ {
+  "id": "9143c7889ad5",
+  "who": "PATRICIA",
+  "text": "la garantía"
+ },
+ {
+  "id": "7445b5b88094",
+  "who": "PATRICIA",
+  "text": "el fabricante"
+ },
+ {
+  "id": "a686d116fb96",
+  "who": "PATRICIA",
+  "text": "el comprobante"
+ },
+ {
+  "id": "d6451e16dc51",
+  "who": "PATRICIA",
+  "text": "atención a clientes"
+ },
+ {
+  "id": "f7fdab6b21ce",
+  "who": "PATRICIA",
+  "text": "el gerente"
+ },
+ {
+  "id": "4d2eea688b37",
+  "who": "PATRICIA",
+  "text": "la licuadora"
+ },
+ {
+  "id": "b0340b05d481",
+  "who": "PATRICIA",
+  "text": "la plancha"
+ },
+ {
+  "id": "6171f86ac10e",
+  "who": "PATRICIA",
+  "text": "el ventilador"
+ },
+ {
+  "id": "7734e52d1fd0",
+  "who": "GUERO",
+  "text": "¿Y qué tal los departamentos? ¿Cuál te gustó más?"
+ },
+ {
+  "id": "25874a60d34c",
+  "who": "YO",
+  "text": "Los dos están bien, pero son muy diferentes."
+ },
+ {
+  "id": "9c37137d3b42",
+  "who": "GUERO",
+  "text": "A ver, cuéntame."
+ },
+ {
+  "id": "d5870ad9744b",
+  "who": "YO",
+  "text": "El de la Roma es más caro y más pequeño que el de Coyoacán."
+ },
+ {
+  "id": "1691042c9582",
+  "who": "GUERO",
+  "text": "¿Y está bonito?"
+ },
+ {
+  "id": "2b003dbc4b73",
+  "who": "YO",
+  "text": "Sí, es más moderno y tiene elevador. Pero hay mucho más ruido."
+ },
+ {
+  "id": "83ea6dbbeafe",
+  "who": "GUERO",
+  "text": "¿Y el de Coyoacán?"
+ },
+ {
+  "id": "2502f0193417",
+  "who": "YO",
+  "text": "Es más grande, tiene jardín, y es tan bonito como el otro."
+ },
+ {
+  "id": "7961a88448b5",
+  "who": "GUERO",
+  "text": "Entonces el de Coyoacán es mejor, ¿no?"
+ },
+ {
+  "id": "b46655d20587",
+  "who": "YO",
+  "text": "Sí y no. Está mucho más lejos de mi trabajo. Son cuarenta y cinco minutos en metro."
+ },
+ {
+  "id": "6aaa04cc6545",
+  "who": "GUERO",
+  "text": "Uy, el metro en la mañana está lleno. Yo prefiero la Roma."
+ },
+ {
+  "id": "6c2acb9a7875",
+  "who": "YO",
+  "text": "Yo no estoy de acuerdo. Para mí, lo más importante es dormir bien."
+ },
+ {
+  "id": "cb0e9741d2c8",
+  "who": "GUERO",
+  "text": "Bueno, tiene sentido. ¿Entonces cuál vas a escoger?"
+ },
+ {
+  "id": "4b41519b21d6",
+  "who": "YO",
+  "text": "Prefiero el de Coyoacán porque es más tranquilo y más barato."
+ },
+ {
+  "id": "95cba808f07b",
+  "who": "GUERO",
+  "text": "Me parece bien. Y los fines de semana vienes a la Roma conmigo."
+ },
+ {
+  "id": "cb71e8a8ce7b",
+  "who": "PATRICIA",
+  "text": "más que"
+ },
+ {
+  "id": "f47b8437358a",
+  "who": "PATRICIA",
+  "text": "menos que"
+ },
+ {
+  "id": "9ec4c67a606e",
+  "who": "PATRICIA",
+  "text": "tan como"
+ },
+ {
+  "id": "f639eaace5eb",
+  "who": "PATRICIA",
+  "text": "mejor"
+ },
+ {
+  "id": "cd62461f6147",
+  "who": "PATRICIA",
+  "text": "peor"
+ },
+ {
+  "id": "6623553a1e10",
+  "who": "PATRICIA",
+  "text": "mayor, menor"
+ },
+ {
+  "id": "6ab6f8049b70",
+  "who": "PATRICIA",
+  "text": "el más"
+ },
+ {
+  "id": "bf83492b5517",
+  "who": "PATRICIA",
+  "text": "caro, barato"
+ },
+ {
+  "id": "85dda4579f99",
+  "who": "PATRICIA",
+  "text": "grande, pequeño"
+ },
+ {
+  "id": "303775b20b0b",
+  "who": "PATRICIA",
+  "text": "moderno, antiguo"
+ },
+ {
+  "id": "265ca4bdf8d6",
+  "who": "PATRICIA",
+  "text": "ruidoso, tranquilo"
+ },
+ {
+  "id": "80d70088d301",
+  "who": "PATRICIA",
+  "text": "cerca, lejos"
+ },
+ {
+  "id": "24d8e0d9afc7",
+  "who": "PATRICIA",
+  "text": "cómodo"
+ },
+ {
+  "id": "449e4f6876a4",
+  "who": "PATRICIA",
+  "text": "seguro"
+ },
+ {
+  "id": "bbfcfad5bf3f",
+  "who": "PATRICIA",
+  "text": "preferir"
+ },
+ {
+  "id": "6ddd5a66546b",
+  "who": "PATRICIA",
+  "text": "escoger"
+ },
+ {
+  "id": "d19d6f4403ef",
+  "who": "PATRICIA",
+  "text": "la ventaja"
+ },
+ {
+  "id": "df7237ac5f5e",
+  "who": "PATRICIA",
+  "text": "la desventaja"
+ },
+ {
+  "id": "392dd3a49310",
+  "who": "PATRICIA",
+  "text": "estar de acuerdo"
+ },
+ {
+  "id": "a24bddcd25d8",
+  "who": "PATRICIA",
+  "text": "para mí"
+ },
+ {
+  "id": "a064d14f0b2f",
+  "who": "PATRICIA",
+  "text": "depende"
+ },
+ {
+  "id": "782a8f135903",
+  "who": "PATRICIA",
+  "text": "Pásele. Siéntese, por favor. ¿Qué le pasa?"
+ },
+ {
+  "id": "f70acd7424b0",
+  "who": "YO",
+  "text": "Me siento muy mal. Me duele mucho el estómago."
+ },
+ {
+  "id": "218e9b362685",
+  "who": "PATRICIA",
+  "text": "¿Desde cuándo?"
+ },
+ {
+  "id": "af936e02348d",
+  "who": "YO",
+  "text": "Desde ayer en la noche. Y tengo diarrea."
+ },
+ {
+  "id": "c6e69ded20a1",
+  "who": "PATRICIA",
+  "text": "¿Tiene fiebre?"
+ },
+ {
+  "id": "cdba92b75f54",
+  "who": "YO",
+  "text": "Sí, creo que sí. Esta mañana tenía treinta y ocho."
+ },
+ {
+  "id": "350e302ca181",
+  "who": "PATRICIA",
+  "text": "¿Qué comió ayer?"
+ },
+ {
+  "id": "49c61a7bc2a0",
+  "who": "YO",
+  "text": "Comí ceviche en la playa y tomé agua de la llave."
+ },
+ {
+  "id": "fe2944f5a8ea",
+  "who": "PATRICIA",
+  "text": "Ah, eso fue. Le voy a dar un antibiótico, amoxicilina"
+ },
+ {
+  "id": "ba7fb096f474",
+  "who": "YO",
+  "text": "Perdón, doctora. Soy alérgico a la penicilina."
+ },
+ {
+  "id": "062af04a06d7",
+  "who": "PATRICIA",
+  "text": "Qué bueno que me dice. Entonces le doy otro. Tómese una pastilla cada doce horas."
+ },
+ {
+  "id": "f91eddeec424",
+  "who": "YO",
+  "text": "¿Cada doce horas? ¿Por cuántos días?"
+ },
+ {
+  "id": "1e8a401b7f67",
+  "who": "PATRICIA",
+  "text": "Por cinco días. Y tome mucho suero."
+ },
+ {
+  "id": "dabe4175c312",
+  "who": "YO",
+  "text": "¿Puedo comer normal?"
+ },
+ {
+  "id": "0255d1cb26a9",
+  "who": "PATRICIA",
+  "text": "Coma ligero: arroz, caldo de pollo, plátano. Nada de picante. Si no mejora en dos días, regrese."
+ },
+ {
+  "id": "8b9134a750dc",
+  "who": "PATRICIA",
+  "text": "la cabeza"
+ },
+ {
+  "id": "a43dbf9fefd4",
+  "who": "PATRICIA",
+  "text": "la garganta"
+ },
+ {
+  "id": "d60512699e62",
+  "who": "PATRICIA",
+  "text": "el estómago"
+ },
+ {
+  "id": "4dcd2709eef6",
+  "who": "PATRICIA",
+  "text": "la panza"
+ },
+ {
+  "id": "09c22cfa1c6b",
+  "who": "PATRICIA",
+  "text": "la espalda"
+ },
+ {
+  "id": "d56a322f6563",
+  "who": "PATRICIA",
+  "text": "el pecho"
+ },
+ {
+  "id": "168eec698104",
+  "who": "PATRICIA",
+  "text": "el oído"
+ },
+ {
+  "id": "96f8c9634231",
+  "who": "PATRICIA",
+  "text": "el dolor"
+ },
+ {
+  "id": "311ce3b825be",
+  "who": "PATRICIA",
+  "text": "la fiebre"
+ },
+ {
+  "id": "628feb8b9911",
+  "who": "PATRICIA",
+  "text": "la tos"
+ },
+ {
+  "id": "b5138113488a",
+  "who": "PATRICIA",
+  "text": "la gripa"
+ },
+ {
+  "id": "e43e94e94982",
+  "who": "PATRICIA",
+  "text": "la diarrea"
+ },
+ {
+  "id": "7db8e1988402",
+  "who": "PATRICIA",
+  "text": "las náuseas"
+ },
+ {
+  "id": "684433854010",
+  "who": "PATRICIA",
+  "text": "mareado, mareada"
+ },
+ {
+  "id": "f3c69d14c1b7",
+  "who": "PATRICIA",
+  "text": "el cansancio"
+ },
+ {
+  "id": "5e35da6d9b67",
+  "who": "PATRICIA",
+  "text": "la receta"
+ },
+ {
+  "id": "ba0f214b2127",
+  "who": "PATRICIA",
+  "text": "la pastilla"
+ },
+ {
+  "id": "738c5e686e44",
+  "who": "PATRICIA",
+  "text": "el jarabe"
+ },
+ {
+  "id": "f0d7792c13ba",
+  "who": "PATRICIA",
+  "text": "el antibiótico"
+ },
+ {
+  "id": "7c850440a0fb",
+  "who": "PATRICIA",
+  "text": "el suero"
+ },
+ {
+  "id": "fd4f16a2f25e",
+  "who": "PATRICIA",
+  "text": "cada ocho horas"
+ },
+ {
+  "id": "ab4e7fc99d08",
+  "who": "PATRICIA",
+  "text": "en ayunas"
+ },
+ {
+  "id": "472b1bb7a56e",
+  "who": "PATRICIA",
+  "text": "mejorar"
+ },
+ {
+  "id": "4fe455707cfd",
+  "who": "POLICIA",
+  "text": "¡Ya regresaste! ¿Qué tal Chiapas? Cuéntame todo."
+ },
+ {
+  "id": "996bd29ee8c6",
+  "who": "YO",
+  "text": "¡Fue increíble! Llegué a Tuxtla el lunes y al día siguiente fui al Cañón del Sumidero."
+ },
+ {
+  "id": "ab058e64cccc",
+  "who": "POLICIA",
+  "text": "¡Ay, qué bonito! ¿Y cómo estuvo?"
+ },
+ {
+  "id": "7ec2b9223caf",
+  "who": "YO",
+  "text": "Íbamos en una lancha por el río. Hacía mucho calor y había cocodrilos por todos lados."
+ },
+ {
+  "id": "2297e0078027",
+  "who": "POLICIA",
+  "text": "¿En serio? ¿Y no te dio miedo?"
+ },
+ {
+  "id": "a17338491ca5",
+  "who": "YO",
+  "text": "Un poco. Pero lo peor pasó después."
+ },
+ {
+  "id": "05cb2fd1d5c8",
+  "who": "POLICIA",
+  "text": "¿Qué pasó?"
+ },
+ {
+  "id": "c50ff739cc9b",
+  "who": "YO",
+  "text": "De repente empezó a llover muchísimo, y el motor de la lancha se apagó."
+ },
+ {
+  "id": "9dc9c987ee7b",
+  "who": "POLICIA",
+  "text": "¡No manches! ¿Y qué hicieron?"
+ },
+ {
+  "id": "fe036ce9450f",
+  "who": "YO",
+  "text": "Esperamos casi una hora. Todos estábamos mojados y nerviosos."
+ },
+ {
+  "id": "966e66ddcb48",
+  "who": "POLICIA",
+  "text": "¿Y luego?"
+ },
+ {
+  "id": "46d200cb80c0",
+  "who": "YO",
+  "text": "Luego pasó un pescador y nos llevó al muelle."
+ },
+ {
+  "id": "33703e6b464f",
+  "who": "POLICIA",
+  "text": "¡Qué aventura! ¿Y el resto del viaje?"
+ },
+ {
+  "id": "20075ae3ef00",
+  "who": "YO",
+  "text": "Después fui a San Cristóbal. Era muy tranquilo y hacía frío. Me encantó."
+ },
+ {
+  "id": "432961cf53c8",
+  "who": "POLICIA",
+  "text": "Bueno, al menos tienes una buena historia."
+ },
+ {
+  "id": "56bd98955806",
+  "who": "PATRICIA",
+  "text": "hacía calor, frío"
+ },
+ {
+  "id": "87683b0816e8",
+  "who": "PATRICIA",
+  "text": "había"
+ },
+ {
+  "id": "0af0596ef127",
+  "who": "PATRICIA",
+  "text": "estaba"
+ },
+ {
+  "id": "199cb85f54ae",
+  "who": "PATRICIA",
+  "text": "era"
+ },
+ {
+  "id": "a074b9dcb4f7",
+  "who": "PATRICIA",
+  "text": "íbamos"
+ },
+ {
+  "id": "86980b8290d4",
+  "who": "PATRICIA",
+  "text": "llovía"
+ },
+ {
+  "id": "f7eb52afda94",
+  "who": "PATRICIA",
+  "text": "tenía miedo"
+ },
+ {
+  "id": "22f36fa6bd68",
+  "who": "PATRICIA",
+  "text": "llegué"
+ },
+ {
+  "id": "67814c222953",
+  "who": "PATRICIA",
+  "text": "empezó"
+ },
+ {
+  "id": "cddfb0e3a5b6",
+  "who": "PATRICIA",
+  "text": "se apagó"
+ },
+ {
+  "id": "91da496c0d0e",
+  "who": "PATRICIA",
+  "text": "pasó"
+ },
+ {
+  "id": "5a4677af5da1",
+  "who": "PATRICIA",
+  "text": "nos ayudó"
+ },
+ {
+  "id": "72181407d0d0",
+  "who": "PATRICIA",
+  "text": "vimos"
+ },
+ {
+  "id": "ced1ffeb22f0",
+  "who": "PATRICIA",
+  "text": "un día"
+ },
+ {
+  "id": "d213f8dba9a9",
+  "who": "PATRICIA",
+  "text": "al día siguiente"
+ },
+ {
+  "id": "b35a746ce42f",
+  "who": "PATRICIA",
+  "text": "de repente"
+ },
+ {
+  "id": "9b9d98d25d8e",
+  "who": "PATRICIA",
+  "text": "entonces"
+ },
+ {
+  "id": "5fac79fa8efe",
+  "who": "PATRICIA",
+  "text": "mientras"
+ },
+ {
+  "id": "5faedece5a90",
+  "who": "PATRICIA",
+  "text": "por suerte"
+ },
+ {
+  "id": "09bce36de53b",
+  "who": "KARLA",
+  "text": "Oye, ¿qué vas a hacer en Semana Santa?"
+ },
+ {
+  "id": "6afb8c995f2a",
+  "who": "YO",
+  "text": "Voy a ir a la Huasteca Potosina. Ya compré los boletos."
+ },
+ {
+  "id": "7a585fb86655",
+  "who": "KARLA",
+  "text": "¡Qué padre! ¿Cuándo te vas?"
+ },
+ {
+  "id": "3c9c13c7abab",
+  "who": "YO",
+  "text": "Me voy el sábado en autobús. Pienso quedarme tres noches en Xilitla."
+ },
+ {
+  "id": "016553c29d9e",
+  "who": "KARLA",
+  "text": "¿Y qué vas a hacer allá?"
+ },
+ {
+  "id": "195444447619",
+  "who": "YO",
+  "text": "Quiero visitar el jardín surrealista, y me gustaría nadar en una cascada."
+ },
+ {
+  "id": "a1bcbe19e5de",
+  "who": "KARLA",
+  "text": "¿Vas a ir a Tamul?"
+ },
+ {
+  "id": "a22b245d8126",
+  "who": "YO",
+  "text": "Sí, si no llueve. Si llueve, el río está muy peligroso."
+ },
+ {
+  "id": "6eb656785f38",
+  "who": "KARLA",
+  "text": "Tienes razón. ¿Vas solo?"
+ },
+ {
+  "id": "ba930056081a",
+  "who": "YO",
+  "text": "Todavía no sé. Depende de mi amigo. Si puede, viene conmigo."
+ },
+ {
+  "id": "fe3316c6c4f3",
+  "who": "KARLA",
+  "text": "¿Y después de Xilitla?"
+ },
+ {
+  "id": "d51ae0845ef0",
+  "who": "YO",
+  "text": "No sé todavía. Tal vez regrese temprano para descansar. ¿Y tú?"
+ },
+ {
+  "id": "5161b64d4b88",
+  "who": "KARLA",
+  "text": "Yo me voy a quedar en Querétaro. Voy a estar con mi familia."
+ },
+ {
+  "id": "208429d4553e",
+  "who": "YO",
+  "text": "¡Qué bien! ¿Algún consejo para la Huasteca?"
+ },
+ {
+  "id": "2b7cf5e366b2",
+  "who": "KARLA",
+  "text": "Lleva repelente, ¡hay muchísimos moscos!"
+ },
+ {
+  "id": "4dfe7ee7dcc8",
+  "who": "PATRICIA",
+  "text": "ir a"
+ },
+ {
+  "id": "84e196268e19",
+  "who": "PATRICIA",
+  "text": "pensar"
+ },
+ {
+  "id": "00eb6fd32ee5",
+  "who": "PATRICIA",
+  "text": "querer"
+ },
+ {
+  "id": "05902a5006bc",
+  "who": "PATRICIA",
+  "text": "me gustaría"
+ },
+ {
+  "id": "ed9bb2c861b2",
+  "who": "PATRICIA",
+  "text": "tener ganas de"
+ },
+ {
+  "id": "123bd010ea51",
+  "who": "PATRICIA",
+  "text": "esperar"
+ },
+ {
+  "id": "23de26ef8923",
+  "who": "PATRICIA",
+  "text": "decidir"
+ },
+ {
+  "id": "6f33ce6e8337",
+  "who": "PATRICIA",
+  "text": "ya"
+ },
+ {
+  "id": "e9e631318ff8",
+  "who": "PATRICIA",
+  "text": "todavía no"
+ },
+ {
+  "id": "7453a30ff5a3",
+  "who": "PATRICIA",
+  "text": "tal vez, a lo mejor"
+ },
+ {
+  "id": "9908e7042cb0",
+  "who": "PATRICIA",
+  "text": "depende de"
+ },
+ {
+  "id": "7c44ec9b27b2",
+  "who": "PATRICIA",
+  "text": "si"
+ },
+ {
+  "id": "cae4539e4752",
+  "who": "PATRICIA",
+  "text": "no sé"
+ },
+ {
+  "id": "412ce2cc655e",
+  "who": "PATRICIA",
+  "text": "Semana Santa"
+ },
+ {
+  "id": "83fd42d8fee4",
+  "who": "PATRICIA",
+  "text": "el puente"
+ },
+ {
+  "id": "814d30e96884",
+  "who": "PATRICIA",
+  "text": "la cascada"
+ },
+ {
+  "id": "f078c4fa2500",
+  "who": "PATRICIA",
+  "text": "el río"
+ },
+ {
+  "id": "a3b74d0baa10",
+  "who": "PATRICIA",
+  "text": "la selva"
+ },
+ {
+  "id": "8de31a0f0ed6",
+  "who": "PATRICIA",
+  "text": "el repelente"
+ },
+ {
+  "id": "9a0018c17845",
+  "who": "PATRICIA",
+  "text": "los moscos"
+ },
+ {
+  "id": "5d1fb6ef2a4d",
+  "who": "YO",
+  "text": "Buenos días. Tengo un problema: perdí el autobús de las nueve y media a Puerto Escondido."
+ },
+ {
+  "id": "008763ecc522",
+  "who": "FLORISTA",
+  "text": "A ver, déjeme ver su boleto. Sí, ese ya salió. ¿Qué pasó?"
+ },
+ {
+  "id": "d1f92e9c8666",
+  "who": "YO",
+  "text": "El taxi llegó tarde y había mucho tráfico en el centro. Llegué a las diez para las diez."
+ },
+ {
+  "id": "f7487fac8a91",
+  "who": "FLORISTA",
+  "text": "Uy, qué mala suerte. El boleto no es reembolsable, pero se puede cambiar."
+ },
+ {
+  "id": "9505146ab8a3",
+  "who": "YO",
+  "text": "¿Qué opciones tengo?"
+ },
+ {
+  "id": "f2eac416ff37",
+  "who": "FLORISTA",
+  "text": "Hay un directo a las once, pero cobramos ciento cincuenta pesos por el cambio."
+ },
+ {
+  "id": "113f255f6cfe",
+  "who": "YO",
+  "text": "¿No hay manera de cambiarlo sin costo? No fue mi culpa."
+ },
+ {
+  "id": "faf67a3cced3",
+  "who": "FLORISTA",
+  "text": "Lo siento, son las reglas de la compañía."
+ },
+ {
+  "id": "f25e947b08b2",
+  "who": "YO",
+  "text": "Entiendo. Entonces, ¿me puede cambiar al de las once?"
+ },
+ {
+  "id": "06a5a7e8caa3",
+  "who": "FLORISTA",
+  "text": "Ay, perdón, el de las once ya está lleno. Me quedan lugares en el de las dos y media."
+ },
+ {
+  "id": "4cc9666a5011",
+  "who": "YO",
+  "text": "Es muy tarde para mí. ¿Y si me voy por Pochutla?"
+ },
+ {
+  "id": "0646aff577a1",
+  "who": "FLORISTA",
+  "text": "Sale a las doce y cuarto. Llega a Pochutla y de ahí toma una combi, como una hora más."
+ },
+ {
+  "id": "7c69066af7a9",
+  "who": "YO",
+  "text": "Está bien, prefiero ese. ¿Dónde guardo mi maleta mientras espero?"
+ },
+ {
+  "id": "2387877362c7",
+  "who": "FLORISTA",
+  "text": "En la paquetería, al fondo a la derecha. Aquí tiene su boleto nuevo."
+ },
+ {
+  "id": "81eda110317e",
+  "who": "YO",
+  "text": "Muchas gracias por su ayuda."
+ },
+ {
+  "id": "b8b950729aed",
+  "who": "PATRICIA",
+  "text": "la paquetería"
+ },
+ {
+  "id": "b22eca13ffc4",
+  "who": "PATRICIA",
+  "text": "el directo"
+ },
+ {
+  "id": "abe8ee3fda46",
+  "who": "PATRICIA",
+  "text": "la combi"
+ },
+ {
+  "id": "c2458d1a754f",
+  "who": "PATRICIA",
+  "text": "perder el autobús"
+ },
+ {
+  "id": "98fad3c1db5c",
+  "who": "PATRICIA",
+  "text": "llegar tarde"
+ },
+ {
+  "id": "8f25a8487c67",
+  "who": "PATRICIA",
+  "text": "estar lleno"
+ },
+ {
+  "id": "36f8a76a3cd6",
+  "who": "PATRICIA",
+  "text": "cancelar"
+ },
+ {
+  "id": "9475d862494b",
+  "who": "PATRICIA",
+  "text": "el retraso"
+ },
+ {
+  "id": "afb730a0248c",
+  "who": "PATRICIA",
+  "text": "se me olvidó"
+ },
+ {
+  "id": "82ae11bb748a",
+  "who": "PATRICIA",
+  "text": "se me perdió"
+ },
+ {
+  "id": "89b71053a94f",
+  "who": "PATRICIA",
+  "text": "cambiar el boleto"
+ },
+ {
+  "id": "a5b708023c5d",
+  "who": "PATRICIA",
+  "text": "la diferencia"
+ },
+ {
+  "id": "ef815d649f20",
+  "who": "PATRICIA",
+  "text": "el cargo"
+ },
+ {
+  "id": "d1cf8042fc38",
+  "who": "PATRICIA",
+  "text": "la ruta"
+ },
+ {
+  "id": "8d1e28e5ecbe",
+  "who": "PATRICIA",
+  "text": "por Pochutla"
+ },
+ {
+  "id": "bd7420558171",
+  "who": "YO",
+  "text": "Buenos días. Quisiera hablar con el gerente, por favor. Quiero poner una queja."
+ },
+ {
+  "id": "7eb5a6359533",
+  "who": "MARISOL",
+  "text": "Buenos días, soy la licenciada Treviño, la gerente. Dígame, ¿qué pasó?"
+ },
+ {
+  "id": "fc64f3cdb78f",
+  "who": "YO",
+  "text": "Mire, la primera noche el aire acondicionado no servía. Llamé a recepción y me dijeron que iban a mandar a alguien, pero nadie vino."
+ },
+ {
+  "id": "43abb578e8c3",
+  "who": "MARISOL",
+  "text": "Lamento mucho escuchar eso."
+ },
+ {
+  "id": "9da879d93b63",
+  "who": "YO",
+  "text": "Además, la segunda noche hubo una fiesta en la alberca hasta las tres de la mañana. No pude dormir."
+ },
+ {
+  "id": "59ece17d7a68",
+  "who": "MARISOL",
+  "text": "Sí, era un evento privado. ¿Lo reportó en ese momento?"
+ },
+ {
+  "id": "3843d2ba3ab1",
+  "who": "YO",
+  "text": "Sí, dos veces. Y para colmo, me cobraron el minibar, y nunca lo abrí."
+ },
+ {
+  "id": "1f4242136a5b",
+  "who": "MARISOL",
+  "text": "Eso lo quito ahorita mismo. Y le puedo ofrecer un desayuno gratis en su próxima visita."
+ },
+ {
+  "id": "917f94d501d1",
+  "who": "YO",
+  "text": "Le agradezco, pero no me parece suficiente. Pagué por una habitación con vista al mar para descansar, y no descansé."
+ },
+ {
+  "id": "28996426b9a1",
+  "who": "MARISOL",
+  "text": "Entiendo. ¿Qué le parecería justo?"
+ },
+ {
+  "id": "9c252a0a7952",
+  "who": "YO",
+  "text": "Creo que lo justo sería no cobrarme una de las tres noches."
+ },
+ {
+  "id": "9afff14efa53",
+  "who": "MARISOL",
+  "text": "Déjeme ver Le puedo descontar la primera noche completa."
+ },
+ {
+  "id": "ed37070adc29",
+  "who": "YO",
+  "text": "Me parece bien. ¿Me puede dar la cuenta corregida por escrito?"
+ },
+ {
+  "id": "16931e547778",
+  "who": "MARISOL",
+  "text": "Claro que sí. Y de nuevo, una disculpa por todo."
+ },
+ {
+  "id": "bc7fc1829af4",
+  "who": "PATRICIA",
+  "text": "poner una queja"
+ },
+ {
+  "id": "3d68b9ee8fc7",
+  "who": "PATRICIA",
+  "text": "quejarse de"
+ },
+ {
+  "id": "d73576904a64",
+  "who": "PATRICIA",
+  "text": "reclamar"
+ },
+ {
+  "id": "18e21822b118",
+  "who": "PATRICIA",
+  "text": "el reclamo"
+ },
+ {
+  "id": "0267ca18a483",
+  "who": "PATRICIA",
+  "text": "inaceptable"
+ },
+ {
+  "id": "e016fb1a193c",
+  "who": "PATRICIA",
+  "text": "las molestias"
+ },
+ {
+  "id": "e3a01c90d148",
+  "who": "PATRICIA",
+  "text": "para colmo"
+ },
+ {
+  "id": "6b14a8349427",
+  "who": "PATRICIA",
+  "text": "me dijeron que"
+ },
+ {
+  "id": "f1d4c9c080b4",
+  "who": "PATRICIA",
+  "text": "me prometieron que"
+ },
+ {
+  "id": "7b5e0b8170ec",
+  "who": "PATRICIA",
+  "text": "no servía"
+ },
+ {
+  "id": "d8156d0515a5",
+  "who": "PATRICIA",
+  "text": "nadie vino"
+ },
+ {
+  "id": "34fa0bb67c81",
+  "who": "PATRICIA",
+  "text": "en ese momento"
+ },
+ {
+  "id": "63c24a929df6",
+  "who": "PATRICIA",
+  "text": "varias veces"
+ },
+ {
+  "id": "412fe0d77eb8",
+  "who": "PATRICIA",
+  "text": "sin embargo"
+ },
+ {
+  "id": "da2f525a6655",
+  "who": "PATRICIA",
+  "text": "la compensación"
+ },
+ {
+  "id": "779373fe544b",
+  "who": "PATRICIA",
+  "text": "descontar"
+ },
+ {
+  "id": "db9f6a655b97",
+  "who": "PATRICIA",
+  "text": "cobrar"
+ },
+ {
+  "id": "3dc3ebba4540",
+  "who": "PATRICIA",
+  "text": "justo"
+ },
+ {
+  "id": "f549c1c0b2e5",
+  "who": "PATRICIA",
+  "text": "por escrito"
+ },
+ {
+  "id": "e8d1483cde07",
+  "who": "PATRICIA",
+  "text": "la reseña"
+ },
+ {
+  "id": "eba8b6ac067f",
+  "who": "DIEGO",
+  "text": "A ver, primera tarjeta: los celulares en las escuelas. ¿Tú qué opinas?"
+ },
+ {
+  "id": "6da84a727345",
+  "who": "YO",
+  "text": "Creo que deberían estar prohibidos en clase, porque los estudiantes se distraen mucho."
+ },
+ {
+  "id": "fb3c2561c7c6",
+  "who": "DIEGO",
+  "text": "¿Prohibidos? ¿No crees que es un poco exagerado?"
+ },
+ {
+  "id": "9f8b6debfaa2",
+  "who": "YO",
+  "text": "Bueno, por un lado son útiles para buscar información. Pero por otro lado, los estudiantes pasan todo el tiempo en redes sociales."
+ },
+ {
+  "id": "9d8f1014d3f5",
+  "who": "DIEGO",
+  "text": "Yo no estoy de acuerdo. Para mí, el problema no es el celular, sino cómo lo usan."
+ },
+ {
+  "id": "c0421060eb87",
+  "who": "YO",
+  "text": "Tienes razón en parte. Por ejemplo, en mis clases los usamos para hacer encuestas, y funciona bien."
+ },
+ {
+  "id": "e0e6f4c330c4",
+  "who": "DIEGO",
+  "text": "¿Ves? Entonces no hay que prohibirlos."
+ },
+ {
+  "id": "1a041b712b9a",
+  "who": "YO",
+  "text": "No, pero no creo que sea buena idea dejarlos todo el tiempo. Depende de la edad."
+ },
+ {
+  "id": "ac793586cf46",
+  "who": "DIEGO",
+  "text": "Ok, eso sí. Siguiente: ¿trabajar desde casa o en la oficina?"
+ },
+ {
+  "id": "ce20e6300636",
+  "who": "YO",
+  "text": "Para mí es mejor trabajar desde casa, porque ahorro mucho tiempo en tráfico."
+ },
+ {
+  "id": "97ea52234d46",
+  "who": "DIEGO",
+  "text": "Pero te sientes solo, ¿no?"
+ },
+ {
+  "id": "667560462ebd",
+  "who": "YO",
+  "text": "A veces sí. Por eso creo que lo ideal es una combinación: dos o tres días en casa."
+ },
+ {
+  "id": "85864b7e80a0",
+  "who": "DIEGO",
+  "text": "En eso estamos de acuerdo."
+ },
+ {
+  "id": "db6f96acdaf8",
+  "who": "YO",
+  "text": "¿Y tú qué prefieres?"
+ },
+ {
+  "id": "af8d6fd3fd26",
+  "who": "PATRICIA",
+  "text": "creo que, pienso que"
+ },
+ {
+  "id": "8a931950418a",
+  "who": "PATRICIA",
+  "text": "me parece que"
+ },
+ {
+  "id": "9de921bb898a",
+  "who": "PATRICIA",
+  "text": "en mi opinión"
+ },
+ {
+  "id": "b3573e5347e7",
+  "who": "PATRICIA",
+  "text": "no creo que"
+ },
+ {
+  "id": "fa3fd933b6b2",
+  "who": "PATRICIA",
+  "text": "opinar"
+ },
+ {
+  "id": "447c3ca65d4e",
+  "who": "PATRICIA",
+  "text": "porque"
+ },
+ {
+  "id": "77b20688d9cc",
+  "who": "PATRICIA",
+  "text": "por eso"
+ },
+ {
+  "id": "41e58e9dd9e0",
+  "who": "PATRICIA",
+  "text": "por ejemplo"
+ },
+ {
+  "id": "794d49dd8e61",
+  "who": "PATRICIA",
+  "text": "por un lado, por otro lado"
+ },
+ {
+  "id": "5f035ebd4293",
+  "who": "PATRICIA",
+  "text": "además"
+ },
+ {
+  "id": "ca979661a868",
+  "who": "PATRICIA",
+  "text": "la ventaja, la desventaja"
+ },
+ {
+  "id": "f24685062c78",
+  "who": "PATRICIA",
+  "text": "tener razón"
+ },
+ {
+  "id": "1caa76eb361c",
+  "who": "PATRICIA",
+  "text": "en parte"
+ },
+ {
+  "id": "7e7f8dd9886d",
+  "who": "PATRICIA",
+  "text": "exagerado"
+ },
+ {
+  "id": "ef335a278b90",
+  "who": "PATRICIA",
+  "text": "eso sí"
+ },
+ {
+  "id": "6330293a2fcc",
+  "who": "PATRICIA",
+  "text": "al contrario"
+ },
+ {
+  "id": "197a1a509391",
+  "who": "LUPE",
+  "text": "Te toca. ¿Qué película nos recomiendas?"
+ },
+ {
+  "id": "4466a5489784",
+  "who": "YO",
+  "text": "Les recomiendo Coco. Es una película animada de Pixar."
+ },
+ {
+  "id": "e019a4d65a4a",
+  "who": "LUPE",
+  "text": "Ah, la he oído mencionar, pero no la he visto. ¿De qué se trata?"
+ },
+ {
+  "id": "db12d88b967c",
+  "who": "YO",
+  "text": "Se trata de un niño, Miguel, que vive en un pueblo de México. Su sueño es ser músico."
+ },
+ {
+  "id": "3a92b3e53d2b",
+  "who": "LUPE",
+  "text": "¿Y cuál es el problema?"
+ },
+ {
+  "id": "31c29a19ed95",
+  "who": "YO",
+  "text": "El problema es que en su familia la música está prohibida, por algo que pasó hace muchos años."
+ },
+ {
+  "id": "a400ccf67d57",
+  "who": "LUPE",
+  "text": "¿Y qué hace?"
+ },
+ {
+  "id": "17e2d5f11b6e",
+  "who": "YO",
+  "text": "En el Día de Muertos, toma la guitarra de un músico famoso y de repente entra al mundo de los muertos."
+ },
+ {
+  "id": "e39f08c663ca",
+  "who": "LUPE",
+  "text": "¡Qué interesante! ¿Y cómo termina?"
+ },
+ {
+  "id": "0d758e1fc59c",
+  "who": "YO",
+  "text": "¡No te voy a contar el final! Pero hay una sorpresa muy grande."
+ },
+ {
+  "id": "5a29a70c3fff",
+  "who": "LUPE",
+  "text": "Ay, ¿por qué no? Bueno, ¿y a ti qué te pareció?"
+ },
+ {
+  "id": "f8c3e9411e03",
+  "who": "YO",
+  "text": "Me encantó. La música es preciosa y los colores son increíbles. Al final lloré muchísimo."
+ },
+ {
+  "id": "da5785605a05",
+  "who": "LUPE",
+  "text": "¿Lloraste? ¿Por qué?"
+ },
+ {
+  "id": "b859461f4031",
+  "who": "YO",
+  "text": "Porque habla de la familia y de recordar a las personas que ya no están. Me hizo pensar en mi abuela."
+ },
+ {
+  "id": "d8aa8fe6c6f2",
+  "who": "LUPE",
+  "text": "Ay, qué bonito. La voy a ver este fin de semana."
+ },
+ {
+  "id": "c64e7d751b66",
+  "who": "PATRICIA",
+  "text": "se trata de"
+ },
+ {
+  "id": "431d7dbd0a5f",
+  "who": "PATRICIA",
+  "text": "el personaje principal"
+ },
+ {
+  "id": "5618ccef47b5",
+  "who": "PATRICIA",
+  "text": "la trama"
+ },
+ {
+  "id": "418f319e1a80",
+  "who": "PATRICIA",
+  "text": "pasar, ocurrir"
+ },
+ {
+  "id": "a023c132568d",
+  "who": "PATRICIA",
+  "text": "el principio, el final"
+ },
+ {
+  "id": "fff03f2e5eda",
+  "who": "PATRICIA",
+  "text": "el conflicto"
+ },
+ {
+  "id": "ad0ddfcf961f",
+  "who": "PATRICIA",
+  "text": "la sorpresa"
+ },
+ {
+  "id": "fc1b47fefdbc",
+  "who": "PATRICIA",
+  "text": "al principio"
+ },
+ {
+  "id": "052327036762",
+  "who": "PATRICIA",
+  "text": "luego, después"
+ },
+ {
+  "id": "d5c7b27bb02c",
+  "who": "PATRICIA",
+  "text": "el spoiler"
+ },
+ {
+  "id": "568463d92b8c",
+  "who": "PATRICIA",
+  "text": "me hizo llorar, reír"
+ },
+ {
+  "id": "4c0a1b4d5dd4",
+  "who": "PATRICIA",
+  "text": "me sorprendió"
+ },
+ {
+  "id": "48228538e8c7",
+  "who": "PATRICIA",
+  "text": "me identifiqué con"
+ },
+ {
+  "id": "32d7213b9304",
+  "who": "PATRICIA",
+  "text": "conmovedor"
+ },
+ {
+  "id": "efb5f51c8ab1",
+  "who": "PATRICIA",
+  "text": "lento"
+ },
+ {
+  "id": "8a7fbdda71db",
+  "who": "PATRICIA",
+  "text": "valer la pena"
+ },
+ {
+  "id": "d5ac14da74e7",
+  "who": "VALERIA",
+  "text": "Bienvenido al programa. Cuéntanos, ¿cuál es tu sueño?"
+ },
+ {
+  "id": "ea80f1a15206",
+  "who": "YO",
+  "text": "Gracias. Mi sueño es vivir un año en México, en Oaxaca."
+ },
+ {
+  "id": "837d83918987",
+  "who": "VALERIA",
+  "text": "¡Qué padre! ¿Y desde cuándo tienes ese sueño?"
+ },
+ {
+  "id": "1dccbe02010e",
+  "who": "YO",
+  "text": "Desde que visité Oaxaca hace cinco años. Me enamoré de la ciudad, de la comida y de la gente."
+ },
+ {
+  "id": "d6dba7ddae82",
+  "who": "VALERIA",
+  "text": "¿Y por qué es tan importante para ti?"
+ },
+ {
+  "id": "bc7abc99faf7",
+  "who": "YO",
+  "text": "Porque quiero hablar español con confianza. Y también me gustaría vivir de una forma más tranquila."
+ },
+ {
+  "id": "e5b5a1febe68",
+  "who": "VALERIA",
+  "text": "¿Y qué estás haciendo para lograrlo?"
+ },
+ {
+  "id": "deef9cb487a6",
+  "who": "YO",
+  "text": "Estoy tomando clases y practico cada semana. También estoy ahorrando dinero."
+ },
+ {
+  "id": "19ebea577d2c",
+  "who": "VALERIA",
+  "text": "¿Y qué es lo más difícil?"
+ },
+ {
+  "id": "6be7e0a1a8f0",
+  "who": "YO",
+  "text": "El trabajo. Necesito encontrar la manera de trabajar a distancia, o pedir un año sabático."
+ },
+ {
+  "id": "5974ddc9b6ce",
+  "who": "VALERIA",
+  "text": "¿Y si no se puede?"
+ },
+ {
+  "id": "3a122916492e",
+  "who": "YO",
+  "text": "Entonces iría por tres meses en el verano. Pero ojalá pueda ir el año completo."
+ },
+ {
+  "id": "45b1bc1fd387",
+  "who": "VALERIA",
+  "text": "¿Y cómo te imaginas allá?"
+ },
+ {
+  "id": "818429ca1bf8",
+  "who": "YO",
+  "text": "Me imagino caminando al mercado en la mañana, platicando con los vecinos, en español, claro."
+ },
+ {
+  "id": "045ef35d65ad",
+  "who": "VALERIA",
+  "text": "¡Ojalá se cumpla! Gracias por compartirlo."
+ },
+ {
+  "id": "e60b0cea2811",
+  "who": "PATRICIA",
+  "text": "el sueño"
+ },
+ {
+  "id": "08f55a9fe65c",
+  "who": "PATRICIA",
+  "text": "la meta"
+ },
+ {
+  "id": "dbec29d93616",
+  "who": "PATRICIA",
+  "text": "la ambición"
+ },
+ {
+  "id": "c14a8ccadd6d",
+  "who": "PATRICIA",
+  "text": "soñar con"
+ },
+ {
+  "id": "a11fd051627f",
+  "who": "PATRICIA",
+  "text": "lograr"
+ },
+ {
+  "id": "19a672b47763",
+  "who": "PATRICIA",
+  "text": "cumplirse"
+ },
+ {
+  "id": "6af2b7e08cc4",
+  "who": "PATRICIA",
+  "text": "el plan B"
+ },
+ {
+  "id": "f16928384450",
+  "who": "PATRICIA",
+  "text": "ojalá"
+ },
+ {
+  "id": "d07aabc1efdd",
+  "who": "PATRICIA",
+  "text": "espero"
+ },
+ {
+  "id": "7efe2a8e69e5",
+  "who": "PATRICIA",
+  "text": "algún día"
+ },
+ {
+  "id": "b3c02f8c86c6",
+  "who": "PATRICIA",
+  "text": "imaginarse"
+ },
+ {
+  "id": "4b00f89007e4",
+  "who": "PATRICIA",
+  "text": "si todo sale bien"
+ },
+ {
+  "id": "4c60960c66ce",
+  "who": "PATRICIA",
+  "text": "realista"
+ },
+ {
+  "id": "833c15c44051",
+  "who": "PATRICIA",
+  "text": "el obstáculo"
+ },
+ {
+  "id": "ed95cfd754fa",
+  "who": "PATRICIA",
+  "text": "ahorrar"
+ },
+ {
+  "id": "294183e28772",
+  "who": "PATRICIA",
+  "text": "a distancia"
+ },
+ {
+  "id": "4fe313928eea",
+  "who": "PATRICIA",
+  "text": "el año sabático"
+ },
+ {
+  "id": "a5d8b991c0a6",
+  "who": "PATRICIA",
+  "text": "arriesgarse"
+ },
+ {
+  "id": "81165da6ad1d",
+  "who": "PATRICIA",
+  "text": "el miedo"
+ },
+ {
+  "id": "5d1164dbaaef",
+  "who": "PATRICIA",
+  "text": "apoyar"
+ },
+ {
+  "id": "aea93715fc2a",
+  "who": "YO",
+  "text": "Hola, ¿qué tal? Creo que estamos en la misma mesa. Soy Alex."
+ },
+ {
+  "id": "faf7c43b52fd",
+  "who": "LALO",
+  "text": "Mucho gusto, Rogelio."
+ },
+ {
+  "id": "cdc8937a9f66",
+  "who": "YO",
+  "text": "¿Y de dónde conoces a los novios?"
+ },
+ {
+  "id": "166efe364c11",
+  "who": "LALO",
+  "text": "Ana es mi prima."
+ },
+ {
+  "id": "f5c6c9ef7eb6",
+  "who": "YO",
+  "text": "¡Ah, qué bien! ¿Y son muy cercanos?"
+ },
+ {
+  "id": "8324ef1044f6",
+  "who": "LALO",
+  "text": "Sí, crecimos juntos en Guadalajara. Prácticamente somos hermanos. ¿Y tú?"
+ },
+ {
+  "id": "cf3828eb5b8f",
+  "who": "YO",
+  "text": "Yo trabajo con Luis. Bueno, trabajábamos juntos hace unos años."
+ },
+ {
+  "id": "7e6de7366f1b",
+  "who": "LALO",
+  "text": "Ah, ¿entonces tú también eres ingeniero?"
+ },
+ {
+  "id": "089bc722e158",
+  "who": "YO",
+  "text": "No, no. Yo soy maestro de inglés. Él tomaba clases conmigo."
+ },
+ {
+  "id": "a1b572a6783f",
+  "who": "LALO",
+  "text": "¡No me digas! Yo siempre he querido aprender inglés bien."
+ },
+ {
+  "id": "5c1726c9110f",
+  "who": "YO",
+  "text": "¿Ah, sí? ¿Y qué te lo impide?"
+ },
+ {
+  "id": "8e77a8238a9c",
+  "who": "LALO",
+  "text": "El tiempo. Tengo un restaurante y trabajo todo el día."
+ },
+ {
+  "id": "8bedff827b78",
+  "who": "YO",
+  "text": "¿En serio? ¿Qué tipo de comida?"
+ },
+ {
+  "id": "3429837968c2",
+  "who": "LALO",
+  "text": "Birria, la mejor de Guadalajara. Bueno, eso dicen."
+ },
+ {
+  "id": "f3238cc06b2a",
+  "who": "YO",
+  "text": "¡Me encanta la birria! Tienes que darme la dirección."
+ },
+ {
+  "id": "ca3b855c592e",
+  "who": "PATRICIA",
+  "text": "¿Cómo?"
+ },
+ {
+  "id": "4a856bdccf9c",
+  "who": "PATRICIA",
+  "text": "¿Qué tal?"
+ },
+ {
+  "id": "cadb1a1b8711",
+  "who": "PATRICIA",
+  "text": "¿Por qué?"
+ },
+ {
+  "id": "a5d9492973f0",
+  "who": "PATRICIA",
+  "text": "¿Cuánto tiempo llevas?"
+ },
+ {
+  "id": "fa62d2bc6d87",
+  "who": "PATRICIA",
+  "text": "¿Qué te trae por aquí?"
+ },
+ {
+  "id": "d4b21407c128",
+  "who": "PATRICIA",
+  "text": "¿Y qué tal es?"
+ },
+ {
+  "id": "7b7f9c88a322",
+  "who": "PATRICIA",
+  "text": "¡No me digas!"
+ },
+ {
+  "id": "a03512fd9a73",
+  "who": "PATRICIA",
+  "text": "¿En serio?, ¿Neta?"
+ },
+ {
+  "id": "41cc9744f3d3",
+  "who": "PATRICIA",
+  "text": "¡Qué casualidad!"
+ },
+ {
+  "id": "9bcbf765c531",
+  "who": "PATRICIA",
+  "text": "¡Qué padre!"
+ },
+ {
+  "id": "e87c80c7c765",
+  "who": "PATRICIA",
+  "text": "Yo también, Yo tampoco"
+ },
+ {
+  "id": "37cc2faca2dd",
+  "who": "PATRICIA",
+  "text": "Me imagino"
+ },
+ {
+  "id": "922b1c6e285a",
+  "who": "PATRICIA",
+  "text": "Eso sí"
+ },
+ {
+  "id": "cdfbc730b361",
+  "who": "PATRICIA",
+  "text": "hablando de"
+ },
+ {
+  "id": "e1d95cbf7444",
+  "who": "PATRICIA",
+  "text": "por cierto"
+ },
+ {
+  "id": "b5a7a262985f",
+  "who": "PATRICIA",
+  "text": "fíjate que"
+ },
+ {
+  "id": "0723a0fa914c",
+  "who": "PATRICIA",
+  "text": "oye"
+ },
+ {
+  "id": "6305e920332b",
+  "who": "PATRICIA",
+  "text": "fue un gusto"
+ },
+ {
+  "id": "4edf83b21df5",
+  "who": "PATRICIA",
+  "text": "platicar"
+ },
+ {
+  "id": "f25522352b68",
+  "who": "PATRICIA",
+  "text": "ahí nos vemos"
+ },
+ {
+  "id": "673da2abcc20",
+  "who": "YO",
+  "text": "Buenas noches, don Arturo. Ya estoy en la puerta. ¿Cómo abro la caja de la llave?"
+ },
+ {
+  "id": "e6be55b878c1",
+  "who": "ARTURO",
+  "text": "Mire, a la derecha de la puerta hay una cajita negra. Ponga el código: cuatro, siete, dos, uno."
+ },
+ {
+  "id": "bd7024c935b6",
+  "who": "YO",
+  "text": "¿Cuatro, siete, dos, uno? Ya está. ¿Y luego?"
+ },
+ {
+  "id": "c56815278879",
+  "who": "ARTURO",
+  "text": "Jale la palanca hacia abajo y ahí está la llave."
+ },
+ {
+  "id": "fc8bc5b8083a",
+  "who": "YO",
+  "text": "Listo, ya entré. Oiga, ¿cómo funciona el agua caliente?"
+ },
+ {
+  "id": "20b3bac599a4",
+  "who": "ARTURO",
+  "text": "El calentador está en el patio. Primero abra la llave del gas, la amarilla."
+ },
+ {
+  "id": "4c484207cdb3",
+  "who": "YO",
+  "text": "¿La llave amarilla? Ok. ¿Qué hago después?"
+ },
+ {
+  "id": "f9b8884300d7",
+  "who": "ARTURO",
+  "text": "Gire la perilla a «piloto», apriétela y presione el botón rojo varias veces."
+ },
+ {
+  "id": "b93d80a8f8a1",
+  "who": "YO",
+  "text": "Ya lo hice, pero no prende."
+ },
+ {
+  "id": "f9f7fcb5e91b",
+  "who": "ARTURO",
+  "text": "Siga apretando la perilla treinta segundos. Ya que prenda, suéltela despacio."
+ },
+ {
+  "id": "2b5bb75ae817",
+  "who": "YO",
+  "text": "¡Ya prendió! A ver si entendí: abro el gas, giro a piloto, aprieto y presiono el botón rojo."
+ },
+ {
+  "id": "81165c19fa07",
+  "who": "ARTURO",
+  "text": "Exacto. Y no tome agua de la llave. Hay un garrafón en la cocina."
+ },
+ {
+  "id": "fd9410545f59",
+  "who": "YO",
+  "text": "Muy bien. ¿Y la basura? ¿Cuándo pasa el camión?"
+ },
+ {
+  "id": "07d920d37cc8",
+  "who": "ARTURO",
+  "text": "Martes y viernes, a las siete de la mañana. Cuando oiga la campana, saque las bolsas."
+ },
+ {
+  "id": "8958bd75322a",
+  "who": "YO",
+  "text": "Perfecto. Muchas gracias por la paciencia."
+ },
+ {
+  "id": "12ce9dc9a80b",
+  "who": "PATRICIA",
+  "text": "ponga"
+ },
+ {
+  "id": "a3275dd5dd97",
+  "who": "PATRICIA",
+  "text": "jale"
+ },
+ {
+  "id": "73fb9cc99445",
+  "who": "PATRICIA",
+  "text": "empuje"
+ },
+ {
+  "id": "f68dbf2a4e9d",
+  "who": "PATRICIA",
+  "text": "gire"
+ },
+ {
+  "id": "ee126f9a0847",
+  "who": "PATRICIA",
+  "text": "apriete"
+ },
+ {
+  "id": "ab6a182f1914",
+  "who": "PATRICIA",
+  "text": "suelte"
+ },
+ {
+  "id": "4f31f2391b8d",
+  "who": "PATRICIA",
+  "text": "presione"
+ },
+ {
+  "id": "1251384ce0dd",
+  "who": "PATRICIA",
+  "text": "saque"
+ },
+ {
+  "id": "999d555c898d",
+  "who": "PATRICIA",
+  "text": "la caja de seguridad"
+ },
+ {
+  "id": "a76b9d85e74c",
+  "who": "PATRICIA",
+  "text": "la palanca"
+ },
+ {
+  "id": "27ba2cd8190f",
+  "who": "PATRICIA",
+  "text": "el calentador, el boiler"
+ },
+ {
+  "id": "6aec7d4e5fe1",
+  "who": "PATRICIA",
+  "text": "la llave del gas"
+ },
+ {
+  "id": "ee695c1865b7",
+  "who": "PATRICIA",
+  "text": "la perilla"
+ },
+ {
+  "id": "7529f6e0aff4",
+  "who": "PATRICIA",
+  "text": "el piloto"
+ },
+ {
+  "id": "9cb35790d356",
+  "who": "PATRICIA",
+  "text": "el garrafón"
+ },
+ {
+  "id": "99255d7165da",
+  "who": "PATRICIA",
+  "text": "el camión de la basura"
+ },
+ {
+  "id": "8ddc2fd6566f",
+  "who": "PATRICIA",
+  "text": "ya que, cuando"
+ },
+ {
+  "id": "90f9cc481210",
+  "who": "PATRICIA",
+  "text": "hasta que"
+ },
+ {
+  "id": "ab52490dccdc",
+  "who": "PATRICIA",
+  "text": "a ver si entendí"
+ },
+ {
+  "id": "929e3d637b78",
+  "who": "PATRICIA",
+  "text": "exacto"
+ },
+ {
+  "id": "86556cf0b116",
+  "who": "ROCIO",
+  "text": "Bienvenido. Gracias por venir. Para empezar, hábleme un poco de usted."
+ },
+ {
+  "id": "1e997d82efa1",
+  "who": "YO",
+  "text": "Con mucho gusto. Soy maestro de inglés y llevo más de diez años dando clases, sobre todo a adultos."
+ },
+ {
+  "id": "682416977735",
+  "who": "ROCIO",
+  "text": "¿Y ha trabajado con niños?"
+ },
+ {
+  "id": "d47a2b7c51a1",
+  "who": "YO",
+  "text": "Un poco. Hace unos años di un taller de verano para niños. Fue un reto, pero me gustó mucho."
+ },
+ {
+  "id": "64279dbfc652",
+  "who": "ROCIO",
+  "text": "¿Por qué le interesa ser voluntario aquí?"
+ },
+ {
+  "id": "42db58cf7918",
+  "who": "YO",
+  "text": "Por dos razones. Primero, quiero ayudar a la comunidad. Y segundo, quiero mejorar mi español."
+ },
+ {
+  "id": "be12afd40b8c",
+  "who": "ROCIO",
+  "text": "Muy bien. ¿Qué haría si un grupo no quiere participar?"
+ },
+ {
+  "id": "39ebb79d0353",
+  "who": "YO",
+  "text": "Primero trataría de entender por qué. Luego usaría juegos y actividades en parejas, porque así los estudiantes se sienten más seguros."
+ },
+ {
+  "id": "11ceac75a144",
+  "who": "ROCIO",
+  "text": "¿Y cuál diría que es su punto débil?"
+ },
+ {
+  "id": "7bb0ef88f83a",
+  "who": "YO",
+  "text": "A veces soy demasiado perfeccionista. Estoy aprendiendo a planear menos y escuchar más a los alumnos."
+ },
+ {
+  "id": "38dd84006732",
+  "who": "ROCIO",
+  "text": "¿Qué disponibilidad tiene?"
+ },
+ {
+  "id": "d26c12400593",
+  "who": "YO",
+  "text": "Puedo dar clases lunes, miércoles y viernes en la tarde. En total, unas ocho horas por semana."
+ },
+ {
+  "id": "63e6f7b78f41",
+  "who": "ROCIO",
+  "text": "Perfecto. ¿Tiene alguna pregunta para nosotros?"
+ },
+ {
+  "id": "f500f03cbd05",
+  "who": "YO",
+  "text": "Sí. ¿Cuántos alumnos hay por grupo? ¿Y cuándo empezaría?"
+ },
+ {
+  "id": "91c4f6b75003",
+  "who": "PATRICIA",
+  "text": "la entrevista"
+ },
+ {
+  "id": "4e17f8a7234d",
+  "who": "PATRICIA",
+  "text": "el puesto"
+ },
+ {
+  "id": "6beeb4db12c6",
+  "who": "PATRICIA",
+  "text": "el voluntariado"
+ },
+ {
+  "id": "a550dbc1d548",
+  "who": "PATRICIA",
+  "text": "la experiencia"
+ },
+ {
+  "id": "e8f450fc8e56",
+  "who": "PATRICIA",
+  "text": "la disponibilidad"
+ },
+ {
+  "id": "a97ee53aa9fe",
+  "who": "PATRICIA",
+  "text": "el punto fuerte, débil"
+ },
+ {
+  "id": "e2a1352274e8",
+  "who": "PATRICIA",
+  "text": "me considero"
+ },
+ {
+  "id": "497d793cd059",
+  "who": "PATRICIA",
+  "text": "paciente"
+ },
+ {
+  "id": "85c905fc2a33",
+  "who": "PATRICIA",
+  "text": "organizado, organizada"
+ },
+ {
+  "id": "79c9f199735e",
+  "who": "PATRICIA",
+  "text": "flexible"
+ },
+ {
+  "id": "f36107c3b6e4",
+  "who": "PATRICIA",
+  "text": "perfeccionista"
+ },
+ {
+  "id": "fa6c90570516",
+  "who": "PATRICIA",
+  "text": "adaptarse"
+ },
+ {
+  "id": "e6928e15566c",
+  "who": "PATRICIA",
+  "text": "¿qué haría si?"
+ },
+ {
+  "id": "2bfb98fc4063",
+  "who": "PATRICIA",
+  "text": "trataría de"
+ },
+ {
+  "id": "5ece9d4ec55c",
+  "who": "PATRICIA",
+  "text": "el reto"
+ },
+ {
+  "id": "7980ddd395a8",
+  "who": "PATRICIA",
+  "text": "resolver"
+ },
+ {
+  "id": "5f17e38f4666",
+  "who": "PATRICIA",
+  "text": "el grupo"
+ },
+ {
+  "id": "0e814656c600",
+  "who": "PATRICIA",
+  "text": "participar"
+ },
+ {
+  "id": "f0770fb45e64",
+  "who": "PATRICIA",
+  "text": "motivar"
+ },
+ {
+  "id": "a2d7cbb5dd75",
+  "who": "PATRICIA",
+  "text": "¿Y tú dónde das clases?"
+ },
+ {
+  "id": "5dbbb164a034",
+  "who": "YO",
+  "text": "Doy clases de inglés en una universidad, sobre todo a estudiantes internacionales."
+ },
+ {
+  "id": "3246c97b2964",
+  "who": "PATRICIA",
+  "text": "¡Qué interesante! ¿Y cómo es una semana normal para ti?"
+ },
+ {
+  "id": "35a3df6c20f7",
+  "who": "YO",
+  "text": "Doy unas doce horas de clase a la semana. Además, planeo las clases, preparo materiales y califico mucho."
+ },
+ {
+  "id": "5f579f854939",
+  "who": "PATRICIA",
+  "text": "¿Y qué es lo más difícil de tu trabajo?"
+ },
+ {
+  "id": "95a6570b1e8a",
+  "who": "YO",
+  "text": "Lo más difícil es que en un mismo grupo hay niveles muy diferentes. Algunos alumnos se aburren y otros se pierden."
+ },
+ {
+  "id": "9cf3d0d09f23",
+  "who": "PATRICIA",
+  "text": "Uf, aquí pasa lo mismo. ¿Y qué haces?"
+ },
+ {
+  "id": "6c595e2413e3",
+  "who": "YO",
+  "text": "Trato de dar opciones: la misma tarea, pero con diferentes niveles de apoyo. No siempre funciona, pero ayuda."
+ },
+ {
+  "id": "0bfd2551ac8a",
+  "who": "PATRICIA",
+  "text": "¿Y la inteligencia artificial? Mis alumnos la usan para todo."
+ },
+ {
+  "id": "4c6858c570ec",
+  "who": "YO",
+  "text": "Los míos también. Por eso ahora hago más actividades orales en clase, donde tienen que hablar sin ayuda."
+ },
+ {
+  "id": "5dd0bf2b0c9d",
+  "who": "PATRICIA",
+  "text": "Buena idea. ¿Y qué es lo que más disfrutas?"
+ },
+ {
+  "id": "189056ee98b7",
+  "who": "YO",
+  "text": "Lo que más me gusta es ver el progreso. Cuando un alumno que no hablaba al principio por fin se anima a participar, me encanta."
+ },
+ {
+  "id": "c43e591d2c4b",
+  "who": "PATRICIA",
+  "text": "Sí, eso no tiene precio."
+ },
+ {
+  "id": "fd38972806bb",
+  "who": "YO",
+  "text": "¿Y tú? ¿Cuántos alumnos tienes por grupo?"
+ },
+ {
+  "id": "fef6b376e6e2",
+  "who": "PATRICIA",
+  "text": "¡Cuarenta! Y con tres horas a la semana."
+ },
+ {
+  "id": "7c3fd3eb7282",
+  "who": "PATRICIA",
+  "text": "planear"
+ },
+ {
+  "id": "7c78c93e5dee",
+  "who": "PATRICIA",
+  "text": "calificar"
+ },
+ {
+  "id": "733746a9f0a7",
+  "who": "PATRICIA",
+  "text": "el material"
+ },
+ {
+  "id": "77702920027c",
+  "who": "PATRICIA",
+  "text": "la junta"
+ },
+ {
+  "id": "40c5045cf500",
+  "who": "PATRICIA",
+  "text": "asesorar"
+ },
+ {
+  "id": "4a0a2c77b1ae",
+  "who": "PATRICIA",
+  "text": "encargarse de"
+ },
+ {
+  "id": "5e5d5b0de691",
+  "who": "PATRICIA",
+  "text": "coordinar"
+ },
+ {
+  "id": "376826ef484e",
+  "who": "PATRICIA",
+  "text": "el nivel"
+ },
+ {
+  "id": "1f16b36943dc",
+  "who": "PATRICIA",
+  "text": "los niveles mezclados"
+ },
+ {
+  "id": "7ae5915d5ec6",
+  "who": "PATRICIA",
+  "text": "la carga de trabajo"
+ },
+ {
+  "id": "0dbac912dcd1",
+  "who": "PATRICIA",
+  "text": "aburrirse"
+ },
+ {
+  "id": "e0251c07e0c2",
+  "who": "PATRICIA",
+  "text": "perderse"
+ },
+ {
+  "id": "bcdef6e6635b",
+  "who": "PATRICIA",
+  "text": "agotado, agotada"
+ },
+ {
+  "id": "bfbe988636b0",
+  "who": "PATRICIA",
+  "text": "disfrutar"
+ },
+ {
+  "id": "0325f5c2f00e",
+  "who": "PATRICIA",
+  "text": "el progreso"
+ },
+ {
+  "id": "d6c68365b7a7",
+  "who": "PATRICIA",
+  "text": "animarse a"
+ },
+ {
+  "id": "a77b30bba194",
+  "who": "PATRICIA",
+  "text": "la satisfacción"
+ },
+ {
+  "id": "354c77626c5c",
+  "who": "PATRICIA",
+  "text": "la libertad"
+ },
+ {
+  "id": "175c06ec7952",
+  "who": "PATRICIA",
+  "text": "los colegas"
+ },
+ {
+  "id": "996b3fafdfc8",
+  "who": "PATRICIA",
+  "text": "no tiene precio"
+ }
+]
